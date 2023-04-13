@@ -1,0 +1,18 @@
+---
+import Content from '../components/Content.astro';
+import Header from '../components/Header.astro';
+import Logo from '../components/Logo';
+import Menu from '../components/Menu.astro';
+import Ratio from '../components/Ratio';
+import CommonLayout from '../layouts/CommonLayout.astro';
+---
+
+<CommonLayout title="Ratio">
+  <Header>
+    <Logo size="small" url="/" />
+    <Menu />
+  </Header>
+  <Content>
+    <Ratio client:visible />
+  </Content>
+</CommonLayout>

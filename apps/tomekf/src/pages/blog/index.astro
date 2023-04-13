@@ -1,0 +1,41 @@
+---
+import type { MarkdownInstance } from 'astro';
+
+import Content from '../../components/Content.astro';
+import Header from '../../components/Header.astro';
+import Logo from '../../components/Logo';
+import Menu from '../../components/Menu.astro';
+import CommonLayout from '../../layouts/CommonLayout.astro';
+import { linkCss } from '../../styles/common';
+
+interface Frontmatter {
+  title: string;
+  author: string;
+  date: string;
+}
+// const posts = await Astro.glob<Frontmatter>('./*.md');
+const posts: MarkdownInstance<Frontmatter>[] = await Astro.glob('./*.(md|mdx)'); // had to use other typing for (md|mdx)
+const postsSorted = [...posts].sort(
+  (a, b) => new Date(a.frontmatter.date).getTime() - new Date(b.frontmatter.date).getTime(),
+);
+---
+
+<CommonLayout title="Blog">
+  <Header>
+    <Logo size="small" url="/" />
+    <Menu />
+  </Header>
+  <Content>
+    <ul>
+      {
+        postsSorted.map((post) => (
+          <li>
+            <a class={linkCss} href={post.url}>
+              {post.frontmatter.title} ({post.frontmatter.date})
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </Content>
+</CommonLayout>

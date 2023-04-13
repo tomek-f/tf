@@ -1,0 +1,6 @@
+# disable global rule
+!.env*
+# disable .local envs
+.env*.local
+
+stats.html

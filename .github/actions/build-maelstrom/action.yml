@@ -1,0 +1,16 @@
+name: '@tf/maelstrom build action'
+description: 'Runs a composite @tf/maelstrom build action'
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        check-latest: true
+        cache: 'yarn'
+    - run: yarn install --immutable
+      shell: bash
+    - run: yarn workspace @tf/maelstrom build
+      shell: bash

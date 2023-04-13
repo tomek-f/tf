@@ -1,0 +1,11 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props as Props;
+---
+
+<div class={['flex items-center justify-between', className].filter(Boolean).join(' ')}>
+  <slot />
+</div>

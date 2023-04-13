@@ -1,0 +1,53 @@
+{
+  "name": "@tf/maelstrom",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0 <19.0.0"
+  },
+  "scripts": {
+    "dev": "rimraf ./.next && next dev",
+    "build": "rimraf ./.next && next build",
+    "build-and-start": "yarn build && yarn start",
+    "start": "next start",
+    "lint-js-next": "next lint",
+    "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
+    "lint-js-fix": "yarn lint-js --fix",
+    "check-types": "yarn tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@supabase/gotrue-js": "^2.20.1",
+    "@supabase/supabase-js": "^2.15.0",
+    "classnames": "^2.3.2",
+    "eslint": "^8.38.0",
+    "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.130.1",
+    "next": "^13.3.0",
+    "next-axiom": "^0.17.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.2",
+    "swr": "^2.1.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/lodash": "^4.14.192",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@types/rimraf": "^4.0.5",
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^2.51.5",
+    "eslint": "^8.38.0",
+    "eslint-config-next": "^13.3.0",
+    "postcss": "^8.4.21",
+    "rimraf": "^4.4.1",
+    "tailwindcss": "^3.3.1",
+    "type-fest": "^3.8.0",
+    "typescript": "^5.0.4"
+  }
+}

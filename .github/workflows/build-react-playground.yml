@@ -1,0 +1,11 @@
+name: build react playground
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-react-playground:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/build-react-playground

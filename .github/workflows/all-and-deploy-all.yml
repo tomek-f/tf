@@ -1,0 +1,56 @@
+name: all actions + deploy all
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-maelstrom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/build-maelstrom
+  build-react-playground:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/build-react-playground
+  build-tomekf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/build-tomekf
+  vitest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/vitest
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/lint
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/prettier
+  types:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/types
+  deploy-maelstrom:
+    name: vercel
+    uses: ./.github/workflows/deploy-maelstrom.yml
+    secrets: inherit
+    needs: [vitest, lint, prettier, types, build-maelstrom]
+  deploy-react-playground:
+    name: vercel
+    uses: ./.github/workflows/deploy-react-playground.yml
+    secrets: inherit
+    needs: [vitest, lint, prettier, types, build-react-playground]
+  deploy-tomekf:
+    name: vercel
+    uses: ./.github/workflows/deploy-tomekf.yml
+    secrets: inherit
+    needs: [vitest, lint, prettier, types, build-tomekf]

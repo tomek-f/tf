@@ -1,0 +1,33 @@
+---
+import '../styles/globals.css';
+
+export interface Props {
+  class?: string;
+  classHtml?: string;
+  title?: string;
+}
+
+const { class: className, classHtml, title } = Astro.props as Props;
+
+const parsedTitle = [title, 'Internety Tomasz Fijoł'].filter(Boolean).join(' | ');
+// todo proper description
+const parsedDescription = ['Internety Tomasz Fijoł', title].filter(Boolean).join(' - ');
+---
+
+<html lang="en" class={classHtml}>
+  <head>
+    <meta charset="utf-8" />
+    <title>{parsedTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={parsedDescription} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+    />
+  </head>
+  <body class={[`font-light text-base bg-black text-white`, className].filter(Boolean).join(' ')}>
+    <slot />
+  </body>
+</html>

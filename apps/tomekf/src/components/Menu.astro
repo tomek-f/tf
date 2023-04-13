@@ -1,0 +1,25 @@
+---
+import { linkCss } from '../styles/common';
+
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props as Props;
+const { pathname } = Astro.url;
+---
+
+<div class={['flex gap-3', className].filter(Boolean).join(' ')}>
+  <a
+    class:list={[linkCss, 'md:text-2xl', { 'text-blue-500': pathname.startsWith('/info') }]}
+    href="/info"
+  >
+    Info</a
+  >
+  <a
+    class:list={[linkCss, 'md:text-2xl', { 'text-blue-500': pathname.startsWith('/contact') }]}
+    href="/contact"
+  >
+    Contact
+  </a>
+</div>

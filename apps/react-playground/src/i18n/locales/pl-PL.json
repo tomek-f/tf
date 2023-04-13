@@ -1,0 +1,12 @@
+{
+  "section.home": "Start",
+  "section.ratio": "Proporcja",
+  "section.contact": "Kontakt",
+
+  "home.links": "Linki",
+  "home.link.linkedIn": "LinkedIn",
+  "home.link.npm": "NPM",
+  "home.link.github": "Github",
+
+  "notFound.message": "Nie znaleziono"
+}

@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .wysiwyg h1 {
+    @apply text-2xl mb-8;
+  }
+  .wysiwyg h1:not(:first-child) {
+    @apply mt-4;
+  }
+  .wysiwyg h2 {
+    @apply text-xl mb-6;
+  }
+  .wysiwyg p:not(:first-child):not(:last-child) {
+    @apply my-4;
+  }
+  .wysiwyg p:first-child {
+    @apply mt-4;
+  }
+  .wysiwyg p:last-child {
+    @apply mt-4;
+  }
+}

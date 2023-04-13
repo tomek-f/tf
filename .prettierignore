@@ -1,0 +1,9 @@
+coverage
+dist
+.yarn
+.next
+
+stats.html
+# all html
+# *.html
+google*.html

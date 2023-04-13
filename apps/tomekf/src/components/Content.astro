@@ -1,0 +1,11 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props as Props;
+---
+
+<div class={['mt-8', className].filter(Boolean).join(' ')}>
+  <slot />
+</div>
