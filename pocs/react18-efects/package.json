@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/runtime": "^7.21.0",
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.33",
+    "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
     "@types/react-redux": "^7.1.25",
     "@vitejs/plugin-react": "^3.1.0",
