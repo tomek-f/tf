@@ -10,6 +10,9 @@ func main() {
 	// remainingCards.print("\nRemaining cards:")
 
 	cards := newDeck()
-	// fmt.Println(cards.toString())
+	cards.print("cards to file")
 	cards.saveToFile("my_cards")
+
+	cards2 := newDeckFromFile("my_cards")
+	cards2.print("cards from file")
 }
