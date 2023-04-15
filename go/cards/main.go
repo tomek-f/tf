@@ -2,8 +2,6 @@ package main
 
 import "fmt"
 
-const elo string = "Elo!"
-
 func main() {
 	cards := []string{"Ace of Diamonds", newCard()}
 	cards = append(cards, "Six of Spades")
