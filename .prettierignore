@@ -1,6 +1,5 @@
 coverage
 dist
-.yarn
 .next
 
 stats.html
