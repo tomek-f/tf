@@ -21,7 +21,8 @@ func newDeck() deck {
 	return cards
 }
 
-func (d deck) print() {
+func (d deck) print(header string) {
+	fmt.Println(header)
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
