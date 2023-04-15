@@ -1,5 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import typograpy from '@tailwindcss/typography';
+import daisyui from 'daisyui';
+import type { Config } from 'tailwindcss';
+
+export default {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -13,8 +16,8 @@ module.exports = {
     },
   },
   // eslint-disable-next-line global-require
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [typograpy, daisyui],
   daisyui: {
     themes: ['dark', 'light'],
   },
-};
+} satisfies Config;
