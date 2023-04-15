@@ -14,8 +14,8 @@ jobs:
         with:
           node-version: 18
           check-latest: true
-          cache: 'yarn'
-      - run: yarn install --immutable
+          cache: 'npm'
+      - run: npm ci
       - name: 'deploy @tf/react-playground to Vercel'
         run: |
           prodRun=""
@@ -23,7 +23,7 @@ jobs:
             prodRun="--prod"
           fi
 
-          yarn vercel --token ${VERCEL_TOKEN} $prodRun
+          npm run vercel --token ${VERCEL_TOKEN} $prodRun
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

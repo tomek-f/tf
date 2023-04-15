@@ -35,13 +35,13 @@
   "scripts": {
     "dev": "tsc -p tsconfig.dev.json && vite",
     "dev-org": "vite",
-    "build-and-serve": "yarn build && yarn serve",
+    "build-and-serve": "npm run build && npm run serve",
     "build": "tsc && vite build",
     "serve": "wds --root-dir dist --watch --open --app-index dist/index.html --port 4173",
     "server-org": "vite preview",
     "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
-    "lint-js-fix": "yarn lint-js --fix",
-    "check-types": "yarn tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
+    "lint-js-fix": "npm run lint-js --fix",
+    "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
   },
   "browserslist": [
     ">0.2%",

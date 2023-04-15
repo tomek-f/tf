@@ -9,12 +9,12 @@
   "scripts": {
     "dev": "rimraf ./.next && next dev",
     "build": "rimraf ./.next && next build",
-    "build-and-start": "yarn build && yarn start",
+    "build-and-start": "npm run build && npm run start",
     "start": "next start",
     "lint-js-next": "next lint",
     "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
-    "lint-js-fix": "yarn lint-js --fix",
-    "check-types": "yarn tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
+    "lint-js-fix": "npm run lint-js --fix",
+    "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
@@ -39,7 +39,6 @@
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
-    "@types/rimraf": "^4.0.5",
     "autoprefixer": "^10.4.14",
     "daisyui": "^2.51.5",
     "eslint": "^8.38.0",

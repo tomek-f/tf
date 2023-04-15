@@ -9,8 +9,8 @@ runs:
       with:
         node-version: 18
         check-latest: true
-        cache: 'yarn'
-    - run: yarn install --immutable
+        cache: 'npm'
+    - run: npm ci
       shell: bash
-    - run: yarn workspace @tf/maelstrom build
+    - run: npm run build --workspace=@tf/maelstrom
       shell: bash

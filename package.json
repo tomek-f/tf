@@ -61,6 +61,5 @@
     "typescript": "^5.0.4",
     "vercel": "^28.18.5"
   },
-  "pre-commit": "beforecommit",
-  "packageManager": "yarn@3.5.0"
+  "pre-commit": "beforecommit"
 }
