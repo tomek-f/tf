@@ -6,11 +6,16 @@
 - `React.ReactNode` - describes anything that can be rendered - strings, numbers, elements or an array of these things
 - `React.ElementType` - React component (import Foo…)
 
+## update all
+
+- `npm install -g npm-check-updates` then `ncu -u -ws` or just `npx npm-check-updates`
+- `npm i`
+
 ## turbo
 
 - https://turbo.build/repo/docs/handbook/sharing-code/internal-packages
 
-## changesets
+## TODO changesets
 
 - `npm run changesets`
 - `npm run changesets version`
