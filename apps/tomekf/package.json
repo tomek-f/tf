@@ -23,11 +23,11 @@
     "@astrojs/mdx": "^0.19.0",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.1",
-    "@types/react": "^18.0.35",
+    "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "astro": "^2.3.0",
-    "astro-compress": "^1.1.35",
-    "astro-critters": "^1.1.31",
+    "astro-compress": "^1.1.36",
+    "astro-critters": "^1.1.32",
     "astro-eleventy-img": "^0.6.2",
     "eslint": "^8.38.0",
     "prettier-plugin-astro": "^0.8.0",
@@ -37,7 +37,7 @@
   "dependencies": {
     "@astrojs/react": "^2.1.1",
     "classnames": "^2.3.2",
-    "lucide-react": "^0.145.0",
+    "lucide-react": "^0.162.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
