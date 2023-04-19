@@ -38,7 +38,6 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-debugger': 'off',
-
     'max-depth': ['error', 3],
     'max-len': ['error', 100, 2, { ignoreComments: true }],
     'max-nested-callbacks': [2, 3],
@@ -56,6 +55,25 @@ module.exports = {
     ],
     'padded-blocks': 'off',
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
+    'object-shorthand': [
+      'error',
+      'always',
+      {
+        ignoreConstructors: false,
+        avoidQuotes: true,
+      },
+    ],
+    'id-denylist': [
+      'error',
+      'e', // -> event
+      'ev', // -> event
+      '_', // -> 'actual name' of unused arg, eg. payload
+      '__',
+      '___',
+      '____',
+      '_____',
+      'cb', // -> callback?
+    ],
 
     /* prettier */
     'prettier/prettier': 'error',
@@ -138,8 +156,6 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
 
-    /* something ;) */
-    /* something ;) */
     'no-restricted-imports': [
       'error',
       {
