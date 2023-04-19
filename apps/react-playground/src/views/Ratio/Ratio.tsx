@@ -12,10 +12,10 @@ const Ratio = () => {
   const [c, setC] = useState<number | string>(5);
   const [x, setX] = useState<number | string>(10);
 
-  const onInput = (ev: React.ChangeEvent<HTMLInputElement>): void => {
-    const value = parseFloat(ev.target.value) || ev.target.value;
+  const onInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const value = parseFloat(event.target.value) || event.target.value;
 
-    switch (ev.target.name) {
+    switch (event.target.name) {
       case 'a':
         setA(value);
         break;
@@ -36,7 +36,7 @@ const Ratio = () => {
       a,
       b,
       c,
-      [ev.target.name]: value,
+      [event.target.name]: value,
     };
     const newX = ratio(temp.a as number, temp.b as number, temp.c as number);
 

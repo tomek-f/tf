@@ -55,11 +55,11 @@ if (import.meta.env.MODE === 'test') {
   const messages = new Proxy(
     {},
     {
-      get(_, key) {
+      get(target, key) {
         return key;
       },
       // https://github.com/formatjs/formatjs/commit/269adc4a81af5d0cfe84ab02bd5242b4335e4a00
-      getOwnPropertyDescriptor(_, key) {
+      getOwnPropertyDescriptor(target, key) {
         return {
           configurable: true,
           enumerable: true,

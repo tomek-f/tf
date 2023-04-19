@@ -7,7 +7,7 @@ import delay from './utils/delay';
 const isDevelopmentRun = process.env.NODE_ENV === 'development';
 
 // https://medium.com/@arm.ninoyan/fixed-react-18-useeffect-runs-twice-8480f0bd837f
-const useLegacyEffect = (cb: () => void, deps: unknown[]) => {
+const useLegacyEffect = (callback: () => void, deps: unknown[]) => {
   const isMountedRef = useRef(!isDevelopmentRun);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const useLegacyEffect = (cb: () => void, deps: unknown[]) => {
       return undefined;
     }
 
-    return cb();
+    return callback();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 };
@@ -56,8 +56,8 @@ const App = ({ settingsState, gameState }: Props) => {
   }, [settingsState.isLightThemeOn]);
 
   const checkTheme = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      if (e.target.checked) {
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (event.target.checked) {
         dispatch.settings.SET_THEME('dark');
       } else {
         dispatch.settings.SET_THEME('light');
@@ -73,7 +73,7 @@ const App = ({ settingsState, gameState }: Props) => {
           <input
             checked={!settingsState.isLightThemeOn}
             id="checkbox"
-            onChange={(e) => checkTheme(e)}
+            onChange={(event) => checkTheme(event)}
             type="checkbox"
           />
           <div className="slider round" />
