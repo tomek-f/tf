@@ -15,6 +15,7 @@
     "turbo:check-types": "turbo check-types",
     "turbo:lint-js": "turbo lint-js",
     "turbo:lint-js-fix": "turbo lint-js-fix",
+    "turbo:lint-js-fix-force": "turbo lint-js-fix --force",
     "turbo:test": "turbo test",
     "turbo:deploy": "turbo deploy",
     "serve-demo": "wds --node-resolve --watch --port 3000",
