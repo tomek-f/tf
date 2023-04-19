@@ -74,6 +74,34 @@ module.exports = {
       '_____',
       'cb', // -> callback?
     ],
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            name: 'react-router',
+            message: 'Please use react-router-dom instead.',
+          },
+          // {
+          //   name: 'react-router-dom',
+          //   importNames: ['useHistory', 'useLocation'],
+          //   message: 'Please use typed useAppHistory/useAppLocation from @boldpl/common/hooks.',
+          // },
+          // {
+          //   name: 'react-redux',
+          //   importNames: ['useSelector', 'useDispatch'],
+          //   message: 'Please use typed useAppSelector/useDispatch from @boldpl/common/hooks/state.',
+          // },
+        ],
+        patterns: [
+          {
+            group: ['apps/*'],
+            caseSensitive: true,
+            message: 'Please use @tf/… or relative paths instead.',
+          },
+        ],
+      },
+    ],
 
     /* prettier */
     'prettier/prettier': 'error',
@@ -155,48 +183,6 @@ module.exports = {
     ],
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
-
-    'no-restricted-imports': [
-      'error',
-      {
-        paths: [
-          {
-            name: 'react-router',
-            message: 'Please use react-router-dom instead.',
-          },
-          // {
-          //   name: 'react-router-dom',
-          //   importNames: ['useHistory', 'useLocation'],
-          //   message: 'Please use typed useAppHistory/useAppLocation from @boldpl/common/hooks.',
-          // },
-          // {
-          //   name: 'react-redux',
-          //   importNames: ['useSelector', 'useDispatch'],
-          //   message: 'Please use typed useAppSelector/useDispatch from @boldpl/common/hooks/state.',
-          // },
-        ],
-        patterns: [
-          {
-            group: ['apps/*'],
-            caseSensitive: true,
-            message: 'Please use @tf/… or relative paths instead.',
-          },
-        ],
-      },
-    ],
-
-    /* jsx-a11y */
-    // 'jsx-a11y/anchor-is-valid': [
-    //   'error',
-    //   {
-    //     components: ['Link'],
-    //     specialLink: ['hrefLeft', 'hrefRight', 'to'],
-    //     aspects: ['noHref', 'invalidHref', 'preferButton'],
-    //   },
-    // ],
-    'jsx-a11y/anchor-is-valid': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off',
   },
   overrides: [
     {
@@ -206,7 +192,6 @@ module.exports = {
           'error',
           { allowHigherOrderFunctions: true },
         ],
-        'react/require-default-props': 'off',
       },
     },
   ],
