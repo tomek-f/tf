@@ -20,16 +20,16 @@
   },
   "devDependencies": {
     "@babel/runtime": "^7.21.0",
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
+    "@types/node": "^18.16.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
     "@types/react-redux": "^7.1.25",
     "@vitejs/plugin-react-swc": "^3.3.0",
-    "@web/dev-server": "^0.1.38",
-    "eslint": "^8.38.0",
+    "@web/dev-server": "^0.2.1",
+    "eslint": "^8.39.0",
     "rollup-plugin-visualizer": "^5.9.0",
     "typescript": "^5.0.4",
-    "vite": "^4.2.2"
+    "vite": "^4.3.2"
   },
   "scripts": {
     "dev": "tsc -p tsconfig.dev.json && vite",
