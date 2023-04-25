@@ -8,7 +8,7 @@
 
 ## update all
 
-- `npm install -g npm-check-updates` then `ncu -u -ws`
+- `npm install -g npm-check-updates` then `ncu -u && ncu -u -ws`
 - `npm i`
 
 ## turbo
