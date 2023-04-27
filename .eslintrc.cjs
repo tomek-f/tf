@@ -39,7 +39,6 @@ module.exports = {
     'no-console': 'off',
     'no-debugger': 'off',
     'max-depth': ['error', 3],
-    'max-len': ['error', 100, 2, { ignoreComments: true }],
     'max-nested-callbacks': [2, 3],
     'max-params': ['error', 5],
     'padding-line-between-statements': [
