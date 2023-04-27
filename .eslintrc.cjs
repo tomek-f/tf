@@ -50,14 +50,7 @@ module.exports = {
     ],
     'padded-blocks': 'off',
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
-    'object-shorthand': [
-      'error',
-      'always',
-      {
-        ignoreConstructors: false,
-        avoidQuotes: true,
-      },
-    ],
+    'object-shorthand': ['error', 'always', { ignoreConstructors: false, avoidQuotes: true }],
     'id-denylist': [
       'error', // -> err
       'e', // -> event
@@ -72,12 +65,7 @@ module.exports = {
     'no-restricted-imports': [
       'error',
       {
-        paths: [
-          {
-            name: 'react-router',
-            message: 'Please use react-router-dom instead.',
-          },
-        ],
+        paths: [{ name: 'react-router', message: 'Please use react-router-dom instead.' }],
         patterns: [
           {
             group: ['apps/*'],
