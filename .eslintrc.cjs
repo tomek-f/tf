@@ -7,12 +7,8 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react', 'react-hooks', 'import', '@typescript-eslint', 'workspaces', 'prettier'],
   settings: {
-    react: {
-      version: 'detect',
-    },
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
+    react: { version: 'detect' },
+    'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
     'import/resolver': {
       typescript: {
         // alwaysTryTypes: true, // ? todo
@@ -63,7 +59,7 @@ module.exports = {
       },
     ],
     'id-denylist': [
-      'error',
+      'error', // -> err
       'e', // -> event
       'ev', // -> event
       '_', // -> 'actual name' of unused arg, eg. payload
@@ -71,7 +67,7 @@ module.exports = {
       '___',
       '____',
       '_____',
-      'cb', // -> callback?
+      'cb', // -> callback
     ],
     'no-restricted-imports': [
       'error',
@@ -81,16 +77,6 @@ module.exports = {
             name: 'react-router',
             message: 'Please use react-router-dom instead.',
           },
-          // {
-          //   name: 'react-router-dom',
-          //   importNames: ['useHistory', 'useLocation'],
-          //   message: 'Please use typed useAppHistory/useAppLocation from @boldpl/common/hooks.',
-          // },
-          // {
-          //   name: 'react-redux',
-          //   importNames: ['useSelector', 'useDispatch'],
-          //   message: 'Please use typed useAppSelector/useDispatch from @boldpl/common/hooks/state.',
-          // },
         ],
         patterns: [
           {
@@ -102,39 +88,22 @@ module.exports = {
       },
     ],
 
-    /* prettier */
     'prettier/prettier': 'error',
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
 
-    /* import */
     'import/no-useless-path-segments': ['error', { noUselessIndex: true }],
     'import/prefer-default-export': 'off',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        // "js": "never",
-        // "jsx": "never",
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
+    'import/extensions': ['error', 'ignorePackages', { ts: 'never', tsx: 'never' }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 
-    /* react */
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-sort-props': 'error',
     'react/jsx-fragments': 'error',
     'react/jsx-props-no-spreading': 'off',
-    'react/button-has-type': [
-      'error',
-      {
-        reset: true,
-      },
-    ],
+    'react/button-has-type': ['error', { reset: true }],
     'react/no-danger': 'error',
     'react/function-component-definition': [
       'error',
@@ -144,14 +113,8 @@ module.exports = {
       },
     ],
 
-    /* react-hooks */
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': [
-      'error',
-      {
-        additionalHooks: 'useLegacyEffect',
-      },
-    ],
+    'react-hooks/exhaustive-deps': ['error', { additionalHooks: 'useLegacyEffect' }],
 
     /* disable normal and reenable in TS */
     'no-unused-expressions': 'off',
@@ -165,33 +128,14 @@ module.exports = {
     quotes: 'off',
     '@typescript-eslint/quotes': ['error', 'single', { avoidEscape: true }],
 
-    /* workspaces */
     'workspaces/no-absolute-imports': 'error',
     'workspaces/no-relative-imports': 'error',
     'workspaces/require-dependency': 'error',
 
-    /* TS */
-    '@typescript-eslint/explicit-module-boundary-types': 'off', // see overrides
     '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        ignoreRestSiblings: true,
-      },
-    ],
+    '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true }],
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
   },
-  overrides: [
-    {
-      files: ['*.ts(x)'],
-      rules: {
-        '@typescript-eslint/explicit-module-boundary-types': [
-          'error',
-          { allowHigherOrderFunctions: true },
-        ],
-      },
-    },
-  ],
 };
