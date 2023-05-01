@@ -19,6 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/build-tomekf
+  build-react18-efects:
+    name: ''
+    uses: ./.github/workflows/build-react18-efects.yml
   vitest:
     runs-on: ubuntu-latest
     steps:
