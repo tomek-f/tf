@@ -6,13 +6,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  # build-maelstrom:
-  #   uses: ./.github/workflows/build-maelstrom.yml
+  build-maelstrom:
+    name: 👷🏼‍♂️
+    uses: ./.github/workflows/build-maelstrom.yml
+    secrets: inherit
   build-react-playground:
+    name: 👷🏼‍♂️
     uses: ./.github/workflows/build-react-playground.yml
   build-tomekf:
+    name: 👷🏼‍♂️
     uses: ./.github/workflows/build-tomekf.yml
   build-react18-efects:
+    name: 👷🏼‍♂️
     uses: ./.github/workflows/build-react18-efects.yml
   vitest:
     runs-on: ubuntu-latest
