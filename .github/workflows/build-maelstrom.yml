@@ -16,7 +16,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - name: Build maelstrom
-        run: echo ${NEXT_PUBLIC_SUPABASE_URL} && echo "111 ${NEXT_PUBLIC_SUPABASE_URL}" && npm run build --workspace=@tf/maelstrom
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: echo ${NEXT_PUBLIC_SUPABASE_URL} && echo "111 ${NEXT_PUBLIC_SUPABASE_URL}" && npm run build --workspace=@tf/maelstrom
