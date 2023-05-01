@@ -1,4 +1,4 @@
-name: build nextjs ts example
+name: build maelstrom
 
 on:
   workflow_dispatch:

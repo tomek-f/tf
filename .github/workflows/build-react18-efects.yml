@@ -1,4 +1,4 @@
-name: build @tf/react18-efects
+name: build react18 efects
 
 on:
   workflow_dispatch:
