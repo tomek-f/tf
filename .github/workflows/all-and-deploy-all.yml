@@ -4,21 +4,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-maelstrom:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-maelstrom
+  # build-maelstrom:
+  #   uses: ./.github/workflows/build-maelstrom.yml
   build-react-playground:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-react-playground
+    uses: ./.github/workflows/build-react-playground.yml
   build-tomekf:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-tomekf
+    uses: ./.github/workflows/build-tomekf.yml
+  build-react18-efects:
+    uses: ./.github/workflows/build-react18-efects.yml
   vitest:
     runs-on: ubuntu-latest
     steps:
@@ -43,7 +36,8 @@ jobs:
     name: vercel
     uses: ./.github/workflows/deploy-maelstrom.yml
     secrets: inherit
-    needs: [vitest, lint, prettier, types, build-maelstrom]
+    # needs: [vitest, lint, prettier, types, build-maelstrom]
+    needs: [vitest, lint, prettier, types]
   deploy-react-playground:
     name: vercel
     uses: ./.github/workflows/deploy-react-playground.yml

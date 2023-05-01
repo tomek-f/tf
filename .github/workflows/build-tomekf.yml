@@ -2,10 +2,17 @@ name: build tomekf
 
 on:
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   build-tomekf:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-tomekf
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          check-latest: true
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build --workspace=@tf/tomekf
