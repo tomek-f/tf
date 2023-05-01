@@ -3,6 +3,10 @@
   "printWidth": 100,
   "singleQuote": true,
   "trailingComma": "all",
+  "semi": true,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "endOfLine": "lf",
 
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
