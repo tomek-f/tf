@@ -16,7 +16,7 @@ jobs:
           check-latest: true
           cache: 'npm'
       - run: npm ci
-      - name: 'deploy @tf/tomekf to Vercel'
+      - name: deploy @tf/tomekf to Vercel
         run: |
           prodRun=""
           if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
