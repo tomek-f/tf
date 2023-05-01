@@ -12,10 +12,9 @@ runs:
         cache: 'npm'
     - run: npm ci
       shell: bash
-    - name: build
-      run: npm run build --workspace=@tf/maelstrom
+    - shell: bash
       # dev secrets
       env:
         NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
         NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-      shell: bash
+      run: npm run build --workspace=@tf/maelstrom
