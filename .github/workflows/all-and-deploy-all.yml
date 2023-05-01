@@ -5,10 +5,7 @@ on:
 
 jobs:
   build-maelstrom:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-maelstrom
+    uses: ./.github/workflows/build-maelstrom.yml
   build-react-playground:
     runs-on: ubuntu-latest
     steps:

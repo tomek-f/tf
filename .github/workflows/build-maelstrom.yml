@@ -8,4 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/build-maelstrom
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          check-latest: true
+          cache: 'npm'
+      - run: npm ci
+      - name: build maelstrom
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: npm run build --workspace=@tf/maelstrom
