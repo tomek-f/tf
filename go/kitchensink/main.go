@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 const elo string = "Elo!"
+const a int = 1
 
 func main() {
 	var card string = "Ace of Spades"
@@ -12,7 +13,7 @@ func main() {
 
 	fmt.Println(card)
 	fmt.Println(card2)
-	fmt.Println(elo)
+	fmt.Println(elo, a)
 
 	cards := []string{"Ace of Diamonds", newCard()}
 	cards = append(cards, "Six of Spades")
