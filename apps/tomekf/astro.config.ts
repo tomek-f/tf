@@ -17,10 +17,7 @@ export default defineConfig({
     compress({
       // logger: 3,
       html: { collapseWhitespace: true, removeComments: true },
-      svg: {
-        multipass: true,
-        floatPrecision: 1,
-      },
+      svg: { cmultipass: true, floatPrecision: 1 },
     }),
     mdx(),
     sitemap({ filter: (page) => !page.includes('/blog') }),
