@@ -15,6 +15,7 @@ export default defineConfig({
   integrations: [
     // critters(),
     tailwind({ config: { applyBaseStyles: false } }),
+    image({ serviceEntryPoint: '@astrojs/image/sharp' }),
     compress({
       // logger: 3,
       html: { collapseWhitespace: true, removeComments: true },
@@ -23,7 +24,6 @@ export default defineConfig({
     mdx(),
     sitemap({ filter: (page) => !page.includes('/blog') }),
     react(),
-    image({ serviceEntryPoint: '@astrojs/image/sharp' }),
   ],
   vite: { ssr: { external: ['@11ty/eleventy-img'] } },
 });
