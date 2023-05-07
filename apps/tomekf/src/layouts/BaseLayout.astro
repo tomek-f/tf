@@ -7,7 +7,7 @@ export interface Props {
   title?: string;
 }
 
-const { class: className, classHtml, title } = Astro.props as Props;
+const { class: className, classHtml, title } = Astro.props;
 
 const parsedTitle = [title, 'Internety Tomasz Fijoł'].filter(Boolean).join(' | ');
 // todo proper description

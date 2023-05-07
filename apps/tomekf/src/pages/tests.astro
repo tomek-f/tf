@@ -1,4 +1,7 @@
 ---
+import { Image /* , Picture */ } from '@astrojs/image/components';
+
+import astronaut from '../assets/astronaut-cut.png';
 import Content from '../components/Content.astro';
 import Header from '../components/Header.astro';
 import Logo from '../components/Logo.astro';
@@ -12,8 +15,12 @@ import CommonLayout from '../layouts/CommonLayout.astro';
     <Menu />
   </Header>
   <Content>
-    <p>nip: 8111641723</p>
-    <p>regon: 369009950</p>
-    <p>gmail: tomekfijol</p>
+    <!-- <Picture
+      src={astronaut}
+      widths={[200, 400, 800]}
+      sizes="(max-width: 800px) 100vw, 800px"
+      alt="descriptive text"
+    /> -->
+    <Image src={astronaut} width={800} alt="descriptive text" />
   </Content>
 </CommonLayout>
