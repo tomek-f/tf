@@ -1,7 +1,11 @@
 ---
+import Starfield from '../components/Starfield.astro';
 import BaseLayout from './BaseLayout.astro';
 ---
 
-<BaseLayout title={Astro.props.title} class="p-8">
-  <slot />
+<BaseLayout title={Astro.props.title} class="min-h-screen p-8">
+  <Starfield />
+  <div class="relative">
+    <slot />
+  </div>
 </BaseLayout>
