@@ -35,7 +35,6 @@
     "@astrojs/tailwind": "^3.1.2",
     "astro": "^2.4.2",
     "astro-compress": "^1.1.42",
-    "astro-eleventy-img": "^0.6.2",
     "classnames": "^2.3.2",
     "lucide-react": "^0.214.0",
     "react": "^18.2.0",
