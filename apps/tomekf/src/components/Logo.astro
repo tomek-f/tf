@@ -1,0 +1,40 @@
+---
+import { Image } from '@astrojs/image/components';
+
+import logo from '../assets/logo.svg';
+
+export interface Props {
+  class?: string;
+  url?: string;
+  size?: 'small' | 'large';
+}
+
+const { class: className, url, size } = Astro.props;
+const sizeClassNames = size === 'large' ? 'w-36 md:w-56' : 'w-24 md:w-44';
+---
+
+{
+  url && (
+    <a href={url}>
+      <Image
+        alt="logo"
+        class={['h-auto', sizeClassNames, className].filter(Boolean).join(' ')}
+        height={75}
+        src={logo}
+        width={220}
+      />
+    </a>
+  )
+}
+
+{
+  !url && (
+    <Image
+      alt="logo"
+      class={['h-auto', sizeClassNames, className].filter(Boolean).join(' ')}
+      height={75}
+      src={logo}
+      width={220}
+    />
+  )
+}

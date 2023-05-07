@@ -23,7 +23,7 @@ export default defineConfig({
     mdx(),
     sitemap({ filter: (page) => !page.includes('/blog') }),
     react(),
-    image(),
+    image({ serviceEntryPoint: '@astrojs/image/sharp' }),
   ],
   vite: { ssr: { external: ['@11ty/eleventy-img'] } },
 });
