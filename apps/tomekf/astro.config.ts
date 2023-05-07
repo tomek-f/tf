@@ -1,3 +1,4 @@
+import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
@@ -17,11 +18,12 @@ export default defineConfig({
     compress({
       // logger: 3,
       html: { collapseWhitespace: true, removeComments: true },
-      svg: { cmultipass: true, floatPrecision: 1 },
+      svg: { multipass: true, floatPrecision: 1 },
     }),
     mdx(),
     sitemap({ filter: (page) => !page.includes('/blog') }),
     react(),
+    image(),
   ],
   vite: { ssr: { external: ['@11ty/eleventy-img'] } },
 });
