@@ -5,6 +5,7 @@ import Content from '../components/Content.astro';
 import Header from '../components/Header.astro';
 import Logo from '../components/Logo';
 import Menu from '../components/Menu.astro';
+import Starfield from '../components/Starfield.astro';
 import { linkCss } from '../styles/common';
 import BaseLayout from './BaseLayout.astro';
 
@@ -17,20 +18,23 @@ type Props = MarkdownLayoutProps<{
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout title={`${frontmatter.title} | Blog`} class="p-8">
-  <Header>
-    <Logo size="small" url="/" />
-    <Menu />
-  </Header>
-  <Content class="wysiwyg">
-    <a class={linkCss} href="/blog"> Back to blog</a>
-    <h1>{frontmatter.title} by {frontmatter.author}</h1>
-    <slot />
-    <p>
-      Written on:
-      <time datetime={new Date(`${frontmatter.date} 12:00`).toISOString()}>
-        {frontmatter.date}
-      </time>
-    </p>
-  </Content>
+<BaseLayout title={`${frontmatter.title} | Blog`} class="min-h-screen p-8">
+  <Starfield />
+  <div class="relative">
+    <Header>
+      <Logo size="small" url="/" />
+      <Menu />
+    </Header>
+    <Content class="wysiwyg">
+      <a class={linkCss} href="/blog"> Back to blog</a>
+      <h1>{frontmatter.title} by {frontmatter.author}</h1>
+      <slot />
+      <p>
+        Written on:
+        <time datetime={new Date(`${frontmatter.date} 12:00`).toISOString()}>
+          {frontmatter.date}
+        </time>
+      </p>
+    </Content>
+  </div>
 </BaseLayout>
