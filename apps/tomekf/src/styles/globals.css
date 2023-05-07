@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+/* @layer components {
   .wysiwyg h1 {
     @apply text-2xl mb-8;
   }
@@ -21,4 +21,4 @@
   .wysiwyg p:last-child {
     @apply mt-4;
   }
-}
+} */
