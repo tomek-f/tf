@@ -1,81 +1,89 @@
 import { useEffect, useState } from 'react';
-import { ArrowUpDown, Moon, Sun } from 'lucide-react';
 
-import ButtonLink from './ButtonLink';
+import { linkClasses } from '../utils/linkClasses';
 
-enum Theme {
-  dark = 'dark',
-  light = 'light',
-  auto = 'auto',
-}
+type Theme = 'dark' | 'light' | 'auto';
 
-type Themes = `${Theme}`;
-
+// THEMES >
 const ThemeSwitcher = () => {
-  const [theme, setTheme] = useState<Themes>(Theme.auto);
+  const [theme, setTheme] = useState<Theme>('auto');
 
-  // if (process.env.NODE_ENV === 'development') {
-  //   console.log('Root', theme);
-  // }
+  if (process.env.NODE_ENV === 'development') {
+    // double log from StrictMode
+    // eslint-disable-next-line no-console
+    console.log('Root', theme);
+  }
 
-  const isThemeDark = theme === Theme.dark;
-  const isThemeLight = theme === Theme.light;
-  const isThemeAuto = theme === Theme.auto;
+  const isThemeDark = theme === 'dark';
+  const isThemeLight = theme === 'light';
+  const isThemeAuto = theme === 'auto';
   const onClickThemeDarkMode = () => {
-    document.documentElement.dataset.theme = Theme.dark;
-    localStorage.setItem('theme', Theme.dark);
-    setTheme(Theme.dark);
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+    localStorage.setItem('theme', 'dark');
+    setTheme('dark');
   };
 
   const onClickThemeLightMode = () => {
-    document.documentElement.dataset.theme = Theme.light;
-    localStorage.setItem('theme', Theme.light);
-    setTheme(Theme.light);
+    document.documentElement.classList.add('light');
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+    setTheme('light');
   };
 
   const onClickThemeSystem = () => {
-    document.documentElement.classList.remove(Theme.dark, Theme.light);
+    document.documentElement.classList.remove('dark', 'light');
     localStorage.removeItem('theme');
     if (
       !localStorage.getItem('theme') &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
-      document.documentElement.dataset.theme = Theme.dark;
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.dataset.theme = Theme.light;
+      document.documentElement.classList.add('light');
     }
-    setTheme(Theme.auto);
+    setTheme('auto');
   };
 
   useEffect(() => {
     if (
-      localStorage.getItem('theme') === Theme.dark ||
+      localStorage.getItem('theme') === 'dark' ||
       (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      document.documentElement.dataset.theme = Theme.dark;
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.dataset.theme = Theme.light;
+      document.documentElement.classList.add('light');
     }
-    setTheme((localStorage.getItem('theme') as Theme) || Theme.auto);
+    setTheme((localStorage.getItem('theme') as Theme) || 'auto');
   }, []);
 
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="flex flex-wrap items-center gap-2 pb-4">
       theme:
-      <ButtonLink active={isThemeDark} onClick={onClickThemeDarkMode}>
-        <Moon className="h-4 w-4 text-info" strokeWidth="1" />
+      <button
+        className={linkClasses({ active: isThemeDark })}
+        onClick={onClickThemeDarkMode}
+        type="button"
+      >
         dark
-      </ButtonLink>
-      <ButtonLink active={isThemeLight} onClick={onClickThemeLightMode}>
-        <Sun className="h-4 w-4 text-warning" strokeWidth="1" />
+      </button>
+      <button
+        className={linkClasses({ active: isThemeLight })}
+        onClick={onClickThemeLightMode}
+        type="button"
+      >
         light
-      </ButtonLink>
-      <ButtonLink active={isThemeAuto} onClick={onClickThemeSystem}>
-        <ArrowUpDown className="h-4 w-4 text-base-content" strokeWidth="1" />
+      </button>
+      <button
+        className={linkClasses({ active: isThemeAuto })}
+        onClick={onClickThemeSystem}
+        type="button"
+      >
         auto
-      </ButtonLink>
+      </button>
     </div>
   );
 };
+// < THEMES
 
 export default ThemeSwitcher;

@@ -1,8 +1,9 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  plugins: [],
   theme: {
     extend: {
       screens: {
@@ -10,5 +11,4 @@ export default {
       },
     },
   },
-  plugins: [],
 } satisfies Config;

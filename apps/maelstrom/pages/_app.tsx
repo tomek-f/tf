@@ -33,7 +33,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         >
           <Content>
             <Header />
-            <div className="prose max-w-full">
+            <div className="max-w-full">
               <Component {...pageProps} />
             </div>
             <Footer />
