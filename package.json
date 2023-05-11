@@ -18,12 +18,14 @@
     "turbo:lint-js-fix-force": "turbo lint-js-fix --force",
     "turbo:test": "turbo test",
     "turbo:deploy": "turbo deploy",
+    "turbo:build:pocs": "turbo build --filter='./pocs/*'",
     "serve-demo": "wds --node-resolve --watch --port 3000",
     "serve-demo:prod": "MODE=prod npm run serve-demo",
     "format-check": "prettier --check .",
     "format-write": "prettier --write .",
     "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test",
-    "vercel": "vercel"
+    "vercel": "vercel",
+    "turbo": "turbo"
   },
   "workspaces": [
     "apps/*",

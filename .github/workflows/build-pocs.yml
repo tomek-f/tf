@@ -1,11 +1,11 @@
-name: build react18 efects
+name: build pocs
 
 on:
   workflow_dispatch:
   workflow_call:
 
 jobs:
-  build-react18-efects:
+  build-pocs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,4 +15,4 @@ jobs:
           check-latest: true
           cache: 'npm'
       - run: npm ci
-      - run: npm run build --workspace=@tf/react18-efects
+      - run: npm run turbo:build:pocs
