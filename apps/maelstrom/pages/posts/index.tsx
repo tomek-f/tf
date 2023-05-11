@@ -13,7 +13,7 @@ const Posts: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ allPo
             <NavLink href={`posts/${id}`}>{title}</NavLink>
             <br />
             <code>{`${id} ${date}`}</code>
-            <div className="prose  max-w-full" dangerouslySetInnerHTML={{ __html: content }} />
+            <div className="max-w-full" dangerouslySetInnerHTML={{ __html: content }} />
           </>
         </div>
       ))}

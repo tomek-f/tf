@@ -11,7 +11,7 @@ const PostMD: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ post
       <h1>{postData.title}</h1>
       {postData.id} {postData.date}
       <br />
-      <span className="prose" dangerouslySetInnerHTML={{ __html: postData.content }} />
+      <span dangerouslySetInnerHTML={{ __html: postData.content }} />
     </>
   );
 };

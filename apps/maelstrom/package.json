@@ -34,13 +34,11 @@
     "swr": "^2.1.5"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9",
     "@types/lodash": "^4.14.194",
     "@types/node": "^20.1.0",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "autoprefixer": "^10.4.14",
-    "daisyui": "^2.51.6",
     "eslint": "^8.40.0",
     "eslint-config-next": "^13.4.1",
     "postcss": "^8.4.23",

@@ -7,9 +7,10 @@ interface Props {
 
 export function linkClasses({ className, active }: Props) {
   return classnames(
-    'inline-flex gap-2 items-center link link-hover',
     'transition-colors duration-300',
-    active ? 'link-accent' : 'link-secondary',
+    active
+      ? 'text-orange-700 dark:text-green-500'
+      : 'text-blue-700 dark:text-yellow-500 hover:underline',
     className,
   );
 }

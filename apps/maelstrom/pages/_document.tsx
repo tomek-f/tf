@@ -9,7 +9,10 @@ const Document = () => {
           rel="stylesheet"
         />
       </Head>
-      <body className="p-8" data-debug="_document">
+      <body
+        className="font-light text-base bg-stone-300 dark:bg-gray-900 text-black dark:text-white p-8 min-h-screen"
+        data-debug="_document"
+      >
         <Main />
         <NextScript />
       </body>
