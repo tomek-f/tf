@@ -16,9 +16,9 @@ jobs:
   build-tomekf:
     name: 👷🏼‍♂️
     uses: ./.github/workflows/build-tomekf.yml
-  build-react18-efects:
+  build-pocs:
     name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-react18-efects.yml
+    uses: ./.github/workflows/build-pocs.yml
   vitest:
     runs-on: ubuntu-latest
     steps:
