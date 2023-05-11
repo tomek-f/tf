@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { LinkClassNames } from 'REACT_PG/constants/linkClassNames';
-import classnames from 'classnames';
+import { clsx } from 'clsx';
 
 type Theme = 'dark' | 'light' | 'auto';
 
@@ -49,7 +49,7 @@ const ThemeSwitcher = () => {
     <div className="flex flex-wrap items-center gap-2 pb-4">
       theme:
       <button
-        className={classnames({
+        className={clsx({
           [LinkClassNames.default]: !isThemeDark,
           [LinkClassNames.active]: isThemeDark,
         })}
@@ -59,7 +59,7 @@ const ThemeSwitcher = () => {
         dark
       </button>
       <button
-        className={classnames({
+        className={clsx({
           [LinkClassNames.default]: !isThemeLight,
           [LinkClassNames.active]: isThemeLight,
         })}
@@ -69,7 +69,7 @@ const ThemeSwitcher = () => {
         light
       </button>
       <button
-        className={classnames({
+        className={clsx({
           [LinkClassNames.default]: !isThemeAuto,
           [LinkClassNames.active]: isThemeAuto,
         })}

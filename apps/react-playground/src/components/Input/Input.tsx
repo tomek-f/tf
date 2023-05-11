@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import { clsx } from 'clsx';
 
 const Input = ({
   readOnly,
@@ -6,7 +6,7 @@ const Input = ({
 }: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) => {
   return (
     <input
-      className={classnames('text-black shadow appearance-none border rounded p-2', {
+      className={clsx('text-black shadow appearance-none border rounded p-2', {
         'bg-gray-400': readOnly,
       })}
       readOnly={readOnly}
