@@ -16,6 +16,7 @@
     "turbo:lint-js": "turbo lint-js",
     "turbo:lint-js-fix": "turbo lint-js-fix",
     "turbo:lint-js-fix-force": "turbo lint-js-fix --force",
+    "turbo:lint-js-next-force": "turbo lint-js-next --force",
     "turbo:test": "turbo test",
     "turbo:deploy": "turbo deploy",
     "turbo:build:pocs": "turbo build --filter='./pocs/*'",
