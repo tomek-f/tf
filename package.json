@@ -13,6 +13,7 @@
     "test-playwright": "playwright test",
     "turbo:build": "turbo build",
     "turbo:check-types": "turbo check-types",
+    "turbo:check-types-force": "turbo check-types --force",
     "turbo:lint-js": "turbo lint-js",
     "turbo:lint-js-fix": "turbo lint-js-fix",
     "turbo:lint-js-fix-force": "turbo lint-js-fix --force",
