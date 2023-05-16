@@ -24,7 +24,6 @@ export default function Home() {
           <li key={index}>{todo}</li>
         ))}
       </ul>
-      {/* @ts-expect-error EXP */}
       <form action={addTodo}>
         <input
           className="border border-gray-300 rounded-lg py-4 px-4 text-base font-normal text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"

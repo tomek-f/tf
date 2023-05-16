@@ -1,6 +1,5 @@
 'use client';
 
-// @ts-expect-error EXP
 import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 
 export default function AddButton() {
