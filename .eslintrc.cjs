@@ -93,13 +93,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/button-has-type': ['error', { reset: true }],
     'react/no-danger': 'error',
-    'react/function-component-definition': [
-      'error',
-      {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      },
-    ],
 
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': ['error', { additionalHooks: 'useLegacyEffect' }],

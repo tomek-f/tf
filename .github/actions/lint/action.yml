@@ -14,3 +14,5 @@ runs:
       shell: bash
     - run: npm run turbo:lint-js
       shell: bash
+    - run: npm run turbo:lint-js-next
+      shell: bash
