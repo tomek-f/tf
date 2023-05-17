@@ -2,5 +2,14 @@
   "name": "@tf/run-script",
   "version": "1.0.0",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.2.3"
+  },
+  "devDependencies": {
+    "@types/gradient-string": "^1.1.2",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.1.7"
+  }
 }
