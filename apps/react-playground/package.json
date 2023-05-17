@@ -4,9 +4,6 @@
   "author": "Tomek Fijoł <tomekfijol@gmail.com> (http://tomekf.pl/)",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=16.0.0 <19.0.0"
-  },
   "scripts": {
     "dev": "tsc -p tsconfig.dev.json && vite",
     "dev-org": "vite",
