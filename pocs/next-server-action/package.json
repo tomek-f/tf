@@ -2,6 +2,7 @@
   "name": "@tf/next-server-action",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "rimraf ./.next && next dev",
     "build": "rimraf ./.next && next build",
