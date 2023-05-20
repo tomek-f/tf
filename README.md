@@ -28,4 +28,4 @@
 
 ## Tailwind
 
-- https://www.npmjs.com/package/tailwind-merge
+- https://www.npmjs.com/package/tailwind-merge - does not remove unused styles

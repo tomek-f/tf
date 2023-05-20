@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
 import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon, BoxIcon } from 'lucide-react';
+import { twMerge } from 'tailwind-merge';
 
 type AlignValues = 'left' | 'center' | 'right';
 
@@ -9,7 +10,8 @@ const Misc = () => {
 
   return (
     <>
-      <div>Uncontrolled</div>
+      {/* should be p-4, does not remove unused styles */}
+      <div className={twMerge('p-6', 'p-2', 'p-4')}>Uncontrolled</div>
       <div>
         <ToggleGroup.Root
           aria-label="Text alignment"
