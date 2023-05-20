@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Box } from 'lucide-react';
 
 import Input from './Input';
 
@@ -45,24 +44,6 @@ const Ratio = () => {
 
   return (
     <>
-      {/* hero icons: adjustments-vertical */}
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-
-      <Box className="h-10 w-10" strokeWidth="1" />
-
       <div>a - b</div>
       <div>c - x</div>
       <div>x = (b * c) / a</div>

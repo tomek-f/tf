@@ -1,4 +1,4 @@
-import { Home } from 'lucide-react';
+import { HomeIcon } from 'lucide-react';
 
 import NavLink from './NavLink';
 
@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <div className="list-none flex flex-col md:flex-row gap-4 p-4">
       <NavLink href="/">
-        <Home className="h-4 w-4" strokeWidth="1" />
+        <HomeIcon className="h-4 w-4" strokeWidth="1" />
       </NavLink>
       <NavLink href="/posts" includes>
         posts
