@@ -20,3 +20,8 @@
 - `npm run changesets`
 - `npm run changesets version`
 - tags?
+
+## Icons
+
+- https://lucide.dev/
+- https://heroicons.com/
