@@ -1,0 +1,18 @@
+---
+import Content from '../../components/Content.astro';
+import Header from '../../components/Header.astro';
+import Logo from '../../components/Logo.astro';
+import Menu from '../../components/Menu.astro';
+import Misc from '../../components/Misc';
+import CommonLayout from '../../layouts/CommonLayout.astro';
+---
+
+<CommonLayout title="Contact">
+  <Header>
+    <Logo size="small" url="/" />
+    <Menu />
+  </Header>
+  <Content>
+    <Misc client:visible />
+  </Content>
+</CommonLayout>

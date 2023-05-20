@@ -25,5 +25,10 @@ export default defineConfig({
     sitemap({ filter: (page) => !page.includes('/blog') }),
     react(),
   ],
-  vite: { ssr: { external: ['@11ty/eleventy-img'] } },
+  vite: {
+    ssr: {
+      external: ['@11ty/eleventy-img'],
+      noExternal: ['@radix-ui/*'],
+    },
+  },
 });

@@ -25,3 +25,7 @@
 
 - https://lucide.dev/
 - https://heroicons.com/
+
+## Tailwind
+
+- https://www.npmjs.com/package/tailwind-merge
