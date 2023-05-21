@@ -16,8 +16,8 @@ module.exports = {
     'import',
     '@typescript-eslint',
     'workspaces',
-    'prettier',
     'unicorn',
+    'prettier',
   ],
   settings: {
     react: { version: 'detect' },
