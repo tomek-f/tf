@@ -3,9 +3,22 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es2022: true,
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['react', 'react-hooks', 'import', '@typescript-eslint', 'workspaces', 'prettier'],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    'react-hooks',
+    'import',
+    '@typescript-eslint',
+    'workspaces',
+    'unicorn',
+    'prettier',
+  ],
   settings: {
     react: { version: 'detect' },
     'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
@@ -118,5 +131,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true }],
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
+
+    'unicorn/no-array-push-push': 'error',
   },
 };
