@@ -1,5 +1,6 @@
-import getLanguage from 'REACT_PG/i18n/getLanguage';
 import type { IntlShape } from 'react-intl';
+
+import getLanguage from 'REACT_PG/i18n/getLanguage';
 
 interface Config {
   intl: null | IntlShape;

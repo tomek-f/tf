@@ -1,7 +1,8 @@
-import Button from 'REACT_PG/components/Button/Button';
-import Fieldset from 'REACT_PG/components/Fieldset/Fieldset';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
+
+import Button from 'REACT_PG/components/Button/Button';
+import Fieldset from 'REACT_PG/components/Fieldset/Fieldset';
 
 interface BearState {
   bears: number;

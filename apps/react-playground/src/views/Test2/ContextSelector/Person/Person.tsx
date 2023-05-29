@@ -1,7 +1,8 @@
+import { useContextSelector } from 'use-context-selector';
+
 import Fieldset from 'REACT_PG/components/Fieldset/Fieldset';
 import Input from 'REACT_PG/components/Input/Input';
 import { ContextState } from 'REACT_PG/contextState';
-import { useContextSelector } from 'use-context-selector';
 
 const Person = () => {
   const person = useContextSelector(ContextState, (v) => v[0].person);
