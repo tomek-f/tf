@@ -1,7 +1,7 @@
 import {
   LANGUAGE_CODE,
-  LANGUAGE_CODES_VALUES,
   LANGUAGE_CODE_DEFAULT,
+  LANGUAGE_CODES_VALUES,
   type LanguageCode,
   type LanguageCodeKeys,
 } from 'REACT_PG/constants/language';
