@@ -1,5 +1,6 @@
-import { LANGUAGE_CODE_DEFAULT } from 'REACT_PG/constants/language';
 import { createIntl, createIntlCache, type IntlShape, type MessageDescriptor } from 'react-intl';
+
+import { LANGUAGE_CODE_DEFAULT } from 'REACT_PG/constants/language';
 
 const intlCache = createIntlCache();
 

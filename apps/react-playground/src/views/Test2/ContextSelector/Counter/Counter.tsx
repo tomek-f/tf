@@ -1,7 +1,8 @@
+import { useContextSelector } from 'use-context-selector';
+
 import Button from 'REACT_PG/components/Button/Button';
 import Fieldset from 'REACT_PG/components/Fieldset/Fieldset';
 import { ContextState } from 'REACT_PG/contextState';
-import { useContextSelector } from 'use-context-selector';
 
 const Counter = () => {
   const count = useContextSelector(ContextState, (v) => v[0].count);

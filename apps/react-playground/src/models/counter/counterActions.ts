@@ -1,5 +1,4 @@
 import { store } from 'REACT_PG/store';
-
 import { decrement, increment, incrementAsync, incrementByAmount } from './counterSlice';
 
 const counterActions = {
