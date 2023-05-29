@@ -1,7 +1,7 @@
+import { useAtom } from 'jotai';
 import Fieldset from 'REACT_PG/components/Fieldset/Fieldset';
 import Input from 'REACT_PG/components/Input/Input';
 import { textAtom } from 'REACT_PG/jotai';
-import { useAtom } from 'jotai';
 
 const InputJotai = () => {
   const [text, setText] = useAtom(textAtom);
