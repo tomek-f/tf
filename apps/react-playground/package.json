@@ -7,10 +7,10 @@
   "scripts": {
     "dev": "tsc -p tsconfig.dev.json && vite",
     "dev-org": "vite",
-    "build-and-serve": "npm run build && npm run serve",
+    "build-and-preview": "npm run build && npm run preview",
     "build": "tsc && vite build",
-    "serve": "wds --root-dir dist --watch --open --app-index dist/index.html --port 4173",
-    "server-org": "vite preview",
+    "preview": "vite preview",
+    "_ntl_hack_preview": "vite preview",
     "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
     "lint-js-fix": "npm run lint-js --fix",
     "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'",
