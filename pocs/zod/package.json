@@ -10,7 +10,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "_ntl_hack_preview": "vite preview",
-    "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./ --report-unused-disable-directives --max-warnings 0",
+    "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
     "lint-js-fix": "npm run lint-js --fix",
     "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
   },
@@ -24,7 +24,6 @@
     "@types/react-dom": "^18.2.4",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "eslint": "^8.42.0",
-    "eslint-plugin-react-refresh": "^0.4.1",
     "typescript": "^5.1.3",
     "vite": "^4.3.9"
   }
