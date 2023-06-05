@@ -11,6 +11,10 @@
 - `npm install -g npm-check-updates` then `ncu -u && ncu -u -ws`
 - `npm i`
 
+## Zod
+
+- default https://github.com/colinhacks/zod/discussions/1953
+
 ## turbo
 
 - https://turbo.build/repo/docs/handbook/sharing-code/internal-packages

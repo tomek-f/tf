@@ -17,6 +17,7 @@ module.exports = {
     '@typescript-eslint',
     'workspaces',
     'unicorn',
+    'react-refresh',
     'prettier',
   ],
   settings: {
@@ -109,6 +110,9 @@ module.exports = {
 
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': ['error', { additionalHooks: 'useLegacyEffect' }],
+
+    // TODO new one
+    'react-refresh/only-export-components': 'warn',
 
     /* disable normal and reenable in TS */
     'no-unused-expressions': 'off',
