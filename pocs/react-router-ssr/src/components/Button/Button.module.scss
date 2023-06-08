@@ -1,0 +1,18 @@
+.root {
+  border-radius: var(--border-radius-default);
+  color: var(--color-button-text);
+  background-color: var(--color-button-background);
+  border: none;
+  transition: background-color var(--transition-default);
+  cursor: pointer;
+  padding: var(--distance-form-controls);
+
+  &:not(:disabled):hover {
+    background-color: var(--color-button-background-hover);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

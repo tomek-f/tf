@@ -17,7 +17,7 @@
     "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && astro check && echo 'no problems'"
   },
   "devDependencies": {
-    "@types/react": "^18.2.8",
+    "@types/react": "^18.2.9",
     "@types/react-dom": "^18.2.4",
     "eslint": "^8.42.0",
     "prettier-plugin-astro": "^0.10.0",
@@ -38,6 +38,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.32.1",
-    "tailwind-merge": "^1.13.0"
+    "tailwind-merge": "^1.13.1"
   }
 }

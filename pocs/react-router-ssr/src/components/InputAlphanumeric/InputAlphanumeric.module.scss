@@ -1,0 +1,18 @@
+.root {
+  appearance: none;
+  border: 0.2rem dashed var(--color-input-border);
+  border-radius: var(--border-radius-default);
+  padding: var(--distance-form-controls);
+  color: var(--color-input-text);
+  background-color: var(--color-input-background);
+  width: 100%;
+
+  &:read-only {
+    background-color: var(--color-read-only);
+  }
+
+  &:disabled {
+    background-color: var(--color-disabled);
+    cursor: not-allowed;
+  }
+}
