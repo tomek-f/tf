@@ -31,6 +31,7 @@ module.exports = {
           'apps/*/tsconfig.json',
           'components/*/tsconfig.json',
           'libs/*/tsconfig.json',
+          'pocs/*/tsconfig.json',
           'tools/*/tsconfig.json',
         ],
       },
