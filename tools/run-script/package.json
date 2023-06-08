@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "one": "echo 1",
+    "two": "echo 2"
+  },
   "dependencies": {
     "gradient-string": "^2.0.2",
     "inquirer": "^9.2.7"
