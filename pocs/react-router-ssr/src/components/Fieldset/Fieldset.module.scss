@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  gap: var(--distance-default);
+  margin-top: var(--distance-bigger);
+  width: 100%;
+  align-items: flex-start;
+  padding: var(--distance-default);
+  border: 0.1rem dashed var(--color-border);
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.horizontal {
+  flex-wrap: wrap;
+}
+
+.legend {
+  padding-inline: var(--distance-smaller);
+}
