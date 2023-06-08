@@ -16,7 +16,7 @@
     "turbo:lint-js-next-force": "turbo lint-js-next --force",
     "turbo:test": "turbo test",
     "turbo:deploy": "turbo deploy",
-    "turbo:build:pocs": "turbo build --filter='./pocs/*'",
+    "turbo:build:pocs": "turbo build --filter='./pocs/*' --filter=!@tf/maelstrom --filter=!@tf/react-playground",
     "serve-demo": "wds --node-resolve --watch --port 3000",
     "serve-demo:prod": "MODE=prod npm run serve-demo",
     "format-check": "prettier --check .",
