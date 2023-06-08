@@ -10,7 +10,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://tomekf.pl/',
-  experimental: { inlineStylesheets: 'always' },
+  build: { inlineStylesheets: 'always' },
   trailingSlash: 'never',
   integrations: [
     // critters(),
