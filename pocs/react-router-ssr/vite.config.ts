@@ -1,5 +1,4 @@
 import react from '@vitejs/plugin-react-swc';
-import { visualizer } from 'rollup-plugin-visualizer';
 import { loadEnv, type UserConfig } from 'vite';
 
 /**
@@ -20,15 +19,5 @@ function htmlPlugin(env: ReturnType<typeof loadEnv>) {
 
 // https://vitejs.dev/config/
 export default ({ mode }: UserConfig) => ({
-  plugins: [
-    react(),
-    htmlPlugin(loadEnv(mode as string, '.')),
-    visualizer({
-      // generates ./stats.html
-      template: 'treemap',
-      gzipSize: true,
-      brotliSize: true,
-      // open: true,
-    }),
-  ],
+  plugins: [react(), htmlPlugin(loadEnv(mode as string, '.'))],
 });
