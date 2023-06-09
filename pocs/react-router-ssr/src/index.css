@@ -1,7 +1,3 @@
-// global scss
-// use scss modules elsewhere (<ComponentName>.module.scss)
-// use rem for units (font-size, padding, margin, gap, .etc), 1rem = 10px
-
 :root {
   --color-primary: rebeccapurple;
   --color-secondary: chartreuse;
@@ -25,7 +21,6 @@
   --font-size-default: 2rem;
   --font-size-smaller: 1.6rem;
 
-  // for padding, margin, gap, etc.
   --distance-default: 2rem;
   --distance-smaller: 1rem;
   --distance-bigger: 3rem;
@@ -45,7 +40,7 @@
 }
 
 html {
-  font-size: 10px; // base font-size, 1rem = 10px
+  font-size: 10px;
   box-sizing: border-box;
   color: var(--color-text);
   background-color: var(--color-background);
