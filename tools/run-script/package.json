@@ -6,7 +6,8 @@
   "main": "index.js",
   "module": "index.js",
   "bin": {
-    "run-script": "index.js"
+    "run-script": "index.js",
+    "tfrs": "index.js"
   },
   "scripts": {
     "start": "node .",
