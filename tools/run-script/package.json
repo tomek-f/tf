@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node ./.ts-node/index.js",
-    "postinstall": "ts-node-esm ./src/index.ts",
+    "build": "ts-node-esm ./src/index.ts",
     "test1": "test 1",
     "test2": "test 2"
   },
