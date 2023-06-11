@@ -23,4 +23,3 @@ inquirer.prompt(questions).then(function (answers) {
         stdio: [process.stdin, process.stdout, process.stderr],
     });
 });
-//# sourceMappingURL=index.js.map
