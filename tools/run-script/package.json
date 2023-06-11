@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./out/index.js",
   "bin": {
-    "run-script": "./dist/index.js",
-    "tfrs": "./dist/index.js"
+    "run-script": "./out/index.js",
+    "tfrs": "./out/index.js"
   },
   "scripts": {
-    "start": "node ./dist/index.js",
+    "start": "node ./out/index.js",
     "build": "tsc --declaration --sourceMap",
     "test1": "test 1",
     "test2": "test 2",
