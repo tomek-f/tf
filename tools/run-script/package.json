@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "main": "dist/index.js",
+  "main": "./.ts-node/index.js",
   "bin": {
     "run-script": "./.ts-node/index.js",
     "tfrs": "./.ts-node/index.js"
