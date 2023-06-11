@@ -22,9 +22,7 @@ const questions = [
   },
 ];
 
-console.log(
-  gradient('#bada55', 'hotpink')(`Hi, welcome to run-script@${process.env.npm_package_version}!`),
-);
+console.log(gradient('#bada55', 'hotpink')('Hi, welcome to run-script!'));
 
 inquirer.prompt(questions).then((answers) => {
   execSync(`npm run ${answers.script}`, {
