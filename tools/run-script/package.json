@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "dist/index.js",
   "bin": {
-    "run-script": "index.js",
-    "tfrs": "index.js"
+    "run-script": "./.ts-node/index.js",
+    "tfrs": "./.ts-node/index.js"
   },
   "scripts": {
-    "start": "node .",
-    "one": "echo 1",
-    "two": "echo 2"
+    "start": "node ./.ts-node/index.js",
+    "postinstall": "ts-node-esm ./src/index.ts",
+    "test1": "test 1",
+    "test2": "test 2"
   },
   "dependencies": {
     "gradient-string": "^2.0.2",
@@ -21,6 +21,8 @@
   "devDependencies": {
     "@types/gradient-string": "^1.1.2",
     "@types/inquirer": "^9.0.3",
-    "@types/node": "^20.2.5"
+    "@types/node": "^20.2.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
   }
 }
