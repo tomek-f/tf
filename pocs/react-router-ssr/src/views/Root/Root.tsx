@@ -1,4 +1,4 @@
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Outlet, Route, Routes, useOutletContext, useParams } from 'react-router-dom';
 
 import styles from './Root.module.css';
 
@@ -19,9 +19,23 @@ const AdminLayout = () => (
 const BooksLayout = () => (
   <div>
     <p>BooksLayout</p>
-    <Outlet />
+    <Outlet context={{ contextData: 'context data' }} />
   </div>
 );
+
+const Bookid = () => {
+  const { id } = useParams();
+  const context = useOutletContext<{ contextData: string }>();
+
+  return (
+    <div>
+      <p>Bookid</p>
+      <div>
+        Book {id} {context.contextData}
+      </div>
+    </div>
+  );
+};
 
 // default with path="*" or index
 
@@ -70,7 +84,7 @@ export const Root = () => {
         {/* index + Outlet */}
         <Route element={<BooksLayout />} path="/books">
           <Route element={<div>/books/index</div>} index />
-          <Route element={<div>/books/:id</div>} path=":id" />
+          <Route element={<Bookid />} path=":id" />
           <Route element={<div>/books/new</div>} path="new" />
         </Route>
         <Route element={<div>not-found</div>} path="*" />
