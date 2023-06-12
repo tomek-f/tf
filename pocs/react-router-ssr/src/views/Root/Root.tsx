@@ -23,6 +23,8 @@ const BooksLayout = () => (
   </div>
 );
 
+// default with path="*" or index
+
 export const Root = () => {
   return (
     <main className={styles.root}>
