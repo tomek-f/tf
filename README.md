@@ -2,7 +2,7 @@
 
 ## react types
 
-- `React.ReactElement` - React element (`<Foo />`)
+- `React.ReactElement` - React element (`<Foo />`); similar `JSX.Element` (deprecated) -> `React.JSX.Element`
 - `React.ReactNode` - describes anything that can be rendered - strings, numbers, elements or an array of these things
 - `React.ElementType` - React component (import Foo…)
 
