@@ -4,7 +4,7 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className="w-full max-w-3xl mx-auto" data-debug="Layout">
+    <div className="w-full max-w-screen-3xl mx-auto" data-debug="Layout">
       {children}
     </div>
   );

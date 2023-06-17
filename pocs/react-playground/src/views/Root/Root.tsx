@@ -18,7 +18,7 @@ const Root = () => {
     <>
       <Head />
       <ThemeSwitcher />
-      <div className="max-w-3xl" data-test="max-w-3xl" />
+      <div className="max-w-screen-3xl" data-test="max-w-screen-3xl" />
       <header className="pb-4">
         <h1 className="text-2xl font-bold">
           <Link to="/">{import.meta.env.VITE_APP_TITLE}</Link>

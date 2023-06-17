@@ -29,7 +29,10 @@ export default function Form() {
       >
         Display Data Requirements
       </button>
-      <form className="flex flex-col max-w-3xl gap-2 mx-auto" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="flex flex-col max-w-screen-3xl gap-2 mx-auto"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <label className="text-xl text-white" htmlFor="name">
           Name:
         </label>
