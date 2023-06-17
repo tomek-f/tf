@@ -14,6 +14,9 @@ const Menu = () => {
       <NavLink href="/test-2" includes>
         test 2
       </NavLink>
+      <NavLink href="/rtk" includes>
+        rtk
+      </NavLink>
     </div>
   );
 };

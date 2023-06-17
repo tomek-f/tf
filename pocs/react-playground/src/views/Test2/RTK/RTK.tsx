@@ -9,7 +9,7 @@ import {
   incrementByAmount,
 } from 'REACT_PG/models/counter/counterSlice';
 
-const RTX = () => {
+const RTK = () => {
   const count = useStoreData(({ counter }) => counter.value);
   const actions = useStoreActions();
 
@@ -37,4 +37,4 @@ const RTX = () => {
   );
 };
 
-export default RTX;
+export default RTK;

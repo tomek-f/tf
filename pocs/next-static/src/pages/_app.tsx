@@ -2,11 +2,13 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Provider as ProviderRedux } from 'react-redux';
 
 import Content from '../components/Content';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
+import { store } from '../store';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -19,15 +21,17 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
         <meta content="Default desc" name="description" />
       </Head>
-      <Layout>
-        <Content>
-          <Header />
-          <div className="max-w-full">
-            <Component {...pageProps} />
-          </div>
-          <Footer />
-        </Content>
-      </Layout>
+      <ProviderRedux store={store}>
+        <Layout>
+          <Content>
+            <Header />
+            <div className="max-w-full">
+              <Component {...pageProps} />
+            </div>
+            <Footer />
+          </Content>
+        </Layout>
+      </ProviderRedux>
     </>
   );
 };
