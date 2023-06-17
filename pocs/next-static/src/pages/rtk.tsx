@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           counterActions.incrementByAmount + 5
         </Button>
         <Button onClick={() => counterActions.incrementAsync(10)}>
-          counterActions.incrementAsync + 10
+          counterActions.incrementAsync + 10 (3 seconds delay)
         </Button>
       </div>
     </>

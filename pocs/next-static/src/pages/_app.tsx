@@ -2,6 +2,7 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Provider as ProviderRedux } from 'react-redux';
 
 import Content from '../components/Content';
@@ -11,6 +12,10 @@ import Layout from '../components/Layout';
 import { store } from '../store';
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
+
+  console.log({ router });
+
   return (
     <>
       <Head>
