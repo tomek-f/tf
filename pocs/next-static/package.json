@@ -17,9 +17,9 @@
   "dependencies": {
     "clsx": "^1.2.1",
     "lucide-react": "^0.244.0",
-    "next": "13.4.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "next": "^13.4.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.3.1",
