@@ -40,7 +40,6 @@
     "@types/react-dom": "^18.2.5",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "@vitest/ui": "^0.32.0",
-    "@web/dev-server": "^0.2.2",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.42.0",
     "happy-dom": "^9.20.3",
