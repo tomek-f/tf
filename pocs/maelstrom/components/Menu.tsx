@@ -4,7 +4,7 @@ import NavLink from './NavLink';
 
 const Menu = () => {
   return (
-    <div className="list-none flex flex-col md:flex-row gap-4 p-4">
+    <div className="list-none flex flex-col md:flex-row gap-4 py-4">
       <NavLink href="/">
         <HomeIcon className="h-4 w-4" strokeWidth="1" />
       </NavLink>

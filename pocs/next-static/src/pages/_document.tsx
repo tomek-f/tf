@@ -10,7 +10,7 @@ const Document = () => {
         />
       </Head>
       <body
-        className="font-light text-base bg-stone-300 dark:bg-gray-900 text-black dark:text-white p-8 min-h-screen"
+        className="font-light text-base bg-emerald-200 dark:bg-purple-950 text-black dark:text-white p-8 min-h-screen"
         data-debug="_document"
       >
         <Main />
