@@ -11,6 +11,10 @@
 - `npm install -g npm-check-updates` then `ncu -u && ncu -u -ws`
 - `npm i`
 
+## next static
+
+- https://nextjs.org/docs/app/building-your-application/deploying/static-exports
+
 ## Zod
 
 - default https://github.com/colinhacks/zod/discussions/1953
@@ -19,16 +23,16 @@
 
 - https://turbo.build/repo/docs/handbook/sharing-code/internal-packages
 
+## Icons
+
+- https://lucide.dev/
+- https://heroicons.com/
+
 ## TODO changesets
 
 - `npm run changesets`
 - `npm run changesets version`
 - tags?
-
-## Icons
-
-- https://lucide.dev/
-- https://heroicons.com/
 
 ## Tailwind
 
