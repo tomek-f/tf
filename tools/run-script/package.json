@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./out/index.js",
   "bin": {
+    "ntl": "./out/index.js",
     "run-script": "./out/index.js",
     "tfrs": "./out/index.js"
   },
