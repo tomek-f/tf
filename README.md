@@ -5,6 +5,9 @@
 - `React.ReactElement` - React element (`<Foo />`); similar `JSX.Element` (deprecated) -> `React.JSX.Element`
 - `React.ReactNode` - describes anything that can be rendered - strings, numbers, elements or an array of these things
 - `React.ElementType` - React component (import Foo…)
+- html components
+  - `type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;`
+  - `interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> { active?: boolean }`
 
 ## update all
 
