@@ -8,8 +8,7 @@
 
 ## update all
 
-- `npm install -g npm-check-updates` then `ncu -u && ncu -u -ws`
-- `npm i`
+- `npm install -g npm-check-updates` && `ncu -u && ncu -u -ws` && `npm i`
 
 ## next static
 
@@ -28,12 +27,14 @@
 - https://lucide.dev/
 - https://heroicons.com/
 
-## TODO changesets
+## Tailwind
+
+- https://www.npmjs.com/package/tailwind-merge - does not remove unused styles
+
+## TODO
+
+### changesets
 
 - `npm run changesets`
 - `npm run changesets version`
 - tags?
-
-## Tailwind
-
-- https://www.npmjs.com/package/tailwind-merge - does not remove unused styles
