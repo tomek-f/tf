@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import ChangeLanguage from './ChangeLanguage';
 import Menu from './Menu';
 
 const Header = () => {
@@ -12,6 +13,9 @@ const Header = () => {
       </div>
       <div className="flex-none">
         <Menu />
+      </div>
+      <div className="flex-none">
+        <ChangeLanguage />
       </div>
     </div>
   );

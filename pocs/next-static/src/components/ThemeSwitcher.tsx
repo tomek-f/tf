@@ -46,15 +46,17 @@ const ThemeSwitcher = () => {
   };
 
   useEffect(() => {
+    const fromLS = localStorage.getItem('theme') as Theme;
+
     if (
-      localStorage.getItem('theme') === 'dark' ||
-      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      fromLS === 'dark' ||
+      (!fromLS && window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.add('light');
     }
-    setTheme((localStorage.getItem('theme') as Theme) || 'auto');
+    setTheme(fromLS || 'auto');
   }, []);
 
   return (
