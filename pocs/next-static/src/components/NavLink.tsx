@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 import RouterLink from './RouterLink';
 
@@ -10,8 +10,8 @@ interface Props {
 }
 
 const NavLink = ({ children, className, href, includes = false }: Props) => {
-  const router = useRouter();
-  const active = includes ? router.asPath.includes(href) : router.asPath === href;
+  const pathname = usePathname();
+  const active = includes ? pathname?.includes(href) : pathname === href;
 
   return (
     <RouterLink active={active} className={className} href={href}>
