@@ -1,6 +1,6 @@
 # tf
 
-## react types
+## react common types
 
 - `React.ReactElement` - React element (`<Foo />`); similar `JSX.Element` (deprecated) -> `React.JSX.Element`
 - `React.ReactNode` - describes anything that can be rendered - strings, numbers, elements or an array of these things
@@ -14,7 +14,7 @@
 
 - https://nextjs.org/docs/app/building-your-application/deploying/static-exports
 
-## Zod
+## zod
 
 - default https://github.com/colinhacks/zod/discussions/1953
 
@@ -22,16 +22,16 @@
 
 - https://turbo.build/repo/docs/handbook/sharing-code/internal-packages
 
-## Icons
+## icons
 
 - https://lucide.dev/
 - https://heroicons.com/
 
-## Tailwind
+## tailwind
 
 - https://www.npmjs.com/package/tailwind-merge - does not remove unused styles
 
-## TODO
+## todo
 
 ### changesets
 
