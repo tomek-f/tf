@@ -1,18 +1,16 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+'use client';
 
-import Button from '../components/Button';
-import { useStoreSelector } from '../hooks/store';
-import counterActions from '../models/counter/counterActions';
+import Button from '../../components/Button';
+import HeadHelmet from '../../components/HeadHelmet';
+import { useStoreSelector } from '../../hooks/store';
+import counterActions from '../../models/counter/counterActions';
 
-const Home: NextPage = () => {
+const Home = () => {
   const count = useStoreSelector(({ counter }) => counter.value);
 
   return (
     <>
-      <Head>
-        <meta content="rtk" name="description" />
-      </Head>
+      <HeadHelmet description="rtk" title="rtk" />
       <p>rtk</p>
       <p>count {count}</p>
       <div className="flex flex-wrap items-center gap-2 mt-4">
