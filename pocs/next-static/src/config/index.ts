@@ -3,13 +3,13 @@
 import type { IntlShape } from 'react-intl';
 
 interface Config {
-  intl: null | IntlShape;
-  language: string;
+  intl: IntlShape | null;
+  language: string | null;
 }
 
 const config: Config = {
   intl: null,
-  language: 'en-US',
+  language: null,
 };
 
 export default config;

@@ -18,16 +18,18 @@ import { Providers } from '../redux/provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
-async function getData() {
-  const { default: unused, ...rest } = await import('../i18n/locales/en-US.json');
+async function getData(language: string) {
+  const { default: unused, ...rest } = await import(`../i18n/locales/${language}.json`);
 
   return rest;
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const messagestDefault = await getData();
+export default async function RootLayout(props: { children: React.ReactNode }) {
+  config.language = config.language || 'en-US';
 
-  intls.add('en-US', messagestDefault);
+  const messagestDefault = await getData(config.language);
+
+  intls.add(config.language, messagestDefault);
 
   const intl = getIntl(config.language);
 
@@ -47,7 +49,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <Layout>
                 <Content>
                   <Header />
-                  <div className="max-w-full">{children}</div>
+                  <div className="max-w-full">{props?.children}</div>
                   <Footer />
                 </Content>
               </Layout>

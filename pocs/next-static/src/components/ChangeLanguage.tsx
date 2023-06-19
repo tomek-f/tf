@@ -6,10 +6,13 @@ import intls from '../i18n/intls';
 const ChangeLanguage = () => {
   const router = useRouter();
   const onClick = async () => {
-    const { default: unused, ...rest } = await import('../i18n/locales/pl-PL.json');
+    const newLanguage = config.language === 'en-US' ? 'pl-PL' : 'en-US';
+    const { default: unused, ...rest } = await import(`../i18n/locales/${newLanguage}.json`);
 
-    intls.add('pl-PL', rest);
-    config.language = 'pl-PL';
+    console.log({ newLanguage, rest });
+
+    intls.add(newLanguage, rest);
+    config.language = newLanguage;
     router.refresh();
   };
 
