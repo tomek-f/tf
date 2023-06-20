@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <HeadHelmet description="home" title="home" />
-      <p>Home</p>
+      <p>home</p>
       <p>count {count}</p>
       <div>{formatMessage('section.home')}</div>
       <div>{formatMessage('section.ratio')}</div>
