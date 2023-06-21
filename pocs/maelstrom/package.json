@@ -18,7 +18,6 @@
     "@supabase/gotrue-js": "^2.31.0",
     "@supabase/supabase-js": "^2.26.0",
     "clsx": "^1.2.1",
-    "eslint": "^8.43.0",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "lucide-react": "^0.248.0",
