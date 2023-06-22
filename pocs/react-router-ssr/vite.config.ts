@@ -17,7 +17,8 @@ function htmlPlugin(env: ReturnType<typeof loadEnv>) {
   };
 }
 
+// loadEnv(mode as string, process.cwd(), 'VITE') === loadEnv(mode as string, '.', 'VITE')
 // https://vitejs.dev/config/
 export default ({ mode }: UserConfig) => ({
-  plugins: [react(), htmlPlugin(loadEnv(mode as string, '.'))],
+  plugins: [react(), htmlPlugin(loadEnv(mode as string, process.cwd(), 'VITE'))],
 });
