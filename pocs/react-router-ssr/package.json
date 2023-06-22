@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsc -p tsconfig.dev.json && vite",
-    "dev-org": "vite",
+    "dev": "vite",
+    "dev-dev": "tsc -p tsconfig.dev.json && vite",
     "build-and-serve": "npm run build && npm run preview",
     "build": "tsc && vite build",
     "preview": "vite preview",
