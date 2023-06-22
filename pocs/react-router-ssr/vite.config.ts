@@ -10,7 +10,7 @@ function htmlPlugin(env: ReturnType<typeof loadEnv>) {
   return {
     name: 'html-transform',
     transformIndexHtml: {
-      enforce: 'pre',
+      order: 'pre',
       transform: (html: string) =>
         html.replace(/%(.*?)%/g, (match, p1: string) => env[p1] ?? match),
     },
