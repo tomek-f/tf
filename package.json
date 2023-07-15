@@ -35,7 +35,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
-    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@playwright/test": "^1.35.1",
     "@total-typescript/ts-reset": "^0.4.2",
     "@types/node": "^20.4.1",
@@ -46,7 +46,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
@@ -54,7 +54,7 @@
     "eslint-plugin-workspaces": "^0.9.0",
     "lint-staged": "^13.2.3",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "turbo": "^1.10.7",
     "typescript": "^5.1.6",
     "vercel": "^31.0.1"
