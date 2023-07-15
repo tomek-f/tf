@@ -40,7 +40,7 @@ export const augmentedIntl = (locale: string, messages: Record<string, string>):
   });
 };
 
-const data: { [x: string]: IntlShape } = {};
+const data: Record<string, IntlShape> = {};
 
 const intls = {
   add(locale: string, messages: Record<string, string>): void {

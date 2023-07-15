@@ -1,8 +1,9 @@
 const sum = (x: number, y: number): number => x + y;
 
-interface Sum2 {
-  (x: number, y: number): number;
-}
+// interface Sum2 {
+//   (x: number, y: number): number;
+// }
+type Sum2 = (x: number, y: number) => number;
 
 export const sum2: Sum2 = (x, y) => x + y;
 
