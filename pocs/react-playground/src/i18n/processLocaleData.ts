@@ -1,7 +1,7 @@
 // todo use it?
 const processLocaleData = (
-  languages: Array<string>,
-  data: Array<{ default: Record<string, string> }>,
+  languages: string[],
+  data: { default: Record<string, string> }[],
 ): Record<string, Record<string, string>> =>
   Object.assign(
     {},
