@@ -12,14 +12,10 @@ const { pathname } = Astro.url;
 <div class={['flex gap-3', className].filter(Boolean).join(' ')}>
   <a
     class:list={[linkCss, 'md:text-2xl', { 'text-blue-500': pathname.startsWith('/info') }]}
-    href="/info"
+    href="/info">Info</a
   >
-    Info
-  </a>
   <a
     class:list={[linkCss, 'md:text-2xl', { 'text-blue-500': pathname.startsWith('/contact') }]}
-    href="/contact"
+    href="/contact">Contact</a
   >
-    Contact
-  </a>
 </div>
