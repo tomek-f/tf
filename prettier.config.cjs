@@ -11,7 +11,11 @@ module.exports = {
   bracketSameLine: false,
   endOfLine: 'lf',
 
-  plugins: [require.resolve('@ianvs/prettier-plugin-sort-imports')],
+  plugins: [
+    require.resolve('@ianvs/prettier-plugin-sort-imports'),
+    require.resolve('prettier-plugin-astro'),
+  ],
+
   importOrder: [
     '<BUILTIN_MODULES>',
     '',
@@ -26,4 +30,12 @@ module.exports = {
   ],
   importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
   importOrderTypeScriptVersion: '5.0.0',
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+  ],
 };

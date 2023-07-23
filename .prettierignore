@@ -1,6 +1,7 @@
 coverage
 dist
 .next
+out
 
 stats.html
 # all html

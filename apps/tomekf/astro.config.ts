@@ -14,7 +14,7 @@ export default defineConfig({
   trailingSlash: 'never',
   integrations: [
     // critters(),
-    tailwind({ config: { applyBaseStyles: false } }),
+    tailwind({ applyBaseStyles: false }),
     image({ serviceEntryPoint: '@astrojs/image/sharp' }),
     compress({
       // logger: 3,
