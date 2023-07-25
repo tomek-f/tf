@@ -17,7 +17,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "clsx": "^2.0.0",
-    "lucide-react": "^0.263.0",
+    "lucide-react": "^0.263.1",
     "next": "13.4.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -26,8 +26,8 @@
     "react-redux": "^8.1.1"
   },
   "devDependencies": {
-    "@types/node": "^20.4.4",
-    "@types/react": "^18.2.15",
+    "@types/node": "^20.4.5",
+    "@types/react": "^18.2.16",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",

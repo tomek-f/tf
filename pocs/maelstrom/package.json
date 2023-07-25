@@ -15,12 +15,12 @@
   },
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
-    "@supabase/gotrue-js": "^2.45.0",
-    "@supabase/supabase-js": "^2.26.0",
+    "@supabase/gotrue-js": "^2.46.0",
+    "@supabase/supabase-js": "^2.29.0",
     "clsx": "^2.0.0",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
-    "lucide-react": "^0.263.0",
+    "lucide-react": "^0.263.1",
     "next": "13.4.12",
     "next-axiom": "^0.18.0",
     "react": "^18.2.0",
@@ -30,9 +30,9 @@
     "swr": "^2.2.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.195",
-    "@types/node": "^20.4.4",
-    "@types/react": "^18.2.15",
+    "@types/lodash": "^4.14.196",
+    "@types/node": "^20.4.5",
+    "@types/react": "^18.2.16",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
