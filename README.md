@@ -44,6 +44,6 @@
 
 ### changesets
 
-- `npm run changesets`
-- `npm run changesets version`
+- `npx changesets`
+- `npx changesets version`
 - tags?
