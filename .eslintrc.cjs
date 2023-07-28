@@ -32,6 +32,7 @@ module.exports = {
           'components/*/tsconfig.json',
           'libs/*/tsconfig.json',
           'pocs/*/tsconfig.json',
+          'sites/*/tsconfig.json',
           'tools/*/tsconfig.json',
         ],
       },
@@ -83,7 +84,7 @@ module.exports = {
         paths: [{ name: 'react-router', message: 'Please use react-router-dom instead.' }],
         patterns: [
           {
-            group: ['apps/*'],
+            group: ['apps/*', 'sites/*'],
             caseSensitive: true,
             message: 'Please use @tf/… or relative paths instead.',
           },
