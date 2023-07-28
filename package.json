@@ -1,6 +1,5 @@
 {
   "name": "tf",
-  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -23,6 +22,7 @@
     "format-write": "prettier --write .",
     "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test",
     "vercel": "vercel",
+    "changeset": "changeset",
     "turbo": "turbo"
   },
   "workspaces": [
@@ -33,7 +33,7 @@
     "tools/*"
   ],
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/changelog-git": "^0.1.14",
     "@changesets/cli": "^2.26.2",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@playwright/test": "^1.36.2",
