@@ -39,11 +39,3 @@
 ## tailwind
 
 - https://www.npmjs.com/package/tailwind-merge - does not remove unused styles
-
-## todo
-
-### changesets
-
-- `npx changeset` or `npm run changset`
-- `npx changeset version` or `npm run changeset version`
-- tags?
