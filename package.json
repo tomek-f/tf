@@ -23,6 +23,7 @@
     "format-write": "prettier --write .",
     "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test",
     "vercel": "vercel",
+    "changesets": "changesets",
     "turbo": "turbo"
   },
   "workspaces": [
