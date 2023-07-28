@@ -1,7 +1,7 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
   "changelog_": "@changesets/changelog-git",
-  "changelog": "./my-changelog-config.js",
+  "changelog": "./my-changelog-config.ts",
   "commit": false,
   "fixed": [["@tf/*"]],
   "linked": [],
