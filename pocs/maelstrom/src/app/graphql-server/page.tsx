@@ -69,12 +69,10 @@ async function getData() {
 const GraphQLServer = async () => {
   const { data, error } = await getData();
 
-  console.log({ data, error });
-
   if (error) {
     return (
       <>
-        <h1>GraphQL</h1>
+        <h1>GraphQL server</h1>
         <p>failed to load</p>
         <p>{error.message}</p>
         <pre>{JSON.stringify(error, null, 2)}</pre>
@@ -85,7 +83,7 @@ const GraphQLServer = async () => {
   if (!data?.length) {
     return (
       <>
-        <h1>GraphQL</h1>
+        <h1>GraphQL server</h1>
         <p>no data</p>
       </>
     );
@@ -93,7 +91,7 @@ const GraphQLServer = async () => {
 
   return (
     <>
-      <h1>GraphQL</h1>
+      <h1>GraphQL server</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
   );
