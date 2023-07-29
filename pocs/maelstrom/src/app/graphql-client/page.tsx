@@ -53,12 +53,10 @@ const GraphQLClient = () => {
   //   setTimeout(() => controller.abort());
   // }, []);
 
-  console.log({ data, error });
-
   if (error) {
     return (
       <>
-        <h1>GraphQL</h1>
+        <h1>GraphQL client</h1>
         <p>failed to load</p>
         <p>{error.message}</p>
         <pre>{JSON.stringify(error, null, 2)}</pre>
@@ -69,7 +67,7 @@ const GraphQLClient = () => {
   if (isLoading) {
     return (
       <>
-        <h1>GraphQL</h1>
+        <h1>GraphQL client</h1>
         <p>loading…</p>
       </>
     );
@@ -78,7 +76,7 @@ const GraphQLClient = () => {
   if (!data?.length) {
     return (
       <>
-        <h1>GraphQL</h1>
+        <h1>GraphQL client</h1>
         <p>no data</p>
       </>
     );
@@ -86,7 +84,7 @@ const GraphQLClient = () => {
 
   return (
     <>
-      <h1>GraphQL</h1>
+      <h1>GraphQL client</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
   );

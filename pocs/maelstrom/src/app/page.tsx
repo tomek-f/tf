@@ -9,9 +9,6 @@ export default function Home() {
   return (
     <>
       <p>home</p>
-      <div>section.home</div>
-      <div>section.ratio</div>
-      <div>section.contact</div>
     </>
   );
 }

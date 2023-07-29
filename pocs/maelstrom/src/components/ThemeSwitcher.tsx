@@ -6,19 +6,18 @@ import { linkClasses } from '../utils/linkClasses';
 
 type Theme = 'dark' | 'light' | 'auto';
 
-// THEMES >
 const ThemeSwitcher = () => {
   const [theme, setTheme] = useState<Theme>('auto');
 
   if (process.env.NODE_ENV === 'development') {
     // double log from StrictMode
-    // eslint-disable-next-line no-console
-    console.log('Root', theme);
+    // console.log('Root', theme);
   }
 
   const isThemeDark = theme === 'dark';
   const isThemeLight = theme === 'light';
   const isThemeAuto = theme === 'auto';
+
   const onClickThemeDarkMode = () => {
     document.documentElement.classList.add('dark');
     document.documentElement.classList.remove('light');
@@ -88,6 +87,5 @@ const ThemeSwitcher = () => {
     </div>
   );
 };
-// < THEMES
 
 export default ThemeSwitcher;

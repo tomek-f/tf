@@ -23,6 +23,12 @@ const Menu = () => {
       <NavLink href="/graphql-server" includes>
         graphql-server
       </NavLink>
+      <NavLink href="/zod-form" includes>
+        zod-form
+      </NavLink>
+      <NavLink href="/zod-server" includes>
+        zod-server
+      </NavLink>
     </div>
   );
 };

@@ -1,7 +1,11 @@
+'use client';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 
-import { UserFormSchemaWithAddress, type UserFormWithAddress } from '../models/User';
+import { UserFormSchemaWithAddress, type UserFormWithAddress } from '../../models/User';
+
+// TODO ? optimize tailwind classes and components
 
 export default function Form() {
   const {
@@ -23,7 +27,7 @@ export default function Form() {
   return (
     <>
       <button
-        className="bg-gray-300 rounded p-2 mb-2 text-xl"
+        className="bg-green-600 rounded p-2 mb-2 text-white"
         onClick={() => trigger()}
         type="button"
       >
@@ -40,7 +44,7 @@ export default function Form() {
           id="name"
           type="text"
           {...register('name')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="John Doe"
         />
         {errors.name && (
@@ -56,7 +60,7 @@ export default function Form() {
           id="username"
           type="text"
           {...register('username')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="johndoe90"
         />
         {errors.username && (
@@ -72,7 +76,7 @@ export default function Form() {
           id="email"
           type="email"
           {...register('email')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="johndoe90@hotmail.com"
         />
         {errors.email && (
@@ -88,7 +92,7 @@ export default function Form() {
           id="street"
           type="text"
           {...register('address.street')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="555 Sycamore St."
         />
         {errors?.address?.street && (
@@ -104,7 +108,7 @@ export default function Form() {
           id="suite"
           type="text"
           {...register('address.suite')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="212 B"
         />
         {errors?.address?.suite && (
@@ -120,7 +124,7 @@ export default function Form() {
           id="city"
           type="text"
           {...register('address.city')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="Kansas City"
         />
         {errors?.address?.city && (
@@ -136,7 +140,7 @@ export default function Form() {
           id="zipcode"
           type="text"
           {...register('address.zipcode')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="55555-1234"
         />
         {errors?.address?.zipcode && (
@@ -151,7 +155,7 @@ export default function Form() {
         <input
           type="tel"
           {...register('phone')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="555-555-5555"
         />
         {errors.phone && (
@@ -167,7 +171,7 @@ export default function Form() {
           id="website"
           type="text"
           {...register('website')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="https://your-website.com"
         />
         {errors.website && (
@@ -183,7 +187,7 @@ export default function Form() {
           id="company-name"
           type="text"
           {...register('company.name')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="Acme Co."
         />
         {errors?.company?.name && (
@@ -199,7 +203,7 @@ export default function Form() {
           id="company-slogan"
           type="text"
           {...register('company.catchPhrase')}
-          className="rounded-md text-xl p-2"
+          className="rounded-md text-xl p-2 text-black"
           placeholder="Coyote's One Stop Shop"
         />
         {errors?.company?.catchPhrase && (
@@ -208,7 +212,10 @@ export default function Form() {
           </p>
         )}
 
-        <button className="text-3xl bg-gray-300 p-2 rounded-md max-w-[10rem]" type="submit">
+        <button
+          className="text-3xl bg-orange-600 p-2 rounded-md max-w-[10rem] text-white"
+          type="submit"
+        >
           Submit
         </button>
       </form>
