@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 # jobs:
-#   deploy-maelstrom:
+#   deploy-next-playground:
 #     name: vercel
-#     uses: tomek-f/tf/.github/workflows/deploy-maelstrom.yml@master
+#     uses: tomek-f/tf/.github/workflows/deploy-next-playground.yml@master
 #   deploy-react-playground:
 #     name: vercel
 #     uses: tomek-f/tf/.github/workflows/deploy-react-playground.yml@master
@@ -15,9 +15,9 @@ on:
 #     uses: tomek-f/tf/.github/workflows/deploy-tomekf.yml@master
 
 jobs:
-  deploy-maelstrom:
+  deploy-next-playground:
     name: vercel
-    uses: ./.github/workflows/deploy-maelstrom.yml
+    uses: ./.github/workflows/deploy-next-playground.yml
     secrets: inherit
   deploy-react-playground:
     name: vercel

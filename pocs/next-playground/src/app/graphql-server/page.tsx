@@ -6,7 +6,7 @@ import gqlite from '../../utils/gqlite';
 
 export const metadata: Metadata = {
   title: 'GraphQL server',
-  description: 'GraphQL server',
+  description: 'GraphQL server description',
 };
 
 const query = gql`

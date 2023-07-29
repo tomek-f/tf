@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-maelstrom:
+  build-next-playground:
     name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-maelstrom.yml
+    uses: ./.github/workflows/build-next-playground.yml
     secrets: inherit
   build-react-playground:
     name: 👷🏼‍♂️
@@ -37,11 +37,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/types
-  deploy-maelstrom:
+  deploy-next-playground:
     name: 🤘🏼
-    uses: ./.github/workflows/deploy-maelstrom.yml
+    uses: ./.github/workflows/deploy-next-playground.yml
     secrets: inherit
-    needs: [vitest, lint, prettier, types, build-maelstrom]
+    needs: [vitest, lint, prettier, types, build-next-playground]
   deploy-react-playground:
     name: 🤘🏼
     uses: ./.github/workflows/deploy-react-playground.yml

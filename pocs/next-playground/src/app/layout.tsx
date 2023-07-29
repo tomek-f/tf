@@ -12,8 +12,8 @@ import config from '../config';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'maelstrom',
-  description: 'maelstrom desc.',
+  title: 'next-playground',
+  description: 'next-playground description',
 };
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

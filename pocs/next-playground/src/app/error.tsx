@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'error',
-  description: 'error',
+  description: 'error description',
 };
 
 export default function Error({ error, reset }: { error: Error; reset: () => void }) {

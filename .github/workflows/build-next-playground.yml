@@ -1,11 +1,11 @@
-name: build maelstrom
+name: build next-playground
 
 on:
   workflow_dispatch:
   workflow_call:
 
 jobs:
-  build-maelstrom:
+  build-next-playground:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,8 +15,8 @@ jobs:
           check-latest: true
           cache: 'npm'
       - run: npm ci
-      - name: build maelstrom
-        run: npm run build --workspace=@tf/maelstrom
+      - name: build next-playground
+        run: npm run build --workspace=@tf/next-playground
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_ANON_KEY }}

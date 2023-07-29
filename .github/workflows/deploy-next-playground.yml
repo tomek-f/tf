@@ -1,11 +1,11 @@
-name: deploy @tf/maelstrom
+name: deploy @tf/next-playground
 
 on:
   workflow_dispatch:
   workflow_call:
 
 jobs:
-  deploy-maelstrom:
+  deploy-next-playground:
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -16,7 +16,7 @@ jobs:
           check-latest: true
           cache: 'npm'
       - run: npm ci
-      - name: deploy @tf/maelstrom to Vercel
+      - name: deploy @tf/next-playground to Vercel
         run: |
           prodRun=""
           if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
