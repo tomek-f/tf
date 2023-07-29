@@ -20,13 +20,13 @@
   },
   "dependencies": {
     "gradient-string": "^2.0.2",
-    "inquirer": "^9.2.8"
+    "inquirer": "^9.2.9"
   },
   "devDependencies": {
     "@types/gradient-string": "^1.1.2",
     "@types/inquirer": "^9.0.3",
     "@types/node": "^20.4.5",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "typescript": "^5.1.6"
   }
 }

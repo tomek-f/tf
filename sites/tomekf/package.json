@@ -17,9 +17,9 @@
     "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && astro check && echo 'no problems'"
   },
   "devDependencies": {
-    "@types/react": "^18.2.16",
+    "@types/react": "^18.2.17",
     "@types/react-dom": "^18.2.7",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6"
   },
@@ -30,8 +30,8 @@
     "@astrojs/sitemap": "^2.0.1",
     "@astrojs/tailwind": "^4.0.0",
     "@radix-ui/react-toggle-group": "^1.0.4",
-    "astro": "^2.9.3",
-    "astro-compress": "^1.1.49",
+    "astro": "^2.9.6",
+    "astro-compress": "^1.1.50",
     "clsx": "^2.0.0",
     "lucide-react": "^0.263.1",
     "react": "^18.2.0",
