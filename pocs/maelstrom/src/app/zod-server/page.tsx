@@ -51,7 +51,7 @@ const ZodServer = async () => {
   if (error) {
     return (
       <>
-        <h1>GraphQL</h1>
+        <h1>Zod server</h1>
         <p>failed to load</p>
         <p>{error.message}</p>
         <pre>{JSON.stringify(error, null, 2)}</pre>
@@ -62,7 +62,7 @@ const ZodServer = async () => {
   if (!data?.length) {
     return (
       <>
-        <h1>GraphQL</h1>
+        <h1>Zod server</h1>
         <p>no data</p>
       </>
     );
@@ -70,7 +70,7 @@ const ZodServer = async () => {
 
   return (
     <>
-      <h1>GraphQL</h1>
+      <h1>Zod server</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
   );
