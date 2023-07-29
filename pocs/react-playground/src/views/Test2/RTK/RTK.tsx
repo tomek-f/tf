@@ -9,7 +9,7 @@ import {
   incrementByAmount,
 } from 'REACT_PG/models/counter/counterSlice';
 
-const RTK = () => {
+const Rtk = () => {
   const count = useStoreData(({ counter }) => counter.value);
   const actions = useStoreActions();
 
@@ -37,4 +37,5 @@ const RTK = () => {
   );
 };
 
-export default RTK;
+// false positive for RTK
+export default Rtk;
