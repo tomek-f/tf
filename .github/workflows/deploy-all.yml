@@ -16,14 +16,14 @@ on:
 
 jobs:
   deploy-next-playground:
-    name: vercel
+    name: 🤘🏼
     uses: ./.github/workflows/deploy-next-playground.yml
     secrets: inherit
   deploy-react-playground:
-    name: vercel
+    name: 🤘🏼
     uses: ./.github/workflows/deploy-react-playground.yml
     secrets: inherit
   deploy-tomekf:
-    name: vercel
+    name: 🤘🏼
     uses: ./.github/workflows/deploy-tomekf.yml
     secrets: inherit
