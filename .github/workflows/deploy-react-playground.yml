@@ -16,6 +16,7 @@ jobs:
           check-latest: true
           cache: 'npm'
       - run: npm ci
+      - run: npm install --global vercel@latest # ? https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
       - name: deploy @tf/react-playground to Vercel
         run: |
           prodRun=""
@@ -23,7 +24,7 @@ jobs:
             prodRun="--prod"
           fi
 
-          npm run vercel -- --token ${VERCEL_TOKEN} $prodRun
+          vercel -- --token ${VERCEL_TOKEN} $prodRun
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
