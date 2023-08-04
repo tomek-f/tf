@@ -24,13 +24,13 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.2",
+    "@astrojs/image": "^0.17.3",
     "@astrojs/mdx": "^0.19.7",
     "@astrojs/react": "^2.2.1",
     "@astrojs/sitemap": "^2.0.1",
     "@astrojs/tailwind": "^4.0.0",
     "@radix-ui/react-toggle-group": "^1.0.4",
-    "astro": "^2.9.7",
+    "astro": "^2.10.1",
     "astro-compress": "^1.1.50",
     "clsx": "^2.0.0",
     "lucide-react": "^0.263.1",
