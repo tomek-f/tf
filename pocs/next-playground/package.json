@@ -23,14 +23,14 @@
     "next": "13.4.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.45.2",
+    "react-hook-form": "^7.45.3",
     "remark": "^14.0.3",
     "remark-html": "^15.0.2",
     "swr": "^2.2.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@types/node": "^20.4.7",
+    "@types/node": "^20.4.8",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.14",
