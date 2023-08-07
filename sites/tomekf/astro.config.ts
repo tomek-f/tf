@@ -3,7 +3,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-import compress from 'astro-compress';
+// import compress from 'astro-compress';
 // import critters from 'astro-critters';
 import { defineConfig } from 'astro/config';
 
@@ -16,11 +16,11 @@ export default defineConfig({
     // critters(),
     tailwind({ applyBaseStyles: false }),
     image({ serviceEntryPoint: '@astrojs/image/sharp' }),
-    compress({
-      // logger: 3,
-      html: { collapseWhitespace: true, removeComments: true },
-      svg: { multipass: true, floatPrecision: 1 },
-    }),
+    // compress({
+    //   // logger: 3,
+    //   html: { collapseWhitespace: true, removeComments: true },
+    //   svg: { multipass: true, floatPrecision: 1 },
+    // }),
     mdx(),
     sitemap({ filter: (page) => !page.includes('/blog') }),
     react(),
