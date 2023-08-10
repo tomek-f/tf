@@ -1,5 +1,5 @@
 ---
-import { linkCss } from '../styles/common';
+import { linkActiveColorCss, linkDefaultColorCss, linkPartialCss } from '../styles/common';
 
 export interface Props {
   class?: string;
@@ -7,15 +7,31 @@ export interface Props {
 
 const { class: className } = Astro.props;
 const { pathname } = Astro.url;
+const isInfo = pathname.startsWith('/info');
+const isContact = pathname.startsWith('/contact');
 ---
 
 <div class={['flex gap-3', className].filter(Boolean).join(' ')}>
   <a
-    class:list={[linkCss, 'md:text-2xl', { 'text-blue-500': pathname.startsWith('/info') }]}
+    class:list={[
+      linkPartialCss,
+      'md:text-2xl',
+      {
+        [linkActiveColorCss]: isInfo,
+        [linkDefaultColorCss]: !isInfo,
+      },
+    ]}
     href="/info">Info</a
   >
   <a
-    class:list={[linkCss, 'md:text-2xl', { 'text-blue-500': pathname.startsWith('/contact') }]}
+    class:list={[
+      linkPartialCss,
+      'md:text-2xl',
+      {
+        [linkActiveColorCss]: isContact,
+        [linkDefaultColorCss]: !isContact,
+      },
+    ]}
     href="/contact">Contact</a
   >
 </div>

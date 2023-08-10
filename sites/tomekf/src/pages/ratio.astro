@@ -3,7 +3,7 @@ import Content from '../components/Content.astro';
 import Header from '../components/Header.astro';
 import Logo from '../components/Logo.astro';
 import Menu from '../components/Menu.astro';
-import Ratio from '../components/Ratio';
+import RatioComp from '../components/Ratio';
 import CommonLayout from '../layouts/CommonLayout.astro';
 ---
 
@@ -13,6 +13,6 @@ import CommonLayout from '../layouts/CommonLayout.astro';
     <Menu />
   </Header>
   <Content>
-    <Ratio client:visible />
+    <RatioComp client:visible />
   </Content>
 </CommonLayout>

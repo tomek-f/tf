@@ -6,7 +6,7 @@ import Header from '../components/Header.astro';
 import Logo from '../components/Logo.astro';
 import Menu from '../components/Menu.astro';
 import Starfield from '../components/Starfield.astro';
-import { linkCss } from '../styles/common';
+import { linkOrangeCss } from '../styles/common';
 import BaseLayout from './BaseLayout.astro';
 
 type Props = MarkdownLayoutProps<{
@@ -26,7 +26,7 @@ const { frontmatter } = Astro.props;
       <Menu />
     </Header>
     <Content class="wysiwyg">
-      <a class={linkCss} href="/blog"> Back to blog</a>
+      <a class={linkOrangeCss} href="/blog"> Back to blog</a>
       <h1>{frontmatter.title} by {frontmatter.author}</h1>
       <slot />
       <p>
