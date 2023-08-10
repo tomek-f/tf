@@ -23,6 +23,8 @@ const sizeClassNames = size === 'large' ? 'w-36 md:w-56' : 'w-24 md:w-44';
         src={logo}
         width={220}
         loading="eager"
+        transition:persist
+        transition:name="logo"
       />
     </a>
   )
@@ -37,6 +39,8 @@ const sizeClassNames = size === 'large' ? 'w-36 md:w-56' : 'w-24 md:w-44';
       src={logo}
       width={220}
       loading="eager"
+      transition:persist
+      transition:name="logo"
     />
   )
 }
