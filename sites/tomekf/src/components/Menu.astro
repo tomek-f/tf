@@ -1,5 +1,5 @@
 ---
-import { linkPartialCss } from '../styles/common';
+import { linkActiveColorCss, linkDefaultColorCss, linkPartialCss } from '../styles/common';
 
 export interface Props {
   class?: string;
@@ -17,8 +17,8 @@ const isContact = pathname.startsWith('/contact');
       linkPartialCss,
       'md:text-2xl',
       {
-        'text-blue-500': isInfo,
-        'text-orange-500': !isInfo,
+        [linkActiveColorCss]: isInfo,
+        [linkDefaultColorCss]: !isInfo,
       },
     ]}
     href="/info">Info</a
@@ -28,8 +28,8 @@ const isContact = pathname.startsWith('/contact');
       linkPartialCss,
       'md:text-2xl',
       {
-        'text-blue-500': isContact,
-        'text-orange-500': !isContact,
+        [linkActiveColorCss]: isContact,
+        [linkDefaultColorCss]: !isContact,
       },
     ]}
     href="/contact">Contact</a
