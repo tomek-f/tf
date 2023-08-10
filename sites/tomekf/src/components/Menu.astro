@@ -1,5 +1,5 @@
 ---
-import { linkCss } from '../styles/common';
+import { linkPartialCss } from '../styles/common';
 
 export interface Props {
   class?: string;
@@ -14,7 +14,7 @@ const isContact = pathname.startsWith('/contact');
 <div class={['flex gap-3', className].filter(Boolean).join(' ')}>
   <a
     class:list={[
-      linkCss,
+      linkPartialCss,
       'md:text-2xl',
       {
         'text-blue-500': isInfo,
@@ -25,7 +25,7 @@ const isContact = pathname.startsWith('/contact');
   >
   <a
     class:list={[
-      linkCss,
+      linkPartialCss,
       'md:text-2xl',
       {
         'text-blue-500': isContact,
