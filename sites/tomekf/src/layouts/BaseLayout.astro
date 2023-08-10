@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import '../styles/globals.css';
 
 export interface Props {
@@ -26,6 +28,7 @@ const parsedDescription = ['Internety Tomasz Fijoł', title].filter(Boolean).joi
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
     />
+    <ViewTransitions />
   </head>
   <body class={[`font-light text-base bg-black text-white`, className].filter(Boolean).join(' ')}>
     <slot />

@@ -6,7 +6,7 @@ import Header from '../../components/Header.astro';
 import Logo from '../../components/Logo.astro';
 import Menu from '../../components/Menu.astro';
 import CommonLayout from '../../layouts/CommonLayout.astro';
-import { linkCss } from '../../styles/common';
+import { linkOrangeCss } from '../../styles/common';
 
 interface Frontmatter {
   title: string;
@@ -30,7 +30,7 @@ const postsSorted = [...posts].sort(
       {
         postsSorted.map((post) => (
           <li>
-            <a class={linkCss} href={post.url}>
+            <a class={linkOrangeCss} href={post.url}>
               {post.frontmatter.title} ({post.frontmatter.date})
             </a>
           </li>
