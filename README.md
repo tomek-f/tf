@@ -8,6 +8,36 @@
 - html components
   - `type Props = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;`
   - `interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> { active?: boolean }`
+- @types/react
+
+  ```ts
+  //
+  // Event Handler Types
+  // ----------------------------------------------------------------------
+
+  type EventHandler<E extends SyntheticEvent<any>> = {
+    bivarianceHack(event: E): void;
+  }['bivarianceHack'];
+
+  type ReactEventHandler<T = Element> = EventHandler<SyntheticEvent<T>>;
+
+  type ClipboardEventHandler<T = Element> = EventHandler<ClipboardEvent<T>>;
+  type CompositionEventHandler<T = Element> = EventHandler<CompositionEvent<T>>;
+  type DragEventHandler<T = Element> = EventHandler<DragEvent<T>>;
+  type FocusEventHandler<T = Element> = EventHandler<FocusEvent<T>>;
+  type FormEventHandler<T = Element> = EventHandler<FormEvent<T>>;
+  type ChangeEventHandler<T = Element> = EventHandler<ChangeEvent<T>>;
+  type KeyboardEventHandler<T = Element> = EventHandler<KeyboardEvent<T>>;
+  type MouseEventHandler<T = Element> = EventHandler<MouseEvent<T>>;
+  type TouchEventHandler<T = Element> = EventHandler<TouchEvent<T>>;
+  type PointerEventHandler<T = Element> = EventHandler<PointerEvent<T>>;
+  type UIEventHandler<T = Element> = EventHandler<UIEvent<T>>;
+  type WheelEventHandler<T = Element> = EventHandler<WheelEvent<T>>;
+  type AnimationEventHandler<T = Element> = EventHandler<AnimationEvent<T>>;
+  type TransitionEventHandler<T = Element> = EventHandler<TransitionEvent<T>>;
+  ```
+
+- …
 
 ## update all
 

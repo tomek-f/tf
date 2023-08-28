@@ -17,26 +17,26 @@
     "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && astro check && echo 'no problems'"
   },
   "devDependencies": {
-    "@types/react": "^18.2.20",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "eslint": "^8.47.0",
+    "eslint": "^8.48.0",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@astrojs/image": "^0.17.3",
     "@astrojs/mdx": "^0.19.7",
-    "@astrojs/react": "^2.2.1",
-    "@astrojs/sitemap": "^2.0.1",
+    "@astrojs/react": "^2.3.2",
+    "@astrojs/sitemap": "^2.0.2",
     "@astrojs/tailwind": "^4.0.0",
     "@radix-ui/react-toggle-group": "^1.0.4",
-    "astro": "^2.10.7",
+    "astro": "^2.10.14",
     "astro-critters": "^2.0.7",
     "clsx": "^2.0.0",
-    "lucide-react": "^0.265.0",
+    "lucide-react": "^0.269.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.32.4",
+    "sharp": "^0.32.5",
     "tailwind-merge": "^1.14.0"
   }
 }
