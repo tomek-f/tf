@@ -31,7 +31,6 @@
     "@astrojs/tailwind": "^4.0.0",
     "@radix-ui/react-toggle-group": "^1.0.4",
     "astro": "^2.10.14",
-    "astro-critters": "^2.0.7",
     "clsx": "^2.0.0",
     "lucide-react": "^0.270.0",
     "react": "^18.2.0",
