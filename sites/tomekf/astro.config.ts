@@ -4,7 +4,6 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
-// import critters from 'astro-critters';
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
@@ -17,7 +16,6 @@ export default defineConfig({
   build: { inlineStylesheets: 'always' },
   trailingSlash: 'never',
   integrations: [
-    // critters(),
     tailwind({ applyBaseStyles: false }),
     image({ serviceEntryPoint: '@astrojs/image/sharp' }),
     mdx(),
