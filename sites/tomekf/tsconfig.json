@@ -1,5 +1,5 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
@@ -9,9 +9,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsxImportSource": "react",
-    "allowSyntheticDefaultImports": true,
-    // Replace `astro/client` with `@astrojs/image/client`
-    "types": ["@astrojs/image/client"]
+    "allowSyntheticDefaultImports": true
+    // "types": ["@astrojs/image"]
   },
   "include": ["../../@types", "src"]
 }
