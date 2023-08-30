@@ -3,7 +3,7 @@ import Content from '../../components/Content.astro';
 import Header from '../../components/Header.astro';
 import Logo from '../../components/Logo.astro';
 import Menu from '../../components/Menu.astro';
-import Misc from '../../components/Misc';
+import MiscComponent from '../../components/Misc'; // some error for misc
 import CommonLayout from '../../layouts/CommonLayout.astro';
 ---
 
@@ -13,6 +13,6 @@ import CommonLayout from '../../layouts/CommonLayout.astro';
     <Menu />
   </Header>
   <Content>
-    <Misc client:visible />
+    <MiscComponent client:visible />
   </Content>
 </CommonLayout>
