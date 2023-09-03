@@ -5,9 +5,9 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-import type { PostPathData } from '../types/data';
+// import type { PostPathData } from '../types/data';
 
-const postsDirectory = path.join(process.cwd(), 'src', 'TODO-posts-md');
+const postsDirectory = path.join(process.cwd(), 'src', 'posts-md');
 
 export async function getPostData(id: string): Promise<PostData> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
@@ -61,14 +61,14 @@ export async function getSortedPostsData(): Promise<PostData[]> {
   });
 }
 
-export function getAllPostIds(): PostPathData[] {
-  const fileNames = fs.readdirSync(postsDirectory);
+// export function getAllPostIds(): PostPathData[] {
+//   const fileNames = fs.readdirSync(postsDirectory);
 
-  return fileNames.map((fileName) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
-}
+//   return fileNames.map((fileName) => {
+//     return {
+//       params: {
+//         id: fileName.replace(/\.md$/, ''),
+//       },
+//     };
+//   });
+// }

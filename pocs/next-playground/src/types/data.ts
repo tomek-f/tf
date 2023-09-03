@@ -1,11 +1,11 @@
-interface PostParams {
-  id: string;
-}
+// interface PostParams {
+//   id: string;
+// }
 
 // todo 'global' type, better name
-export interface PostPathData {
-  params: PostParams;
-}
+// export interface PostPathData {
+//   params: PostParams;
+// }
 
 export interface Country {
   continent: string;
