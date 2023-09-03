@@ -10,7 +10,7 @@ const Posts = async () => {
         <div key={id}>
           <>
             <code>{date.toString()}</code>{' '}
-            <NavLink className="font-bold" href={`posts/${id}`}>
+            <NavLink className="font-bold" href={`posts-static/${id}`}>
               {title}
             </NavLink>
           </>
