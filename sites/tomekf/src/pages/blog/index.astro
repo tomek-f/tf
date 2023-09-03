@@ -2,9 +2,6 @@
 import type { MarkdownInstance } from 'astro';
 
 import Content from '../../components/Content.astro';
-import Header from '../../components/Header.astro';
-import Logo from '../../components/Logo.astro';
-import Menu from '../../components/Menu.astro';
 import CommonLayout from '../../layouts/CommonLayout.astro';
 import { linkOrangeCss } from '../../styles/common';
 
@@ -21,10 +18,6 @@ const postsSorted = [...posts].sort(
 ---
 
 <CommonLayout title="Blog">
-  <Header>
-    <Logo size="small" url="/" />
-    <Menu />
-  </Header>
   <Content>
     <ul>
       {
