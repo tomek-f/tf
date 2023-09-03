@@ -12,16 +12,13 @@ const Posts = async () => {
 
   return (
     <div className="grid gap-4">
-      {allPostsData.map(({ id, date, title, content }) => (
+      {allPostsData.map(({ id, date, title }) => (
         <div key={id}>
           <>
+            <code>{date.toString()}</code>{' '}
             <NavLink className="font-bold" href={`posts/${id}`}>
               {title}
             </NavLink>
-            <br />
-            <code>{`${id} ${date}`}</code>
-            {/* eslint-disable-next-line react/no-danger */}
-            <div className="max-w-full" dangerouslySetInnerHTML={{ __html: content }} />
           </>
         </div>
       ))}
