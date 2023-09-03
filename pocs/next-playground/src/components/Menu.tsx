@@ -17,6 +17,9 @@ const Menu = () => {
       <NavLink href="/posts" includes>
         posts
       </NavLink>
+      <NavLink href="/posts-static" includes>
+        posts static
+      </NavLink>
       <NavLink href="/graphql-client" includes>
         graphql-client
       </NavLink>
