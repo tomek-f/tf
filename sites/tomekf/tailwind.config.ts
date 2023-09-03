@@ -11,12 +11,16 @@ export default {
       keyframes: {
         float: {
           '0%': { transform: 'translate3d(0, 0, 0)' },
-          '100%': { transform: 'translate3d(0, 0.5rem, 0)' },
+          '100%': { transform: 'translate3d(0.5rem, 0.5rem, 0)' },
+        },
+        'float-long': {
+          '0%': { transform: 'translate3d(0, 0, 0)' },
+          '100%': { transform: 'translate3d(1.5rem, 1.5rem, 0)' },
         },
       },
       animation: {
         float: 'float 1.5s linear infinite alternate',
-        'float-long': 'float 3s linear infinite alternate',
+        'float-long': 'float-long 2s linear infinite alternate',
       },
     },
   },

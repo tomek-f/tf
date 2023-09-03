@@ -9,16 +9,17 @@ export interface Props {
   size?: 'small' | 'large';
 }
 
-const { class: className, url, size } = Astro.props;
+const { class: className, url, size = 'small' } = Astro.props;
 const sizeClassNames = size === 'large' ? 'w-36 md:w-56' : 'w-24 md:w-44';
+const finalClassNames = ['h-auto', sizeClassNames, className].filter(Boolean).join(' ');
 ---
 
 {
-  url && (
+  url ? (
     <a href={url}>
       <Image
         alt="logo"
-        class={['h-auto', sizeClassNames, className].filter(Boolean).join(' ')}
+        class={finalClassNames}
         height={75}
         src={logo}
         width={220}
@@ -27,14 +28,10 @@ const sizeClassNames = size === 'large' ? 'w-36 md:w-56' : 'w-24 md:w-44';
         transition:name="logo"
       />
     </a>
-  )
-}
-
-{
-  !url && (
+  ) : (
     <Image
       alt="logo"
-      class={['h-auto', sizeClassNames, className].filter(Boolean).join(' ')}
+      class={finalClassNames}
       height={75}
       src={logo}
       width={220}

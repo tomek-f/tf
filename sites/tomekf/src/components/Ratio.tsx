@@ -43,7 +43,7 @@ const Ratio = () => {
   };
 
   return (
-    <>
+    <div className="animate-float md:animate-float-long motion-reduce:animate-none">
       <div>a - b</div>
       <div>c - x</div>
       <div>x = (b * c) / a</div>
@@ -80,7 +80,7 @@ const Ratio = () => {
           value={x}
         />
       </div>
-    </>
+    </div>
   );
 };
 
