@@ -120,10 +120,6 @@
     "@typescript-eslint/no-use-before-define": "error",
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error",
-    "semi": "off",
-    "@typescript-eslint/semi": "error",
-    "quotes": "off",
-    "@typescript-eslint/quotes": ["error", "single", { "avoidEscape": true }],
 
     "workspaces/no-absolute-imports": "error",
     "workspaces/no-relative-imports": "error",
