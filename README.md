@@ -43,14 +43,12 @@
 
 - `npm install -g npm-check-updates` && `ncu -u && ncu -u -ws` && `npm i`
 
-## next new stuff
+## next
 
 - app folder
 - server components
 - server actions
-
-## next static
-
+- https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
 - https://nextjs.org/docs/app/building-your-application/deploying/static-exports
 
 ## zod
