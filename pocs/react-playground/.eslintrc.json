@@ -1,6 +1,5 @@
 {
   "rules": {
-    // TODO new one
     "react-refresh/only-export-components": "warn"
   }
 }
