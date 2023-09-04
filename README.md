@@ -64,6 +64,11 @@
 - https://lucide.dev/
 - https://heroicons.com/
 
+## primitives
+
+- https://www.radix-ui.com/
+- https://headlessui.com/
+
 ## tailwind
 
 - https://www.npmjs.com/package/tailwind-merge - does not remove unused styles
