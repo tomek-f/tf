@@ -3,6 +3,9 @@
   "version": "1.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "^18 || ^20"
+  },
   "main": "./out/index.js",
   "bin": {
     "ntl": "./out/index.js",
