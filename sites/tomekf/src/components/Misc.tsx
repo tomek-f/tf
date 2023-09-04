@@ -15,7 +15,7 @@ const Misc = () => {
       <div>
         <ToggleGroup.Root
           aria-label="Text alignment"
-          className="inline-flex border border-gray-300 bg-amber-800 rounded-md shadow-md"
+          className="inline-flex border border-neutral-300 bg-amber-800 rounded-md shadow-md"
           defaultValue="left"
           type="single"
         >
@@ -47,7 +47,7 @@ const Misc = () => {
       <div>
         <ToggleGroup.Root
           aria-label="Text alignment"
-          className="inline-flex border border-gray-300 bg-amber-800 rounded-md shadow-md"
+          className="inline-flex border border-neutral-300 bg-amber-800 rounded-md shadow-md"
           onValueChange={(value: AlignValues) => {
             if (value) setAlign(value);
           }}

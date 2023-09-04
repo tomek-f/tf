@@ -73,7 +73,7 @@ const Ratio = () => {
           value={c}
         />
         <Input
-          className="text-black shadow appearance-none border rounded p-2 bg-gray-400"
+          className="text-black shadow appearance-none border rounded p-2 bg-neutral-400"
           name="x"
           readOnly
           type="text"
