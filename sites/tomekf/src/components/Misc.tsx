@@ -11,7 +11,7 @@ const Misc = () => {
   return (
     <>
       {/* should be p-4, does not remove unused styles */}
-      <div className={twMerge('p-6', 'p-2', 'p-4')}>Uncontrolled</div>
+      <div className={twMerge('p-12', 'p-2', 'p-4')}>Uncontrolled</div>
       <div>
         <ToggleGroup.Root
           aria-label="Text alignment"

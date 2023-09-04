@@ -1,21 +1,6 @@
 ---
 // https://developer.mozilla.org/en-US/docs/Web/CSS/::view-transition-old
 // https://docs.astro.build/en/guides/view-transitions/
-
-/*
-<style is:global>
-  ::view-transition-old(starfield) {
-    display: none;
-  }
-
-  ::view-transition-new(starfield) {
-    animation: none;
-  }
-</style>
-
-transition:persist
-transition:name="starfield"
-*/
 ---
 
 <div id="starfield" class="fixed inset-0 motion-reduce:hidden">
@@ -24,9 +9,6 @@ transition:name="starfield"
 
 <script>
   import type { Nullable } from '../../types/misc';
-
-  const COUNT = 800;
-  const SPEED = 0.1;
 
   class Star {
     x: number;
@@ -72,56 +54,66 @@ transition:name="starfield"
     }
   }
 
-  const stars = Array.from({ length: COUNT }, () => new Star(0, 0, 0));
-  let rafId = 0;
+  (() => {
+    const canvasElem: Nullable<HTMLCanvasElement> = document.querySelector('#starfield-canvas');
+    const container = document.querySelector('#starfield');
 
-  // TODO ! sign
-  const canvasElem: Nullable<HTMLCanvasElement> = document.querySelector('#starfield-canvas');
-  const container: Nullable<Element> = document.querySelector('#starfield');
-  const ctx: Nullable<CanvasRenderingContext2D> = canvasElem!.getContext('2d')!;
-  const resizeObserver = new ResizeObserver(setup);
-  resizeObserver.observe(container!);
-
-  function setup() {
-    rafId > 0 && cancelAnimationFrame(rafId);
-    const { clientWidth: width, clientHeight: height } = container as Element;
-
-    if (!canvasElem || !ctx) {
+    if (!canvasElem || !container) {
       return;
     }
 
-    const dpr = window.devicePixelRatio || 1;
-    canvasElem.width = width * dpr;
-    canvasElem.height = height * dpr;
-    canvasElem.style.width = `${width}px`;
-    canvasElem.style.height = `${height}px`;
-    ctx.scale(dpr, dpr);
+    const COUNT = 800;
+    const SPEED = 0.1;
+    let rafId = 0;
+    const stars = Array.from({ length: COUNT }, () => new Star(0, 0, 0));
+    const ctx = canvasElem.getContext('2d')!;
+    const resizeObserver = new ResizeObserver(setup);
 
-    for (const star of stars) {
-      star.x = Math.random() * width - width / 2;
-      star.y = Math.random() * height - height / 2;
-      star.z = 0;
+    resizeObserver.observe(container);
+
+    function setup() {
+      rafId > 0 && cancelAnimationFrame(rafId);
+
+      const { clientWidth: width, clientHeight: height } = container as Element;
+
+      if (!canvasElem || !ctx) {
+        return;
+      }
+
+      const dpr = window.devicePixelRatio || 1;
+
+      canvasElem.width = width * dpr;
+      canvasElem.height = height * dpr;
+      canvasElem.style.width = `${width}px`;
+      canvasElem.style.height = `${height}px`;
+      ctx.scale(dpr, dpr);
+
+      for (const star of stars) {
+        star.x = Math.random() * width - width / 2;
+        star.y = Math.random() * height - height / 2;
+        star.z = 0;
+      }
+
+      ctx.translate(width / 2, height / 2);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+      ctx.strokeStyle = 'white';
+      rafId = requestAnimationFrame(frame);
     }
 
-    ctx.translate(width / 2, height / 2);
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
-    ctx.strokeStyle = 'white';
-    rafId = requestAnimationFrame(frame);
-  }
+    function frame() {
+      const { clientWidth: width, clientHeight: height } = container as Element;
 
-  function frame() {
-    const { clientWidth: width, clientHeight: height } = container as Element;
+      if (!ctx) {
+        return;
+      }
 
-    if (!ctx) {
-      return;
+      for (const star of stars) {
+        star.update(width, height, SPEED);
+        star.draw(ctx);
+      }
+
+      ctx.fillRect(-width / 2, -height / 2, width, height);
+      rafId = requestAnimationFrame(frame);
     }
-
-    for (const star of stars) {
-      star.update(width, height, SPEED);
-      star.draw(ctx);
-    }
-
-    ctx.fillRect(-width / 2, -height / 2, width, height);
-    rafId = requestAnimationFrame(frame);
-  }
+  })();
 </script>
