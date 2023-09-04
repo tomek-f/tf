@@ -18,7 +18,7 @@ const { frontmatter } = Astro.props;
 
 <CommonLayout title={`${frontmatter.title} | Blog`}>
   <Content>
-    <a class={linkCss} href="/blog">Back to blog</a>
+    <a class={linkCss} href="/blog">Back to blog</a> ALPHA
     <Content class="wysiwyg mt-4">
       <h1>{frontmatter.title} by {frontmatter.author}</h1>
       <slot />
