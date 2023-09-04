@@ -1,0 +1,12 @@
+---
+import Content from '../../components/Content.astro';
+import PatternComp from '../../components/Pattern.astro';
+import CommonLayout from '../../layouts/CommonLayout.astro';
+---
+
+<CommonLayout title="Info">
+  <Content class="flex flex-col gap-4">
+    <PatternComp />
+    <PatternComp class="w-96 h-96" />
+  </Content>
+</CommonLayout>

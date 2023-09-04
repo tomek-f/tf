@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import HeaderWithContent from './components/HeaderWithContent.astro';
 ---
 
-<BaseLayout title={Astro.props.title} class="min-h-screen p-8">
+<BaseLayout title={Astro.props.title}>
   <HeaderWithContent />
   <slot />
 </BaseLayout>

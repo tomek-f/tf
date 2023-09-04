@@ -2,7 +2,7 @@
 import type { MarkdownLayoutProps } from 'astro';
 
 import Content from '../components/Content.astro';
-import { linkOrangeCss } from '../styles/common';
+import { linkCss } from '../styles/common';
 import CommonLayout from './CommonLayout.astro';
 
 type Props = MarkdownLayoutProps<{
@@ -14,9 +14,9 @@ type Props = MarkdownLayoutProps<{
 const { frontmatter } = Astro.props;
 ---
 
-<CommonLayout title={`${frontmatter.title} | Blog`} class="min-h-screen p-8">
+<CommonLayout title={`${frontmatter.title} | Blog`}>
   <Content class="wysiwyg">
-    <a class={linkOrangeCss} href="/blog"> Back to blog</a>
+    <a class={linkCss} href="/blog"> Back to blog</a>
     <h1>{frontmatter.title} by {frontmatter.author}</h1>
     <slot />
     <p>

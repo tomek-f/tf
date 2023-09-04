@@ -1,8 +1,8 @@
 ---
 // https://developer.mozilla.org/en-US/docs/Web/CSS/::view-transition-old
 // https://docs.astro.build/en/guides/view-transitions/
----
 
+/*
 <style is:global>
   ::view-transition-old(starfield) {
     display: none;
@@ -13,12 +13,12 @@
   }
 </style>
 
-<div
-  id="starfield"
-  class="fixed inset-0 motion-reduce:hidden"
-  transition:persist
-  transition:name="starfield"
->
+transition:persist
+transition:name="starfield"
+*/
+---
+
+<div id="starfield" class="fixed inset-0 motion-reduce:hidden">
   <canvas class="pointer-events-none" id="starfield-canvas"></canvas>
 </div>
 
