@@ -1,0 +1,18 @@
+---
+import Content from '../components/Content.astro';
+import { linkCss } from '../styles/common';
+import CommonLayout from './CommonLayout.astro';
+
+type Props = {
+  title: string;
+};
+---
+
+<CommonLayout title={`${Astro.props.title} | Test`}>
+  <Content>
+    <a class={linkCss} href="/test">Back to test</a>
+    <Content class="mt-4">
+      <slot />
+    </Content>
+  </Content>
+</CommonLayout>

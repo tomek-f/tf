@@ -6,32 +6,20 @@ export interface Props {
 }
 
 const { class: className } = Astro.props;
+
+const activeLink = ['md:text-xl', linkActiveColorCss];
+const inactiveLink = ['md:text-xl', linkDefaultColorCss, linkHoverColorCss];
+
 const { pathname } = Astro.url;
 const isInfo = pathname.startsWith('/info');
 const isContact = pathname.startsWith('/contact');
+const isTest = pathname.startsWith('/test');
+const isBlog = pathname.startsWith('/blog');
 ---
 
 <div class={['flex gap-3', className].filter(Boolean).join(' ')}>
-  <a
-    class:list={[
-      'md:text-xl',
-      {
-        [linkActiveColorCss]: isInfo,
-        [linkDefaultColorCss]: !isInfo,
-        [linkHoverColorCss]: !isInfo,
-      },
-    ]}
-    href="/info">Info</a
-  >
-  <a
-    class:list={[
-      'md:text-xl',
-      {
-        [linkActiveColorCss]: isContact,
-        [linkDefaultColorCss]: !isContact,
-        [linkHoverColorCss]: !isContact,
-      },
-    ]}
-    href="/contact">Contact</a
-  >
+  <a class:list={isInfo ? activeLink : inactiveLink} href="/info">Info</a>
+  <a class:list={isContact ? activeLink : inactiveLink} href="/contact">Contact</a>
+  <a class:list={isTest ? activeLink : inactiveLink} href="/test">Test</a>
+  <a class:list={isBlog ? activeLink : inactiveLink} href="/blog">Blog</a>
 </div>

@@ -1,11 +1,8 @@
 ---
-import Content from '../../components/Content.astro';
 import MiscComp from '../../components/Misc'; // some error for misc
-import CommonLayout from '../../layouts/CommonLayout.astro';
+import TestLayout from '../../layouts/TestLayout.astro';
 ---
 
-<CommonLayout title="Misc">
-  <Content>
-    <MiscComp client:visible />
-  </Content>
-</CommonLayout>
+<TestLayout title="Misc">
+  <MiscComp client:visible />
+</TestLayout>
