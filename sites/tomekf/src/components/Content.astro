@@ -1,4 +1,6 @@
 ---
+import { twMerge } from 'tailwind-merge';
+
 export interface Props {
   class?: string;
 }
@@ -6,6 +8,6 @@ export interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div class={['mt-8', className].filter(Boolean).join(' ')}>
+<div class={twMerge('mt-8', className)}>
   <slot />
 </div>

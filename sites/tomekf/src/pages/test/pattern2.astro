@@ -1,12 +1,11 @@
 ---
-import Content from '../../components/Content.astro';
-import CommonLayout from '../../layouts/CommonLayout.astro';
+import TestLayout from '../../layouts/TestLayout.astro';
 
 // https://heropatterns.com/
 ---
 
-<CommonLayout title="Patter 2">
-  <Content class="flex flex-col gap-4">
+<TestLayout title="Patter 2">
+  <div class="flex flex-col gap-4">
     <div
       class="w-96 h-96"
       style={`background-color: #461eee;
@@ -26,5 +25,5 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         </g>
       </g>
     </svg>
-  </Content>
-</CommonLayout>
+  </div>
+</TestLayout>

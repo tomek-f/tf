@@ -3,13 +3,10 @@ import { Image } from 'astro:assets';
 
 import astronaut from '../../assets/astronaut-cut.png';
 import logo from '../../assets/logo.opti.svg';
-import Content from '../../components/Content.astro';
-import CommonLayout from '../../layouts/CommonLayout.astro';
+import TestLayout from '../../layouts/TestLayout.astro';
 ---
 
-<CommonLayout title="Img">
-  <Content>
-    <Image src={astronaut} width={800} alt="descriptive text" loading="eager" />
-    <Image alt="logo" height={75} src={logo} width={220} loading="eager" />
-  </Content>
-</CommonLayout>
+<TestLayout title="Img">
+  <Image src={astronaut} width={800} alt="descriptive text" loading="eager" />
+  <Image alt="logo" height={75} src={logo} width={220} loading="eager" />
+</TestLayout>

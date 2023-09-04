@@ -1,11 +1,8 @@
 ---
-import Content from '../../components/Content.astro';
 import RatioComp from '../../components/Ratio';
-import CommonLayout from '../../layouts/CommonLayout.astro';
+import TestLayout from '../../layouts/TestLayout.astro';
 ---
 
-<CommonLayout title="Ratio">
-  <Content>
-    <RatioComp client:visible />
-  </Content>
-</CommonLayout>
+<TestLayout title="Ratio">
+  <RatioComp client:visible />
+</TestLayout>
