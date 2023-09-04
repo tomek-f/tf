@@ -6,6 +6,6 @@ export interface Props {
 const { class: className } = Astro.props;
 ---
 
-<div class={['flex items-center justify-between', className].filter(Boolean).join(' ')}>
+<div class={['flex items-center gap-6 md:gap-8', className].filter(Boolean).join(' ')}>
   <slot />
 </div>
