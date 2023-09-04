@@ -1,0 +1,13 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className = 'w-20 h-20' } = Astro.props;
+
+// pattern added to body
+---
+
+<svg class:list={['bg-neutral-800 rounded-2xl border-dashed border-neutral-700 border', className]}>
+  <rect stroke="none" fill="url(#striped-pattern)" width="100%" height="100%"></rect>
+</svg>
