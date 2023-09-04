@@ -1,5 +1,5 @@
 ---
-import { linkActiveColorCss, linkDefaultColorCss, linkPartialCss } from '../styles/common';
+import { linkActiveColorCss, linkDefaultColorCss, linkHoverColorCss } from '../styles/common';
 
 export interface Props {
   class?: string;
@@ -14,22 +14,22 @@ const isContact = pathname.startsWith('/contact');
 <div class={['flex gap-3', className].filter(Boolean).join(' ')}>
   <a
     class:list={[
-      linkPartialCss,
-      'md:text-2xl',
+      'md:text-xl',
       {
         [linkActiveColorCss]: isInfo,
         [linkDefaultColorCss]: !isInfo,
+        [linkHoverColorCss]: !isInfo,
       },
     ]}
     href="/info">Info</a
   >
   <a
     class:list={[
-      linkPartialCss,
-      'md:text-2xl',
+      'md:text-xl',
       {
         [linkActiveColorCss]: isContact,
         [linkDefaultColorCss]: !isContact,
+        [linkHoverColorCss]: !isContact,
       },
     ]}
     href="/contact">Contact</a

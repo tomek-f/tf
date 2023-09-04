@@ -1,7 +1,7 @@
-export const linkActiveColorCss = 'text-blue-500';
+export const linkActiveColorCss = 'text-violet-500';
 
-export const linkDefaultColorCss = 'text-orange-500';
+export const linkDefaultColorCss = 'text-lime-500';
 
-export const linkPartialCss = 'hover:text-blue-500 text-base';
+export const linkHoverColorCss = 'hover:text-lime-300';
 
-export const linkOrangeCss = `${linkDefaultColorCss} ${linkPartialCss}`;
+export const linkCss = `text-base ${linkDefaultColorCss} ${linkHoverColorCss}`;

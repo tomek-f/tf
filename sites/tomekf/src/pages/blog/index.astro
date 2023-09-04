@@ -3,7 +3,7 @@ import type { MarkdownInstance } from 'astro';
 
 import Content from '../../components/Content.astro';
 import CommonLayout from '../../layouts/CommonLayout.astro';
-import { linkOrangeCss } from '../../styles/common';
+import { linkCss } from '../../styles/common';
 
 interface Frontmatter {
   title: string;
@@ -23,7 +23,7 @@ const postsSorted = [...posts].sort(
       {
         postsSorted.map((post) => (
           <li>
-            <a class={linkOrangeCss} href={post.url}>
+            <a class={linkCss} href={post.url}>
               {post.frontmatter.title} ({post.frontmatter.date})
             </a>
           </li>

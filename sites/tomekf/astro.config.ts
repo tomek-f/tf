@@ -18,12 +18,12 @@ export default defineConfig({
     }),
     mdx(),
     // sitemap(),
-    sitemap({ filter: (page) => !page.includes('/blog') }),
+    sitemap({ filter: (page) => !page.includes('/blog') && !page.includes('/test') }),
     react(),
   ],
   vite: {
     ssr: {
-      external: ['@11ty/eleventy-img'],
+      // external: ['@11ty/eleventy-img'],
       noExternal: ['@radix-ui/*'],
     },
   },
