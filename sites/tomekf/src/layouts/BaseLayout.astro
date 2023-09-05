@@ -15,9 +15,6 @@ const parsedTitle = [title, 'Internety Tomasz Fijoł'].filter(Boolean).join(' | 
 // todo proper description
 const parsedDescription = ['Internety Tomasz Fijoł', title].filter(Boolean).join(' - ');
 
-// #striped-pattern - pattern opti -> cannot add class hidden or invisible, color and currentColor in stroke has to be here
-// TODO move it to Pattern.astro
-
 /*
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
   <symbol id="checkmark" viewBox="0 0 48 48">
@@ -47,21 +44,5 @@ const parsedDescription = ['Internety Tomasz Fijoł', title].filter(Boolean).joi
   </head>
   <body class:list={['font-light text-base bg-neutral-900 text-neutral-100', className]}>
     <slot />
-    <div class="absolute -top-full">
-      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current text-neutral-700">
-        <defs>
-          <pattern
-            id="striped-pattern"
-            x="0"
-            y="0"
-            width="10"
-            height="10"
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M-3 13 15-5M-5 5l18-18M-1 21 17 3"></path>
-          </pattern>
-        </defs>
-      </svg>
-    </div>
   </body>
 </html>
