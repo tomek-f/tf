@@ -5,14 +5,13 @@ export interface Props {
 }
 
 const { class: className, url } = Astro.props;
-const finalClassNames = ['h-auto w-28 md:w-32', className].filter(Boolean).join(' ');
 ---
 
 <a href={url}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 220 75"
-    class={finalClassNames}
+    class:list={['h-auto w-20 sm:w-32', className]}
     transition:persist
     transition:name="logo"
   >

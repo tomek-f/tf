@@ -7,8 +7,8 @@ export interface Props {
 
 const { class: className } = Astro.props;
 
-const activeLink = ['md:text-xl', linkActiveColorCss];
-const inactiveLink = ['md:text-xl', linkDefaultColorCss, linkHoverColorCss];
+const activeLink = ['text-lg md:text-xl', /* 'font-semibold', */ linkActiveColorCss];
+const inactiveLink = ['text-lg md:text-xl', linkDefaultColorCss, linkHoverColorCss];
 
 const { pathname } = Astro.url;
 const isInfo = pathname.startsWith('/info');
@@ -17,9 +17,9 @@ const isTest = pathname.startsWith('/test');
 const isBlog = pathname.startsWith('/blog');
 ---
 
-<div class={['flex gap-3', className].filter(Boolean).join(' ')}>
+<div class:list={['flex gap-3', className]}>
   <a class:list={isInfo ? activeLink : inactiveLink} href="/info">Info</a>
   <a class:list={isContact ? activeLink : inactiveLink} href="/contact">Contact</a>
-  <a class:list={isTest ? activeLink : inactiveLink} href="/test">Test</a>
   <a class:list={isBlog ? activeLink : inactiveLink} href="/blog">Blog</a>
+  <a class:list={isTest ? activeLink : inactiveLink} href="/test">Test</a>
 </div>

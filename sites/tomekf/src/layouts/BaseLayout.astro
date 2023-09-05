@@ -32,7 +32,7 @@ const parsedDescription = ['Internety Tomasz Fijoł', title].filter(Boolean).joi
 // <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
 ---
 
-<html lang="en" class:list={['min-h-screen p-6 md:p-8', classHtml]}>
+<html lang="en" class:list={['min-w-[360px] min-h-screen p-6 md:p-8', classHtml]}>
   <head>
     <meta charset="utf-8" />
     <title>{parsedTitle}</title>
@@ -45,11 +45,7 @@ const parsedDescription = ['Internety Tomasz Fijoł', title].filter(Boolean).joi
     />
     <ViewTransitions />
   </head>
-  <body
-    class={[`font-light text-base bg-neutral-900 text-neutral-100`, className]
-      .filter(Boolean)
-      .join(' ')}
-  >
+  <body class:list={['font-light text-base bg-neutral-900 text-neutral-100', className]}>
     <slot />
     <div class="absolute -top-full">
       <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current text-neutral-700">
