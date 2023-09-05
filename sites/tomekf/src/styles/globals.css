@@ -2,23 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
-  .wysiwyg h1 {
-    @apply text-2xl mb-8;
+@layer components {
+  .custom-html h1 {
+    @apply text-2xl my-8;
   }
-  .wysiwyg h1:not(:first-child) {
-    @apply mt-4;
+  .custom-html h2 {
+    @apply text-xl my-6;
   }
-  .wysiwyg h2 {
-    @apply text-xl mb-6;
+  .custom-html h3 {
+    @apply text-lg my-4;
   }
-  .wysiwyg p:not(:first-child):not(:last-child) {
+  .custom-html :is(h1, h2, h3, b, strong) {
+    @apply font-semibold;
+  }
+  .custom-html :is(i, em):first-child {
+    @apply italic;
+  }
+  .custom-html p {
     @apply my-4;
   }
-  .wysiwyg p:first-child {
-    @apply mt-4;
+  .custom-html ul {
+    @apply list-disc;
   }
-  .wysiwyg p:last-child {
-    @apply mt-4;
+  .custom-html ol {
+    @apply list-decimal;
   }
-} */
+  .custom-html :is(ol, ul) {
+    @apply list-inside ml-4 my-4;
+  }
+  .custom-html :is(ol, ul, p, h1, h2, h3, h4, h5, h6):first-child {
+    @apply mt-0;
+  }
+  .custom-html :is(ol, ul, p, h1, h2, h3, h4, h5, h6):last-child {
+    @apply mb-0;
+  }
+}

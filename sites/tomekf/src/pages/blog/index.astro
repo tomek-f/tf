@@ -18,9 +18,9 @@ const postsSorted = [...posts].sort(
 ---
 
 <CommonLayout title="Blog">
-  <Content>
-    <p>Test <span class="text-red-500">ALPHA</span></p>
-    <ul class="list-disc list-inside ml-2 mt-2">
+  <Content class="custom-html">
+    <p>Blog <span class="text-red-500">ALPHA</span></p>
+    <ul>
       {
         postsSorted.map((post) => (
           <li>
