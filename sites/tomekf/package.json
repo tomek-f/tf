@@ -14,6 +14,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro",
+    "sync": "astro sync",
     "ntl-hack-preview": "astro preview",
     "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
     "lint-js-fix": "npm run lint-js --fix",

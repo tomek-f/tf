@@ -9,8 +9,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsxImportSource": "react",
-    "allowSyntheticDefaultImports": true
-    // "types": ["@astrojs/image"]
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "allowJs": true
+    // same as src/env.d.ts
+    // "types": ["astro/client", "./.astro/types.d.ts"]
   },
   "include": ["../../@types", "src"]
 }
