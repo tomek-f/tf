@@ -1,5 +1,7 @@
 ---
-import { linkActiveColorCss, linkDefaultColorCss, linkHoverColorCss } from '../styles/common';
+import { twMerge } from 'tailwind-merge';
+
+import { linkActiveCss, linkCss } from '../styles/common';
 
 export interface Props {
   class?: string;
@@ -7,8 +9,8 @@ export interface Props {
 
 const { class: className } = Astro.props;
 
-const activeLink = ['text-lg md:text-xl', /* 'font-semibold', */ linkActiveColorCss];
-const inactiveLink = ['text-lg md:text-xl', linkDefaultColorCss, linkHoverColorCss];
+const activeLink = [linkActiveCss, 'text-lg md:text-xl' /* , 'font-semibold' */];
+const inactiveLink = [linkCss, 'text-lg md:text-xl' /* , 'font-semibold' */];
 
 const { pathname } = Astro.url;
 const isInfo = pathname.startsWith('/info');
@@ -18,8 +20,8 @@ const isBlog = pathname.startsWith('/blog');
 ---
 
 <div class:list={['flex gap-3', className]}>
-  <a class:list={isInfo ? activeLink : inactiveLink} href="/info">Info</a>
-  <a class:list={isContact ? activeLink : inactiveLink} href="/contact">Contact</a>
-  <a class:list={isBlog ? activeLink : inactiveLink} href="/blog">Blog</a>
-  <a class:list={isTest ? activeLink : inactiveLink} href="/test">Test</a>
+  <a class={twMerge(isInfo ? activeLink : inactiveLink)} href="/info">Info</a>
+  <a class={twMerge(isContact ? activeLink : inactiveLink)} href="/contact">Contact</a>
+  <a class={twMerge(isBlog ? activeLink : inactiveLink)} href="/blog">Blog</a>
+  <a class={twMerge(isTest ? activeLink : inactiveLink)} href="/test">Test</a>
 </div>
