@@ -1,19 +1,14 @@
 ---
-import type { MarkdownInstance } from 'astro';
+import { getCollection } from 'astro:content';
 
 import Content from '../../components/Content.astro';
 import CommonLayout from '../../layouts/CommonLayout.astro';
 import { linkCss } from '../../styles/common';
 
-interface Frontmatter {
-  title: string;
-  author: string;
-  date: string;
-}
-// const posts = await Astro.glob<Frontmatter>('./*.md');
-const posts: MarkdownInstance<Frontmatter>[] = await Astro.glob('./*.(md|mdx)'); // had to use other typing for (md|mdx)
-const postsSorted = [...posts].sort(
-  (a, b) => new Date(a.frontmatter.date).getTime() - new Date(b.frontmatter.date).getTime(),
+const { pathname } = Astro.url; // or just use /blog
+const allBlogPosts = await getCollection('blog');
+const postsSorted = [...allBlogPosts].sort(
+  (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime(),
 );
 ---
 
@@ -24,8 +19,8 @@ const postsSorted = [...posts].sort(
       {
         postsSorted.map((post) => (
           <li>
-            <a class={linkCss} href={post.url}>
-              {post.frontmatter.title} ({post.frontmatter.date})
+            <a class={linkCss} href={`${pathname}/${post.slug}`}>
+              {post.data.title} ({post.data.date})
             </a>
           </li>
         ))
