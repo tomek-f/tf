@@ -13,12 +13,12 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "astro": "astro",
     "sync": "astro sync",
+    "astro": "astro",
     "ntl-hack-preview": "astro preview",
     "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
     "lint-js-fix": "npm run lint-js --fix",
-    "check-types": "astro sync && tsc --skipLibCheck true -p ./tsconfig.json && astro check && echo 'no problems'"
+    "check-types": "astro check && tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
