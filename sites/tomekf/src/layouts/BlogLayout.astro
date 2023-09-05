@@ -12,19 +12,18 @@ type Props = MarkdownLayoutProps<{
 }>;
 
 const { frontmatter } = Astro.props;
-
-// TODO wysiwyg inner css
 ---
 
 <CommonLayout title={`${frontmatter.title} | Blog`}>
   <Content>
     <a class={linkCss} href="/blog">Back to blog</a>
-    <Content class="wysiwyg mt-4">
+    <Content class="custom-html mt-4">
       <span class="text-red-500">ALPHA</span>
-      <h1>{frontmatter.title} by {frontmatter.author}</h1>
+      <h1>{frontmatter.title}</h1>
       <slot />
-      <p>
-        Written on:
+      <p class="italic text-neutral-500">
+        {frontmatter.author}
+         @
         <time datetime={new Date(`${frontmatter.date} 12:00`).toISOString()}>
           {frontmatter.date}
         </time>

@@ -5,7 +5,7 @@ author: 'Tommy F.'
 date: '09 Aug 2022'
 ---
 
-## Lorem 1!
+## Subheader 1!
 
 This is your first markdown page. It probably isn't styled much, although
 Markdown does support **bold** and _italics._
