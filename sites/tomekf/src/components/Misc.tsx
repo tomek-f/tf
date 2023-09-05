@@ -9,8 +9,8 @@ const Misc = () => {
 
   return (
     <>
-      <div className="p-4">Uncontrolled</div>
-      <div>
+      <div className="mb-2">Uncontrolled</div>
+      <div className="mb-8">
         <ToggleGroup.Root
           aria-label="Text alignment"
           className="inline-flex border border-neutral-300 bg-amber-800 rounded-md shadow-md"
@@ -41,8 +41,8 @@ const Misc = () => {
         </ToggleGroup.Root>
       </div>
 
-      <div>Controlled</div>
-      <div>
+      <div className="mb-2">Controlled</div>
+      <div className="mb-8">
         <ToggleGroup.Root
           aria-label="Text alignment"
           className="inline-flex border border-neutral-300 bg-amber-800 rounded-md shadow-md"
