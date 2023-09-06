@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
-import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon, BoxIcon } from 'lucide-react';
+import {
+    AlignCenterIcon,
+    AlignLeftIcon,
+    AlignRightIcon,
+    BoxIcon,
+} from 'lucide-react';
 
 type AlignValues = 'left' | 'center' | 'right';
 

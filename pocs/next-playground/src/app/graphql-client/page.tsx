@@ -7,7 +7,11 @@ import gql from '../../utils/gql';
 
 const query = gql`
     query GetLearnWithJasonEpisodes($now: DateTime!) {
-        allEpisode(limit: 10, sort: { date: ASC }, where: { date: { gte: $now } }) {
+        allEpisode(
+            limit: 10
+            sort: { date: ASC }
+            where: { date: { gte: $now } }
+        ) {
             date
             title
             guest {
@@ -36,7 +40,9 @@ const GraphQLClient = () => {
     // url = 'https://www.learnwithjason1.dev/graphql'; // ERR_NET_FAILED_TO_FETCH
     // url = 'https://httpstat.us/400'; // ERR_NET_NOT_OK (400)
 
-    const { data, error, isLoading } = useSWRGraphQL<{ data: { allEpisode: SomeObj } }[]>([
+    const { data, error, isLoading } = useSWRGraphQL<
+        { data: { allEpisode: SomeObj } }[]
+    >([
         url,
         {
             // same request 2 times

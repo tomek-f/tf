@@ -8,10 +8,13 @@ import {
 import { LOCAL_STORAGE_KEYS } from 'REACT_PG/constants/localStorage';
 
 export function getBrowserLanguage(): string {
-    const language = (navigator.languages?.[0] ?? navigator.language) as LanguageCode;
+    const language = (navigator.languages?.[0] ??
+        navigator.language) as LanguageCode;
 
     // long-lang-codes array includes: (long-lang-code || language) ? long-lang-code : LANGUAGE_CODE_DEFAULT
-    return LANGUAGE_CODES_VALUES.includes(LANGUAGE_CODE[language as LanguageCodeKeys] || language)
+    return LANGUAGE_CODES_VALUES.includes(
+        LANGUAGE_CODE[language as LanguageCodeKeys] || language,
+    )
         ? LANGUAGE_CODE[language as LanguageCodeKeys] || language
         : LANGUAGE_CODE_DEFAULT;
 }

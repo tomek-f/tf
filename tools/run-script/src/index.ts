@@ -10,7 +10,9 @@ interface PackageJson {
     [x: string]: unknown;
 }
 
-const packageJson = JSON.parse(readFileSync('./package.json', 'utf-8')) as PackageJson;
+const packageJson = JSON.parse(
+    readFileSync('./package.json', 'utf-8'),
+) as PackageJson;
 const scripts = packageJson.scripts;
 const keys = Object.keys(scripts);
 const questions = [

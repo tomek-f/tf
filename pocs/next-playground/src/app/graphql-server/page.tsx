@@ -11,7 +11,11 @@ export const metadata: Metadata = {
 
 const query = gql`
     query GetLearnWithJasonEpisodes($now: DateTime!) {
-        allEpisode(limit: 10, sort: { date: ASC }, where: { date: { gte: $now } }) {
+        allEpisode(
+            limit: 10
+            sort: { date: ASC }
+            where: { date: { gte: $now } }
+        ) {
             date
             title
             guest {

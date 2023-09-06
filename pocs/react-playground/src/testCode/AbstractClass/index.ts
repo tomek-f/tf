@@ -6,7 +6,10 @@ class AccountingDepartment extends Department {
     }
 
     printMeeting(): void {
-        console.log('The Accounting Department meets each Monday at 10am.', this); // eslint-disable-line no-console
+        console.log(
+            'The Accounting Department meets each Monday at 10am.',
+            this,
+        ); // eslint-disable-line no-console
     }
 
     generateReports(): void {

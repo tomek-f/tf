@@ -9,7 +9,13 @@ export const metadata: Metadata = {
     description: 'error description',
 };
 
-export default function GlobalError({ error, reset }: { error: Error; reset: () => void }) {
+export default function GlobalError({
+    error,
+    reset,
+}: {
+    error: Error;
+    reset: () => void;
+}) {
     useEffect(() => {
         // Log the error to an error reporting service
         console.error(error);

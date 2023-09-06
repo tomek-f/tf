@@ -22,7 +22,9 @@ type GQLiteResultSingle<T> =
     | { data: never; errors: GQLiteErrorData[] }
     | { data: T; errors: never };
 
-type GQLiteResult<T> = (T extends [] ? GQLiteResultSingle<T>[] : GQLiteResultSingle<T>) | string;
+type GQLiteResult<T> =
+    | (T extends [] ? GQLiteResultSingle<T>[] : GQLiteResultSingle<T>)
+    | string;
 
 async function getResult<T>(response: Response) {
     const contentType = response.headers.get('Content-Type');
@@ -48,7 +50,9 @@ interface GQLitePayload {
     operationName?: string;
 }
 
-export interface GQLiteInit extends Partial<GQLitePayload>, Partial<Omit<RequestInit, 'body'>> {
+export interface GQLiteInit
+    extends Partial<GQLitePayload>,
+        Partial<Omit<RequestInit, 'body'>> {
     body?: GQLitePayload | GQLitePayload[];
     rawRequest?: boolean;
 }
@@ -69,7 +73,9 @@ class GQLiteError<K> extends Error {
         { result = null, status = null, error = null }: GQLiteErrorInfo<K>,
     ) {
         const errorMessage =
-            (error instanceof Error && error.message) || message || GQLiteErrors.ERR_NET_GENERIC;
+            (error instanceof Error && error.message) ||
+            message ||
+            GQLiteErrors.ERR_NET_GENERIC;
 
         super(errorMessage);
 
@@ -87,7 +93,15 @@ class GQLiteError<K> extends Error {
 
 const gqlite = async <T, E extends Error = GQLiteSomeError>(
     input: RequestInfo | URL,
-    { query, variables, operationName, body, headers, rawRequest = false, ...init }: GQLiteInit,
+    {
+        query,
+        variables,
+        operationName,
+        body,
+        headers,
+        rawRequest = false,
+        ...init
+    }: GQLiteInit,
 ): Promise<T> => {
     // console.log('gqlite', input, {
     //   query,
@@ -100,7 +114,9 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
     // });
 
     if (Array.isArray(body) && !rawRequest) {
-        throw new Error('gqlite: for batch requests, set `rawRequest` to `true`');
+        throw new Error(
+            'gqlite: for batch requests, set `rawRequest` to `true`',
+        );
     }
 
     let result: GQLiteResult<T> | null = null;
@@ -125,14 +141,20 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
         status = response.status;
 
         if (!response.ok) {
-            throw new GQLiteError<T>(GQLiteErrors.ERR_NET_NOT_OK, { result, status });
+            throw new GQLiteError<T>(GQLiteErrors.ERR_NET_NOT_OK, {
+                result,
+                status,
+            });
         }
 
         result = await getResult<GQLiteResult<T>>(response);
 
         // not an object && not an array -> string
         if (typeof result !== 'object') {
-            throw new GQLiteError<T>(GQLiteErrors.ERR_NET_NOT_GRAPHQL, { result, status });
+            throw new GQLiteError<T>(GQLiteErrors.ERR_NET_NOT_GRAPHQL, {
+                result,
+                status,
+            });
         }
 
         if (
@@ -140,10 +162,18 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
             ((Array.isArray(result) && !result.every(checkResults)) ||
                 (!Array.isArray(result) && !checkResults(result)))
         ) {
-            throw new GQLiteError(GQLiteErrors.ERR_NET_GRAPHQL_ERRORS, { result, status });
+            throw new GQLiteError(GQLiteErrors.ERR_NET_GRAPHQL_ERRORS, {
+                result,
+                status,
+            });
         }
 
-        if (!rawRequest && !Array.isArray(result) && result && checkResults(result)) {
+        if (
+            !rawRequest &&
+            !Array.isArray(result) &&
+            result &&
+            checkResults(result)
+        ) {
             return result.data;
         }
 
@@ -161,15 +191,25 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
         }
 
         if (!isAbortError) {
-            throw new GQLiteError(GQLiteErrors.ERR_NET_FAILED_TO_FETCH, { result, status });
+            throw new GQLiteError(GQLiteErrors.ERR_NET_FAILED_TO_FETCH, {
+                result,
+                status,
+            });
         }
 
         if (isAbortError) {
-            throw new GQLiteError(GQLiteErrors.ERR_NET_FETCH_ABORTED, { result, status });
+            throw new GQLiteError(GQLiteErrors.ERR_NET_FETCH_ABORTED, {
+                result,
+                status,
+            });
         }
 
         // Justin Case, re-throw with original stack
-        throw new GQLiteError(GQLiteErrors.ERR_NET_GENERIC, { result, status, error });
+        throw new GQLiteError(GQLiteErrors.ERR_NET_GENERIC, {
+            result,
+            status,
+            error,
+        });
     }
 };
 

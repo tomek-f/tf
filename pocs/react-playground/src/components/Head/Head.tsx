@@ -6,7 +6,11 @@ interface Props {
 
 const Head = ({ title }: Props) => (
     <Helmet>
-        <title>{[title, import.meta.env.VITE_APP_TITLE].filter(Boolean).join(' | ')}</title>
+        <title>
+            {[title, import.meta.env.VITE_APP_TITLE]
+                .filter(Boolean)
+                .join(' | ')}
+        </title>
     </Helmet>
 );
 

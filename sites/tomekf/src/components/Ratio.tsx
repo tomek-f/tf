@@ -37,7 +37,11 @@ const Ratio = () => {
             c,
             [target.name]: value,
         };
-        const newX = ratio(temp.a as number, temp.b as number, temp.c as number);
+        const newX = ratio(
+            temp.a as number,
+            temp.b as number,
+            temp.c as number,
+        );
 
         setX(!Number.isNaN(newX) && Number.isFinite(newX) ? newX : '🤯');
     };

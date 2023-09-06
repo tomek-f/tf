@@ -9,7 +9,10 @@ import {
     type SpyInstance,
 } from 'vitest';
 
-import { LANGUAGE_CODE, LANGUAGE_CODE_DEFAULT } from 'REACT_PG/constants/language';
+import {
+    LANGUAGE_CODE,
+    LANGUAGE_CODE_DEFAULT,
+} from 'REACT_PG/constants/language';
 import { getBrowserLanguage } from './getLanguage';
 
 const getLanguageTestHelper = (val: string | null): void => {

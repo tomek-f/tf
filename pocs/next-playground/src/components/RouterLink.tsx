@@ -9,13 +9,23 @@ interface Props extends LinkProps {
     className?: string;
 }
 
-const RouterLink = ({ children, className, href, active = false, ...rest }: Props) => {
+const RouterLink = ({
+    children,
+    className,
+    href,
+    active = false,
+    ...rest
+}: Props) => {
     if (!href || !children) {
         return null;
     }
 
     return (
-        <Link className={linkClasses({ active, className })} href={href} {...rest}>
+        <Link
+            className={linkClasses({ active, className })}
+            href={href}
+            {...rest}
+        >
             {children}
         </Link>
     );

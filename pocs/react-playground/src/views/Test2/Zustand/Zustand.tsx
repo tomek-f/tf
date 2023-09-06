@@ -20,8 +20,13 @@ const useBearStore = create<BearState>()(
             (set) => ({
                 ...initilState,
                 increase: (by) =>
-                    set((state) => ({ bears: state.bears + by }), false, 'bear/increase'),
-                clear: () => set((state) => ({ ...state, ...initilState }), true),
+                    set(
+                        (state) => ({ bears: state.bears + by }),
+                        false,
+                        'bear/increase',
+                    ),
+                clear: () =>
+                    set((state) => ({ ...state, ...initilState }), true),
             }),
             { name: 'zustand-storage-example' },
         ),

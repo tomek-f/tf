@@ -51,7 +51,8 @@ const ThemeSwitcher = () => {
 
         if (
             fromLS === 'dark' ||
-            (!fromLS && window.matchMedia('(prefers-color-scheme: dark)').matches)
+            (!fromLS &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
         ) {
             document.documentElement.classList.add('dark');
         } else {
