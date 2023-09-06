@@ -7,7 +7,9 @@ type Theme = 'dark' | 'light' | 'auto';
 
 // THEMES >
 const ThemeSwitcher = () => {
-    const [theme, setTheme] = useState<Theme>((localStorage.getItem('theme') as Theme) || 'auto');
+    const [theme, setTheme] = useState<Theme>(
+        (localStorage.getItem('theme') as Theme) || 'auto',
+    );
 
     if (import.meta.env.DEV) {
         // double log from StrictMode

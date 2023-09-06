@@ -27,7 +27,9 @@ const Root = () => {
             <nav className="flex flex-wrap items-center gap-2 pb-4">
                 <NavLink
                     className={({ isActive }) =>
-                        isActive ? LinkClassNames.active : LinkClassNames.default
+                        isActive
+                            ? LinkClassNames.active
+                            : LinkClassNames.default
                     }
                     to="/"
                 >
@@ -35,7 +37,9 @@ const Root = () => {
                 </NavLink>
                 <NavLink
                     className={({ isActive }) =>
-                        isActive ? LinkClassNames.active : LinkClassNames.default
+                        isActive
+                            ? LinkClassNames.active
+                            : LinkClassNames.default
                     }
                     to="/ratio"
                 >
@@ -43,7 +47,9 @@ const Root = () => {
                 </NavLink>
                 <NavLink
                     className={({ isActive }) =>
-                        isActive ? LinkClassNames.active : LinkClassNames.default
+                        isActive
+                            ? LinkClassNames.active
+                            : LinkClassNames.default
                     }
                     to="/contact"
                 >
@@ -51,7 +57,9 @@ const Root = () => {
                 </NavLink>
                 <NavLink
                     className={({ isActive }) =>
-                        isActive ? LinkClassNames.active : LinkClassNames.default
+                        isActive
+                            ? LinkClassNames.active
+                            : LinkClassNames.default
                     }
                     to="/test1"
                 >
@@ -59,7 +67,9 @@ const Root = () => {
                 </NavLink>
                 <NavLink
                     className={({ isActive }) =>
-                        isActive ? LinkClassNames.active : LinkClassNames.default
+                        isActive
+                            ? LinkClassNames.active
+                            : LinkClassNames.default
                     }
                     to="/test2"
                 >
@@ -67,7 +77,9 @@ const Root = () => {
                 </NavLink>
                 <NavLink
                     className={({ isActive }) =>
-                        isActive ? LinkClassNames.active : LinkClassNames.default
+                        isActive
+                            ? LinkClassNames.active
+                            : LinkClassNames.default
                     }
                     to="/404-test"
                 >

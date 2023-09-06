@@ -18,7 +18,9 @@ export async function getPostData(id: string) {
     const postPath = path.join(postsDirectory, `${id}.md`);
     const fileContents = fs.readFileSync(postPath, 'utf8');
     const matterResult = matter(fileContents) as GrayMatterFile<string>;
-    const processedContent = await remark().use(html).process(matterResult.content);
+    const processedContent = await remark()
+        .use(html)
+        .process(matterResult.content);
     const contentHtml = processedContent.toString();
     const data = matterResult.data as { date: Date; title: string };
 

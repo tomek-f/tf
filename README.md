@@ -22,7 +22,9 @@
     type ReactEventHandler<T = Element> = EventHandler<SyntheticEvent<T>>;
 
     type ClipboardEventHandler<T = Element> = EventHandler<ClipboardEvent<T>>;
-    type CompositionEventHandler<T = Element> = EventHandler<CompositionEvent<T>>;
+    type CompositionEventHandler<T = Element> = EventHandler<
+        CompositionEvent<T>
+    >;
     type DragEventHandler<T = Element> = EventHandler<DragEvent<T>>;
     type FocusEventHandler<T = Element> = EventHandler<FocusEvent<T>>;
     type FormEventHandler<T = Element> = EventHandler<FormEvent<T>>;

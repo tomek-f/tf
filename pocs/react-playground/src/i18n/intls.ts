@@ -1,11 +1,19 @@
-import { createIntl, createIntlCache, type IntlShape, type MessageDescriptor } from 'react-intl';
+import {
+    createIntl,
+    createIntlCache,
+    type IntlShape,
+    type MessageDescriptor,
+} from 'react-intl';
 
 import { LANGUAGE_CODE_DEFAULT } from 'REACT_PG/constants/language';
 
 const intlCache = createIntlCache();
 
 // react-intl's methods are very sensitive for a lack of id, so we are making sure id is provided
-export const augmentedIntl = (locale: string, messages: Record<string, string>): IntlShape => {
+export const augmentedIntl = (
+    locale: string,
+    messages: Record<string, string>,
+): IntlShape => {
     const intl = createIntl(
         {
             locale,
@@ -26,14 +34,19 @@ export const augmentedIntl = (locale: string, messages: Record<string, string>):
                     if (!id) {
                         newId = 'ERR_INTL_NO_ID';
 
-                        const error = new Error(`intl get: formatMessage ${locale} ${newId}`);
+                        const error = new Error(
+                            `intl get: formatMessage ${locale} ${newId}`,
+                        );
 
                         if (import.meta.env.DEV) {
                             console.error(error); // eslint-disable-line no-console
                         }
                     }
 
-                    return target.formatMessage({ id: newId || id, ...restMessage }, values);
+                    return target.formatMessage(
+                        { id: newId || id, ...restMessage },
+                        values,
+                    );
                 };
             }
             // add additional methods if needed (used in intl form intls or react-intl's Components)

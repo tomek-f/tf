@@ -20,12 +20,20 @@ const Rtk = () => {
             <div className="flex flex-wrap items-center gap-2 mt-4">
                 <Button onClick={() => actions(decrement())}>decrement</Button>
                 <Button onClick={() => actions(increment())}>increment</Button>
-                <Button onClick={() => actions(incrementByAmount(5))}>incrementByAmount + 5</Button>
-                <Button onClick={() => actions(incrementAsync(10))}>incrementAsync + 10</Button>
+                <Button onClick={() => actions(incrementByAmount(5))}>
+                    incrementByAmount + 5
+                </Button>
+                <Button onClick={() => actions(incrementAsync(10))}>
+                    incrementAsync + 10
+                </Button>
             </div>
             <div className="flex flex-wrap items-center gap-2 mt-4">
-                <Button onClick={counterActions.decrement}>counterActions.decrement</Button>
-                <Button onClick={counterActions.increment}>counterActions.increment</Button>
+                <Button onClick={counterActions.decrement}>
+                    counterActions.decrement
+                </Button>
+                <Button onClick={counterActions.increment}>
+                    counterActions.increment
+                </Button>
                 <Button onClick={() => counterActions.incrementByAmount(5)}>
                     counterActions.incrementByAmount + 5
                 </Button>

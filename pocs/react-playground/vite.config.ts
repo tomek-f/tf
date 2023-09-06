@@ -15,7 +15,10 @@ function htmlPlugin(env: ReturnType<typeof loadEnv>) {
         transformIndexHtml: {
             order: 'pre',
             transform: (html: string) =>
-                html.replace(/%(.*?)%/g, (match, p1: string) => env[p1] ?? match),
+                html.replace(
+                    /%(.*?)%/g,
+                    (match, p1: string) => env[p1] ?? match,
+                ),
         },
     };
 }

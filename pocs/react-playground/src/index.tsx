@@ -17,7 +17,9 @@ import './index.css';
 
 (async () => {
     const { language } = config;
-    const { default: messages } = await import(`./i18n/locales/${language}.json`);
+    const { default: messages } = await import(
+        `./i18n/locales/${language}.json`
+    );
     const root = document.getElementById('root');
 
     config.intl = augmentedIntl(language, messages);
@@ -26,8 +28,14 @@ import './index.css';
         return;
     }
 
-    const ProviderContextSelector = ({ children }: { children: React.ReactNode }) => (
-        <ContextState.Provider value={useValue()}>{children}</ContextState.Provider>
+    const ProviderContextSelector = ({
+        children,
+    }: {
+        children: React.ReactNode;
+    }) => (
+        <ContextState.Provider value={useValue()}>
+            {children}
+        </ContextState.Provider>
     );
 
     createRoot(root).render(

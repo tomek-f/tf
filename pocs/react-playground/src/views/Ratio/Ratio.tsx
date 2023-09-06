@@ -39,7 +39,11 @@ const Ratio = () => {
             c,
             [event.target.name]: value,
         };
-        const newX = ratio(temp.a as number, temp.b as number, temp.c as number);
+        const newX = ratio(
+            temp.a as number,
+            temp.b as number,
+            temp.c as number,
+        );
 
         setX(!Number.isNaN(newX) && Number.isFinite(newX) ? newX : '🤯');
     };
@@ -52,9 +56,27 @@ const Ratio = () => {
             <div>c - x</div>
             <div>x = (b * c) / a</div>
             <div className="grid gap-2 grid-cols-2 max-w-lg mx-auto mt-4">
-                <Input name="a" onChange={onInput} placeholder="a" type="number" value={a} />
-                <Input name="b" onChange={onInput} placeholder="b" type="number" value={b} />
-                <Input name="c" onChange={onInput} placeholder="c" type="number" value={c} />
+                <Input
+                    name="a"
+                    onChange={onInput}
+                    placeholder="a"
+                    type="number"
+                    value={a}
+                />
+                <Input
+                    name="b"
+                    onChange={onInput}
+                    placeholder="b"
+                    type="number"
+                    value={b}
+                />
+                <Input
+                    name="c"
+                    onChange={onInput}
+                    placeholder="c"
+                    type="number"
+                    value={c}
+                />
                 <Input name="x" readOnly type="text" value={x} />
             </div>
         </>

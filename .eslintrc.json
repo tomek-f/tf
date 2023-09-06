@@ -56,8 +56,16 @@
         "max-params": ["error", 5],
         "padding-line-between-statements": [
             "error",
-            { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
-            { "blankLine": "always", "prev": "*", "next": ["const", "let", "var"] },
+            {
+                "blankLine": "always",
+                "prev": ["const", "let", "var"],
+                "next": "*"
+            },
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": ["const", "let", "var"]
+            },
             {
                 "blankLine": "any",
                 "prev": ["const", "let", "var"],
@@ -66,7 +74,10 @@
             { "blankLine": "always", "prev": "*", "next": "return" }
         ],
         "padded-blocks": "off",
-        "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 0, "maxEOF": 0 }],
+        "no-multiple-empty-lines": [
+            "error",
+            { "max": 1, "maxBOF": 0, "maxEOF": 0 }
+        ],
         "object-shorthand": [
             "error",
             "always",
@@ -87,7 +98,10 @@
             "error",
             {
                 "paths": [
-                    { "name": "react-router", "message": "Please use react-router-dom instead." }
+                    {
+                        "name": "react-router",
+                        "message": "Please use react-router-dom instead."
+                    }
                 ],
                 "patterns": [
                     {
@@ -103,10 +117,20 @@
         "arrow-body-style": "off",
         "prefer-arrow-callback": "off",
 
-        "import/no-useless-path-segments": ["error", { "noUselessIndex": true }],
+        "import/no-useless-path-segments": [
+            "error",
+            { "noUselessIndex": true }
+        ],
         "import/prefer-default-export": "off",
-        "import/extensions": ["error", "ignorePackages", { "ts": "never", "tsx": "never" }],
-        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            { "ts": "never", "tsx": "never" }
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            { "devDependencies": true }
+        ],
 
         "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
         "react/jsx-uses-react": "off",
@@ -118,7 +142,10 @@
         "react/no-danger": "error",
 
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": ["error", { "additionalHooks": "useLegacyEffect" }],
+        "react-hooks/exhaustive-deps": [
+            "error",
+            { "additionalHooks": "useLegacyEffect" }
+        ],
 
         /* disable normal and reenable in TS */
         "no-unused-expressions": "off",
@@ -134,9 +161,18 @@
 
         "@typescript-eslint/member-delimiter-style": "error",
         "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
-        "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
-        "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }],
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            { "ignoreRestSiblings": true }
+        ],
+        "@typescript-eslint/consistent-type-definitions": [
+            "error",
+            "interface"
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+            "error",
+            { "prefer": "type-imports" }
+        ],
 
         "unicorn/no-array-push-push": "error"
     }

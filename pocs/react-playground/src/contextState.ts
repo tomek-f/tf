@@ -64,4 +64,7 @@ const reducer = (state: State, action: Action) => {
 
 export const useValue = () => useReducer(reducer, initialState);
 
-export const ContextState = createContext<[State, Dispatch]>([initialState, () => null]);
+export const ContextState = createContext<[State, Dispatch]>([
+    initialState,
+    () => null,
+]);
