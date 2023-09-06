@@ -1,54 +1,54 @@
 name: all actions + deploy all
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
-  build-next-playground:
-    name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-next-playground.yml
-    secrets: inherit
-  build-react-playground:
-    name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-react-playground.yml
-  build-tomekf:
-    name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-tomekf.yml
-  build-pocs:
-    name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-pocs.yml
-  vitest:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/vitest
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/lint
-  prettier:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/prettier
-  types:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/types
-  deploy-next-playground:
-    name: 🤘🏼
-    uses: ./.github/workflows/deploy-next-playground.yml
-    secrets: inherit
-    needs: [vitest, lint, prettier, types, build-next-playground]
-  deploy-react-playground:
-    name: 🤘🏼
-    uses: ./.github/workflows/deploy-react-playground.yml
-    secrets: inherit
-    needs: [vitest, lint, prettier, types, build-react-playground]
-  deploy-tomekf:
-    name: 🤘🏼
-    uses: ./.github/workflows/deploy-tomekf.yml
-    secrets: inherit
-    needs: [vitest, lint, prettier, types, build-tomekf]
+    build-next-playground:
+        name: 👷🏼‍♂️
+        uses: ./.github/workflows/build-next-playground.yml
+        secrets: inherit
+    build-react-playground:
+        name: 👷🏼‍♂️
+        uses: ./.github/workflows/build-react-playground.yml
+    build-tomekf:
+        name: 👷🏼‍♂️
+        uses: ./.github/workflows/build-tomekf.yml
+    build-pocs:
+        name: 👷🏼‍♂️
+        uses: ./.github/workflows/build-pocs.yml
+    vitest:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/vitest
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/lint
+    prettier:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/prettier
+    types:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/types
+    deploy-next-playground:
+        name: 🤘🏼
+        uses: ./.github/workflows/deploy-next-playground.yml
+        secrets: inherit
+        needs: [vitest, lint, prettier, types, build-next-playground]
+    deploy-react-playground:
+        name: 🤘🏼
+        uses: ./.github/workflows/deploy-react-playground.yml
+        secrets: inherit
+        needs: [vitest, lint, prettier, types, build-react-playground]
+    deploy-tomekf:
+        name: 🤘🏼
+        uses: ./.github/workflows/deploy-tomekf.yml
+        secrets: inherit
+        needs: [vitest, lint, prettier, types, build-tomekf]

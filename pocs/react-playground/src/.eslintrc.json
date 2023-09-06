@@ -1,6 +1,6 @@
 {
-  "rules": {
-    "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-var-requires": "error"
-  }
+    "rules": {
+        "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/no-var-requires": "error"
+    }
 }

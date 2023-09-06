@@ -1,9 +1,9 @@
 interface Config {
-  language: string;
+    language: string;
 }
 
 const config: Config = {
-  language: 'en-US',
+    language: 'en-US',
 };
 
 export default config;

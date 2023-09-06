@@ -2,17 +2,17 @@ name: 'Lint action'
 description: 'Runs a composite Lint action'
 
 runs:
-  using: 'composite'
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-        check-latest: true
-        cache: 'npm'
-    - run: npm ci
-      shell: bash
-    - run: npm run turbo:lint-js
-      shell: bash
-    - run: npm run turbo:lint-js-next
-      shell: bash
+    using: 'composite'
+    steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+              node-version: 18
+              check-latest: true
+              cache: 'npm'
+        - run: npm ci
+          shell: bash
+        - run: npm run turbo:lint-js
+          shell: bash
+        - run: npm run turbo:lint-js-next
+          shell: bash

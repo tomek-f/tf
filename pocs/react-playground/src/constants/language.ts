@@ -1,6 +1,6 @@
 export enum LANGUAGE_CODE {
-  en = 'en-US',
-  pl = 'pl-PL',
+    en = 'en-US',
+    pl = 'pl-PL',
 }
 
 export const LANGUAGE_CODES_VALUES = Object.values(LANGUAGE_CODE);

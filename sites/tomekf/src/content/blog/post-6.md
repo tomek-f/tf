@@ -10,9 +10,9 @@ date: '2023-06-12'
 This is your first markdown page. It probably isn't styled much, although
 Markdown does support **bold** and _italics._
 
-- 1
-- 2
-- 3
+-   1
+-   2
+-   3
 
 1. 1
 1. 2

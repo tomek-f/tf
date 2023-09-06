@@ -1,14 +1,14 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "baseUrl": ".",
-    "types": ["vite/client", "vitest", "node"],
-    "skipLibCheck": true,
-    "paths": {
-      "REACT_PG/*": ["src/*"]
-    }
-  },
-  "include": ["../../@types", "src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "baseUrl": ".",
+        "types": ["vite/client", "vitest", "node"],
+        "skipLibCheck": true,
+        "paths": {
+            "REACT_PG/*": ["src/*"]
+        }
+    },
+    "include": ["../../@types", "src"],
+    "references": [{ "path": "./tsconfig.node.json" }]
 }

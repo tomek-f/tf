@@ -1,41 +1,41 @@
 name: all actions without deploys
 
 on:
-  push:
-    branches: ['**']
-  workflow_dispatch:
+    push:
+        branches: ['**']
+    workflow_dispatch:
 
 jobs:
-  build-next-playground:
-    name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-next-playground.yml
-    secrets: inherit
-  build-react-playground:
-    name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-react-playground.yml
-  build-tomekf:
-    name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-tomekf.yml
-  build-pocs:
-    name: 👷🏼‍♂️
-    uses: ./.github/workflows/build-pocs.yml
-  vitest:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/vitest
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/lint
-  prettier:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/prettier
-  types:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/types
+    build-next-playground:
+        name: 👷🏼‍♂️
+        uses: ./.github/workflows/build-next-playground.yml
+        secrets: inherit
+    build-react-playground:
+        name: 👷🏼‍♂️
+        uses: ./.github/workflows/build-react-playground.yml
+    build-tomekf:
+        name: 👷🏼‍♂️
+        uses: ./.github/workflows/build-tomekf.yml
+    build-pocs:
+        name: 👷🏼‍♂️
+        uses: ./.github/workflows/build-pocs.yml
+    vitest:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/vitest
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/lint
+    prettier:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/prettier
+    types:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/types

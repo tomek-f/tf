@@ -1,34 +1,35 @@
 {
-  "arrowParens": "always",
-  "printWidth": 100,
-  "singleQuote": true,
-  "trailingComma": "all",
-  "semi": true,
-  "bracketSpacing": true,
-  "bracketSameLine": false,
-  "endOfLine": "lf",
+    "arrowParens": "always",
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "semi": true,
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "endOfLine": "lf",
+    "tabWidth": 4,
 
-  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-astro"],
-  "importOrder": [
-    "<BUILTIN_MODULES>",
-    "",
-    "^(react/(.*)$)|^(react$)",
-    "^(next/(.*)$)|^(next$)",
-    "<THIRD_PARTY_MODULES>",
-    "",
-    "^(REACT_PG)(/.*)$",
-    "^(?!.*[.](css|scss)$)[./].*$",
-    "",
-    ".(css|scss)$"
-  ],
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-  "importOrderTypeScriptVersion": "5.0.0",
-  "overrides": [
-    {
-      "files": "*.astro",
-      "options": {
-        "parser": "astro"
-      }
-    }
-  ]
+    "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-astro"],
+    "importOrder": [
+        "<BUILTIN_MODULES>",
+        "",
+        "^(react/(.*)$)|^(react$)",
+        "^(next/(.*)$)|^(next$)",
+        "<THIRD_PARTY_MODULES>",
+        "",
+        "^(REACT_PG)(/.*)$",
+        "^(?!.*[.](css|scss)$)[./].*$",
+        "",
+        ".(css|scss)$"
+    ],
+    "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+    "importOrderTypeScriptVersion": "5.0.0",
+    "overrides": [
+        {
+            "files": "*.astro",
+            "options": {
+                "parser": "astro"
+            }
+        }
+    ]
 }

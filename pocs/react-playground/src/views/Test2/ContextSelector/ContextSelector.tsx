@@ -3,11 +3,11 @@ import Counter from './Counter/Counter';
 import Person from './Person/Person';
 
 const ContextSelector = () => (
-  <Fieldset legend="(use)ContextSelector">
-    {Math.random()}
-    <Counter />
-    <Person />
-  </Fieldset>
+    <Fieldset legend="(use)ContextSelector">
+        {Math.random()}
+        <Counter />
+        <Person />
+    </Fieldset>
 );
 
 export default ContextSelector;

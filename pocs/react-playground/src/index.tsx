@@ -16,33 +16,33 @@ import './themesOnInit';
 import './index.css';
 
 (async () => {
-  const { language } = config;
-  const { default: messages } = await import(`./i18n/locales/${language}.json`);
-  const root = document.getElementById('root');
+    const { language } = config;
+    const { default: messages } = await import(`./i18n/locales/${language}.json`);
+    const root = document.getElementById('root');
 
-  config.intl = augmentedIntl(language, messages);
+    config.intl = augmentedIntl(language, messages);
 
-  if (!root) {
-    return;
-  }
+    if (!root) {
+        return;
+    }
 
-  const ProviderContextSelector = ({ children }: { children: React.ReactNode }) => (
-    <ContextState.Provider value={useValue()}>{children}</ContextState.Provider>
-  );
+    const ProviderContextSelector = ({ children }: { children: React.ReactNode }) => (
+        <ContextState.Provider value={useValue()}>{children}</ContextState.Provider>
+    );
 
-  createRoot(root).render(
-    <StrictMode>
-      <HelmetProvider>
-        <ProviderRedux store={store}>
-          <ProviderContextSelector>
-            <RawIntlProvider value={config.intl}>
-              <CustomRouter history={history}>
-                <Root />
-              </CustomRouter>
-            </RawIntlProvider>
-          </ProviderContextSelector>
-        </ProviderRedux>
-      </HelmetProvider>
-    </StrictMode>,
-  );
+    createRoot(root).render(
+        <StrictMode>
+            <HelmetProvider>
+                <ProviderRedux store={store}>
+                    <ProviderContextSelector>
+                        <RawIntlProvider value={config.intl}>
+                            <CustomRouter history={history}>
+                                <Root />
+                            </CustomRouter>
+                        </RawIntlProvider>
+                    </ProviderContextSelector>
+                </ProviderRedux>
+            </HelmetProvider>
+        </StrictMode>,
+    );
 })();
