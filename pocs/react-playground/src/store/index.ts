@@ -3,9 +3,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from 'REACT_PG/models/counter/counterSlice';
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+    reducer: {
+        counter: counterReducer,
+    },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

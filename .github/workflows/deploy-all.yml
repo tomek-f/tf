@@ -1,7 +1,7 @@
 name: deploy all
 
 on:
-  workflow_dispatch:
+    workflow_dispatch:
 
 # jobs:
 #   deploy-next-playground:
@@ -15,15 +15,15 @@ on:
 #     uses: tomek-f/tf/.github/workflows/deploy-tomekf.yml@master
 
 jobs:
-  deploy-next-playground:
-    name: 🤘🏼
-    uses: ./.github/workflows/deploy-next-playground.yml
-    secrets: inherit
-  deploy-react-playground:
-    name: 🤘🏼
-    uses: ./.github/workflows/deploy-react-playground.yml
-    secrets: inherit
-  deploy-tomekf:
-    name: 🤘🏼
-    uses: ./.github/workflows/deploy-tomekf.yml
-    secrets: inherit
+    deploy-next-playground:
+        name: 🤘🏼
+        uses: ./.github/workflows/deploy-next-playground.yml
+        secrets: inherit
+    deploy-react-playground:
+        name: 🤘🏼
+        uses: ./.github/workflows/deploy-react-playground.yml
+        secrets: inherit
+    deploy-tomekf:
+        name: 🤘🏼
+        uses: ./.github/workflows/deploy-tomekf.yml
+        secrets: inherit

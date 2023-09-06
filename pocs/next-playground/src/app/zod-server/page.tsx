@@ -5,8 +5,8 @@ import { UserSchemaWithGeo } from '../../models/User';
 import type { Nullable, SomeError } from '../../types/misc';
 
 export const metadata: Metadata = {
-  title: 'Zod server',
-  description: 'Zod server description',
+    title: 'Zod server',
+    description: 'Zod server description',
 };
 
 const UserResults = z.array(UserSchemaWithGeo);
@@ -14,66 +14,66 @@ const UserResults = z.array(UserSchemaWithGeo);
 type UserArray = z.infer<typeof UserResults>;
 
 async function getData() {
-  let url: Nullable<string> = null;
+    let url: Nullable<string> = null;
 
-  url = 'https://jsonplaceholder.typicode.com/users'; // proper
-  // url = '/api/text'; // ERR_NET_FAILED_TO_FETCH
-  // url = 'https://jsonplaceholder.typicode1.com/users'; // ERR_NET_FAILED_TO_FETCH
-  // url = 'https://httpstat.us/400'; // ERR_NET_NOT_OK (400)
+    url = 'https://jsonplaceholder.typicode.com/users'; // proper
+    // url = '/api/text'; // ERR_NET_FAILED_TO_FETCH
+    // url = 'https://jsonplaceholder.typicode1.com/users'; // ERR_NET_FAILED_TO_FETCH
+    // url = 'https://httpstat.us/400'; // ERR_NET_NOT_OK (400)
 
-  let data: Nullable<UserArray> = null;
-  let error: Nullable<SomeError> = null;
+    let data: Nullable<UserArray> = null;
+    let error: Nullable<SomeError> = null;
 
-  try {
-    const res = await fetch(url);
+    try {
+        const res = await fetch(url);
 
-    if (!res.ok) {
-      error = new Error('res not ok');
+        if (!res.ok) {
+            error = new Error('res not ok');
 
-      return { data, error };
+            return { data, error };
+        }
+
+        const usersJson = (await res.json()) as UserArray;
+
+        data = UserResults.parse(usersJson);
+    } catch (err) {
+        error = err as SomeError;
     }
 
-    const usersJson = (await res.json()) as UserArray;
-
-    data = UserResults.parse(usersJson);
-  } catch (err) {
-    error = err as SomeError;
-  }
-
-  return { data, error };
+    return { data, error };
 }
 
 // TODO change title and description
 
 const ZodServer = async () => {
-  const { data, error } = await getData();
+    const { data, error } = await getData();
 
-  if (error) {
+    if (error) {
+        return (
+            <>
+                <h1>Zod server</h1>
+                <p>failed to load</p>
+                <p>{error.message}</p>
+                <pre>{JSON.stringify(error, null, 2)}</pre>
+            </>
+        );
+    }
+
+    if (!data?.length) {
+        return (
+            <>
+                <h1>Zod server</h1>
+                <p>no data</p>
+            </>
+        );
+    }
+
     return (
-      <>
-        <h1>Zod server</h1>
-        <p>failed to load</p>
-        <p>{error.message}</p>
-        <pre>{JSON.stringify(error, null, 2)}</pre>
-      </>
+        <>
+            <h1>Zod server</h1>
+            <pre>{JSON.stringify(data, null, 2)}</pre>
+        </>
     );
-  }
-
-  if (!data?.length) {
-    return (
-      <>
-        <h1>Zod server</h1>
-        <p>no data</p>
-      </>
-    );
-  }
-
-  return (
-    <>
-      <h1>Zod server</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </>
-  );
 };
 
 export default ZodServer;

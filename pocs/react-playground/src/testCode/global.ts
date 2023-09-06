@@ -1,9 +1,9 @@
 // declare let foo: number; // for accessing global without window
 
 declare global {
-  interface Window {
-    foo: number;
-  }
+    interface Window {
+        foo: number;
+    }
 }
 
 window.foo = 1;

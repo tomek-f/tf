@@ -11,7 +11,7 @@
 
 // hacked version
 function gql(strings: TemplateStringsArray) {
-  return strings.join('');
+    return strings.join('');
 }
 
 export default gql;

@@ -1,22 +1,22 @@
 name: build next-playground
 
 on:
-  workflow_dispatch:
-  workflow_call:
+    workflow_dispatch:
+    workflow_call:
 
 jobs:
-  build-next-playground:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          check-latest: true
-          cache: 'npm'
-      - run: npm ci
-      - name: build next-playground
-        run: npm run build --workspace=@tf/next-playground
-        env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+    build-next-playground:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
+            - name: build next-playground
+              run: npm run build --workspace=@tf/next-playground
+              env:
+                  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_URL }}
+                  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_ANON_KEY }}

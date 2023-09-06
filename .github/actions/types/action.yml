@@ -2,15 +2,15 @@ name: 'Types action'
 description: 'Runs a composite Types action'
 
 runs:
-  using: 'composite'
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-        check-latest: true
-        cache: 'npm'
-    - run: npm ci
-      shell: bash
-    - run: npm run turbo:check-types
-      shell: bash
+    using: 'composite'
+    steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+              node-version: 18
+              check-latest: true
+              cache: 'npm'
+        - run: npm ci
+          shell: bash
+        - run: npm run turbo:check-types
+          shell: bash
