@@ -1,0 +1,24 @@
+{
+    "name": "@tf/kysely",
+    "version": "1.1.0",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": "^18 || ^20"
+    },
+    "main": "./out/index.js",
+    "scripts": {
+        "start": "tsx ./src/index.ts",
+        "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
+        "lint-js-fix": "npm run lint-js --fix",
+        "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
+    },
+    "dependencies": {
+        "better-sqlite3": "^8.6.0",
+        "kysely": "^0.26.3"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.4",
+        "tsx": "^3.12.8"
+    }
+}
