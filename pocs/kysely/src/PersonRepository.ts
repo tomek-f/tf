@@ -6,7 +6,7 @@ export async function findPersonById(id: number) {
         .selectFrom('person')
         .where('id', '=', id)
         .selectAll()
-        .executeTakeFirst();
+        .executeTakeFirst(); // or just execute
 }
 
 export async function findPeople(criteria: Partial<Person>) {
