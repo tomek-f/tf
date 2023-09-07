@@ -1,6 +1,7 @@
 import { sql } from 'kysely';
 
 import { db } from './database';
+import { findPersonById } from './PersonRepository';
 
 (async () => {
     // create tables
@@ -54,11 +55,7 @@ import { db } from './database';
         .where('id', '=', 1)
         .execute();
 
-    const person2 = await db
-        .selectFrom('person')
-        .selectAll()
-        .where('first_name', '=', 'Jennifer')
-        .execute();
+    const person2 = await findPersonById(1);
 
     console.log({ persons, person, person2 });
 })();
