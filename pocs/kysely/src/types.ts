@@ -18,6 +18,7 @@ export interface PersonTable {
     id: Generated<number>;
 
     first_name: string;
+
     gender: 'man' | 'woman' | 'other';
 
     // If the column is nullable in the database, make its type nullable.
