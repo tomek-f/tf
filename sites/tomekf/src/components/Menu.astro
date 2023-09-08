@@ -3,13 +3,14 @@ import { twMerge } from 'tailwind-merge';
 
 import { linkActiveCss, linkCss } from '../styles/common';
 
-export interface Props {
-  class?: string;
-}
+type Props = astroHTML.JSX.HTMLAttributes;
 
 const { class: className } = Astro.props;
 
-const activeLink = [linkActiveCss, 'text-lg md:text-xl' /* , 'font-semibold' */];
+const activeLink = [
+    linkActiveCss,
+    'text-lg md:text-xl' /* , 'font-semibold' */,
+];
 const inactiveLink = [linkCss, 'text-lg md:text-xl' /* , 'font-semibold' */];
 
 const { pathname } = Astro.url;
@@ -20,8 +21,10 @@ const isBlog = pathname.startsWith('/blog');
 ---
 
 <div class:list={['flex gap-3', className]}>
-  <a class={twMerge(isInfo ? activeLink : inactiveLink)} href="/info">Info</a>
-  <a class={twMerge(isContact ? activeLink : inactiveLink)} href="/contact">Contact</a>
-  <a class={twMerge(isBlog ? activeLink : inactiveLink)} href="/blog">Blog</a>
-  <a class={twMerge(isTest ? activeLink : inactiveLink)} href="/test">Test</a>
+    <a class={twMerge(isInfo ? activeLink : inactiveLink)} href="/info">Info</a>
+    <a class={twMerge(isContact ? activeLink : inactiveLink)} href="/contact"
+        >Contact</a
+    >
+    <a class={twMerge(isBlog ? activeLink : inactiveLink)} href="/blog">Blog</a>
+    <a class={twMerge(isTest ? activeLink : inactiveLink)} href="/test">Test</a>
 </div>

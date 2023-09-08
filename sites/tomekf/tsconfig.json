@@ -11,7 +11,9 @@
         "jsxImportSource": "react",
         "allowSyntheticDefaultImports": true,
         "strictNullChecks": true,
-        "allowJs": true
+        "allowJs": true,
+        "noErrorTruncation": true,
+        "verbatimModuleSyntax": true
         // same as src/env.d.ts
         // "types": ["astro/client", "./.astro/types.d.ts"]
     },

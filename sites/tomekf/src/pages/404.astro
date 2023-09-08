@@ -4,18 +4,18 @@ import CommonLayout from '../layouts/CommonLayout.astro';
 ---
 
 <CommonLayout title="404">
-  <Content>
-    <p>404</p>
-    <p id="pathname-404"></p>
-  </Content>
+    <Content>
+        <p>404</p>
+        <p id="pathname-404"></p>
+    </Content>
 </CommonLayout>
 
 <script is:inline>
-  (() => {
-    const pathname = document.getElementById('pathname-404');
+    (() => {
+        const pathname = document.getElementById('pathname-404');
 
-    if (pathname) {
-      pathname.textContent = window.location.pathname;
-    }
-  })();
+        if (pathname) {
+            pathname.textContent = window.location.pathname;
+        }
+    })();
 </script>

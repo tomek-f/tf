@@ -1,13 +1,16 @@
 ---
-export interface Props {
-  class?: string;
-}
+type Props = astroHTML.JSX.HTMLAttributes;
 
 const { class: className } = Astro.props;
 
 // TODO ? https://preline.co/docs/navbar.html#with-collapse
 ---
 
-<div class:list={['flex items-center justify-between', /* 'gap-6 md:gap-8', */ className]}>
-  <slot />
+<div
+    class:list={[
+        'flex items-center justify-between',
+        /* 'gap-6 md:gap-8', */ className,
+    ]}
+>
+    <slot />
 </div>

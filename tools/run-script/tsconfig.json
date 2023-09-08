@@ -8,7 +8,9 @@
         "skipLibCheck": true,
         "moduleResolution": "node",
         "outDir": "./dist",
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "noErrorTruncation": true,
+        "verbatimModuleSyntax": true
     },
     "include": ["./src"],
     "exclude": ["node_modules", "./dist"]
