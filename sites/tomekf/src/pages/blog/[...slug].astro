@@ -36,7 +36,7 @@ export const getStaticPaths = (async () => {
 // https://docs.astro.build/pl/guides/typescript/#infer-getstaticpaths-types
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 // const { slug } = Astro.params as InferGetStaticParamsType<typeof getStaticPaths>;
-const { pathname } = Astro.url;
+// const { pathname } = Astro.url; // or just use /blog/
 const { entry, nextSlug, nextTitle, prevSlug, prevTitle } = Astro.props;
 const { Content /* , remarkPluginFrontmatter, headings */ } =
     await entry.render();
@@ -49,7 +49,7 @@ const { Content /* , remarkPluginFrontmatter, headings */ } =
             prevSlug && (
                 <>
                     <>prev: </>
-                    <a href={`${pathname}/../${prevSlug}`} class={linkCss}>
+                    <a href={`/blog/${prevSlug}`} class={linkCss}>
                         {prevTitle}
                     </a>
                 </>
@@ -60,7 +60,7 @@ const { Content /* , remarkPluginFrontmatter, headings */ } =
             nextSlug && (
                 <>
                     <>next: </>
-                    <a href={`${pathname}/../${nextSlug}`} class={linkCss}>
+                    <a href={`/blog/${nextSlug}`} class={linkCss}>
                         {nextTitle}
                     </a>
                 </>
