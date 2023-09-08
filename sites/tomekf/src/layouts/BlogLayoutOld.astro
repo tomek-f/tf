@@ -1,7 +1,7 @@
 ---
 import type { MarkdownLayoutProps } from 'astro';
 
-import Content from '../components/Content.astro';
+import Block from '../components/Block.astro';
 import { linkCss } from '../styles/common';
 import CommonLayout from './CommonLayout.astro';
 
@@ -15,9 +15,9 @@ const { frontmatter } = Astro.props;
 ---
 
 <CommonLayout title={`${frontmatter.title} | Blog`}>
-    <Content>
+    <Block>
         <a class={linkCss} href="/blog">Back to blog</a>
-        <Content class="custom-html mt-4">
+        <Block class="custom-html mt-4">
             <p class="italic text-neutral-500">
                 {frontmatter.author}
                  @
@@ -32,6 +32,6 @@ const { frontmatter } = Astro.props;
             <span class="text-red-500">ALPHA</span>
             <h1>{frontmatter.title}</h1>
             <slot />
-        </Content>
-    </Content>
+        </Block>
+    </Block>
 </CommonLayout>

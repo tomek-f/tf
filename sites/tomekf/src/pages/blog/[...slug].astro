@@ -4,27 +4,67 @@ import type {
     // InferGetStaticParamsType,
     InferGetStaticPropsType,
 } from 'astro';
-import { getCollection } from 'astro:content';
+import { getCollection /* , type CollectionEntry */ } from 'astro:content';
+
+import Block from '../../components/Block.astro';
+import CommonLayout from '../../layouts/CommonLayout.astro';
+import { linkCss } from '../../styles/common';
+
+// type Test = CollectionEntry<'blog'>;
 
 export const getStaticPaths = (async () => {
-    const blogEntries = await getCollection('blog');
+    const allBlogPosts = await getCollection('blog');
+    const postsSorted = allBlogPosts.sort(
+        (a, b) =>
+            new Date(a.data.date).getTime() - new Date(b.data.date).getTime(),
+    );
 
-    return blogEntries.map((entry) => ({
-        params: { slug: entry.slug },
-        props: { entry },
+    return postsSorted.map((entry, idx) => ({
+        params: {
+            slug: entry.slug,
+        },
+        props: {
+            entry,
+            prevSlug: postsSorted[idx - 1]?.slug,
+            prevTitle: postsSorted[idx - 1]?.data.title,
+            nextSlug: postsSorted[idx + 1]?.slug,
+            nextTitle: postsSorted[idx + 1]?.data.title,
+        },
     }));
 }) satisfies GetStaticPaths;
 
 // https://docs.astro.build/pl/guides/typescript/#infer-getstaticpaths-types
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
-
-// const { slug } = Astro.params as InferGetStaticParamsType<
-//     typeof getStaticPaths
-// >;
-const { entry } = Astro.props;
-const { Content, headings, remarkPluginFrontmatter } = await entry.render();
-
-console.log({ entry, headings, remarkPluginFrontmatter });
+// const { slug } = Astro.params as InferGetStaticParamsType<typeof getStaticPaths>;
+const { pathname } = Astro.url;
+const { entry, nextSlug, nextTitle, prevSlug, prevTitle } = Astro.props;
+const { Content /* , remarkPluginFrontmatter, headings */ } =
+    await entry.render();
 ---
 
-<Content />
+<CommonLayout title={`${entry.data.title} | Blog`}>
+    <Content />
+    <Block slot="footer">
+        {
+            prevSlug && (
+                <>
+                    <>prev: </>
+                    <a href={`${pathname}/../${prevSlug}`} class={linkCss}>
+                        {prevTitle}
+                    </a>
+                </>
+            )
+        }
+        {prevSlug && nextSlug && <> | </>}
+        {
+            nextSlug && (
+                <>
+                    <>next: </>
+                    <a href={`${pathname}/../${nextSlug}`} class={linkCss}>
+                        {nextTitle}
+                    </a>
+                </>
+            )
+        }
+    </Block>
+</CommonLayout>

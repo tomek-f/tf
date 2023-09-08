@@ -28,8 +28,7 @@
         {
             "files": "*.astro",
             "options": {
-                "parser": "astro",
-                "tabWidth": 4
+                "parser": "astro"
             }
         }
     ]
