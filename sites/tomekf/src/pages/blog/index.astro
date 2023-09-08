@@ -8,23 +8,23 @@ import { linkCss } from '../../styles/common';
 const { pathname } = Astro.url; // or just use /blog
 const allBlogPosts = await getCollection('blog');
 const postsSorted = [...allBlogPosts].sort(
-  (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime(),
+    (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime(),
 );
 ---
 
 <CommonLayout title="Blog">
-  <Content class="custom-html">
-    <p>Blog <span class="text-red-500">ALPHA</span></p>
-    <ul>
-      {
-        postsSorted.map((post) => (
-          <li>
-            <a class={linkCss} href={`${pathname}/${post.slug}`}>
-              {post.data.title} ({post.data.date})
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </Content>
+    <Content class="custom-html">
+        <p>Blog <span class="text-red-500">ALPHA</span></p>
+        <ul>
+            {
+                postsSorted.map((post) => (
+                    <li>
+                        <a class={linkCss} href={`${pathname}${post.slug}`}>
+                            {post.data.title} ({post.data.date})
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </Content>
 </CommonLayout>

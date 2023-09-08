@@ -3,17 +3,21 @@ import { ViewTransitions } from 'astro:transitions';
 
 import '../styles/globals.css';
 
-export interface Props {
-  class?: string;
-  classHtml?: string;
-  title?: string;
+interface Props {
+    class?: string;
+    classHtml?: string;
+    title?: string;
 }
 
 const { class: className, classHtml, title } = Astro.props;
 
-const parsedTitle = [title, 'Internety Tomasz Fijoł'].filter(Boolean).join(' | ');
+const parsedTitle = [title, 'Internety Tomasz Fijoł']
+    .filter(Boolean)
+    .join(' | ');
 // todo proper description
-const parsedDescription = ['Internety Tomasz Fijoł', title].filter(Boolean).join(' - ');
+const parsedDescription = ['Internety Tomasz Fijoł', title]
+    .filter(Boolean)
+    .join(' - ');
 
 /*
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
@@ -29,20 +33,28 @@ const parsedDescription = ['Internety Tomasz Fijoł', title].filter(Boolean).joi
 // <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
 ---
 
-<html lang="en" class:list={['min-w-[360px] min-h-screen p-6 md:p-8', classHtml]}>
-  <head>
-    <meta charset="utf-8" />
-    <title>{parsedTitle}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={parsedDescription} />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
-    />
-    <ViewTransitions />
-  </head>
-  <body class:list={['font-light text-base bg-neutral-900 text-neutral-100', className]}>
-    <slot />
-  </body>
+<html
+    lang="en"
+    class:list={['min-w-[360px] min-h-screen p-6 md:p-8', classHtml]}
+>
+    <head>
+        <meta charset="utf-8" />
+        <title>{parsedTitle}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={parsedDescription} />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+        />
+        <ViewTransitions />
+    </head>
+    <body
+        class:list={[
+            'font-light text-base bg-neutral-900 text-neutral-100',
+            className,
+        ]}
+    >
+        <slot />
+    </body>
 </html>

@@ -6,28 +6,32 @@ import { linkCss } from '../styles/common';
 import CommonLayout from './CommonLayout.astro';
 
 type Props = MarkdownLayoutProps<{
-  title: string;
-  author: string;
-  date: string;
+    title: string;
+    author: string;
+    date: string;
 }>;
 
 const { frontmatter } = Astro.props;
 ---
 
 <CommonLayout title={`${frontmatter.title} | Blog`}>
-  <Content>
-    <a class={linkCss} href="/blog">Back to blog</a>
-    <Content class="custom-html mt-4">
-      <p class="italic text-neutral-500">
-        {frontmatter.author}
-         @
-        <time datetime={new Date(`${frontmatter.date} 12:00`).toISOString()}>
-          {frontmatter.date}
-        </time>
-      </p>
-      <span class="text-red-500">ALPHA</span>
-      <h1>{frontmatter.title}</h1>
-      <slot />
+    <Content>
+        <a class={linkCss} href="/blog">Back to blog</a>
+        <Content class="custom-html mt-4">
+            <p class="italic text-neutral-500">
+                {frontmatter.author}
+                 @
+                <time
+                    datetime={new Date(
+                        `${frontmatter.date} 12:00`,
+                    ).toISOString()}
+                >
+                    {frontmatter.date}
+                </time>
+            </p>
+            <span class="text-red-500">ALPHA</span>
+            <h1>{frontmatter.title}</h1>
+            <slot />
+        </Content>
     </Content>
-  </Content>
 </CommonLayout>

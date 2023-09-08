@@ -1,17 +1,30 @@
 ---
+import type {
+    GetStaticPaths,
+    // InferGetStaticParamsType,
+    InferGetStaticPropsType,
+} from 'astro';
 import { getCollection } from 'astro:content';
 
-export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog');
+export const getStaticPaths = (async () => {
+    const blogEntries = await getCollection('blog');
 
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
-}
+    return blogEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}) satisfies GetStaticPaths;
 
+// https://docs.astro.build/pl/guides/typescript/#infer-getstaticpaths-types
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+// const { slug } = Astro.params as InferGetStaticParamsType<
+//     typeof getStaticPaths
+// >;
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content, headings, remarkPluginFrontmatter } = await entry.render();
+
+console.log({ entry, headings, remarkPluginFrontmatter });
 ---
 
 <Content />
