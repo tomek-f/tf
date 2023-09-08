@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayoutOld.astro
 title: 'Lorem 5'
 author: 'Tommy F.'
 date: '07 May 2023'

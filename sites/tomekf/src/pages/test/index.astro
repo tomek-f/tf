@@ -1,5 +1,5 @@
 ---
-import Content from '../../components/Content.astro';
+import Block from '../../components/Block.astro';
 import CommonLayout from '../../layouts/CommonLayout.astro';
 import { linkCss } from '../../styles/common';
 
@@ -13,7 +13,7 @@ import { linkCss } from '../../styles/common';
 ---
 
 <CommonLayout title="Test">
-    <Content class="custom-html">
+    <Block class="custom-html">
         <!-- <ul class="list-disc list-inside ml-2">
       {
         urls.map((url) => (
@@ -46,5 +46,5 @@ import { linkCss } from '../../styles/common';
                 <a class={linkCss} href="/test/starfield">starfield</a>
             </li>
         </ul>
-    </Content>
+    </Block>
 </CommonLayout>

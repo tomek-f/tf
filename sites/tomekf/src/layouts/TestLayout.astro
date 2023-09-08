@@ -1,5 +1,5 @@
 ---
-import Content from '../components/Content.astro';
+import Block from '../components/Block.astro';
 import { linkCss } from '../styles/common';
 import CommonLayout from './CommonLayout.astro';
 
@@ -9,10 +9,10 @@ type Props = {
 ---
 
 <CommonLayout title={`${Astro.props.title} | Test`}>
-    <Content>
+    <Block>
         <a class={linkCss} href="/test">Back to test</a>
-        <Content class="mt-4">
+        <Block class="mt-4">
             <slot />
-        </Content>
-    </Content>
+        </Block>
+    </Block>
 </CommonLayout>
