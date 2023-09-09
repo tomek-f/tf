@@ -1,14 +1,19 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
-        "module": "nodenext",
+        "types": ["bun-types"],
+        "lib": ["esnext"],
+        "module": "esnext",
         "target": "esnext",
-        "moduleResolution": "nodenext",
-        "esModuleInterop": true,
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "moduleDetection": "force",
+        "jsx": "react-jsx", // support JSX
+        "allowJs": true, // allow importing `.js` from `.ts`
+        "esModuleInterop": true, // allow default imports for CommonJS modules
         "strict": true,
-        // "jsx": "react-jsx",
-        // "jsxFragmentFactory": "Fragment",
-        "jsxImportSource": "hono/jsx",
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
         "noEmit": true,
         "noErrorTruncation": true,
         "verbatimModuleSyntax": true
