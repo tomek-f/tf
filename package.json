@@ -22,7 +22,7 @@
         "serve-demo:prod": "MODE=prod npm run serve-demo",
         "format-check": "prettier --check .",
         "format-write": "prettier --write .",
-        "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test",
+        "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test --force",
         "vercel": "vercel",
         "turbo": "turbo"
     },
