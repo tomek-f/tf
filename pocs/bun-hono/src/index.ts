@@ -4,13 +4,13 @@ import { serveStatic } from 'hono/bun';
 const app = new Hono();
 
 app.use('*', async (c, next) => {
-    const start = Date.now();
+    const start = performance.now();
 
     await next();
 
-    const end = Date.now();
+    const end = performance.now();
 
-    c.res.headers.set('X-Response-Time', `${end - start}`);
+    c.res.headers.set('X-Response-Time-In-Miliseconds', `${end - start}`);
 });
 app.use('/*', serveStatic({ root: './src' }));
 app.use('/favicon.ico', serveStatic({ path: './src/favicon.ico' }));
