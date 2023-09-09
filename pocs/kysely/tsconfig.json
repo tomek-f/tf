@@ -1,7 +1,6 @@
 {
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
-        "module": "es6",
-        "target": "es5",
         "noImplicitAny": false,
         "allowSyntheticDefaultImports": true,
         "strict": true,
