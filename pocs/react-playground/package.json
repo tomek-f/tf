@@ -44,7 +44,7 @@
         "@vitejs/plugin-react-swc": "^3.3.2",
         "@vitest/ui": "^0.34.4",
         "autoprefixer": "^10.4.15",
-        "eslint": "^8.48.0",
+        "eslint": "^8.49.0",
         "happy-dom": "^11.0.2",
         "postcss": "^8.4.29",
         "rollup-plugin-visualizer": "^5.9.2",
