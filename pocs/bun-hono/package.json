@@ -4,12 +4,17 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "bun run --hot src/index.ts"
+        "dev": "bun run --hot src/index.ts",
+        "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
+        "lint-js-fix": "npm run lint-js --fix",
+        "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
     },
     "dependencies": {
         "hono": "^3.5.4"
     },
     "devDependencies": {
-        "bun-types": "^0.6.2"
+        "bun-types": "^0.6.2",
+        "eslint": "^8.48.0",
+        "typescript": "^5.2.2"
     }
 }
