@@ -1,0 +1,15 @@
+{
+    "name": "@tf/bun-hono",
+    "version": "1.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "bun run --hot src/index.ts"
+    },
+    "dependencies": {
+        "hono": "^3.5.4"
+    },
+    "devDependencies": {
+        "bun-types": "^0.6.2"
+    }
+}
