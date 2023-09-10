@@ -3,6 +3,8 @@ name: bun test
 on:
     workflow_dispatch:
     workflow_call:
+    push:
+        branches: ['**']
 
 jobs:
     build-tomekf:
