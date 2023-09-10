@@ -13,5 +13,5 @@ jobs:
               with:
                   bun-version: latest
             - run: cd packages/pocs/bun-hono
-            - run: bun install
-            - run: bun run build --workspace=@tf/tomekf
+            # - run: bun install
+            - run: bun test
