@@ -4,14 +4,17 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "bun run --hot ./src/index.ts",
+        "server": "bun run --hot ./src/server.ts",
+        "client": "bun run --hot ./src/client.ts",
         "some-test": "bun test",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "npm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
     },
     "dependencies": {
-        "hono": "^3.5.8"
+        "@hono/zod-validator": "^0.1.8",
+        "hono": "^3.5.8",
+        "zod": "^3.22.2"
     },
     "devDependencies": {
         "bun-types": "^1.0.1",

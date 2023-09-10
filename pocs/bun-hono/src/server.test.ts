@@ -1,11 +1,11 @@
 // eslint-disable-next-line import/no-unresolved
 import { describe, expect, test } from 'bun:test';
 
-import app from '.';
+import app from './server';
 
 describe('My first test', () => {
     test('Should return 200 Response', async () => {
-        const req = new Request('http://localhost/');
+        const req = new Request('http://[::1]/');
         const res = await app.fetch(req);
 
         expect(res.status).toBe(200);
