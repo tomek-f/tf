@@ -4,9 +4,10 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "server": "bun run --hot ./src/server.ts",
-        "client": "bun run --hot ./src/client.ts",
-        "some-test": "bun test",
+        "bun-server": "bun run --hot ./src/server.ts",
+        "bun-client": "bun run --hot ./src/client.ts",
+        "bun-test": "bun test",
+        "bun-test-watch": "bun test --watch",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "npm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
