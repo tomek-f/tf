@@ -15,7 +15,7 @@ jobs:
               with:
                   bun-version: latest
             - run: |
-                    cd ./pocs/bun-hono
-                    bun install
+                    cd ./pocs/bun-hono &&
+                    bun install &&
                     bun test
             - run: bun test
