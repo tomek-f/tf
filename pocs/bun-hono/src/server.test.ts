@@ -5,7 +5,7 @@ import app from './server';
 
 describe('My first test', () => {
     test('Should return 200 Response', async () => {
-        // const req = new Request('http://[::1]'); // this return `Static file: ./src/index.html is not found` in console, test works
+        // const req = new Request('http://[::1]'); // this returns `Static file: ./src/index.html is not found` to the console, but the test passes 🤷
         const req = new Request('http://[::1]/static/demo');
         const res = await app.fetch(req);
 
