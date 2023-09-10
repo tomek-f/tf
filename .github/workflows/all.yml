@@ -7,17 +7,13 @@ on:
 
 jobs:
     build-next-playground:
-        name: 👷🏼‍♂️
         uses: ./.github/workflows/build-next-playground.yml
         secrets: inherit
     build-react-playground:
-        name: 👷🏼‍♂️
         uses: ./.github/workflows/build-react-playground.yml
     build-tomekf:
-        name: 👷🏼‍♂️
         uses: ./.github/workflows/build-tomekf.yml
     build-pocs:
-        name: 👷🏼‍♂️
         uses: ./.github/workflows/build-pocs.yml
     vitest:
         runs-on: ubuntu-latest
