@@ -1,0 +1,17 @@
+name: bun test
+
+on:
+    workflow_dispatch:
+    workflow_call:
+
+jobs:
+    build-tomekf:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: oven-sh/setup-bun@v1
+              with:
+                  bun-version: latest
+            - run: cd packages/pocs/bun-hono
+            - run: bun install
+            - run: bun run build --workspace=@tf/tomekf
