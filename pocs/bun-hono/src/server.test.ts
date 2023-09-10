@@ -5,7 +5,8 @@ import app from './server';
 
 describe('My first test', () => {
     test('Should return 200 Response', async () => {
-        const req = new Request('http://[::1]/');
+        // const req = new Request('http://[::1]'); // this return `Static file: ./src/index.html is not found` in console, test works
+        const req = new Request('http://[::1]/static/demo');
         const res = await app.fetch(req);
 
         expect(res.status).toBe(200);

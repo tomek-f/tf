@@ -21,7 +21,7 @@ jobs:
               run: |
                   prodRun=""
                   if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
-                    prodRun="--prod"
+                  prodRun="--prod"
                   fi
 
                   vercel --token ${VERCEL_TOKEN} $prodRun

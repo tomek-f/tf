@@ -1,0 +1,21 @@
+name: bun test
+
+on:
+    workflow_dispatch:
+    workflow_call:
+    push:
+        branches: ['**']
+
+jobs:
+    bun-test:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./pocs/bun-hono
+        steps:
+            - uses: actions/checkout@v3
+            - uses: oven-sh/setup-bun@v1
+              with:
+                  bun-version: latest
+            - run: bun install
+            - run: bun run ./src/server.ts & bun run wait-on http://localhost:2137 && bun test
