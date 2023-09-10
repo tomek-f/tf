@@ -14,6 +14,6 @@ jobs:
             - uses: oven-sh/setup-bun@v1
               with:
                   bun-version: latest
-            - run: cd ./pocs/bun-hono
+            - run: cd ./pocs/bun-hono && bun test
             # - run: bun install
             - run: bun test

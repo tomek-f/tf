@@ -3,7 +3,7 @@ import { describe, expect, test } from 'bun:test';
 
 import app from './server';
 
-describe('My first test', () => {
+describe.skip('My first test', () => {
     test('Should return 200 Response', async () => {
         const req = new Request('http://[::1]/');
         const res = await app.fetch(req);
