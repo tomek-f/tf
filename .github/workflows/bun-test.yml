@@ -9,12 +9,14 @@ on:
 jobs:
     bun-test:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: ./pocs/bun-hono
         steps:
             - uses: actions/checkout@v3
             - uses: oven-sh/setup-bun@v1
               with:
                   bun-version: latest
-            - run: |
-                  cd ./pocs/bun-hono &&
-                  bun install &&
-                  bun test
+            - run: bun install
+            - run: bun run ./src/server.ts
+            - run: wait-on http://localhost:2137 && bun test
