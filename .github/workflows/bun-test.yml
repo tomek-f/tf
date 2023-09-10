@@ -18,5 +18,4 @@ jobs:
               with:
                   bun-version: latest
             - run: bun install
-            - run: bun run ./src/server.ts
-            - run: wait-on http://localhost:2137 && bun test
+            - run: bun run ./src/server.ts & bun run wait-on http://localhost:2137 && bun test
