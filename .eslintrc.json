@@ -11,13 +11,10 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "react-hooks",
         "import",
         "@typescript-eslint",
         "workspaces",
         "unicorn",
-        "react-refresh",
         "prettier"
     ],
     "settings": {
@@ -40,7 +37,6 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
         "plugin:import/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
@@ -130,21 +126,6 @@
         "import/no-extraneous-dependencies": [
             "error",
             { "devDependencies": true }
-        ],
-
-        "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/jsx-sort-props": "error",
-        "react/jsx-fragments": "error",
-        "react/jsx-props-no-spreading": "off",
-        "react/button-has-type": ["error", { "reset": true }],
-        "react/no-danger": "error",
-
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": [
-            "error",
-            { "additionalHooks": "useLegacyEffect" }
         ],
 
         /* disable normal and reenable in TS */
