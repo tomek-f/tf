@@ -11,11 +11,11 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
-              with:
-                  node-version: 18
-                  check-latest: true
-                  cache: 'npm'
-            - run: npm ci
+            #   with:
+            #       node-version: 18
+            #       check-latest: true
+            #       cache: 'npm'
+            # - run: npm ci
             - run: npm install --global vercel@latest # ? https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
             - name: deploy @tf/next-playground to Vercel
               run: |

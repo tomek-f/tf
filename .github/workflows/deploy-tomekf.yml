@@ -2,30 +2,35 @@ name: deploy @tf/tomekf
 
 on:
     workflow_dispatch:
-    workflow_call:
 
 jobs:
-    deploy-tomekf:
+    build-tomekf:
+        uses: ./.github/workflows/build-tomekf.yml
+    build-pocs:
+        uses: ./.github/workflows/build-pocs.yml
+    vitest:
         runs-on: ubuntu-latest
-        environment: production
         steps:
             - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-            #   with:
-            #       node-version: 18
-            #       check-latest: true
-            #       cache: 'npm'
-            # - run: npm ci
-            - run: npm install --global vercel@latest # ? https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
-            - name: deploy @tf/tomekf to Vercel
-              run: |
-                  prodRun=""
-                  if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
-                  prodRun="--prod"
-                  fi
-
-                  vercel --token ${VERCEL_TOKEN} $prodRun
-              env:
-                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_TF_1 }}
+            - uses: ./.github/actions/vitest
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/lint
+    prettier:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/prettier
+    types:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/types
+    bun-test:
+        uses: ./.github/workflows/bun-test.yml
+    deploy-tomekf:
+        uses: ./.github/workflows/unsecure-deploy-tomekf.yml
+        secrets: inherit
+        needs: [vitest, lint, prettier, types, build-tomekf, bun-test]
