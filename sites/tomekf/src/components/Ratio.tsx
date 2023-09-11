@@ -1,10 +1,10 @@
-import { createSignal, type JSX } from 'solid-js';
+import { createSignal /* , type Component */, type JSX } from 'solid-js';
 
 import Input from './Input';
 
 const ratio = (a: number, b: number, c: number): number => (b * c) / a;
 
-const Ratio = () => {
+const Ratio /* : Component */ = () => {
     const [a, setA] = createSignal<number | string>(10);
     const [b, setB] = createSignal<number | string>(20);
     const [c, setC] = createSignal<number | string>(5);

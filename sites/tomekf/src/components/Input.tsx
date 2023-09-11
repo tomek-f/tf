@@ -1,10 +1,10 @@
 import { clsx } from 'clsx';
-import type { JSX } from 'solid-js';
+import type { Component, JSX } from 'solid-js';
 
-const Input = ({
+const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = ({
     readonly,
     ...restProps
-}: JSX.InputHTMLAttributes<HTMLInputElement>) => {
+}) => {
     return (
         <input
             class={clsx(
