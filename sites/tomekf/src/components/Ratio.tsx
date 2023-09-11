@@ -1,17 +1,19 @@
-import { useState } from 'react';
+import { createSignal /* , type Component */, type JSX } from 'solid-js';
 
 import Input from './Input';
 
 const ratio = (a: number, b: number, c: number): number => (b * c) / a;
 
-const Ratio = () => {
-    const [a, setA] = useState<number | string>(10);
-    const [b, setB] = useState<number | string>(20);
-    const [c, setC] = useState<number | string>(5);
-    const [x, setX] = useState<number | string>(10);
+const Ratio /* : Component */ = () => {
+    const [a, setA] = createSignal<number | string>(10);
+    const [b, setB] = createSignal<number | string>(20);
+    const [c, setC] = createSignal<number | string>(5);
+    const [x, setX] = createSignal<number | string>(10);
 
-    const onInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        const target = event.target as HTMLInputElement;
+    const onInput: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event> = (
+        event,
+    ): void => {
+        const target = event.target;
         const value = parseFloat(target.value) || target.value; // sometimes NaN or string
 
         switch (target.name) {
@@ -32,9 +34,9 @@ const Ratio = () => {
         }
 
         const temp = {
-            a,
-            b,
-            c,
+            a: a(),
+            b: b(),
+            c: c(),
             [target.name]: value,
         };
         const newX = ratio(
@@ -47,41 +49,41 @@ const Ratio = () => {
     };
 
     return (
-        <div className="animate-float md:animate-float-long motion-reduce:animate-none">
+        <div class="animate-float md:animate-float-long motion-reduce:animate-none">
             <div>a - b</div>
             <div>c - x</div>
             <div>x = (b * c) / a</div>
-            <div className="grid gap-2 grid-cols-2 max-w-lg mx-auto mt-4">
+            <div class="grid gap-2 grid-cols-2 max-w-lg mx-auto mt-4">
                 <Input
-                    className="text-black shadow appearance-none border rounded p-2"
+                    class="text-black shadow appearance-none border rounded p-2"
                     name="a"
                     onChange={onInput}
                     placeholder="a"
                     type="number"
-                    value={a}
+                    value={a()}
                 />
                 <Input
-                    className="text-black shadow appearance-none border rounded p-2"
+                    class="text-black shadow appearance-none border rounded p-2"
                     name="b"
                     onChange={onInput}
                     placeholder="b"
                     type="number"
-                    value={b}
+                    value={b()}
                 />
                 <Input
-                    className="text-black shadow appearance-none border rounded p-2"
+                    class="text-black shadow appearance-none border rounded p-2"
                     name="c"
                     onChange={onInput}
                     placeholder="c"
                     type="number"
-                    value={c}
+                    value={c()}
                 />
                 <Input
-                    className="text-black shadow appearance-none border rounded p-2 bg-neutral-400"
+                    class="text-black shadow appearance-none border rounded p-2 bg-neutral-400"
                     name="x"
                     readOnly
                     type="text"
-                    value={x}
+                    value={x()}
                 />
             </div>
         </div>

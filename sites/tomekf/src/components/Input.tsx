@@ -1,21 +1,19 @@
 import { clsx } from 'clsx';
+import type { Component, JSX } from 'solid-js';
 
-const Input = ({
-    readOnly,
+const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = ({
+    readonly,
     ...restProps
-}: React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
->) => {
+}) => {
     return (
         <input
-            className={clsx(
+            class={clsx(
                 'text-black shadow appearance-none border rounded p-2',
                 {
-                    'bg-neutral-400': readOnly,
+                    'bg-neutral-400': readonly,
                 },
             )}
-            readOnly={readOnly}
+            readonly={readonly || false}
             type="text"
             {...restProps}
         />

@@ -1,6 +1,6 @@
 import mdx from '@astrojs/mdx';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import solidJs from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import { defineConfig } from 'astro/config';
 
@@ -16,12 +16,12 @@ export default defineConfig({
         mdx(),
         // sitemap(),
         sitemap({ filter: (page) => !page.includes('/blog') }),
-        react(),
+        solidJs(),
     ],
-    vite: {
-        ssr: {
-            // external: ['@11ty/eleventy-img'],
-            noExternal: ['@radix-ui/*'],
-        },
-    },
+    // vite: {
+    //     ssr: {
+    //         // external: ['@11ty/eleventy-img'],
+    //         // noExternal: ['@radix-ui/*'],
+    //     },
+    // },
 });
