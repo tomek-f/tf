@@ -1,9 +1,11 @@
-const linkDefaultCss = 'text-lime-500';
+export const primaryCss = 'text-sky-500';
 
-export const linkActiveCss = 'text-purple-500';
+export const linkDefaultCss = primaryCss;
 
-const linkHoverCss = 'hover:text-lime-200';
+export const linkActiveCss = 'text-lime-500 cursor-default';
 
-const linkTransitionCss = 'transition-colors duration-300';
+export const linkHoverCss = 'hover:text-sky-300 hover:underline';
+
+export const linkTransitionCss = 'transition-colors duration-300';
 
 export const linkCss = `text-base ${linkDefaultCss} ${linkTransitionCss} ${linkHoverCss}`;
