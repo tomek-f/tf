@@ -1,4 +1,4 @@
-name: deploy @tf/tomekf
+name: unsecure deploy @tf/tomekf (without other steps)
 
 on:
     workflow_dispatch:
