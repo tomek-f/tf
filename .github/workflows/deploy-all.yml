@@ -1,8 +1,6 @@
-name: all actions without deploys
+name: deploy all
 
 on:
-    push:
-        branches: ['master']
     workflow_dispatch:
 
 jobs:
