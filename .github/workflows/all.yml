@@ -40,6 +40,7 @@ jobs:
         uses: ./.github/workflows/bun-test.yml
 
     deploy-tomekf:
+        if: github.ref == 'refs/heads/master'
         uses: ./.github/workflows/deploy-tomekf.yml
         secrets: inherit
         needs: [vitest, lint, prettier, types, build-tomekf]
