@@ -38,3 +38,8 @@ jobs:
             - uses: ./.github/actions/types
     bun-test:
         uses: ./.github/workflows/bun-test.yml
+
+    deploy-tomekf:
+        uses: ./.github/workflows/deploy-tomekf.yml
+        secrets: inherit
+        needs: [vitest, lint, prettier, types, build-tomekf]
