@@ -1,6 +1,8 @@
 name: deploy @tf/react-playground
 
 on:
+    push:
+        branches: ['master']
     workflow_dispatch:
     workflow_call:
 
@@ -11,11 +13,6 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
-            #   with:
-            #       node-version: 18
-            #       check-latest: true
-            #       cache: 'npm'
-            # - run: npm ci
             - run: npm install --global vercel@latest # ? https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
             - name: deploy @tf/react-playground to Vercel
               run: |

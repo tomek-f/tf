@@ -1,13 +1,14 @@
-name: all actions without deploys
+name: all actions
 
 on:
     push:
-        branches-ignore: ['master']
+        branches: ['**']
     workflow_dispatch:
 
 jobs:
     build-next-playground:
-        uses: ./.github/workflows/build-next-playground.yml # or uses: tomek-f/tf/.github/workflows/build-next-playground.yml
+        # uses: tomek-f/tf/.github/workflows/build-next-playground.yml
+        uses: ./.github/workflows/build-next-playground.yml
         secrets: inherit
     build-react-playground:
         uses: ./.github/workflows/build-react-playground.yml
