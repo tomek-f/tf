@@ -1,8 +1,8 @@
 import {
-    createMemo,
-    createSignal,
     // type JSX,
-    // createEffect
+    // createEffect,
+    // createMemo, // for expensive calculations
+    createSignal,
 } from 'solid-js';
 
 import Input from './Input';
@@ -14,12 +14,11 @@ const Ratio = () => {
     const [a, setA] = createSignal<number | string>(10);
     const [b, setB] = createSignal<number | string>(20);
     const [c, setC] = createSignal<number | string>(5);
-    const x = createMemo(() =>
-        ratio(a() as number, b() as number, c() as number),
-    );
+    const x = () => ratio(a() as number, b() as number, c() as number);
 
     // createEffect(() => console.log('x is', x()));
 
+    // // not needed as solidjs does not need this kind of optimization
     // const onInput: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event> = (
     //     event,
     // ): void => {
