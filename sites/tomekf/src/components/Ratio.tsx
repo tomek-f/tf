@@ -1,92 +1,69 @@
-import { createSignal /* , type Component */, type JSX } from 'solid-js';
+import {
+    /* createEffect, */ createMemo,
+    createSignal,
+    type JSX,
+} from 'solid-js';
 
 import Input from './Input';
 
-const ratio = (a: number, b: number, c: number): number => (b * c) / a;
+const ratio = (a = 0, b = 0, c = 0): number => (b * c) / a;
 
 const Ratio /* : Component */ = () => {
     const [a, setA] = createSignal<number | string>(10);
     const [b, setB] = createSignal<number | string>(20);
     const [c, setC] = createSignal<number | string>(5);
-    const [x, setX] = createSignal<number | string>(10);
+    const x = createMemo(() =>
+        ratio(a() as number, b() as number, c() as number),
+    );
 
+    // createEffect(() => console.log('x is', x()));
+
+    // TODO ? support for exponential numbers, eg. 2e3, 3e+8
     const onInput: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event> = (
         event,
     ): void => {
-        const target = event.target;
-        const value = parseFloat(target.value) || target.value; // sometimes NaN or string
-
-        switch (target.name) {
+        switch (event.target.name) {
             case 'a':
-                setA(value);
+                setA(event.target.value);
                 break;
             case 'b':
-                setB(value);
+                setB(event.target.value);
                 break;
             default:
-                setC(value);
+                setC(event.target.value);
         }
-
-        if (typeof value === 'string') {
-            setX('🤯');
-
-            return;
-        }
-
-        const temp = {
-            a: a(),
-            b: b(),
-            c: c(),
-            [target.name]: value,
-        };
-        const newX = ratio(
-            temp.a as number,
-            temp.b as number,
-            temp.c as number,
-        );
-
-        setX(!Number.isNaN(newX) && Number.isFinite(newX) ? newX : '🤯');
     };
 
     return (
-        <div class="animate-float md:animate-float-long motion-reduce:animate-none">
+        <>
             <div>a - b</div>
             <div>c - x</div>
             <div>x = (b * c) / a</div>
             <div class="grid gap-2 grid-cols-2 max-w-lg mx-auto mt-4">
                 <Input
-                    class="text-black shadow appearance-none border rounded p-2"
                     name="a"
-                    onChange={onInput}
+                    onInput={onInput}
                     placeholder="a"
                     type="number"
                     value={a()}
                 />
                 <Input
-                    class="text-black shadow appearance-none border rounded p-2"
                     name="b"
-                    onChange={onInput}
+                    onInput={onInput}
                     placeholder="b"
                     type="number"
                     value={b()}
                 />
                 <Input
-                    class="text-black shadow appearance-none border rounded p-2"
                     name="c"
-                    onChange={onInput}
+                    onInput={onInput}
                     placeholder="c"
                     type="number"
                     value={c()}
                 />
-                <Input
-                    class="text-black shadow appearance-none border rounded p-2 bg-neutral-400"
-                    name="x"
-                    readOnly
-                    type="text"
-                    value={x()}
-                />
+                <Input readonly value={x()} />
             </div>
-        </div>
+        </>
     );
 };
 
