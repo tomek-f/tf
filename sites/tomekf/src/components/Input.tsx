@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
 import type { Component, JSX } from 'solid-js';
 
+// Component<Props> or just (props: Props)
 const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = (props) => {
     return (
         <input
