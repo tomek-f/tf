@@ -7,11 +7,10 @@ on:
 jobs:
     deploy-react-playground:
         runs-on: ubuntu-latest
-        environment: production
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
-            - run: npm install --global vercel@latest # ? https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
+            - run: npm install --global vercel@latest
             - name: deploy @tf/react-playground to Vercel
               run: |
                   prodRun=""

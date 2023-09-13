@@ -39,8 +39,22 @@ jobs:
     bun-test:
         uses: ./.github/workflows/bun-test.yml
 
-    deploy-tomekf:
+    deploy-next-playground:
+        uses: ./.github/workflows/deploy-next-playground.yml
+        secrets: inherit
+        needs: [vitest, lint, prettier, types, build-next-playground]
+    deploy-react-playground:
+        uses: ./.github/workflows/deploy-react-playground.yml
+        secrets: inherit
+        needs: [vitest, lint, prettier, types, build-react-playground]
+    preview-deploy-tomekf:
+        if: github.ref != 'refs/heads/master'
+        uses: ./.github/workflows/preview-deploy-tomekf.yml
+        secrets: inherit
+        needs: [vitest, lint, prettier, types, build-tomekf]
+
+    production-deploy-tomekf:
         if: github.ref == 'refs/heads/master'
-        uses: ./.github/workflows/deploy-tomekf.yml
+        uses: ./.github/workflows/production-deploy-tomekf.yml
         secrets: inherit
         needs: [vitest, lint, prettier, types, build-tomekf]
