@@ -21,7 +21,7 @@
         "@types/better-sqlite3": "^7.6.4",
         "@types/node": "^20.6.0",
         "eslint": "^8.49.0",
-        "tsx": "^3.12.8",
+        "tsx": "^3.12.10",
         "typescript": "^5.2.2"
     }
 }
