@@ -5,21 +5,14 @@ on:
     workflow_call:
 
 jobs:
-    deploy-tomekf:
+    preview-deploy-tomekf:
         runs-on: ubuntu-latest
-        environment: production
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
-            - run: npm install --global vercel@latest # ? https://vercel.com/guides/how-can-i-use-github-actions-with-vercel
+            - run: npm install --global vercel@latest
             - name: deploy @tf/tomekf to Vercel
-              run: |
-                  prodRun=""
-                  if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
-                  prodRun="--prod"
-                  fi
-
-                  vercel --token ${VERCEL_TOKEN} $prodRun
+              run: vercel --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
