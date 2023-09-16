@@ -15,7 +15,10 @@ export default defineConfig({
         tailwind({ applyBaseStyles: false }),
         mdx(),
         // sitemap(),
-        sitemap({ filter: (page) => !page.includes('/blog') }),
+        sitemap({
+            filter: (page) =>
+                !page.includes('/blog') && !page.includes('/from-social'),
+        }),
         solidJs(),
     ],
     // vite: {
