@@ -14,11 +14,11 @@
     },
     "dependencies": {
         "@hono/zod-validator": "^0.1.8",
-        "hono": "^3.6.0",
+        "hono": "^3.6.1",
         "zod": "^3.22.2"
     },
     "devDependencies": {
-        "bun-types": "^1.0.1",
+        "bun-types": "^1.0.2",
         "eslint": "^8.49.0",
         "typescript": "^5.2.2",
         "wait-on": "^7.0.1"

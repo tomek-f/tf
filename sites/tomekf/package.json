@@ -29,11 +29,11 @@
     },
     "dependencies": {
         "@astrojs/check": "^0.2.0",
-        "@astrojs/mdx": "^1.0.3",
+        "@astrojs/mdx": "^1.1.0",
         "@astrojs/sitemap": "^3.0.0",
         "@astrojs/solid-js": "^3.0.1",
         "@astrojs/tailwind": "^5.0.0",
-        "astro": "^3.0.13",
+        "astro": "^3.1.0",
         "clsx": "^2.0.0",
         "lucide-solid": "^0.277.0",
         "runes": "^0.4.3",
