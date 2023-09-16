@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO ? Add a based on linkCss */
 @layer components {
     .custom-html h1 {
         @apply text-2xl my-8 text-lime-200;
