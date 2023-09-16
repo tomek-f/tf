@@ -17,7 +17,7 @@ export default defineConfig({
         // sitemap(),
         sitemap({
             filter: (page) =>
-                !page.includes('/blog') && !page.includes('/from-social'),
+                !page.includes('/blog') && !page.includes('/media'),
         }),
         solidJs(),
     ],
