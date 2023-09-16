@@ -10,6 +10,7 @@ interface Frontmatter {
     author: string;
     date: string;
 }
+
 // const posts = await Astro.glob<Frontmatter>('./*.md');
 const posts: MarkdownInstance<Frontmatter>[] = await Astro.glob('./*.(md|mdx)'); // had to use other typing for (md|mdx)
 const postsSorted = [...posts].sort(
@@ -17,6 +18,8 @@ const postsSorted = [...posts].sort(
         new Date(a.frontmatter.date).getTime() -
         new Date(b.frontmatter.date).getTime(),
 );
+// Astro treats any .md (or alternative supported extension) or .mdx file inside of the /src/pages/ directory as a page.
+// Placing a file in this directory, or any sub-directory, will automatically build a page route using the pathname of the file.
 ---
 
 <CommonLayout title="Blog">
