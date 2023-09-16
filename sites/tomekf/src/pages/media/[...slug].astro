@@ -37,12 +37,12 @@ const { post, nextSlug, nextText, prevSlug, prevText } = Astro.props;
         <Block class="custom-html">
             <h2>{post.hash}</h2>
             <p>{post.text}</p>
-            <p>{post.hash}.{post.type}</p>
             {
                 post.type === 'jpg' && (
                     <img
                         src={
-                            import.meta.env.DEV || import.meta.env.PREVIEW
+                            import.meta.env.DEV ||
+                            import.meta.env.IS_NON_PRODUCTION
                                 ? `https://develop.images.tomekf.pl/media/${post.hash}.${post.type}`
                                 : `https://images.tomekf.pl/media/${post.hash}.${post.type}`
                         }
