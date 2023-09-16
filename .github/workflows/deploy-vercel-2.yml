@@ -5,13 +5,13 @@ on:
     workflow_call:
 
 jobs:
-    deploy-react-playground:
+    deploy-vercel-2:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: deploy @tf/react-playground to Vercel
+            - name: deploy project 2 to Vercel
               run: |
                   prodRun=""
                   if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
@@ -22,4 +22,4 @@ jobs:
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_TF_2 }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_2 }}
