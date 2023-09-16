@@ -5,13 +5,13 @@ on:
     workflow_call:
 
 jobs:
-    deploy-next-playground:
+    deploy-vercel-3:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: deploy @tf/next-playground to Vercel
+            - name: deploy project 3 to Vercel
               run: |
                   prodRun=""
                   if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
