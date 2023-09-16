@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content';
 
 import Block from '../../components/Block.astro';
 import CommonLayout from '../../layouts/CommonLayout.astro';
-import { linkCss } from '../../styles/common';
 
 // const { pathname } = Astro.url; // or just use /blog/
 const allBlogPosts = await getCollection('blog');
@@ -20,7 +19,7 @@ const postsSorted = allBlogPosts.sort(
             {
                 postsSorted.map((post) => (
                     <li>
-                        <a class={linkCss} href={`/blog/${post.slug}`}>
+                        <a href={`/blog/${post.slug}`}>
                             {post.data.title} ({post.data.date})
                         </a>
                     </li>

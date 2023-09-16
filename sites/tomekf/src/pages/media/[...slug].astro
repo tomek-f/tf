@@ -1,0 +1,87 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+
+import Block from '../../components/Block.astro';
+import CommonLayout from '../../layouts/CommonLayout.astro';
+import posts from '../../media/posts.json';
+import { linkCss } from '../../styles/common';
+import dateFromISOString from '../../utils/dateFromISOString';
+import truncateSpecial from '../../utils/truncateSpecial';
+
+export const getStaticPaths = (async () => {
+    return posts.map((post, idx) => {
+        const nextPost = posts[idx + 1];
+        const prevPost = posts[idx - 1];
+
+        return {
+            params: { slug: post.hash },
+            props: {
+                post,
+                prevSlug: prevPost?.hash,
+                prevText: prevPost && truncateSpecial(prevPost?.text, 29),
+                nextSlug: nextPost?.hash,
+                nextText: nextPost && truncateSpecial(nextPost?.text, 29),
+            },
+        };
+    });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post, nextSlug, nextText, prevSlug, prevText } = Astro.props;
+---
+
+<CommonLayout title={`${post.hash} | Media`}>
+    <Block>
+        <a class={linkCss} href="/media">Back to media</a>
+        <Block class="custom-html">
+            <h2>{post.hash}</h2>
+            <p>{post.text}</p>
+            <p>{post.hash}.{post.type}</p>
+            {
+                post.type === 'jpg' && (
+                    <img
+                        src={`/data/${post.hash}.${post.type}`}
+                        alt={post.hash}
+                    />
+                )
+            }
+            {
+                post.type === 'mp4' && (
+                    <video controls>
+                        <source
+                            src={`/data/${post.hash}.${post.type}`}
+                            type="video/mp4"
+                        />
+                    </video>
+                )
+            }
+            <p>
+                <time datetime={post.date}>{dateFromISOString(post.date)}</time>
+            </p>
+        </Block>
+    </Block>
+    <Block>
+        {
+            prevSlug && (
+                <>
+                    <>prev: </>
+                    <a href={`/media/${prevSlug}`} class={linkCss}>
+                        {prevText}
+                    </a>
+                </>
+            )
+        }
+        {prevSlug && nextSlug && <> | </>}
+        {
+            nextSlug && (
+                <>
+                    <>next: </>
+                    <a href={`/media/${nextSlug}`} class={linkCss}>
+                        {nextText}
+                    </a>
+                </>
+            )
+        }
+    </Block>
+</CommonLayout>

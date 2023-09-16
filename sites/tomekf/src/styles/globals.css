@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO ? Add a based on linkCss */
 @layer components {
     .custom-html h1 {
         @apply text-2xl my-8 text-lime-200;
@@ -35,5 +36,9 @@
     }
     .custom-html :is(ol, ul, p, h1, h2, h3, h4, h5, h6):last-child {
         @apply mb-0;
+    }
+    /* sync with linkCss */
+    .custom-html a {
+        @apply text-base text-sky-500 transition-colors duration-300 hover:text-sky-300 hover:underline;
     }
 }

@@ -1,7 +1,6 @@
 ---
 import Block from '../../components/Block.astro';
 import CommonLayout from '../../layouts/CommonLayout.astro';
-import { linkCss } from '../../styles/common';
 
 // use this only to generate a list of pages, as it fucks up the starfield js, loads it to early on nav
 // interface CustomDataFile {
@@ -18,7 +17,7 @@ import { linkCss } from '../../styles/common';
       {
         urls.map((url) => (
           <li>
-            <a class={linkCss} href={url}>
+            <a href={url}>
               {url.split('/').pop()}
             </a>
           </li>
@@ -28,28 +27,28 @@ import { linkCss } from '../../styles/common';
         <p>Test</p>
         <ul>
             <li>
-                <a class={linkCss} href="/test/animation">animation</a>
+                <a href="/test/animation">animation</a>
             </li>
             <li>
-                <a class={linkCss} href="/test/img">img</a>
+                <a href="/test/img">img</a>
             </li>
             <li>
-                <a class={linkCss} href="/test/misc">misc</a>
+                <a href="/test/misc">misc</a>
             </li>
             <li>
-                <a class={linkCss} href="/test/pattern">pattern</a>
+                <a href="/test/pattern">pattern</a>
             </li>
             <li>
-                <a class={linkCss} href="/test/pattern2">pattern2</a>
+                <a href="/test/pattern2">pattern2</a>
             </li>
             <li>
-                <a class={linkCss} href="/test/ratio">ratio</a>
+                <a href="/test/ratio">ratio</a>
             </li>
             <li>
-                <a class={linkCss} href="/test/starfield">starfield</a>
+                <a href="/test/starfield">starfield</a>
             </li>
             <li>
-                <a class={linkCss} href="/test/site-colors">site colors</a>
+                <a href="/test/site-colors">site colors</a>
             </li>
         </ul>
     </Block>
