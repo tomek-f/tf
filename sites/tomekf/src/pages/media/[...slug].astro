@@ -33,7 +33,7 @@ const { post, nextSlug, nextText, prevSlug, prevText } = Astro.props;
 
 <CommonLayout title={`${post.hash} | Media`}>
     <Block>
-        {import.meta.env.POKEAPI}
+        {import.meta.env.PREVIEW}
         <a class={linkCss} href="/media">Back to media</a>
         <Block class="custom-html">
             <h2>{post.hash}</h2>
