@@ -33,6 +33,7 @@ const { post, nextSlug, nextText, prevSlug, prevText } = Astro.props;
 
 <CommonLayout title={`${post.hash} | Media`}>
     <Block>
+        {import.meta.env.POKEAPI}
         <a class={linkCss} href="/media">Back to media</a>
         <Block class="custom-html">
             <h2>{post.hash}</h2>
@@ -41,7 +42,11 @@ const { post, nextSlug, nextText, prevSlug, prevText } = Astro.props;
             {
                 post.type === 'jpg' && (
                     <img
-                        src={`/data/${post.hash}.${post.type}`}
+                        src={
+                            import.meta.env.DEV || import.meta.env.PREVIEW
+                                ? `https://develop.images.tomekf.pl/media/${post.hash}.${post.type}`
+                                : `https://images.tomekf.pl/media/${post.hash}.${post.type}`
+                        }
                         alt={post.hash}
                     />
                 )
