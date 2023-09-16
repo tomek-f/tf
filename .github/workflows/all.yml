@@ -39,10 +39,6 @@ jobs:
     bun-test:
         uses: ./.github/workflows/bun-test.yml
 
-    deploy-vercel-2:
-        uses: ./.github/workflows/deploy-vercel-2.yml
-        secrets: inherit
-        needs: [vitest, lint, prettier, types]
     deploy-vercel-3:
         uses: ./.github/workflows/deploy-vercel-3.yml
         secrets: inherit
