@@ -1,11 +1,11 @@
 ---
-import HeaderWithContent from '../components/HeaderWithContent.astro';
+import Header from '../components/Header.astro';
 import BaseLayout from './BaseLayout.astro';
 ---
 
 <BaseLayout title={Astro.props.title}>
     <div class="max-w-7xl mx-auto">
-        <HeaderWithContent />
+        <Header />
         <slot />
         <slot name="footer" />
     </div>

@@ -45,6 +45,18 @@
 
 -   `npm install -g npm-check-updates` && `ncu -u && ncu -u -ws` && `npm i`
 
+## astro
+
+same result
+
+```ts
+import type { HTMLAttributes } from 'astro/types';
+
+type Props1 = HTMLAttributes<'svg'>;
+
+type Props2 = astroHTML.JSX.SVGAttributes;
+```
+
 ## next
 
 -   app folder
