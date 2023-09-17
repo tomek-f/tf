@@ -8,8 +8,6 @@ import {
     type UserFormWithAddress,
 } from '../../models/User';
 
-// TODO ? optimize tailwind classes and components
-
 export default function Form() {
     const {
         register,

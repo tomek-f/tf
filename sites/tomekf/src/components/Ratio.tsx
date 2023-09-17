@@ -9,7 +9,6 @@ import Input from './Input';
 
 const ratio = (a = 0, b = 0, c = 0): number => (b * c) / a;
 
-// TODO ? support for exponential numbers, eg. 2e3, 3e+8
 const Ratio = () => {
     const [a, setA] = createSignal<number | string>(10);
     const [b, setB] = createSignal<number | string>(20);
