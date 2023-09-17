@@ -1,4 +1,4 @@
-// todo use it?
+// TODO ? use it or remove it
 const processLocaleData = (
     languages: string[],
     data: { default: Record<string, string> }[],
