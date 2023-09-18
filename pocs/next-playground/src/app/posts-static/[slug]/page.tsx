@@ -1,4 +1,4 @@
-import { getPostData, getSortedPostsData } from '../../../lib/posts-md';
+import { getPostData, getSortedPostsData } from '../../../lib/posts-json';
 
 export async function generateStaticParams() {
     const posts = await getSortedPostsData();
