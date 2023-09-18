@@ -8,30 +8,14 @@ const Menu = () => {
             <NavLink href="/">
                 <HomeIcon className="h-4 w-4" strokeWidth="1" />
             </NavLink>
-            <NavLink href="/test-1" includes>
-                test-1
-            </NavLink>
-            <NavLink href="/test-2" includes>
-                test-2
-            </NavLink>
-            <NavLink href="/posts" includes>
-                posts
-            </NavLink>
-            <NavLink href="/posts-static" includes>
-                posts static
-            </NavLink>
-            <NavLink href="/graphql-client" includes>
-                graphql-client
-            </NavLink>
-            <NavLink href="/graphql-server" includes>
-                graphql-server
-            </NavLink>
-            <NavLink href="/zod-form" includes>
-                zod-form
-            </NavLink>
-            <NavLink href="/zod-server" includes>
-                zod-server
-            </NavLink>
+            <NavLink href="/test-1">test-1</NavLink>
+            <NavLink href="/test-2">test-2</NavLink>
+            <NavLink href="/posts">posts</NavLink>
+            <NavLink href="/posts-static">posts static</NavLink>
+            <NavLink href="/graphql-client">graphql-client</NavLink>
+            <NavLink href="/graphql-server">graphql-server</NavLink>
+            <NavLink href="/zod-form">zod-form</NavLink>
+            <NavLink href="/zod-server">zod-server</NavLink>
         </div>
     );
 };
