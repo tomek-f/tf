@@ -1,10 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import matter, { type GrayMatterFile } from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
-
 interface PostData {
     date: Date;
     id: string;
@@ -12,32 +8,21 @@ interface PostData {
     content: string;
 }
 
-const postsDirectory = path.join(process.cwd(), 'src', 'posts-md');
+const postsDirectory = path.join(process.cwd(), 'src', 'posts-json');
 
 export async function getPostData(id: string) {
-    const postPath = path.join(postsDirectory, `${id}.md`);
+    const postPath = path.join(postsDirectory, `${id}.json`);
     const fileContents = fs.readFileSync(postPath, 'utf8');
-    const matterResult = matter(fileContents) as GrayMatterFile<string>;
-    const processedContent = await remark()
-        .use(html)
-        .process(matterResult.content);
-    const contentHtml = processedContent.toString();
-    const data = matterResult.data as { date: Date; title: string };
+    const data = JSON.parse(fileContents) as PostData;
 
-    // prepare post data
-    return {
-        id,
-        date: data.date,
-        title: data.title,
-        content: contentHtml,
-    } satisfies PostData;
+    return data;
 }
 
 export async function getSortedPostsData() {
     const fileNames = fs.readdirSync(postsDirectory);
     const allPostsData = await Promise.all(
         fileNames.map(async (fileName) => {
-            const id = fileName.replace(/\.md$/, '');
+            const id = fileName.replace(/\.json$/, '');
             const data = await getPostData(id);
 
             return data;

@@ -1,4 +1,4 @@
-import { getPostData } from '../../../lib/posts-md';
+import { getPostData } from '../../../lib/posts-json';
 
 const PostMD = async ({ params: { slug } }: { params: { slug: string } }) => {
     const postData = await getPostData(slug);

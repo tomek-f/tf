@@ -1,5 +1,5 @@
 import NavLink from '../../components/NavLink';
-import { getSortedPostsData } from '../../lib/posts-md';
+import { getSortedPostsData } from '../../lib/posts-json';
 
 const Posts = async () => {
     const allPostsData = await getSortedPostsData();
