@@ -29,6 +29,11 @@ export const getStaticPaths = (async () => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { post, nextSlug, nextText, prevSlug, prevText } = Astro.props;
+
+const mapUrl =
+    post.latitude &&
+    post.longitude &&
+    `https://maps.googleapis.com/maps/api/staticmap?center=${post.latitude},${post.longitude}&zoom=12&size=640x480&maptype=roadmap&markers=color:orange%7C${post.latitude},${post.longitude}&key=AIzaSyAob2wjpg-Qnl88iv6kYL9Sdi3WB2rlypQ`;
 ---
 
 <CommonLayout title={`${post.hash} | Media`}>
@@ -60,6 +65,7 @@ const { post, nextSlug, nextText, prevSlug, prevText } = Astro.props;
                     </video>
                 )
             }
+            {mapUrl && <img src={mapUrl} alt={`static map for ${post.hash}`} />}
             <p>
                 <time datetime={post.date}>{dateFromISOString(post.date)}</time>
             </p>
