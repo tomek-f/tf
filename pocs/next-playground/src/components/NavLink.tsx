@@ -8,12 +8,11 @@ interface Props {
     children: React.ReactNode;
     className?: string;
     href: string;
-    includes?: boolean;
 }
 
-const NavLink = ({ children, className, href, includes = false }: Props) => {
+const NavLink = ({ children, className, href }: Props) => {
     const pathname = usePathname();
-    const active = includes ? pathname?.includes(href) : pathname === href;
+    const active = pathname === href || pathname?.startsWith(`${href}/`);
 
     return (
         <RouterLink active={active} className={className} href={href}>
