@@ -30,10 +30,14 @@ const variables = {
 const controller = new AbortController();
 const { signal } = controller;
 
-// TODO change title and description
-
 const GraphQLClient = () => {
     let url: Nullable<string> = null;
+
+    // or make it this page a server-side component; the logic in an additional component with 'use client';
+    document.title = 'GraphQL client';
+    document
+        .querySelector('meta[name="description"]')
+        ?.setAttribute('content', 'GraphQL client description');
 
     url = 'https://www.learnwithjason.dev/graphql'; // proper
     // url = '/api/text'; // ERR_NET_NOT_OK (404)

@@ -6,6 +6,19 @@ export async function generateStaticParams() {
     return posts;
 }
 
+export async function generateMetadata({
+    params: { slug },
+}: {
+    params: { slug: string };
+}) {
+    const postData = await getPostData(slug);
+
+    return {
+        title: postData.title,
+        description: `${postData.title} description`,
+    };
+}
+
 const PostMD = async ({ params: { slug } }: { params: { slug: string } }) => {
     const postData = await getPostData(slug);
 

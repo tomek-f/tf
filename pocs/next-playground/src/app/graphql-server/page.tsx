@@ -68,8 +68,6 @@ async function getData() {
     return { data, error };
 }
 
-// TODO change title and description
-
 const GraphQLServer = async () => {
     const { data, error } = await getData();
 

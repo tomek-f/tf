@@ -43,8 +43,6 @@ async function getData() {
     return { data, error };
 }
 
-// TODO change title and description
-
 const ZodServer = async () => {
     const { data, error } = await getData();
 
