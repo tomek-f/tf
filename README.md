@@ -64,6 +64,7 @@ type Props2 = astroHTML.JSX.SVGAttributes;
 -   server actions
 -   https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
 -   https://nextjs.org/docs/app/building-your-application/deploying/static-exports
+-   title and description ://github.com/vercel/next.js/discussions/50872
 
 ## zod
 

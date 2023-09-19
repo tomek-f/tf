@@ -1,6 +1,11 @@
+import type { Metadata } from 'next';
+
 import Form from './Form';
 
-// TODO change title and description
+export const metadata: Metadata = {
+    title: 'Zod form',
+    description: 'Zod form description',
+};
 
 const Zod = () => {
     return <Form />;

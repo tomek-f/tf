@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
+
 import NavLink from '../../components/NavLink';
 import { getSortedPostsData } from '../../lib/posts-json';
+
+export const metadata: Metadata = {
+    title: 'Posts',
+    description: 'Posts description',
+};
 
 const Posts = async () => {
     const allPostsData = await getSortedPostsData();
