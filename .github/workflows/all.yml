@@ -36,8 +36,6 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/types
-    bun-test:
-        uses: ./.github/workflows/bun-test.yml
 
     deploy-vercel-3:
         uses: ./.github/workflows/deploy-vercel-3.yml

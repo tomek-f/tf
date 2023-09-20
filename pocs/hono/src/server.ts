@@ -1,25 +1,25 @@
+import { serve } from '@hono/node-server';
+import { serveStatic } from '@hono/node-server/serve-static';
 import { zValidator } from '@hono/zod-validator';
 import { Hono } from 'hono';
-import { serveStatic } from 'hono/bun';
-// import { compress } from 'hono/compress';
+import { compress } from 'hono/compress';
 import { prettyJSON } from 'hono/pretty-json';
 import { z } from 'zod';
 
 const app = new Hono();
 
 app.use('*', async (c, next) => {
-    const start = performance.now();
+    const start = Date.now();
 
     await next();
 
-    const end = performance.now();
+    const end = Date.now();
 
     c.res.headers.set('X-Response-Time-In-Miliseconds', `${end - start}`);
 });
 app.use('*', prettyJSON({ space: 4 }));
 
-// can't do this right now, on bun https://github.com/oven-sh/bun/issues/1723
-// app.use('*', compress());
+app.use('*', compress());
 
 const route = app.get(
     '/hello',
@@ -52,7 +52,7 @@ app.get(
 );
 app.get('*', serveStatic({ path: './src/static/fallback.txt' }));
 
-export default {
-    port: 2137,
+serve({
     fetch: app.fetch,
-};
+    port: 8787,
+});
