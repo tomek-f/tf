@@ -19,7 +19,7 @@
     },
     "devDependencies": {
         "@types/better-sqlite3": "^7.6.5",
-        "@types/node": "^20.6.2",
+        "@types/node": "^20.6.3",
         "eslint": "^8.49.0",
         "tsx": "^3.12.10",
         "typescript": "^5.2.2"
