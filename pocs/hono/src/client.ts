@@ -1,8 +1,9 @@
 import { hc } from 'hono/client';
 
-import app, { type AppType } from './server';
+// import { type AppType } from './server'; // this breaks tsx
+import type { AppType } from './server';
 
-const client = hc<AppType>(`http://[::1]:${app.port}`); // localhost as it runs on bun now
+const client = hc<AppType>('http://0.0.0.0:8787/');
 const res = await client.hello.$get({
     query: {
         name: 'Hono',
