@@ -1,0 +1,14 @@
+---
+import { twMerge } from 'tailwind-merge';
+
+type Props = astroHTML.JSX.InputHTMLAttributes;
+
+const props = Astro.props;
+
+const css = twMerge(
+    'rounded-md bg-slate-800 p-3 mt-8',
+    props.readonly && 'bg-neutral-400',
+);
+---
+
+<input class={css} {...props} type="text" />
