@@ -18,7 +18,7 @@ const Ratio = () => {
     // createEffect(() => console.log('x is', x()));
 
     // // not needed as solidjs does not need this kind of optimization
-    // const onInput: JSX.ChangeEventHandlerUnion<HTMLInputElement, Event> = (
+    // const onInput: JSX.ChangeEventHandlerUnion<HTMLInputElement, InputEvent> = (
     //     event,
     // ): void => {
     //     switch (event.target.name) {
