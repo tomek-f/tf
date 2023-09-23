@@ -1,5 +1,5 @@
 {
-    "name": "@tf/tomekf",
+    "name": "@tf/astro-ssr",
     "version": "1.1.0",
     "private": true,
     "type": "module",
@@ -12,6 +12,8 @@
         "build-and-preview": "npm run build && npm run preview",
         "build": "astro build",
         "preview": "astro preview",
+        "preview-node": "node ./dist/server/entry.mjs",
+        "preview-node-custom": "HOST=0.0.0.0 PORT=4321 node ./dist/server/entry.mjs",
         "check": "astro check",
         "sync": "astro sync",
         "astro": "astro",
@@ -28,8 +30,7 @@
     },
     "dependencies": {
         "@astrojs/check": "^0.2.0",
-        "@astrojs/mdx": "^1.1.0",
-        "@astrojs/sitemap": "^3.0.0",
+        "@astrojs/node": "^6.0.1",
         "@astrojs/solid-js": "^3.0.1",
         "@astrojs/tailwind": "^5.0.0",
         "astro": "^3.1.2",
