@@ -16,7 +16,8 @@
         "lint-js-next": "next lint",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "npm run lint-js --fix",
-        "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
+        "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'",
+        "next": "next"
     },
     "dependencies": {
         "@hookform/resolvers": "^3.3.1",
