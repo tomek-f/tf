@@ -2,4 +2,3 @@
   ignore = "exit 0"
   command = "npm run build --workspace=@tf/astro-solidjs"
   functions = "netlify/functions"
-  publish = "dist"

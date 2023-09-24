@@ -102,7 +102,7 @@ jobs:
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
             - name: testing-netlify-deploy-react-playground
-              run: netlify deploy --build --filter @tf/react-playground --dir=pocs/next-playground/dist
+              run: netlify deploy --build --filter @tf/react-playground --dir=pocs/react-playground/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
@@ -173,7 +173,7 @@ jobs:
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
             - name: production-netlify-deploy-react-playground
-              run: netlify deploy --build --filter @tf/react-playground --dir=pocs/next-playground/dist --prod
+              run: netlify deploy --build --filter @tf/react-playground --dir=pocs/react-playground/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
