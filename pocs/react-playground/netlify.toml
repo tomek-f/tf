@@ -1,2 +1,5 @@
 [build]
   ignore = "exit 0"
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "dist"
