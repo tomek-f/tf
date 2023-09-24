@@ -53,7 +53,7 @@ jobs:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
-    testing-vercel-next-playground:
+    testing-vercel-deploy-next-playground:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
@@ -62,13 +62,13 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: testing-vercel-next-playground
+            - name: testing-vercel-deploy-next-playground
               run: vercel --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
-    testing-netlify-astro-solidjs:
+    testing-netlify-deploy-astro-solidjs:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
@@ -77,12 +77,12 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
-            - name: testing-netlify-astro-solidjs
+            - name: testing-netlify-deploy-astro-solidjs
               run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_1 }}
-    testing-netlify-react-playground:
+    testing-netlify-deploy-react-playground:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
@@ -91,7 +91,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
-            - name: testing-netlify-react-playground
+            - name: testing-netlify-deploy-react-playground
               run: netlify deploy --build --filter @tf/react-playground --dir=pocs/next-playground/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -108,13 +108,13 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: roduction-vercel-deploy-tomekf
+            - name: production-vercel-deploy-tomekf
               run: vercel --token ${VERCEL_TOKEN} --prod
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
-    production-vercel-next-playground:
+    production-vercel-deploy-next-playground:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
@@ -123,13 +123,13 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: production-vercel-next-playground
+            - name: production-vercel-deploy-next-playground
               run: vercel --token ${VERCEL_TOKEN} --prod
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
-    production-netlify-astro-solidjs:
+    production-netlify-deploy-astro-solidjs:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
@@ -138,12 +138,12 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
-            - name: production-netlify-astro-solidjs
+            - name: production-netlify-deploy-astro-solidjs
               run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_1 }}
-    production-netlify-react-playground:
+    production-netlify-deploy-react-playground:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
@@ -152,7 +152,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
-            - name: production-netlify-react-playground
+            - name: production-netlify-deploy-react-playground
               run: netlify deploy --build --filter @tf/react-playground --dir=pocs/next-playground/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
