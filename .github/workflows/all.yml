@@ -76,6 +76,11 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
             - name: testing-netlify-deploy-astro-solidjs
               run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist
@@ -90,6 +95,11 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
             - name: testing-netlify-deploy-react-playground
               run: netlify deploy --build --filter @tf/react-playground --dir=pocs/next-playground/dist
@@ -137,6 +147,11 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
             - name: production-netlify-deploy-astro-solidjs
               run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist --prod
@@ -151,6 +166,11 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
             - name: production-netlify-deploy-react-playground
               run: netlify deploy --build --filter @tf/react-playground --dir=pocs/next-playground/dist --prod
