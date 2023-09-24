@@ -78,7 +78,7 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
             - name: testing-netlify-astro-solidjs
-              run: netlify deploy
+              run: netlify deploy --dir=pocs/astro-solidjs/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_1 }}
@@ -92,7 +92,7 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
             - name: testing-netlify-react-playground
-              run: netlify deploy
+              run: netlify deploy --dir=pocs/next-playground/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
@@ -139,7 +139,7 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
             - name: production-netlify-astro-solidjs
-              run: netlify deploy --prod
+              run: netlify deploy --dir=pocs/astro-solidjs/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_1 }}
@@ -154,7 +154,7 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
             - name: production-netlify-react-playground
-              run: netlify deploy --prod
+              run: netlify deploy --dir=pocs/next-playground/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
