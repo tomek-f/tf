@@ -1,4 +1,4 @@
-name: all actions
+name: all
 
 on:
     push:
@@ -37,6 +37,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/types
 
+    # TESTING/PREVIEW >>>>>>>>>>
     testing-vercel-deploy-tomekf:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
@@ -52,7 +53,7 @@ jobs:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
-    testing-vercel-next-playground:
+    testing-vercel-deploy-next-playground:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
@@ -61,13 +62,53 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: testing-vercel-next-playground
+            - name: testing-vercel-deploy-next-playground
               run: vercel --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
+    testing-netlify-deploy-astro-solidjs:
+        if: github.ref != 'refs/heads/master'
+        runs-on: ubuntu-latest
+        environment: testing
+        needs: [vitest, lint, prettier, types, build-pocs]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm install npm install --global netlify-cli@latest
+            - name: testing-netlify-deploy-astro-solidjs
+              run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_1 }}
+    testing-netlify-deploy-react-playground:
+        if: github.ref != 'refs/heads/master'
+        runs-on: ubuntu-latest
+        environment: testing
+        needs: [vitest, lint, prettier, types, build-react-playground]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm install npm install --global netlify-cli@latest
+            - name: testing-netlify-deploy-react-playground
+              run: netlify deploy --build --filter @tf/react-playground --dir=pocs/react-playground/dist
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
+    # TESTING/PREVIEW <<<<<<<<<<
 
+    # PRODUCTION >>>>>>>>>>
     production-vercel-deploy-tomekf:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
@@ -77,13 +118,13 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: roduction-vercel-deploy-tomekf
+            - name: production-vercel-deploy-tomekf
               run: vercel --token ${VERCEL_TOKEN} --prod
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
-    production-vercel-next-playground:
+    production-vercel-deploy-next-playground:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
@@ -92,9 +133,48 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: production-vercel-next-playground
+            - name: production-vercel-deploy-next-playground
               run: vercel --token ${VERCEL_TOKEN} --prod
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
+    production-netlify-deploy-astro-solidjs:
+        if: github.ref == 'refs/heads/master'
+        runs-on: ubuntu-latest
+        environment: production
+        needs: [vitest, lint, prettier, types, build-pocs]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm install npm install --global netlify-cli@latest
+            - name: production-netlify-deploy-astro-solidjs
+              run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist --prod
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_1 }}
+    production-netlify-deploy-react-playground:
+        if: github.ref == 'refs/heads/master'
+        runs-on: ubuntu-latest
+        environment: production
+        needs: [vitest, lint, prettier, types, build-react-playground]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm install npm install --global netlify-cli@latest
+            - name: production-netlify-deploy-react-playground
+              run: netlify deploy --build --filter @tf/react-playground --dir=pocs/react-playground/dist --prod
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
+    # PRODUCTION <<<<<<<<<<
