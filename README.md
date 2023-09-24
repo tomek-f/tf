@@ -88,3 +88,36 @@ type Props2 = astroHTML.JSX.SVGAttributes;
 
 -   https://www.npmjs.com/package/tailwind-merge - does not remove unused styles
 -   https://preline.co/index.html
+
+## workflow backup
+
+```yml
+name: deploy @tf/next-playground
+
+on:
+    workflow_dispatch:
+    workflow_call:
+
+jobs:
+    deploy-vercel-3:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                environment: [testing, production]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+            - run: npm install --global vercel@latest
+            - name: deploy project 3 to Vercel
+              run: |
+                  prodRun=""
+                  if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
+                  prodRun="--prod"
+                  fi
+
+                  vercel --token ${VERCEL_TOKEN} $prodRun
+              env:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
+```
