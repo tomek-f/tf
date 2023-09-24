@@ -8,7 +8,9 @@
     },
     "scripts": {
         "dev": "rimraf ./.next && next dev",
+        "dev-turbo": "rimraf ./.next && next dev --turbo",
         "build": "rimraf ./.next && next build",
+        "build-turbo": "rimraf ./.next && next build --turbo",
         "build-and-start": "npm run build && npm run start",
         "start": "next start",
         "lint-js-next": "next lint",
