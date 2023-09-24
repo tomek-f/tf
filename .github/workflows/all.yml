@@ -37,18 +37,64 @@ jobs:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/types
 
-    deploy-vercel-3:
-        uses: ./.github/workflows/deploy-vercel-3.yml
-        secrets: inherit
-        needs: [vitest, lint, prettier, types, build-next-playground]
-    preview-deploy-tomekf:
+    testing-vercel-deploy-tomekf:
         if: github.ref != 'refs/heads/master'
-        uses: ./.github/workflows/preview-deploy-tomekf.yml
-        secrets: inherit
+        runs-on: ubuntu-latest
+        environment: testing
         needs: [vitest, lint, prettier, types, build-tomekf]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+            - run: npm install --global vercel@latest
+            - name: testing-vercel-deploy-tomekf
+              run: vercel --token ${VERCEL_TOKEN}
+              env:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
+    testing-vercel-next-playground:
+        if: github.ref != 'refs/heads/master'
+        runs-on: ubuntu-latest
+        environment: testing
+        needs: [vitest, lint, prettier, types, build-next-playground]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+            - run: npm install --global vercel@latest
+            - name: testing-vercel-next-playground
+              run: vercel --token ${VERCEL_TOKEN} --prod
+              env:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
 
-    production-deploy-tomekf:
+    production-vercel-deploy-tomekf:
         if: github.ref == 'refs/heads/master'
-        uses: ./.github/workflows/production-deploy-tomekf.yml
-        secrets: inherit
+        runs-on: ubuntu-latest
+        environment: production
         needs: [vitest, lint, prettier, types, build-tomekf]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+            - run: npm install --global vercel@latest
+            - name: roduction-vercel-deploy-tomekf
+              run: vercel --token ${VERCEL_TOKEN} --prod
+              env:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
+    production-vercel-next-playground:
+        if: github.ref == 'refs/heads/master'
+        runs-on: ubuntu-latest
+        environment: production
+        needs: [vitest, lint, prettier, types, build-next-playground]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+            - run: npm install --global vercel@latest
+            - name: production-vercel-next-playground
+              run: vercel --token ${VERCEL_TOKEN} --prod
+              env:
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
