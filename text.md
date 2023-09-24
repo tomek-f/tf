@@ -1,0 +1,3 @@
+-   https://jsfiddle.net/nugatt/h23ork59/1/
+-   https://github.com/dowjones/svg-text
+-   https://codepen.io/chrisgannon/pen/YWgbYz
