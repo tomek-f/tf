@@ -62,7 +62,7 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
             - name: testing-vercel-next-playground
-              run: vercel --token ${VERCEL_TOKEN} --prod
+              run: vercel --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
