@@ -47,7 +47,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: testing-vercel-deploy-tomekf
+            - name: 👷🏼
               run: vercel --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -62,7 +62,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: testing-vercel-deploy-next-playground
+            - name: 👷🏼
               run: vercel --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -82,7 +82,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: testing-netlify-deploy-astro-solidjs
+            - name: 👷🏼
               run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -101,7 +101,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: testing-netlify-deploy-react-playground
+            - name: 👷🏼
               run: netlify deploy --build --filter @tf/react-playground --dir=pocs/react-playground/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -118,7 +118,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: production-vercel-deploy-tomekf
+            - name: 👷🏼
               run: vercel --token ${VERCEL_TOKEN} --prod
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -133,7 +133,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
-            - name: production-vercel-deploy-next-playground
+            - name: 👷🏼
               run: vercel --token ${VERCEL_TOKEN} --prod
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -153,7 +153,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: production-netlify-deploy-astro-solidjs
+            - name: 👷🏼
               run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -172,7 +172,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: production-netlify-deploy-react-playground
+            - name: 👷🏼
               run: netlify deploy --build --filter @tf/react-playground --dir=pocs/react-playground/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
