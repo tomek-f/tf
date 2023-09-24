@@ -1,4 +1,4 @@
 [build]
-  ignore = "exit 0"
+  # ignore = "exit 0"
   command = "npm run build --workspace=@tf/react-playground"
   functions = "netlify/functions"
