@@ -121,3 +121,16 @@ jobs:
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
                   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
 ```
+
+## vercel.json old react config
+
+```json
+{
+    "github": {
+        "enabled": false
+    },
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
+```
