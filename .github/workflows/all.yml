@@ -78,7 +78,7 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
             - name: testing-netlify-astro-solidjs
-              run: netlify deploy --dir=pocs/astro-solidjs/dist
+              run: netlify deploy --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_1 }}
@@ -92,7 +92,7 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
             - name: testing-netlify-react-playground
-              run: netlify deploy --dir=pocs/next-playground/dist
+              run: netlify deploy --filter @tf/react-playground --dir=pocs/next-playground/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
@@ -139,11 +139,10 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
             - name: production-netlify-astro-solidjs
-              run: netlify deploy --dir=pocs/astro-solidjs/dist --prod
+              run: netlify deploy --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_1 }}
-
     production-netlify-react-playground:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
@@ -154,7 +153,7 @@ jobs:
             - uses: actions/setup-node@v3
             - run: npm install npm install --global netlify-cli@latest
             - name: production-netlify-react-playground
-              run: netlify deploy --dir=pocs/next-playground/dist --prod
+              run: netlify deploy --filter @tf/react-playground --dir=pocs/next-playground/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
