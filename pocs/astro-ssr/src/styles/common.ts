@@ -2,7 +2,7 @@ export const primaryCss = 'text-sky-500';
 
 export const linkDefaultCss = primaryCss;
 
-export const linkActiveCss = 'text-lime-500 cursor-default';
+export const linkActiveCss = 'text-pink-500 cursor-default';
 
 export const linkHoverCss = 'hover:text-sky-300 hover:underline';
 
