@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import { twMerge } from 'tailwind-merge';
 
 import '../styles/globals.css';
 
@@ -33,7 +34,7 @@ const parsedDescription = ['Astro + SolidJS', title]
 
 <html
     lang="en"
-    class:list={['min-w-[360px] min-h-screen p-6 md:p-8', classHtml]}
+    class={twMerge('min-w-[360px] min-h-screen p-6 md:p-8', classHtml)}
 >
     <head>
         <meta charset="utf-8" />
@@ -43,15 +44,15 @@ const parsedDescription = ['Astro + SolidJS', title]
         <meta name="description" content={parsedDescription} />
         <link
             rel="icon"
-            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+            href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦄</text></svg>"
         />
         <ViewTransitions />
     </head>
     <body
-        class:list={[
-            'font-light text-base bg-slate-900 text-gray-100',
+        class={twMerge(
+            'font-light text-base bg-violet-950 text-gray-100',
             className,
-        ]}
+        )}
     >
         <slot />
     </body>
