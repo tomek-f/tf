@@ -1,3 +1,5 @@
+import type { Nullable } from '../types/misc';
+
 type GQLiteSomeObj = object;
 type GQLiteSomeError = Error & GQLiteSomeObj;
 
@@ -58,18 +60,18 @@ export interface GQLiteInit
 }
 
 interface GQLiteErrorInfo<K> {
-    result?: GQLiteResult<K> | null;
-    status?: number | null;
-    error?: Error | null;
+    result?: Nullable<GQLiteResult<K>>;
+    status?: Nullable<number>;
+    error?: Nullable<Error>;
 }
 
 class GQLiteError<K> extends Error {
-    result: GQLiteResult<K> | null;
+    result: Nullable<GQLiteResult<K>>;
 
-    status: number | null;
+    status: Nullable<number>;
 
     constructor(
-        message: string | null,
+        message: Nullable<string>,
         { result = null, status = null, error = null }: GQLiteErrorInfo<K>,
     ) {
         const errorMessage =
@@ -119,8 +121,8 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
         );
     }
 
-    let result: GQLiteResult<T> | null = null;
-    let status: number | null = null;
+    let result: Nullable<GQLiteResult<T>> = null;
+    let status: Nullable<number> = null;
 
     try {
         const response = await fetch(input, {
