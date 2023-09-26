@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import type { AllEpisodes } from '../../types/episodes';
 import type { Nullable, SomeError } from '../../types/misc';
 import gql from '../../utils/gql';
 import gqlite from '../../utils/gqlite';
@@ -26,17 +27,6 @@ const query = gql`
         }
     }
 `;
-
-interface AllEpisodes {
-    date: string;
-    title: string;
-    guest: {
-        name: string;
-        twitter: string;
-    };
-    description: string;
-}
-
 const variables = {
     now: new Date().toISOString(),
 };

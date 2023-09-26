@@ -1,9 +1,12 @@
 'use client';
 
 // import { useEffect } from 'react';
-import useSWRGraphQL from '../../hooks/useSWRGraphQL';
-import type { Nullable, SomeObj } from '../../types/misc';
+import { useEffect, useState } from 'react';
+
+import type { AllEpisodes } from '../../types/episodes';
+import type { Nullable } from '../../types/misc';
 import gql from '../../utils/gql';
+import gqlite from '../../utils/gqlite';
 
 const query = gql`
     query GetLearnWithJasonEpisodes($now: DateTime!) {
@@ -27,8 +30,40 @@ const variables = {
     now: new Date().toISOString(),
 };
 
-const controller = new AbortController();
-const { signal } = controller;
+// const controller = new AbortController();
+// const { signal } = controller;
+
+const useData = (url: string) => {
+    const [data, setData] =
+        useState<Nullable<{ data: { allEpisode: AllEpisodes } }[]>>(null);
+    const [error, setError] = useState<Nullable<string>>(null);
+    const [loading, setloading] = useState<boolean>(true);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await gqlite<
+                    { data: { allEpisode: AllEpisodes } }[]
+                >(url, {
+                    // same request 2 times
+                    rawRequest: true,
+                    body: [
+                        { query, variables },
+                        { query, variables },
+                    ],
+                });
+
+                setData(response);
+            } catch (err) {
+                setError((err as Error).message);
+            } finally {
+                setloading(false);
+            }
+        })();
+    }, [url]);
+
+    return { data, error, loading };
+};
 
 const GraphQLClient = () => {
     let url: Nullable<string> = null;
@@ -46,20 +81,7 @@ const GraphQLClient = () => {
     // url = 'https://www.learnwithjason1.dev/graphql'; // ERR_NET_FAILED_TO_FETCH
     // url = 'https://httpstat.us/400'; // ERR_NET_NOT_OK (400)
 
-    const { data, error, isLoading } = useSWRGraphQL<
-        { data: { allEpisode: SomeObj } }[]
-    >([
-        url,
-        {
-            // same request 2 times
-            rawRequest: true,
-            body: [
-                { query, variables },
-                { query, variables },
-            ],
-            signal,
-        },
-    ]);
+    const { data, error, loading } = useData(url);
 
     // useEffect(() => {
     //   setTimeout(() => controller.abort());
@@ -70,13 +92,13 @@ const GraphQLClient = () => {
             <>
                 <h1>GraphQL client</h1>
                 <p>failed to load</p>
-                <p>{error.message}</p>
+                <p>{error}</p>
                 <pre>{JSON.stringify(error, null, 2)}</pre>
             </>
         );
     }
 
-    if (isLoading) {
+    if (loading) {
         return (
             <>
                 <h1>GraphQL client</h1>
