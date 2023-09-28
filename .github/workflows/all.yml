@@ -42,7 +42,7 @@ jobs:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
-        # needs: [vitest, lint, prettier, types, build-tomekf]
+        needs: [vitest, lint, prettier, types, build-tomekf]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -129,7 +129,7 @@ jobs:
             # - run: npm ci # vercel build handles this
             - run: npm install --global vercel@latest
             - name: 👷🏼
-              run: vercel pull --yes --token ${VERCEL_TOKEN} && vercel build --prod --cwd ./sites/tomekf && vercel deploy --prod --token ${VERCEL_TOKEN} --cwd ./sites/tomekf
+              run: vercel link --cwd ./sites/tomekf --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
