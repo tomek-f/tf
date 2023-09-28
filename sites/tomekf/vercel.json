@@ -3,5 +3,8 @@
         "enabled": false
     },
     "cleanUrls": true,
-    "trailingSlash": false
+    "trailingSlash": false,
+    "installCommand": "npm ci",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist"
 }
