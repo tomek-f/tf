@@ -6,16 +6,9 @@ on:
     workflow_dispatch:
 
 jobs:
-    build-next-playground:
-        # uses: tomek-f/tf/.github/workflows/build-next-playground.yml
-        uses: ./.github/workflows/build-next-playground.yml
-        secrets: inherit
-    build-react-playground:
-        uses: ./.github/workflows/build-react-playground.yml
-    build-tomekf:
-        uses: ./.github/workflows/build-tomekf.yml
     build-pocs:
-        uses: ./.github/workflows/build-pocs.yml
+        uses: ./.github/workflows/build-other.yml
+        #     secrets: inherit
     vitest:
         runs-on: ubuntu-latest
         steps:
@@ -42,7 +35,7 @@ jobs:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
-        needs: [vitest, lint, prettier, types, build-tomekf]
+        needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -62,7 +55,7 @@ jobs:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
-        needs: [vitest, lint, prettier, types, build-next-playground]
+        needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -82,7 +75,7 @@ jobs:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
-        needs: [vitest, lint, prettier, types, build-pocs]
+        needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -101,7 +94,7 @@ jobs:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: testing
-        needs: [vitest, lint, prettier, types, build-react-playground]
+        needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -123,7 +116,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
-        needs: [vitest, lint, prettier, types, build-tomekf]
+        needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -143,7 +136,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
-        needs: [vitest, lint, prettier, types, build-next-playground]
+        needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -163,7 +156,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
-        needs: [vitest, lint, prettier, types, build-pocs]
+        needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -182,7 +175,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
-        needs: [vitest, lint, prettier, types, build-react-playground]
+        needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
