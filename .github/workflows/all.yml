@@ -6,11 +6,9 @@ on:
     workflow_dispatch:
 
 jobs:
-    # build-next-playground:
-    #     uses: ./.github/workflows/build-next-playground.yml
-    #     secrets: inherit
     build-pocs:
-        uses: ./.github/workflows/build-pocs.yml
+        uses: ./.github/workflows/build-other.yml
+        #     secrets: inherit
     vitest:
         runs-on: ubuntu-latest
         steps:
