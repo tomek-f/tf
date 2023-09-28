@@ -66,9 +66,14 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            # - run: npm ci # vercel build handles this
             - run: npm install --global vercel@latest
             - name: 👷🏼
-              run: vercel --token ${VERCEL_TOKEN}
+              run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build && vercel deploy --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -142,9 +147,14 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            # - run: npm ci # vercel build handles this
             - run: npm install --global vercel@latest
             - name: 👷🏼
-              run: vercel --token ${VERCEL_TOKEN} --prod
+              run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
                   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
