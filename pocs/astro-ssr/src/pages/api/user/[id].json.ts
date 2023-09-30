@@ -14,11 +14,7 @@ export const GET: APIRoute = ({ params }) => {
         });
     }
 
-    return new Response(
-        JSON.stringify({
-            name: usernames[id],
-        }),
-    );
+    return new Response(JSON.stringify({ name: usernames[id] }));
 };
 
 export function getStaticPaths() {
