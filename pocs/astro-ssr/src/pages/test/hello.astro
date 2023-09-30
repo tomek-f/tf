@@ -2,15 +2,15 @@
 import type { APIContext } from 'astro';
 
 import SubLayout from '../../layouts/SubLayout.astro';
-import { GET } from '../api/hello.ts';
+import { GET, type HelloData } from '../api/hello.ts';
 
 // https://docs.astro.build/en/recipes/call-endpoints/
 // https://github.com/withastro/astro/issues/8514
-// TODO fix that
+// TODO ? fix that
 const response = await GET(Astro as unknown as APIContext);
-const data = await (response as Response).json();
+const data = (await (response as Response).json()) as HelloData;
 ---
 
-<SubLayout title="Test 1">
+<SubLayout title="Hello">
     <h1>{data.greeting}</h1>
 </SubLayout>
