@@ -12,8 +12,8 @@ export const GET: APIRoute = ({ url: { searchParams }, redirect }) => {
 
     if (a === '0') {
         return new Response(JSON.stringify('Hello world!'), {
-            status: 200,
             headers: { 'Content-Type': 'application/json' },
+            status: 200,
         });
     }
 
