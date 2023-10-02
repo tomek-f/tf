@@ -210,7 +210,7 @@ jobs:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
     production-netlify-deploy-astro-ssr:
-        if: github.ref != 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         runs-on: ubuntu-latest
         environment: production
         needs: [vitest, lint, prettier, types]
