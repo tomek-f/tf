@@ -212,7 +212,7 @@ jobs:
     production-netlify-deploy-astro-ssr:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
-        environment: testing
+        environment: production
         needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
