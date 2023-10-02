@@ -109,6 +109,25 @@ jobs:
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
+    testing-netlify-deploy-astro-ssr:
+        if: github.ref != 'refs/heads/master'
+        runs-on: ubuntu-latest
+        environment: testing
+        needs: [vitest, lint, prettier, types]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm install npm install --global netlify-cli@latest
+            - name: 👷🏼
+              run: netlify deploy --build --filter @tf/astro-ssr --dir=pocs/astro-ssr/dist
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_3 }}
     # TESTING/PREVIEW <<<<<<<<<<
 
     # PRODUCTION >>>>>>>>>>
@@ -190,4 +209,23 @@ jobs:
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_2 }}
+    production-netlify-deploy-astro-ssr:
+        if: github.ref != 'refs/heads/master'
+        runs-on: ubuntu-latest
+        environment: production
+        needs: [vitest, lint, prettier, types]
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  check-latest: true
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm install npm install --global netlify-cli@latest
+            - name: 👷🏼
+              run: netlify deploy --build --filter @tf/astro-ssr --dir=pocs/astro-ssr/dist --prod
+              env:
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_3 }}
     # PRODUCTION <<<<<<<<<<

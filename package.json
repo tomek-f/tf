@@ -13,7 +13,7 @@
         "turbo:lint-js-fix": "turbo lint-js-fix --force",
         "turbo:lint-js-next": "turbo lint-js-next --force",
         "turbo:test": "turbo test --force",
-        "turbo:build:pocs": "turbo build --force --filter='./pocs/*' --filter=!@tf/next-playground --filter=!@tf/react-playground --filter=!@tf/astro-solidjs",
+        "turbo:build-pocs": "turbo build --force --filter='./pocs/*' --filter=!@tf/next-playground --filter=!@tf/react-playground --filter=!@tf/astro-solidjs --filter=!@tf/astro-ssr",
         "format-check": "prettier --check .",
         "format-write": "prettier --write .",
         "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test --force",
