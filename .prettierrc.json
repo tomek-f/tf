@@ -9,7 +9,11 @@
     "endOfLine": "lf",
     "tabWidth": 4,
 
-    "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-astro"],
+    "plugins": [
+        "@ianvs/prettier-plugin-sort-imports",
+        "prettier-plugin-astro",
+        "prettier-plugin-tailwindcss"
+    ],
     "importOrder": [
         "<BUILTIN_MODULES>",
         "",

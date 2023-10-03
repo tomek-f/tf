@@ -11,7 +11,7 @@ const Person = () => {
     return (
         <Fieldset legend="Person">
             {Math.random()}
-            <div className="flex flex-wrap items-center gap-2 mt-4">
+            <div className="mt-4 flex flex-wrap items-center gap-2">
                 First Name:
                 <Input
                     onChange={(event) => {
@@ -22,7 +22,7 @@ const Person = () => {
                     value={person.firstName}
                 />
             </div>
-            <div className="flex flex-wrap items-center gap-2 mt-2">
+            <div className="mt-2 flex flex-wrap items-center gap-2">
                 Last Name:
                 <Input
                     onChange={(event) => {
@@ -33,7 +33,7 @@ const Person = () => {
                     value={person.lastName}
                 />
             </div>
-            <div className="flex flex-wrap items-center gap-2 mt-2">
+            <div className="mt-2 flex flex-wrap items-center gap-2">
                 Age:
                 <Input
                     onChange={(event) => {

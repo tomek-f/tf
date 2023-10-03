@@ -4,13 +4,13 @@
 
 @layer components {
     .custom-html h1 {
-        @apply text-2xl my-8 text-lime-200;
+        @apply my-8 text-2xl text-lime-200;
     }
     .custom-html h2 {
-        @apply text-xl my-6 text-lime-100;
+        @apply my-6 text-xl text-lime-100;
     }
     .custom-html h3 {
-        @apply text-lg my-4;
+        @apply my-4 text-lg;
     }
     .custom-html :is(h1, h2, h3, b, strong) {
         @apply font-semibold;
@@ -28,7 +28,7 @@
         @apply list-decimal;
     }
     .custom-html :is(ol, ul) {
-        @apply list-inside ml-4 my-4;
+        @apply my-4 ml-4 list-inside;
     }
     .custom-html :is(ol, ul, p, h1, h2, h3, h4, h5, h6):first-child {
         @apply mt-0;

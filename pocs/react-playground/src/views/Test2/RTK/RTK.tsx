@@ -17,7 +17,7 @@ const Rtk = () => {
         <Fieldset legend="RTK">
             {Math.random()}
             <div>count using useAppSelector {count}</div>
-            <div className="flex flex-wrap items-center gap-2 mt-4">
+            <div className="mt-4 flex flex-wrap items-center gap-2">
                 <Button onClick={() => actions(decrement())}>decrement</Button>
                 <Button onClick={() => actions(increment())}>increment</Button>
                 <Button onClick={() => actions(incrementByAmount(5))}>
@@ -27,7 +27,7 @@ const Rtk = () => {
                     incrementAsync + 10
                 </Button>
             </div>
-            <div className="flex flex-wrap items-center gap-2 mt-4">
+            <div className="mt-4 flex flex-wrap items-center gap-2">
                 <Button onClick={counterActions.decrement}>
                     counterActions.decrement
                 </Button>

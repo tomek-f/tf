@@ -10,7 +10,7 @@ const Input = ({
     return (
         <input
             className={clsx(
-                'text-black shadow appearance-none border rounded p-2',
+                'appearance-none rounded border p-2 text-black shadow',
                 {
                     'bg-gray-400': readOnly,
                 },
