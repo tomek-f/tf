@@ -24,7 +24,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
                 rel="icon"
             />
             <body
-                className={`${inter.className} font-light text-base bg-emerald-200 dark:bg-purple-950 text-black dark:text-white p-8 min-h-screen`}
+                className={`${inter.className} min-h-screen bg-emerald-200 p-8 text-base font-light text-black dark:bg-purple-950 dark:text-white`}
             >
                 <Layout>
                     <Content>

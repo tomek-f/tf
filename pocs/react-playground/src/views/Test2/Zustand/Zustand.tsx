@@ -51,7 +51,7 @@ const Controls = () => {
     return (
         <Fieldset legend="Controls">
             {Math.random()}
-            <div className="flex flex-wrap items-center gap-2 mt-4">
+            <div className="mt-4 flex flex-wrap items-center gap-2">
                 <Button onClick={() => increasePopulation(1)}>one up</Button>
                 <Button onClick={() => clear()}>clear</Button>
             </div>

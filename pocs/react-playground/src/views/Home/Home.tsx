@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <p>{formatMessage('home.links')}</p>
-            <ul className="list-disc list-inside ml-2 mt-2">
+            <ul className="ml-2 mt-2 list-inside list-disc">
                 <li>
                     <Link
                         className={LinkClassNames.default}

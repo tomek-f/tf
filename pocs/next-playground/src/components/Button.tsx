@@ -9,9 +9,9 @@ const Button = (props: Props) => {
     return (
         <button
             className={clsx(
-                'text-white bg-orange-500 hover:bg-yellow-500',
+                'bg-orange-500 text-white hover:bg-yellow-500',
                 'transition-colors duration-200 ease-in-out',
-                'px-2 py-1 font-medium rounded',
+                'rounded px-2 py-1 font-medium',
             )}
             type="button"
             {...props}

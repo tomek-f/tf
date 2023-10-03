@@ -6,7 +6,7 @@ const Input: Component<JSX.InputHTMLAttributes<HTMLInputElement>> = (props) => {
     return (
         <input
             class={twMerge(
-                'rounded-md bg-violet-900 p-3 mt-8',
+                'mt-8 rounded-md bg-violet-900 p-3',
                 props.readonly && 'bg-gray-400',
             )}
             type="text"

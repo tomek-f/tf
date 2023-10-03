@@ -55,7 +55,7 @@ const Ratio = () => {
             <div>a - b</div>
             <div>c - x</div>
             <div>x = (b * c) / a</div>
-            <div className="grid gap-2 grid-cols-2 max-w-lg mx-auto mt-4">
+            <div className="mx-auto mt-4 grid max-w-lg grid-cols-2 gap-2">
                 <Input
                     name="a"
                     onChange={onInput}

@@ -7,3 +7,5 @@ stats.html
 # all html
 # *.html
 google*.html
+
+.astro
