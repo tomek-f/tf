@@ -15,7 +15,7 @@
         "@hono/zod-validator": "^0.1.9",
         "@ngneat/falso": "^7.1.1",
         "hono": "^3.7.3",
-        "zod": "^3.22.2"
+        "zod": "^3.22.3"
     },
     "devDependencies": {
         "eslint": "^8.50.0",
