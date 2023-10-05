@@ -20,11 +20,11 @@ const isBlog = pathname.startsWith('/blog');
 // https://preline.co/docs/navbar.html#svg
 ---
 
-<header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full">
+<header class="z-50 flex w-full flex-wrap sm:flex-nowrap sm:justify-start">
     <nav class="w-full sm:flex sm:items-center sm:justify-between">
         <div class="flex items-center justify-between">
             <a
-                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 focus:ring-offset-slate-800"
+                class="focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-slate-800"
                 href="/"
             >
                 <Logo />
@@ -33,16 +33,16 @@ const isBlog = pathname.startsWith('/blog');
             <div class="sm:hidden">
                 <button
                     type="button"
-                    class="p-2 inline-flex justify-center items-center rounded-md border font-medium before:shadow-sm align-middle focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 focus:ring-offset-slate-800 transition-all bg-slate-900 hover:bg-slate-800 border-slate-700 text-gray-400 hover:text-white"
+                    class="inline-flex items-center justify-center rounded-md border border-slate-700 bg-slate-900 p-2 align-middle font-medium text-gray-400 transition-all before:shadow-sm hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-slate-800"
                     id="header-button"
                 >
                     <MenuIcon
-                        class="w-4 h-4"
+                        class="h-4 w-4"
                         id="header-icon-1"
                         strokeWidth="1"
                     />
                     <XIcon
-                        class="hidden w-4 h-4"
+                        class="hidden h-4 w-4"
                         id="header-icon-2"
                         strokeWidth="1"
                     />
@@ -51,10 +51,10 @@ const isBlog = pathname.startsWith('/blog');
         </div>
         <div
             id="header-menu"
-            class="overflow-hidden transition-all duration-300 basis-full grow hidden sm:block"
+            class="hidden grow basis-full overflow-hidden transition-all duration-300 sm:block"
         >
             <div
-                class="flex flex-col gap-3 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:pl-5"
+                class="mt-5 flex flex-col gap-3 sm:mt-0 sm:flex-row sm:items-center sm:justify-end sm:pl-5"
             >
                 <a
                     class={twMerge(isInfo ? activeLink : inactiveLink)}

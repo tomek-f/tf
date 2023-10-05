@@ -34,7 +34,7 @@ const parsedDescription = ['Astro + SolidJS', title]
 
 <html
     lang="en"
-    class:list={twMerge('min-w-[360px] min-h-screen p-6 md:p-8', classHtml)}
+    class:list={twMerge('min-h-screen min-w-[360px] p-6 md:p-8', classHtml)}
 >
     <head>
         <meta charset="utf-8" />
@@ -50,7 +50,7 @@ const parsedDescription = ['Astro + SolidJS', title]
     </head>
     <body
         class:list={twMerge(
-            'font-light text-base bg-sky-950 text-sky-100',
+            'bg-sky-950 text-base font-light text-sky-100',
             className,
         )}
     >
