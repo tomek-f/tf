@@ -41,12 +41,12 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install --global vercel@latest
-            - name: copy images
-              run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git tf-data
+            - name: clone repo with media
+              run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git __tf_data__
               env:
                   GH_TOKEN: ${{ secrets.GH_TOKEN }}
-            - run: ls -lhaFS && ls -lhaFS tf-data/data/media
-            - run: cp -r tf-data/data/media sites/tomekf/public/media
+            - name: copy media to tomekf public fir
+              run: cp -r __tf_data__/data/media sites/tomekf/public/media
             - run: ls -lhaFS sites/tomekf/public/media
 
     # TESTING/PREVIEW >>>>>>>>>>
