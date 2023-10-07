@@ -39,6 +39,13 @@ const mapUrl =
     }&zoom=12&size=640x480&maptype=roadmap&markers=color:orange%7C${
         post.latitude
     },${post.longitude}&key=${import.meta.env.GOOGLE_MAPS_API_KEY}}`;
+
+/*
+import.meta.env.DEV ||
+import.meta.env.IS_NON_PRODUCTION
+    ? `https://develop.images.tomekf.pl/media/${post.hash}.${post.type}`
+    : `https://images.tomekf.pl/media/${post.hash}.${post.type}`
+*/
 ---
 
 <CommonLayout title={`${post.hash} | Media`}>
@@ -46,15 +53,14 @@ const mapUrl =
         <a class={linkCss} href="/media">Back to media</a>
         <Block class="custom-html">
             <h2>{post.hash}</h2>
-            <p>{post.text}</p>
+            <p class="break-words">{post.text}</p>
             {
                 post.type === 'jpg' && (
                     <img
                         src={
-                            import.meta.env.DEV ||
-                            import.meta.env.IS_NON_PRODUCTION
-                                ? `https://develop.images.tomekf.pl/media/${post.hash}.${post.type}`
-                                : `https://images.tomekf.pl/media/${post.hash}.${post.type}`
+                            import.meta.env.DEV
+                                ? `https://images.tomekf.pl/media/${post.hash}.${post.type}`
+                                : `/media/${post.hash}.${post.type}`
                         }
                         alt={post.hash}
                     />
@@ -64,7 +70,11 @@ const mapUrl =
                 post.type === 'mp4' && (
                     <video controls>
                         <source
-                            src={`/data/${post.hash}.${post.type}`}
+                            src={
+                                import.meta.env.DEV
+                                    ? `https://images.tomekf.pl/media/${post.hash}.${post.type}`
+                                    : `/media/${post.hash}.${post.type}`
+                            }
                             type="video/mp4"
                         />
                     </video>
