@@ -31,7 +31,6 @@ jobs:
             - uses: ./.github/actions/types
 
     test-images:
-        if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -42,11 +41,13 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install --global vercel@latest
-            - name: 👷🏼
-              run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git data
+            - name: copy images
+              run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git tf-data
               env:
                   GH_TOKEN: ${{ secrets.GH_TOKEN }}
-            - run: ls -lhaFS && ls -lhaFS data
+            - run: ls -lhaFS && ls -lhaFS tf-data/data/media
+            - run: cp -r tf-data/data/media sites/tomekf/public/media
+            - run: ls -lhaFS sites/tomekf/public/media
 
     # TESTING/PREVIEW >>>>>>>>>>
     testing-vercel-deploy-tomekf:
@@ -63,7 +64,9 @@ jobs:
                   cache: 'npm'
             # - run: npm ci # vercel build handles this
             - run: npm install --global vercel@latest
-            - name: 👷🏼
+            # - name: copy images
+            #   run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git tf-data
+            - name: deploy
               run: vercel link --cwd ./sites/tomekf --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build && vercel deploy --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -83,7 +86,7 @@ jobs:
                   cache: 'npm'
             # - run: npm ci # vercel build handles this
             - run: npm install --global vercel@latest
-            - name: 👷🏼
+            - name: deploy
               run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build && vercel deploy --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -103,7 +106,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: 👷🏼
+            - name: deploy
               run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -122,7 +125,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: 👷🏼
+            - name: deploy
               run: netlify deploy --build --filter @tf/react-playground --dir=pocs/react-playground/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -141,7 +144,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: 👷🏼
+            - name: deploy
               run: netlify deploy --build --filter @tf/astro-ssr --dir=pocs/astro-ssr/dist
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -163,7 +166,7 @@ jobs:
                   cache: 'npm'
             # - run: npm ci # vercel build handles this
             - run: npm install --global vercel@latest
-            - name: 👷🏼
+            - name: deploy
               run: vercel link --cwd ./sites/tomekf --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -183,7 +186,7 @@ jobs:
                   cache: 'npm'
             # - run: npm ci # vercel build handles this
             - run: npm install --global vercel@latest
-            - name: 👷🏼
+            - name: deploy
               run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -203,7 +206,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: 👷🏼
+            - name: deploy
               run: netlify deploy --build --filter @tf/astro-solidjs --dir=pocs/astro-solidjs/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -222,7 +225,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: 👷🏼
+            - name: deploy
               run: netlify deploy --build --filter @tf/react-playground --dir=pocs/react-playground/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -241,7 +244,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm install npm install --global netlify-cli@latest
-            - name: 👷🏼
+            - name: deploy
               run: netlify deploy --build --filter @tf/astro-ssr --dir=pocs/astro-ssr/dist --prod
               env:
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
