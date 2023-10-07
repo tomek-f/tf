@@ -16,3 +16,14 @@ export default {
         },
     },
 } satisfies Config;
+
+// postcss.config.cjs not needed as it is configured in package.json
+// /** @type {import('postcss-load-config').Config} */
+// const config = {
+//     plugins: {
+//         tailwindcss: {},
+//         autoprefixer: {},
+//     },
+// };
+
+// module.exports = config;
