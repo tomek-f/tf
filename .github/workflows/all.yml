@@ -34,7 +34,7 @@ jobs:
     test-images:
         if: github.ref != 'refs/heads/master'
         runs-on: ubuntu-latest
-        environment: testing
+        # environment: testing
         # needs: [vitest, lint, prettier, types]
         steps:
             - uses: actions/checkout@v3
