@@ -54,8 +54,8 @@ const useData = (url: string) => {
                 });
 
                 setData(response);
-            } catch (err) {
-                setError((err as Error).message);
+            } catch (error_) {
+                setError((error_ as Error).message);
             } finally {
                 setloading(false);
             }

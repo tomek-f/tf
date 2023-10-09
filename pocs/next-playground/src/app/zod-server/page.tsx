@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { z } from 'zod';
 
-import { UserSchemaWithGeo } from '../../models/User';
+import { UserSchemaWithGeo } from '../../models/user';
 import type { Nullable, SomeError } from '../../types/misc';
 
 export const metadata: Metadata = {
@@ -25,19 +25,19 @@ async function getData() {
     let error: Nullable<SomeError> = null;
 
     try {
-        const res = await fetch(url);
+        const response = await fetch(url);
 
-        if (!res.ok) {
+        if (!response.ok) {
             error = new Error('res not ok');
 
             return { data, error };
         }
 
-        const usersJson = (await res.json()) as UserArray;
+        const usersJson = (await response.json()) as UserArray;
 
         data = UserResults.parse(usersJson);
-    } catch (err) {
-        error = err as SomeError;
+    } catch (error_) {
+        error = error_ as SomeError;
     }
 
     return { data, error };

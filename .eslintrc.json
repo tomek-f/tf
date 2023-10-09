@@ -42,6 +42,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/stylistic",
         "plugin:import/typescript",
+        "plugin:unicorn/recommended",
         "prettier"
     ],
     "rules": {
@@ -155,6 +156,29 @@
             { "prefer": "type-imports" }
         ],
 
-        "unicorn/no-array-push-push": "error"
+        "unicorn/filename-case": [
+            "error",
+            {
+                "case": "kebabCase",
+                "ignore": [".tsx$"]
+            }
+        ],
+        "unicorn/prevent-abbreviations": [
+            "error",
+            {
+                "allowList": {
+                    "props": true,
+                    "Props": true,
+                    "generateStaticParams": true
+                }
+            }
+        ],
+        "unicorn/no-null": "off",
+        "unicorn/template-indent": [
+            "warn",
+            {
+                "indent": 4
+            }
+        ]
     }
 }

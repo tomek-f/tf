@@ -51,8 +51,8 @@ async function getData() {
                 { query, variables },
             ],
         });
-    } catch (err) {
-        error = err as SomeError;
+    } catch (error_) {
+        error = error_ as SomeError;
     }
 
     return { data, error };

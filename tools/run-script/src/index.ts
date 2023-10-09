@@ -11,7 +11,7 @@ interface PackageJson {
 }
 
 const packageJson = JSON.parse(
-    readFileSync('./package.json', 'utf-8'),
+    readFileSync('./package.json', 'utf8'),
 ) as PackageJson;
 const scripts = packageJson.scripts;
 const keys = Object.keys(scripts);
@@ -26,6 +26,8 @@ const questions = [
 
 console.log(gradient('#bada55', 'hotpink')('Hi, welcome to run-script!'));
 
+// TODO ? fix this
+// eslint-disable-next-line unicorn/prefer-top-level-await
 inquirer.prompt(questions).then((answers) => {
     execSync(`npm run ${answers.script}`, {
         // cwd: process.cwd(),
