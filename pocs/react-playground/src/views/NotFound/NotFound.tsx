@@ -1,5 +1,5 @@
 import Head from 'REACT_PG/components/Head/Head';
-import { useFormatMessageQuick } from 'REACT_PG/hooks/useFormatMessage';
+import { useFormatMessageQuick } from 'REACT_PG/hooks/ use-format-message';
 
 const NotFound = () => {
     return (

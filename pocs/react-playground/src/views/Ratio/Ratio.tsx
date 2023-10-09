@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Head from 'REACT_PG/components/Head/Head';
 import Input from 'REACT_PG/components/Input/Input';
-import useFormatMessage from 'REACT_PG/hooks/useFormatMessage';
+import useFormatMessage from 'REACT_PG/hooks/ use-format-message';
 
 const ratio = (a: number, b: number, c: number): number => (b * c) / a;
 
@@ -14,7 +14,8 @@ const Ratio = () => {
     const [x, setX] = useState<number | string>(10);
 
     const onInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        const value = parseFloat(event.target.value) || event.target.value;
+        const value =
+            Number.parseFloat(event.target.value) || event.target.value;
 
         switch (event.target.name) {
             case 'a':
@@ -33,16 +34,16 @@ const Ratio = () => {
             return;
         }
 
-        const temp = {
+        const temporary = {
             a,
             b,
             c,
             [event.target.name]: value,
         };
         const newX = ratio(
-            temp.a as number,
-            temp.b as number,
-            temp.c as number,
+            temporary.a as number,
+            temporary.b as number,
+            temporary.c as number,
         );
 
         setX(!Number.isNaN(newX) && Number.isFinite(newX) ? newX : '🤯');

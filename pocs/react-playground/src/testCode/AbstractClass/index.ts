@@ -1,4 +1,4 @@
-import Department from './Department';
+import Department from './department';
 
 class AccountingDepartment extends Department {
     constructor() {

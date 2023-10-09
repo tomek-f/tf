@@ -173,12 +173,14 @@
                 }
             }
         ],
-        "unicorn/no-null": "off",
         "unicorn/template-indent": [
             "warn",
             {
                 "indent": 4
             }
-        ]
+        ],
+
+        "unicorn/no-null": "off",
+        "unicorn/switch-case-braces": "off"
     }
 }

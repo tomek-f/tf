@@ -4,7 +4,7 @@ import {
     increment,
     incrementAsync,
     incrementByAmount,
-} from './counterSlice';
+} from './counter-slice';
 
 const counterActions = {
     increment: () => store.dispatch(increment()),

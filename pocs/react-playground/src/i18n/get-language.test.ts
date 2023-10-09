@@ -13,12 +13,12 @@ import {
     LANGUAGE_CODE,
     LANGUAGE_CODE_DEFAULT,
 } from 'REACT_PG/constants/language';
-import { getBrowserLanguage } from './getLanguage';
+import { getBrowserLanguage } from './get-language';
 
-const getLanguageTestHelper = (val: string | null): void => {
+const getLanguageTestHelper = (value: string | null): void => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    window.navigator.languages[0] = val;
+    window.navigator.languages[0] = value;
 };
 
 let languageGetter: SpyInstance;

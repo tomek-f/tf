@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { clsx } from 'clsx';
 
-import { LinkClassNames } from 'REACT_PG/constants/linkClassNames';
+import { LinkClassNames } from 'REACT_PG/constants/link-class-names';
 
 type Theme = 'dark' | 'light' | 'auto';
 
