@@ -1,7 +1,7 @@
 // copilot chat generated
 import { describe, expect, it } from 'vitest';
 
-import toJSON from './toJSON';
+import toJSON from './to-json';
 
 describe('toJSON', () => {
     it('should return a JSON string with no indentation when pretty is false', () => {

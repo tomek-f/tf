@@ -12,7 +12,7 @@ import history from './router/history';
 import { store } from './store';
 import Root from './views/Root/Root';
 
-import './themesOnInit';
+import './themes-on-init';
 import './index.css';
 
 // TODO ? fix this
