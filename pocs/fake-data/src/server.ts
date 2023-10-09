@@ -31,7 +31,9 @@ const apiPost = app
         (c) => {
             const { count } = c.req.valid('query');
 
-            return c.jsonT(randPost({ length: count ? parseInt(count) : 1 }));
+            return c.jsonT(
+                randPost({ length: count ? Number.parseInt(count) : 1 }),
+            );
         },
     )
     .get('/hero', (c) => {
@@ -54,7 +56,7 @@ const apiHero = app
             const { count } = c.req.valid('query');
 
             return c.jsonT(
-                randSuperhero({ length: count ? parseInt(count) : 1 }),
+                randSuperhero({ length: count ? Number.parseInt(count) : 1 }),
             );
         },
     )

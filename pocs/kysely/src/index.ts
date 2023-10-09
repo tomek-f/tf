@@ -1,11 +1,13 @@
 import { sql } from 'kysely';
 
-import { db } from './database';
-import { findPersonById } from './PersonRepository';
+import { database } from './database';
+import { findPersonById } from './person-repository';
 
+// TODO ? fix this
+// eslint-disable-next-line unicorn/prefer-top-level-await
 (async () => {
     // create tables
-    await db.schema
+    await database.schema
         .createTable('person')
         .addColumn('id', 'integer', (col) => col.primaryKey())
         .addColumn('first_name', 'text', (col) => col.notNull())
@@ -16,7 +18,7 @@ import { findPersonById } from './PersonRepository';
         )
         .execute();
 
-    await db.schema
+    await database.schema
         .createTable('pet')
         .addColumn('id', 'integer', (col) => col.primaryKey())
         .addColumn('name', 'text', (col) => col.notNull().unique())
@@ -33,7 +35,7 @@ import { findPersonById } from './PersonRepository';
     //     .execute();
 
     // add Jennifer Aniston
-    await db
+    await database
         .insertInto('person')
         .values({
             first_name: 'Jennifer',
@@ -43,13 +45,13 @@ import { findPersonById } from './PersonRepository';
         .executeTakeFirst();
 
     // get all persons
-    const persons = await db
+    const persons = await database
         .selectFrom('person')
         .select(['person.id', 'first_name'])
         .execute();
 
     // get Jennifer Aniston
-    const person = await db
+    const person = await database
         .selectFrom('person')
         .select(['id', 'first_name', 'last_name', 'created_at', 'gender'])
         .where('id', '=', 1)

@@ -5,7 +5,7 @@ import {
     type LanguageCode,
     type LanguageCodeKeys,
 } from 'REACT_PG/constants/language';
-import { LOCAL_STORAGE_KEYS } from 'REACT_PG/constants/localStorage';
+import { LOCAL_STORAGE_KEYS } from 'REACT_PG/constants/local-storage';
 
 export function getBrowserLanguage(): string {
     const language = (navigator.languages?.[0] ??
@@ -21,12 +21,15 @@ export function getBrowserLanguage(): string {
 
 function getLanguage(): string {
     if (import.meta.env.DEV) {
-        const devInterfaceLanguage = localStorage.getItem(
+        const developmentInterfaceLanguage = localStorage.getItem(
             LOCAL_STORAGE_KEYS.devInterfaceLanguage,
         ) as LanguageCodeKeys | null;
 
-        if (devInterfaceLanguage && LANGUAGE_CODE[devInterfaceLanguage]) {
-            return LANGUAGE_CODE[devInterfaceLanguage];
+        if (
+            developmentInterfaceLanguage &&
+            LANGUAGE_CODE[developmentInterfaceLanguage]
+        ) {
+            return LANGUAGE_CODE[developmentInterfaceLanguage];
         }
     }
 

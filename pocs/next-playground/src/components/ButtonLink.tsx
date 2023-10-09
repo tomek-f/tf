@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-import { linkClasses } from '../utils/linkClasses';
+import { linkClasses } from '../utils/link-classes';
 
 interface Props
     extends DetailedHTMLProps<

@@ -2,8 +2,8 @@ import { Link, NavLink, Route, Routes } from 'react-router-dom';
 
 import Head from 'REACT_PG/components/Head/Head';
 import ThemeSwitcher from 'REACT_PG/components/ThemeSwitcher/ThemeSwitcher';
-import { LinkClassNames } from 'REACT_PG/constants/linkClassNames';
-import useFormatMessage from 'REACT_PG/hooks/useFormatMessage';
+import { LinkClassNames } from 'REACT_PG/constants/link-class-names';
+import useFormatMessage from 'REACT_PG/hooks/ use-format-message';
 import Contact from '../Contact/Contact';
 import Home from '../Home/Home';
 import NotFound from '../NotFound/NotFound';

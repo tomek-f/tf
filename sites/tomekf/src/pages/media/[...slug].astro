@@ -5,8 +5,8 @@ import Block from '../../components/Block.astro';
 import CommonLayout from '../../layouts/CommonLayout.astro';
 import posts from '../../media/posts.json';
 import { linkCss } from '../../styles/common';
-import dateFromISOString from '../../utils/dateFromISOString';
-import truncateSpecial from '../../utils/truncateSpecial';
+import dateFromISOString from '../../utils/date-from-iso-string';
+import truncateSpecial from '../../utils/truncate-special';
 
 export const getStaticPaths = (async () => {
     return posts.map((post, idx) => {

@@ -23,7 +23,9 @@ export const BasicUserSchema = z.object({
         .trim()
         .toLowerCase()
         .min(5, { message: 'URLs must be a minimum of 5 characters' })
-        .refine((val) => val.indexOf('.') !== -1, { message: 'Invalid URL' })
+        .refine((value) => value.includes('.'), {
+            message: 'Invalid URL',
+        })
         .optional(),
     company: z.object({
         name: z.string().trim().min(5, {
@@ -43,6 +45,8 @@ const UserAddressSchema = z.object({
         .string()
         .trim()
         .min(2, { message: 'City must be 2 or more characters long' }),
+    // TODO ? fix this
+    // eslint-disable-next-line unicorn/better-regex
     zipcode: z.string().regex(/^\d{5}(?:[-\s]\d{4})?$/, {
         message: 'Must be 5 digit zip. Optional 4 digit extension allowed.',
     }),

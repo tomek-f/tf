@@ -21,6 +21,6 @@ type Nullable<T> = T | null;
 // NonNullable is an utiliy type
 type NonUndefined<T> = T extends undefined ? never : T;
 
-type SomeObj = object;
+type SomeObject = object;
 
-type ArrayOfSomeObjType = SomeObj[];
+type ArrayOfSomeObjectType = SomeObject[];

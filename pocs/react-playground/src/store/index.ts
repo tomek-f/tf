@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import counterReducer from 'REACT_PG/models/counter/counterSlice';
+import counterReducer from 'REACT_PG/models/counter/counter-slice';
 
 export const store = configureStore({
     reducer: {

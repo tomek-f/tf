@@ -1,5 +1,5 @@
-export type SomeObj = object;
-export type SomeError = Error & SomeObj;
+export type SomeObject = object;
+export type SomeError = Error & SomeObject;
 
 export type Nullable<T> = T | null;
 export type NullableDeep<T> = { [K in keyof T]: T[K] | null }; // export type NullableDeep<T> = { [K in keyof T]: Nullable<T[K]> };

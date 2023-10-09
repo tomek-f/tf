@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { LinkClassNames } from 'REACT_PG/constants/linkClassNames';
-import useFormatMessage from 'REACT_PG/hooks/useFormatMessage';
+import { LinkClassNames } from 'REACT_PG/constants/link-class-names';
+import useFormatMessage from 'REACT_PG/hooks/ use-format-message';
 
 const Home = () => {
     const formatMessage = useFormatMessage();

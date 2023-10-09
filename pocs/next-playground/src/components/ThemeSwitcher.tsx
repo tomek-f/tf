@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { linkClasses } from '../utils/linkClasses';
+import { linkClasses } from '../utils/link-classes';
 
 type Theme = 'dark' | 'light' | 'auto';
 

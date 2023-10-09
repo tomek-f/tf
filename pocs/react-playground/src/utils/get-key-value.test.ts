@@ -1,14 +1,14 @@
 // copilot chat generated
 import { describe, expect, it } from 'vitest';
 
-import getKeyValue from './getKeyValue';
+import getKeyValue from './get-key-value';
 
 describe('getKeyValue', () => {
     it('should return the value of the specified key', () => {
-        const obj = { foo: 'bar', baz: 42 };
+        const object = { foo: 'bar', baz: 42 };
 
-        expect(getKeyValue(obj, 'foo')).toBe('bar');
-        expect(getKeyValue(obj, 'baz')).toBe(42);
+        expect(getKeyValue(object, 'foo')).toBe('bar');
+        expect(getKeyValue(object, 'baz')).toBe(42);
     });
 
     // it('should handle undefined and null objects', () => {
@@ -17,9 +17,9 @@ describe('getKeyValue', () => {
     // });
 
     it('should handle non-existent keys', () => {
-        const obj = { foo: 'bar' };
+        const object = { foo: 'bar' };
 
         // @ts-expect-error baz does not exist on obj
-        expect(getKeyValue(obj, 'baz')).toBeUndefined();
+        expect(getKeyValue(object, 'baz')).toBeUndefined();
     });
 });

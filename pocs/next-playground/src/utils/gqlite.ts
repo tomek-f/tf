@@ -1,7 +1,7 @@
 import type { Nullable } from '../types/misc';
 
-type GQLiteSomeObj = object;
-type GQLiteSomeError = Error & GQLiteSomeObj;
+type GQLiteSomeObject = object;
+type GQLiteSomeError = Error & GQLiteSomeObject;
 
 enum GQLiteErrors {
     ERR_NET_NOT_OK = 'ERR_NET_NOT_OK',
@@ -38,8 +38,8 @@ async function getResult<T>(response: Response) {
     return response.text();
 }
 
-function headersJSON(obj?: HeadersInit) {
-    return new Headers({ 'Content-Type': 'application/json', ...obj });
+function headersJSON(object?: HeadersInit) {
+    return new Headers({ 'Content-Type': 'application/json', ...object });
 }
 
 function checkResults<T>(result: GQLiteResultSingle<T>) {
@@ -48,7 +48,7 @@ function checkResults<T>(result: GQLiteResultSingle<T>) {
 
 interface GQLitePayload {
     query: string;
-    variables: GQLiteSomeObj;
+    variables: GQLiteSomeObject;
     operationName?: string;
 }
 
@@ -161,7 +161,8 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
 
         if (
             result &&
-            ((Array.isArray(result) && !result.every(checkResults)) ||
+            ((Array.isArray(result) &&
+                !result.every((item) => checkResults(item))) ||
                 (!Array.isArray(result) && !checkResults(result)))
         ) {
             throw new GQLiteError(GQLiteErrors.ERR_NET_GRAPHQL_ERRORS, {
@@ -180,8 +181,8 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
         }
 
         return result as T;
-    } catch (err) {
-        const error = err as GQLiteError<T> | E;
+    } catch (error_) {
+        const error = error_ as GQLiteError<T> | E;
         const isDOMException = error instanceof DOMException;
         const isAbortError = isDOMException || error.name === 'AbortError';
 

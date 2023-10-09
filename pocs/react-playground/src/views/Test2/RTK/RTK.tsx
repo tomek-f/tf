@@ -1,13 +1,13 @@
 import Button from 'REACT_PG/components/Button/Button';
 import Fieldset from 'REACT_PG/components/Fieldset/Fieldset';
 import { useStoreActions, useStoreData } from 'REACT_PG/hooks/store';
-import counterActions from 'REACT_PG/models/counter/counterActions';
+import counterActions from 'REACT_PG/models/counter/counter-actions';
 import {
     decrement,
     increment,
     incrementAsync,
     incrementByAmount,
-} from 'REACT_PG/models/counter/counterSlice';
+} from 'REACT_PG/models/counter/counter-slice';
 
 const Rtk = () => {
     const count = useStoreData(({ counter }) => counter.value);

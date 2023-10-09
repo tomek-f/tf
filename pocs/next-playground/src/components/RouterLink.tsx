@@ -1,7 +1,7 @@
 import Link, { type LinkProps } from 'next/link';
 
 // import type { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
-import { linkClasses } from '../utils/linkClasses';
+import { linkClasses } from '../utils/link-classes';
 
 interface Props extends LinkProps {
     active?: boolean;

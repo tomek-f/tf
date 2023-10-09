@@ -1,7 +1,7 @@
 // copilot chat generated
 import { describe, expect, it } from 'vitest';
 
-import isType from './isType';
+import isType from './is-type.js';
 
 describe('isType', () => {
     it('should return true if the value is an instance of the specified type', () => {
