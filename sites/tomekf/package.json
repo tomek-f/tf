@@ -31,12 +31,12 @@
         "@astrojs/mdx": "^1.1.1",
         "@astrojs/sitemap": "^3.0.1",
         "@astrojs/solid-js": "^3.0.2",
-        "@astrojs/tailwind": "^5.0.1",
-        "astro": "^3.2.3",
-        "lucide-solid": "^0.284.0",
+        "@astrojs/tailwind": "^5.0.2",
+        "astro": "^3.2.4",
+        "lucide-solid": "^0.285.0",
         "runes": "^0.4.3",
         "sharp": "^0.32.6",
-        "solid-js": "^1.7.12",
+        "solid-js": "^1.8.1",
         "tailwind-merge": "^1.14.0"
     }
 }
