@@ -16,6 +16,10 @@ import (
 var router *chi.Mux
 var db *sql.DB
 
+type articleContextKey string // https://pkg.go.dev/context#example-WithValue
+
+const key = articleContextKey("article")
+
 type Article struct {
 	ID      int           `json:"id"`
 	Title   string        `json:"title"`
@@ -71,6 +75,7 @@ func ChangeMethod(next http.Handler) http.Handler {
 
 func ArticleCtx(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
 		articleID := chi.URLParam(r, "articleID")
 		article, err := dbGetArticle(articleID)
 		if err != nil {
@@ -78,7 +83,7 @@ func ArticleCtx(next http.Handler) http.Handler {
 			http.Error(w, http.StatusText(404), 404)
 			return
 		}
-		ctx := context.WithValue(r.Context(), "article", article)
+		ctx := context.WithValue(r.Context(), key, article)
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }
@@ -114,20 +119,20 @@ func CreateArticle(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetArticle(w http.ResponseWriter, r *http.Request) {
-	article := r.Context().Value("article").(*Article)
+	article := r.Context().Value(key).(*Article)
 	t, _ := template.ParseFiles("templates/base.html", "templates/article.html")
 	err := t.Execute(w, article)
 	catch(err)
 }
 
 func EditArticle(w http.ResponseWriter, r *http.Request) {
-	article := r.Context().Value("article").(*Article)
+	article := r.Context().Value(key).(*Article)
 	fmt.Println(article)
 	// TODO: Render template
 }
 
 func UpdateArticle(w http.ResponseWriter, r *http.Request) {
-	article := r.Context().Value("article").(*Article)
+	article := r.Context().Value(key).(*Article)
 	title := r.FormValue("title")
 	content := r.FormValue("content")
 	newArticle := &Article{
@@ -140,7 +145,7 @@ func UpdateArticle(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteArticle(w http.ResponseWriter, r *http.Request) {
-	article := r.Context().Value("article").(*Article)
+	article := r.Context().Value(key).(*Article)
 	err := dbDeleteArticle(strconv.Itoa(article.ID))
 	catch(err)
 	http.Redirect(w, r, "/", http.StatusFound)

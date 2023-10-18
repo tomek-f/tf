@@ -84,6 +84,7 @@ func dbUpdateArticle(id string, article *Article) error {
 	}
 	return nil
 }
+
 func dbDeleteArticle(id string) error {
 	query, err := db.Prepare("delete from articles where id=?")
 	defer query.Close()
