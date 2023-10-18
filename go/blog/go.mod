@@ -1,4 +1,4 @@
-module tomekf.pl/blog
+module blog
 
 go 1.21.3
 
