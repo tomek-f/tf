@@ -20,10 +20,10 @@ func connect() (*sql.DB, error) {
 
 func dbCreateArticle(article *Article) error {
 	query, err := db.Prepare("insert into articles(title,content) values (?,?)")
-	defer query.Close()
 	if err != nil {
 		return err
 	}
+	defer query.Close()
 	_, err = query.Exec(article.Title, article.Content)
 	if err != nil {
 		return err
@@ -33,10 +33,10 @@ func dbCreateArticle(article *Article) error {
 
 func dbGetAllArticles() ([]*Article, error) {
 	query, err := db.Prepare("select id, title, content from articles")
-	defer query.Close()
 	if err != nil {
 		return nil, err
 	}
+	defer query.Close()
 	result, err := query.Query()
 	if err != nil {
 		return nil, err
@@ -59,10 +59,10 @@ func dbGetAllArticles() ([]*Article, error) {
 
 func dbGetArticle(articleID string) (*Article, error) {
 	query, err := db.Prepare("select id, title, content from articles where id = ?")
-	defer query.Close()
 	if err != nil {
 		return nil, err
 	}
+	defer query.Close()
 	result := query.QueryRow(articleID)
 	data := new(Article)
 	err = result.Scan(&data.ID, &data.Title, &data.Content)
@@ -74,10 +74,10 @@ func dbGetArticle(articleID string) (*Article, error) {
 
 func dbUpdateArticle(id string, article *Article) error {
 	query, err := db.Prepare("update articles set (title, content) = (?,?) where id=?")
-	defer query.Close()
 	if err != nil {
 		return err
 	}
+	defer query.Close()
 	_, err = query.Exec(article.Title, article.Content, id)
 	if err != nil {
 		return err
@@ -87,10 +87,10 @@ func dbUpdateArticle(id string, article *Article) error {
 
 func dbDeleteArticle(id string) error {
 	query, err := db.Prepare("delete from articles where id=?")
-	defer query.Close()
 	if err != nil {
 		return err
 	}
+	defer query.Close()
 	_, err = query.Exec(id)
 	if err != nil {
 		return err
