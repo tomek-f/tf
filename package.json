@@ -46,12 +46,12 @@
         "eslint-plugin-react-refresh": "^0.4.3",
         "eslint-plugin-unicorn": "^48.0.1",
         "eslint-plugin-workspaces": "^0.9.0",
-        "lint-staged": "^15.0.1",
+        "lint-staged": "^15.0.2",
         "pre-commit": "^1.2.2",
         "prettier": "^3.0.3",
         "prettier-plugin-astro": "^0.12.0",
         "prettier-plugin-tailwindcss": "^0.5.6",
-        "turbo": "^1.10.15",
+        "turbo": "^1.10.16",
         "typescript": "^5.2.2"
     },
     "pre-commit": "beforecommit"
