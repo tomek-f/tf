@@ -12,13 +12,13 @@
     },
     "dependencies": {
         "@hono/node-server": "^1.2.0",
-        "@hono/zod-validator": "^0.1.9",
+        "@hono/zod-validator": "^0.1.10",
         "@ngneat/falso": "^7.1.1",
-        "hono": "^3.8.1",
+        "hono": "^3.8.3",
         "zod": "^3.22.4"
     },
     "devDependencies": {
-        "eslint": "^8.51.0",
+        "eslint": "^8.52.0",
         "tsx": "^3.14.0",
         "typescript": "^5.2.2"
     }
