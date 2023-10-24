@@ -23,6 +23,7 @@
     },
     "devDependencies": {
         "@types/runes": "^0.4.2",
+        "@types/uuid": "^9.0.6",
         "eslint": "^8.52.0",
         "tailwindcss": "^3.3.3",
         "type-fest": "^4.5.0",
@@ -36,9 +37,11 @@
         "astro": "^3.3.3",
         "better-sqlite3": "^9.0.0",
         "lucide-solid": "^0.288.0",
+        "nanoid": "^5.0.2",
         "runes": "^0.4.3",
         "sharp": "^0.32.6",
         "solid-js": "^1.8.3",
-        "tailwind-merge": "^1.14.0"
+        "tailwind-merge": "^1.14.0",
+        "uuid": "^9.0.1"
     }
 }
