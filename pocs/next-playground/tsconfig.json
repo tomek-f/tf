@@ -3,12 +3,9 @@
     "compilerOptions": {
         "skipLibCheck": true,
         "jsx": "preserve",
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ],
-        "strictNullChecks": true
+        "plugins": [{ "name": "next" }],
+        "strictNullChecks": true,
+        "baseUrl": "."
     },
     "include": [
         "../../@types",
