@@ -145,7 +145,7 @@
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/no-unused-vars": [
             "error",
-            { "ignoreRestSiblings": true }
+            { "ignoreRestSiblings": true, "argsIgnorePattern": "^_" }
         ],
         "@typescript-eslint/consistent-type-definitions": [
             "error",
@@ -158,10 +158,7 @@
 
         "unicorn/filename-case": [
             "error",
-            {
-                "case": "kebabCase",
-                "ignore": [".tsx$"]
-            }
+            { "case": "kebabCase", "ignore": [".tsx$"] }
         ],
         "unicorn/prevent-abbreviations": [
             "error",
@@ -173,12 +170,7 @@
                 }
             }
         ],
-        "unicorn/template-indent": [
-            "warn",
-            {
-                "indent": 4
-            }
-        ],
+        "unicorn/template-indent": ["warn", { "indent": 4 }],
 
         "unicorn/no-null": "off",
         "unicorn/switch-case-braces": "off"
