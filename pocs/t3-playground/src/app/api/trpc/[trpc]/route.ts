@@ -1,6 +1,6 @@
 import { type NextRequest } from 'next/server';
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
-import { env } from 'T3/env.mjs';
+import { env } from 'T3/env.js';
 import { appRouter } from 'T3/server/api/root';
 import { createTRPCContext } from 'T3/server/api/trpc';
 
