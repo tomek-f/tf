@@ -1,28 +1,15 @@
 {
+    "extends": "../../tsconfig.json",
     "compilerOptions": {
-        "target": "es2017",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "checkJs": true,
         "skipLibCheck": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
         "jsx": "preserve",
-        "incremental": true,
-        "noUncheckedIndexedAccess": true,
+        "plugins": [{ "name": "next" }],
+        "strictNullChecks": true,
         "baseUrl": ".",
-        "paths": {
-            "T3/*": ["./src/*"]
-        },
-        "plugins": [{ "name": "next" }]
+        "paths": { "T3/*": ["./src/*"] }
     },
     "include": [
+        "../../@types",
         ".eslintrc.cjs",
         "next-env.d.ts",
         "**/*.ts",
