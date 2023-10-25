@@ -27,8 +27,9 @@ const questions = [
 console.log(gradient('#bada55', 'hotpink')('Hi, welcome to run-script!'));
 
 // TODO ? fix this
-// eslint-disable-next-line unicorn/prefer-top-level-await
+// eslint-disable-next-line unicorn/prefer-top-level-await, @typescript-eslint/no-floating-promises
 inquirer.prompt(questions).then((answers) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     execSync(`npm run ${answers.script}`, {
         // cwd: process.cwd(),
         stdio: [process.stdin, process.stdout, process.stderr],
