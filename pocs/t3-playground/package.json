@@ -49,5 +49,11 @@
     },
     "ct3aMetadata": {
         "initVersion": "7.22.0"
+    },
+    "postcss": {
+        "plugins": {
+            "tailwindcss": {},
+            "autoprefixer": {}
+        }
     }
 }
