@@ -16,6 +16,8 @@ const Menu = () => {
             <NavLink href="/graphql-server">graphql-server</NavLink>
             <NavLink href="/zod-form">zod-form</NavLink>
             <NavLink href="/zod-server">zod-server</NavLink>
+            <NavLink href="/form">form</NavLink>
+            <NavLink href="/form-2">form 2</NavLink>
         </div>
     );
 };
