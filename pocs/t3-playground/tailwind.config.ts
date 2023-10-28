@@ -4,6 +4,7 @@ import { type Config } from 'tailwindcss';
 
 export default {
     content: ['./src/**/*.tsx'],
+    plugins: [],
     theme: {
         extend: {
             fontFamily: {
@@ -11,5 +12,4 @@ export default {
             },
         },
     },
-    plugins: [],
 } satisfies Config;

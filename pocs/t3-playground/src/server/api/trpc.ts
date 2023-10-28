@@ -64,7 +64,6 @@ export const createTRPCContext = (opts: { req: NextRequest }) => {
  */
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
-    transformer: superjson,
     errorFormatter({ shape, error }) {
         return {
             ...shape,
@@ -77,6 +76,7 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
             },
         };
     },
+    transformer: superjson,
 });
 
 /**

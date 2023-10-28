@@ -29,16 +29,16 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 // loadEnv(mode as string, process.cwd(), 'VITE') === loadEnv(mode as string, '.', 'VITE')
 // https://vitejs.dev/config/
-export default (/* { mode }: UserConfig */) => ({
+const config = (/* { mode }: UserConfig */) => ({
     plugins: [
         react(),
         // htmlPlugin(loadEnv(mode as string, process.cwd(), 'VITE')),
         // stats.html file sizes are messed up
         visualizer({
+            brotliSize: true,
+            gzipSize: true,
             // generates ./stats.html
             template: 'treemap',
-            gzipSize: true,
-            brotliSize: true,
             // open: true,
         }),
     ],
@@ -50,3 +50,5 @@ export default (/* { mode }: UserConfig */) => ({
         },
     },
 });
+
+export default config;

@@ -47,8 +47,8 @@ app.get('/', (c) => c.text('Hello Hono! You can access: /static(s)/hello.txt'));
 app.get(
     '/*',
     serveStatic({
-        root: './src',
         rewriteRequestPath: (path) => path.replace(/^\/statics/, '/static'),
+        root: './src',
     }),
 );
 

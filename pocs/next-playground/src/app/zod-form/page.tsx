@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import Form from './Form';
 
 export const metadata: Metadata = {
-    title: 'Zod form',
     description: 'Zod form description',
+    title: 'Zod form',
 };
 
 const Zod = () => {

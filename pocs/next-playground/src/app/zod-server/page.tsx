@@ -5,8 +5,8 @@ import { UserSchemaWithGeo } from '../../models/user';
 import type { Nullable, SomeError } from '../../types/misc';
 
 export const metadata: Metadata = {
-    title: 'Zod server',
     description: 'Zod server description',
+    title: 'Zod server',
 };
 
 const UserResults = z.array(UserSchemaWithGeo);

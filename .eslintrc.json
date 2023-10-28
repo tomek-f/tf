@@ -109,6 +109,16 @@
                 ]
             }
         ],
+        "sort-keys": [
+            "error",
+            "asc",
+            {
+                "allowLineSeparatedGroups": true,
+                "caseSensitive": true,
+                "natural": false,
+                "minKeys": 2
+            }
+        ],
 
         "prettier/prettier": "error",
         "arrow-body-style": "off",
@@ -129,7 +139,6 @@
             { "devDependencies": true }
         ],
 
-        /* disable normal and reenable in TS */
         "no-unused-expressions": "off",
         "@typescript-eslint/no-unused-expressions": "error",
         "no-use-before-define": "off",
@@ -171,7 +180,6 @@
             }
         ],
         "unicorn/template-indent": ["warn", { "indent": 4 }],
-
         "unicorn/no-null": "off",
         "unicorn/switch-case-braces": "off"
     }

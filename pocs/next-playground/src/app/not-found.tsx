@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'not found',
     description: 'not found description',
+    title: 'not found',
 };
 
 export default function NotFound() {

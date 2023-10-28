@@ -6,10 +6,8 @@ import { createTRPCContext } from 'T3/server/api/trpc';
 
 const handler = (request: NextRequest) =>
     fetchRequestHandler({
-        endpoint: '/api/trpc',
-        req: request,
-        router: appRouter,
         createContext: () => createTRPCContext({ req: request }),
+        endpoint: '/api/trpc',
         onError:
             env.NODE_ENV === 'development'
                 ? ({ path, error }) => {
@@ -20,6 +18,8 @@ const handler = (request: NextRequest) =>
                       );
                   }
                 : undefined,
+        req: request,
+        router: appRouter,
     });
 
 export { handler as GET, handler as POST };

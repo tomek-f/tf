@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import solidJs from '@astrojs/solid-js';

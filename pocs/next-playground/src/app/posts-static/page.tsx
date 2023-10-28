@@ -4,8 +4,8 @@ import NavLink from '../../components/NavLink';
 import { getSortedPostsData } from '../../lib/posts-json';
 
 export const metadata: Metadata = {
-    title: 'Post static',
     description: 'Post static description',
+    title: 'Post static',
 };
 
 const Posts = async () => {

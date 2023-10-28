@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 import nodejs from '@astrojs/node';
 import solidJs from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';

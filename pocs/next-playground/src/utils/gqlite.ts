@@ -126,15 +126,16 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
 
     try {
         const response = await fetch(input, {
-            method: 'POST',
-            headers: headersJSON(headers),
             body: JSON.stringify(
                 body || {
                     query,
                     variables,
+                    // eslint-disable-next-line sort-keys
                     operationName,
                 },
             ),
+            headers: headersJSON(headers),
+            method: 'POST',
             ...init,
         });
 
@@ -209,9 +210,9 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
 
         // Justin Case, re-throw with original stack
         throw new GQLiteError(GQLiteErrors.ERR_NET_GENERIC, {
+            error,
             result,
             status,
-            error,
         });
     }
 };

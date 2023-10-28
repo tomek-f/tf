@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'error',
     description: 'error description',
+    title: 'error',
 };
 
 export default function Error({

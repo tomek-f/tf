@@ -12,20 +12,21 @@ const initialState: CounterState = {
 
 export const counterSlice = createSlice({
     name: 'counter',
+    // eslint-disable-next-line sort-keys
     initialState,
     /* eslint-disable no-param-reassign */
     reducers: {
-        increment: (state) => {
-            state.value += 1;
-        },
         decrement: (state) => {
             state.value -= 1;
+        },
+        increment: (state) => {
+            state.value += 1;
         },
         incrementByAmount: (state, action: PayloadAction<number>) => {
             state.value += action.payload;
         },
-        /* eslint-enable no-param-reassign */
     },
+    /* eslint-enable no-param-reassign */
 });
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;

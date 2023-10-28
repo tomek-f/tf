@@ -9,7 +9,6 @@ import { type AppRouter } from 'T3/server/api/root';
 import { getUrl, transformer } from './shared';
 
 export const api = createTRPCProxyClient<AppRouter>({
-    transformer,
     links: [
         loggerLink({
             enabled: (op) =>
@@ -17,7 +16,6 @@ export const api = createTRPCProxyClient<AppRouter>({
                 (op.direction === 'down' && op.result instanceof Error),
         }),
         unstable_httpBatchStreamLink({
-            url: getUrl(),
             headers() {
                 const heads = new Map(headers());
 
@@ -25,6 +23,8 @@ export const api = createTRPCProxyClient<AppRouter>({
 
                 return Object.fromEntries(heads);
             },
+            url: getUrl(),
         }),
     ],
+    transformer,
 });
