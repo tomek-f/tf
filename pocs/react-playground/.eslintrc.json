@@ -1,6 +1,6 @@
 {
     "plugins": ["react", "react-hooks", "react-refresh"],
-    "extends": ["plugin:react/recommended"],
+    "extends": ["next/core-web-vitals", "plugin:react/recommended"],
     "rules": {
         "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
         "react/jsx-uses-react": "off",
@@ -10,12 +10,16 @@
         "react/jsx-props-no-spreading": "off",
         "react/button-has-type": ["error", { "reset": true }],
         "react/no-danger": "error",
-
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": [
             "error",
             { "additionalHooks": "useLegacyEffect" }
         ],
-        "react-refresh/only-export-components": "warn"
+
+        "react-refresh/only-export-components": "warn",
+
+        "@next/next/no-html-link-for-pages": "off",
+
+        "@typescript-eslint/consistent-type-assertions": "off"
     }
 }

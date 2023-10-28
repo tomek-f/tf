@@ -10,13 +10,14 @@
         "react/jsx-props-no-spreading": "off",
         "react/button-has-type": ["error", { "reset": true }],
         "react/no-danger": "error",
-
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": [
             "error",
             { "additionalHooks": "useLegacyEffect" }
         ],
+
         "@next/next/no-html-link-for-pages": "off",
+
         "@typescript-eslint/consistent-type-assertions": "off"
     }
 }
