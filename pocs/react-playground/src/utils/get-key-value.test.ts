@@ -5,7 +5,7 @@ import getKeyValue from './get-key-value';
 
 describe('getKeyValue', () => {
     it('should return the value of the specified key', () => {
-        const object = { foo: 'bar', baz: 42 };
+        const object = { baz: 42, foo: 'bar' };
 
         expect(getKeyValue(object, 'foo')).toBe('bar');
         expect(getKeyValue(object, 'baz')).toBe(42);

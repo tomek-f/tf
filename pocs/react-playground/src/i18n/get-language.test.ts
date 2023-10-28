@@ -30,8 +30,8 @@ const navigatorLanguages0 = navigatorLanguages[0];
 beforeAll(() => {
     languageGetter = vi.spyOn(window.navigator, 'language', 'get');
     Object.defineProperty(window.navigator, 'languages', {
-        value: navigatorLanguages,
         configurable: true,
+        value: navigatorLanguages,
     });
     expect(window.navigator.languages[0]).toBe(navigatorLanguages0);
 });

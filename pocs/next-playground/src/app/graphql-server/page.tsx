@@ -6,8 +6,8 @@ import gql from '../../utils/gql';
 import gqlite from '../../utils/gqlite';
 
 export const metadata: Metadata = {
-    title: 'GraphQL server',
     description: 'GraphQL server description',
+    title: 'GraphQL server',
 };
 
 const query = gql`
@@ -45,11 +45,11 @@ async function getData() {
     try {
         data = await gqlite<{ data: { allEpisode: AllEpisodes } }[]>(url, {
             // same request 2 times
-            rawRequest: true,
             body: [
                 { query, variables },
                 { query, variables },
             ],
+            rawRequest: true,
         });
     } catch (error_) {
         error = error_ as SomeError;

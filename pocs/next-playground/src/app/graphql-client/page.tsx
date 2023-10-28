@@ -46,11 +46,11 @@ const useData = (url: string) => {
                     { data: { allEpisode: AllEpisodes } }[]
                 >(url, {
                     // same request 2 times
-                    rawRequest: true,
                     body: [
                         { query, variables },
                         { query, variables },
                     ],
+                    rawRequest: true,
                 });
 
                 setData(response);

@@ -39,8 +39,8 @@ import { findPersonById } from './person-repository';
         .insertInto('person')
         .values({
             first_name: 'Jennifer',
-            last_name: 'Aniston',
             gender: 'woman',
+            last_name: 'Aniston',
         })
         .executeTakeFirst();
 
@@ -59,5 +59,5 @@ import { findPersonById } from './person-repository';
 
     const person2 = await findPersonById(1);
 
-    console.log({ persons, person, person2 });
+    console.log({ person, person2, persons });
 })();

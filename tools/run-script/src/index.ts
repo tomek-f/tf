@@ -17,10 +17,10 @@ const scripts = packageJson.scripts;
 const keys = Object.keys(scripts);
 const questions = [
     {
-        type: 'list',
-        name: 'script',
-        message: 'Choose a script to run',
         choices: keys,
+        message: 'Choose a script to run',
+        name: 'script',
+        type: 'list',
     },
 ];
 

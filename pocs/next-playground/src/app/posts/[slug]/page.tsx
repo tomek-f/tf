@@ -8,8 +8,8 @@ export async function generateMetadata({
     const postData = await getPostData(slug);
 
     return {
-        title: postData.title,
         description: `${postData.title} description`,
+        title: postData.title,
     };
 }
 

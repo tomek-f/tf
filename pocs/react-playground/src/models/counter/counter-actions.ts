@@ -7,11 +7,11 @@ import {
 } from './counter-slice';
 
 const counterActions = {
-    increment: () => store.dispatch(increment()),
     decrement: () => store.dispatch(decrement()),
+    increment: () => store.dispatch(increment()),
+    incrementAsync: (amount: number) => store.dispatch(incrementAsync(amount)),
     incrementByAmount: (amount: number) =>
         store.dispatch(incrementByAmount(amount)),
-    incrementAsync: (amount: number) => store.dispatch(incrementAsync(amount)),
 };
 
 export default counterActions;

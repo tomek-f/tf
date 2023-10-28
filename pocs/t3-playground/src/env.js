@@ -1,4 +1,4 @@
-/* eslint-disable unicorn/prevent-abbreviations */
+/* eslint-disable sort-keys, unicorn/prevent-abbreviations */
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
