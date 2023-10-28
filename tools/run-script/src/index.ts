@@ -7,6 +7,7 @@ import inquirer from 'inquirer';
 
 interface PackageJson {
     scripts: Record<string, string>;
+    // eslint-disable-next-line typescript-sort-keys/interface
     [x: string]: unknown;
 }
 

@@ -15,9 +15,9 @@ type State = typeof initialState;
 type Action =
     | { type: 'increment' }
     | { type: 'decrement' }
-    | { type: 'setFirstName'; firstName: string }
-    | { type: 'setLastName'; lastName: string }
-    | { type: 'setAge'; age: number };
+    | { firstName: string; type: 'setFirstName' }
+    | { lastName: string; type: 'setLastName' }
+    | { age: number; type: 'setAge' };
 
 type Dispatch = (action: Action) => void;
 

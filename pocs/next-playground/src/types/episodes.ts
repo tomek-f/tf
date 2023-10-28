@@ -1,9 +1,9 @@
 export interface AllEpisodes {
     date: string;
-    title: string;
+    description: string;
     guest: {
         name: string;
         twitter: string;
     };
-    description: string;
+    title: string;
 }

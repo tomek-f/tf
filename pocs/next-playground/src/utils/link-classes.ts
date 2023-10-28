@@ -1,8 +1,8 @@
 import { clsx } from 'clsx';
 
 interface Props {
-    className?: string;
     active?: boolean;
+    className?: string;
 }
 
 export function linkClasses({ className, active }: Props) {

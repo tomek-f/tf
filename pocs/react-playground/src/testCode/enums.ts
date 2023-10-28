@@ -1,8 +1,8 @@
 export enum Direction {
-    Up = 'UP',
     Down = 'DOWN',
     Left = 'LEFT',
     Right = 'RIGHT',
+    Up = 'UP',
 }
 
 export enum Direction2 {
