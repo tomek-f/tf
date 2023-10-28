@@ -6,8 +6,8 @@ import Fieldset from 'REACT_PG/components/Fieldset/Fieldset';
 
 interface BearState {
     bears: number;
-    increase: (by: number) => void;
     clear: () => void;
+    increase: (by: number) => void;
 }
 
 const initilState = {

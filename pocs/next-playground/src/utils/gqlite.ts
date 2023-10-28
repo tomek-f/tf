@@ -4,20 +4,20 @@ type GQLiteSomeObject = object;
 type GQLiteSomeError = Error & GQLiteSomeObject;
 
 enum GQLiteErrors {
-    ERR_NET_NOT_OK = 'ERR_NET_NOT_OK',
-    ERR_NET_NOT_GRAPHQL = 'ERR_NET_NOT_GRAPHQL',
-    ERR_NET_GRAPHQL_ERRORS = 'ERR_NET_GRAPHQL_ERRORS',
     ERR_NET_FAILED_TO_FETCH = 'ERR_NET_FAILED_TO_FETCH',
     ERR_NET_FETCH_ABORTED = 'ERR_NET_FETCH_ABORTED',
     ERR_NET_GENERIC = 'ERR_NET_GENERIC',
+    ERR_NET_GRAPHQL_ERRORS = 'ERR_NET_GRAPHQL_ERRORS',
+    ERR_NET_NOT_GRAPHQL = 'ERR_NET_NOT_GRAPHQL',
+    ERR_NET_NOT_OK = 'ERR_NET_NOT_OK',
 }
 
 interface GQLiteErrorData {
-    message: string;
     extensions: {
         code: string;
         path: string;
     };
+    message: string;
 }
 
 type GQLiteResultSingle<T> =
@@ -47,9 +47,9 @@ function checkResults<T>(result: GQLiteResultSingle<T>) {
 }
 
 interface GQLitePayload {
+    operationName?: string;
     query: string;
     variables: GQLiteSomeObject;
-    operationName?: string;
 }
 
 export interface GQLiteInit
@@ -60,9 +60,9 @@ export interface GQLiteInit
 }
 
 interface GQLiteErrorInfo<K> {
+    error?: Nullable<Error>;
     result?: Nullable<GQLiteResult<K>>;
     status?: Nullable<number>;
-    error?: Nullable<Error>;
 }
 
 class GQLiteError<K> extends Error {

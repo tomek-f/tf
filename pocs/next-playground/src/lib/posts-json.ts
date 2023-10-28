@@ -2,10 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 interface PostData {
+    content: string;
     date: Date;
     id: string;
     title: string;
-    content: string;
 }
 
 const postsDirectory = path.join(process.cwd(), 'src', 'posts-json');
