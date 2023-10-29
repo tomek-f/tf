@@ -4,7 +4,7 @@
     "private": true,
     "type": "module",
     "engines": {
-        "node": "^18 || ^20"
+        "node": "^20"
     },
     "source": "src/index.html",
     "browserslist": "> 0.5%, last 2 versions, not dead",
