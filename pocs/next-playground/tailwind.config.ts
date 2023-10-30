@@ -1,3 +1,5 @@
+import { fontFamily } from 'tailwindcss/defaultTheme';
+
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -10,6 +12,9 @@ export default {
     plugins: [],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['var(--font-sans)', ...fontFamily.sans],
+            },
             screens: {
                 '3xl': '1920px',
             },
