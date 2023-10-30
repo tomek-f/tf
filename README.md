@@ -3,8 +3,7 @@
 ## to check
 
 -   [ ] https://component-party.dev/
--   [ ] server components
--   [ ] server actions
+-   [ ] https://auto-animate.formkit.com/
 
 ## update all
 
