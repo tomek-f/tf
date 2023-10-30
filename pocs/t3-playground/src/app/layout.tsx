@@ -5,6 +5,7 @@ import { headers } from 'next/headers';
 import { TRPCReactProvider } from 'T3/trpc/react';
 
 const inter = Inter({
+    display: 'swap',
     subsets: ['latin'],
     variable: '--font-sans',
 });

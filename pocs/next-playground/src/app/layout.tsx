@@ -9,7 +9,11 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import config from '../config';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+    display: 'swap',
+    subsets: ['latin'],
+    variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
     description: 'next-playground description',
@@ -24,7 +28,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
                 rel="icon"
             />
             <body
-                className={`${inter.className} min-h-screen bg-emerald-200 p-8 text-base font-light text-black dark:bg-purple-950 dark:text-white`}
+                className={`font-sans ${inter.variable} min-h-screen bg-emerald-200 p-8 text-base font-light text-black dark:bg-purple-950 dark:text-white`}
             >
                 <Layout>
                     <Content>
