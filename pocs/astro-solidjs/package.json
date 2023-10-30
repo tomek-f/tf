@@ -27,14 +27,14 @@
         "typescript": "^5.2.2"
     },
     "dependencies": {
-        "@astrojs/check": "^0.2.1",
+        "@astrojs/check": "^0.3.0",
         "@astrojs/solid-js": "^3.0.2",
         "@astrojs/tailwind": "^5.0.2",
         "astro": "^3.4.0",
         "lucide-solid": "^0.290.0",
         "runes": "^0.4.3",
         "sharp": "^0.32.6",
-        "solid-js": "^1.8.4",
-        "tailwind-merge": "^1.14.0"
+        "solid-js": "^1.8.5",
+        "tailwind-merge": "^2.0.0"
     }
 }
