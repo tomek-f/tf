@@ -42,6 +42,15 @@ type Props2 = astroHTML.JSX.SVGAttributes;
 -   https://www.radix-ui.com/
 -   https://headlessui.com/
 
+## fake data
+
+-   https://www.npmjs.com/package/@faker-js/faker
+-   https://www.npmjs.com/package/@ngneat/falso
+
+## backend
+
+-   express, fastify, koa, hono, hapi
+
 ## tailwind
 
 -   https://www.npmjs.com/package/tailwind-merge - does not remove unused styles
