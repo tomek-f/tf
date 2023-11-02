@@ -25,5 +25,14 @@
     </head>
     <body>
         {{ template "body" . }}
+        <script>
+            window.document.addEventListener('DOMContentLoaded', (event) => {
+                console.log(
+                    'DOMContentLoaded',
+                    window.location.pathname,
+                    event,
+                );
+            });
+        </script>
     </body>
 </html>
