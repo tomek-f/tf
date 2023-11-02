@@ -52,6 +52,7 @@ func main() {
 			r.Get("/edit", EditArticle)  // GET /articles/1234/edit
 		})
 	})
+	fmt.Println("http://localhost:8005/")
 	err = http.ListenAndServe(":8005", router)
 	catch(err)
 }
