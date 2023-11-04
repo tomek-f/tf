@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+// just use @tanstack/react-query provided by @trpc/* deps
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { loggerLink, unstable_httpBatchStreamLink } from '@trpc/client';
 import { createTRPCReact } from '@trpc/react-query';
