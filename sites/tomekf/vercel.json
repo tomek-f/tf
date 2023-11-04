@@ -1,10 +1,13 @@
 {
-    "github": {
-        "enabled": false
+    "git": {
+        "deploymentEnabled": {
+            "feat/1": false,
+            "feat/2": false,
+            "feat/3": false,
+            "feat/4": false,
+            "feat/5": false
+        }
     },
     "cleanUrls": true,
-    "trailingSlash": false,
-    "installCommand": "npm ci",
-    "buildCommand": "npm run build",
-    "outputDirectory": "dist"
+    "trailingSlash": false
 }
