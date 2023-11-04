@@ -103,6 +103,16 @@ type Props2 = astroHTML.JSX.SVGAttributes;
 
 ## workflow backup
 
+vecel.json
+
+```json
+{
+    "github": {
+        "enabled": false
+    }
+}
+```
+
 ```yml
 name: deploy @tf/next-playground
 
