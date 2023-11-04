@@ -17,7 +17,6 @@
         "format-write": "prettier --write . **/*.astro",
         "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test --force",
         "vercel": "vercel",
-        "netlify": "netlify",
         "turbo": "turbo"
     },
     "workspaces": [
