@@ -1,11 +1,7 @@
 {
     "git": {
         "deploymentEnabled": {
-            "feat/1": false,
-            "feat/2": false,
-            "feat/3": false,
-            "feat/4": false,
-            "feat/5": false
+            "feat/skipDeploy": false
         }
     },
     "cleanUrls": true,
