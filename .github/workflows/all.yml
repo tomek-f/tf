@@ -30,102 +30,102 @@ jobs:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/types
 
-    # TESTING/PREVIEW >>>>>>>>>>
-    testing-vercel-deploy-tomekf:
-        if: github.ref != 'refs/heads/master'
-        runs-on: ubuntu-latest
-        environment: testing
-        needs: [build, vitest, lint, prettier, types]
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 20
-                  check-latest: true
-                  cache: 'npm'
-            # - run: npm ci # vercel build handles this
-            - run: npm install --global vercel@latest
-            - name: clone repo with media
-              run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git __tf_data__
-              env:
-                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-            - name: copy media to tomekf public fir
-              run: cp -r __tf_data__/data/media sites/tomekf/public/media
-            - run: ls -lhaFS sites/tomekf/public/media
-            - name: build & deploy
-              run: vercel link --cwd ./sites/tomekf --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build && vercel deploy --token ${VERCEL_TOKEN}
-              env:
-                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
-    testing-vercel-deploy-next-playground:
-        if: github.ref != 'refs/heads/master'
-        runs-on: ubuntu-latest
-        environment: testing
-        needs: [build, vitest, lint, prettier, types]
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 20
-                  check-latest: true
-                  cache: 'npm'
-            # - run: npm ci # vercel build handles this
-            - run: npm install --global vercel@latest
-            - name: build & deploy
-              run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build && vercel deploy --token ${VERCEL_TOKEN}
-              env:
-                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
-    # TESTING/PREVIEW <<<<<<<<<<
+    # # TESTING/PREVIEW >>>>>>>>>>
+    # testing-vercel-deploy-tomekf:
+    #     if: github.ref != 'refs/heads/master'
+    #     runs-on: ubuntu-latest
+    #     environment: testing
+    #     needs: [build, vitest, lint, prettier, types]
+    #     steps:
+    #         - uses: actions/checkout@v3
+    #         - uses: actions/setup-node@v3
+    #           with:
+    #               node-version: 20
+    #               check-latest: true
+    #               cache: 'npm'
+    #         # - run: npm ci # vercel build handles this
+    #         - run: npm install --global vercel@latest
+    #         - name: clone repo with media
+    #           run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git __tf_data__
+    #           env:
+    #               GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    #         - name: copy media to tomekf public fir
+    #           run: cp -r __tf_data__/data/media sites/tomekf/public/media
+    #         - run: ls -lhaFS sites/tomekf/public/media
+    #         - name: build & deploy
+    #           run: vercel link --cwd ./sites/tomekf --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build && vercel deploy --token ${VERCEL_TOKEN}
+    #           env:
+    #               VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    #               VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    #               VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
+    # testing-vercel-deploy-next-playground:
+    #     if: github.ref != 'refs/heads/master'
+    #     runs-on: ubuntu-latest
+    #     environment: testing
+    #     needs: [build, vitest, lint, prettier, types]
+    #     steps:
+    #         - uses: actions/checkout@v3
+    #         - uses: actions/setup-node@v3
+    #           with:
+    #               node-version: 20
+    #               check-latest: true
+    #               cache: 'npm'
+    #         # - run: npm ci # vercel build handles this
+    #         - run: npm install --global vercel@latest
+    #         - name: build & deploy
+    #           run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build && vercel deploy --token ${VERCEL_TOKEN}
+    #           env:
+    #               VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    #               VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    #               VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
+    # # TESTING/PREVIEW <<<<<<<<<<
 
-    # PRODUCTION >>>>>>>>>>
-    production-vercel-deploy-tomekf:
-        if: github.ref == 'refs/heads/master'
-        runs-on: ubuntu-latest
-        environment: production
-        needs: [build, vitest, lint, prettier, types]
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 20
-                  check-latest: true
-                  cache: 'npm'
-            # - run: npm ci # vercel build handles this
-            - run: npm install --global vercel@latest
-            - name: clone repo with media
-              run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git __tf_data__
-              env:
-                  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-            - name: copy media to tomekf public fir
-              run: cp -r __tf_data__/data/media sites/tomekf/public/media
-            - run: ls -lhaFS sites/tomekf/public/media
-            - name: build & deploy
-              run: vercel link --cwd ./sites/tomekf --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
-              env:
-                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
-    production-vercel-deploy-next-playground:
-        if: github.ref == 'refs/heads/master'
-        runs-on: ubuntu-latest
-        environment: production
-        needs: [build, vitest, lint, prettier, types]
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 20
-                  check-latest: true
-                  cache: 'npm'
-            # - run: npm ci # vercel build handles this
-            - run: npm install --global vercel@latest
-            - name: build & deploy
-              run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
-              env:
-                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-                  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-                  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
-    # PRODUCTION <<<<<<<<<<
+    # # PRODUCTION >>>>>>>>>>
+    # production-vercel-deploy-tomekf:
+    #     if: github.ref == 'refs/heads/master'
+    #     runs-on: ubuntu-latest
+    #     environment: production
+    #     needs: [build, vitest, lint, prettier, types]
+    #     steps:
+    #         - uses: actions/checkout@v3
+    #         - uses: actions/setup-node@v3
+    #           with:
+    #               node-version: 20
+    #               check-latest: true
+    #               cache: 'npm'
+    #         # - run: npm ci # vercel build handles this
+    #         - run: npm install --global vercel@latest
+    #         - name: clone repo with media
+    #           run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git __tf_data__
+    #           env:
+    #               GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    #         - name: copy media to tomekf public fir
+    #           run: cp -r __tf_data__/data/media sites/tomekf/public/media
+    #         - run: ls -lhaFS sites/tomekf/public/media
+    #         - name: build & deploy
+    #           run: vercel link --cwd ./sites/tomekf --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
+    #           env:
+    #               VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    #               VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    #               VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_1 }}
+    # production-vercel-deploy-next-playground:
+    #     if: github.ref == 'refs/heads/master'
+    #     runs-on: ubuntu-latest
+    #     environment: production
+    #     needs: [build, vitest, lint, prettier, types]
+    #     steps:
+    #         - uses: actions/checkout@v3
+    #         - uses: actions/setup-node@v3
+    #           with:
+    #               node-version: 20
+    #               check-latest: true
+    #               cache: 'npm'
+    #         # - run: npm ci # vercel build handles this
+    #         - run: npm install --global vercel@latest
+    #         - name: build & deploy
+    #           run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
+    #           env:
+    #               VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    #               VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+    #               VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_3 }}
+    # # PRODUCTION <<<<<<<<<<
