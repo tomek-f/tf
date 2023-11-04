@@ -97,6 +97,10 @@ type Props2 = astroHTML.JSX.SVGAttributes;
 
 -   …
 
+## react native
+
+-   use expo 😉
+
 ## workflow backup
 
 ```yml
