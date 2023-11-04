@@ -12,40 +12,4 @@ import Input from './Input.astro';
     <Input id="x" name="x" readonly value="10" />
 </div>
 
-<script>
-    const ratio = (a = 0, b = 0, c = 0): number => (b * c) / a;
-    const byId = <T extends HTMLElement>(id: string): T | null =>
-        document.getElementById(id) as T | null;
-
-    const $a = byId<HTMLInputElement>('a');
-    const $b = byId<HTMLInputElement>('b');
-    const $c = byId<HTMLInputElement>('c');
-    const $x = byId<HTMLInputElement>('x');
-
-    if (!$a || !$b || !$c || !$x) {
-        throw new Error('Elements not found!');
-    }
-
-    const state = {
-        a: Number($a.value),
-        b: Number($b.value),
-        c: Number($c.value),
-        x: Number($x.value),
-    };
-
-    type StateKeys = keyof typeof state;
-
-    const onInput = (event: Event): void => {
-        if (!(event.target instanceof HTMLInputElement)) {
-            return;
-        }
-
-        state[event.target.name as StateKeys] = Number(event.target.value);
-        state.x = ratio(state.a, state.b, state.c);
-        $x.value = state.x.toString();
-    };
-
-    $a.addEventListener('input', onInput);
-    $b.addEventListener('input', onInput);
-    $c.addEventListener('input', onInput);
-</script>
+<script src="./ratio.ts"></script>
