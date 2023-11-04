@@ -41,10 +41,9 @@ const mapUrl =
     },${post.longitude}&key=${import.meta.env.GOOGLE_MAPS_API_KEY}}`;
 
 /*
-import.meta.env.DEV ||
-import.meta.env.IS_NON_PRODUCTION
-    ? `https://develop.images.tomekf.pl/media/${post.hash}.${post.type}`
-    : `https://images.tomekf.pl/media/${post.hash}.${post.type}`
+import.meta.env.DEV
+    ? `https://media.tomekf.pl/media/${post.hash}.${post.type}`
+    : `/media/${post.hash}.${post.type}`
 */
 ---
 
@@ -58,9 +57,10 @@ import.meta.env.IS_NON_PRODUCTION
                 post.type === 'jpg' && (
                     <img
                         src={
-                            import.meta.env.DEV
-                                ? `https://images.tomekf.pl/media/${post.hash}.${post.type}`
-                                : `/media/${post.hash}.${post.type}`
+                            import.meta.env.DEV ||
+                            import.meta.env.IS_NON_PRODUCTION
+                                ? `https://develop.media.tomekf.pl/media/${post.hash}.${post.type}`
+                                : `https://media.tomekf.pl/media/${post.hash}.${post.type}`
                         }
                         alt={post.hash}
                     />
@@ -71,9 +71,10 @@ import.meta.env.IS_NON_PRODUCTION
                     <video controls>
                         <source
                             src={
-                                import.meta.env.DEV
-                                    ? `https://images.tomekf.pl/media/${post.hash}.${post.type}`
-                                    : `/media/${post.hash}.${post.type}`
+                                import.meta.env.DEV ||
+                                import.meta.env.IS_NON_PRODUCTION
+                                    ? `https://develop.media.tomekf.pl/media/${post.hash}.${post.type}`
+                                    : `https://media.tomekf.pl/media/${post.hash}.${post.type}`
                             }
                             type="video/mp4"
                         />
