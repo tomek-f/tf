@@ -43,22 +43,22 @@ const parsedDescription = ['Internety Tomasz Fijoł', title]
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={parsedDescription} />
-        <meta name="debug_DEV" content={`${import.meta.env.DEV || false}`} />
+        <meta name="debug_DEV" content={`${!!import.meta.env.DEV}`} />
         <meta
             name="debug_IS_NON_PRODUCTION"
-            content={`${import.meta.env.IS_NON_PRODUCTION || false}`}
+            content={`${!!import.meta.env.IS_NON_PRODUCTION}`}
         />
         <meta
             name="debug_IS_PRODUCTION"
-            content={`${import.meta.env.IS_PRODUCTION || false}`}
+            content={`${!!import.meta.env.IS_PRODUCTION}`}
         />
         <meta
             name="debug_IS_PREVIEW"
-            content={`${import.meta.env.IS_PREVIEW || false}`}
+            content={`${!!import.meta.env.IS_PREVIEW}`}
         />
         <meta
             name="debug_IS_DEVELOPMENT"
-            content={`${import.meta.env.IS_DEVELOPMENT || false}`}
+            content={`${!!import.meta.env.IS_DEVELOPMENT}`}
         />
         <link
             rel="icon"
