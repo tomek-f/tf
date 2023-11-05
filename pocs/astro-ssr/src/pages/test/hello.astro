@@ -11,6 +11,4 @@ const response = await GET(Astro as unknown as APIContext);
 const data = (await (response as Response).json()) as HelloData;
 ---
 
-<SubLayout title="Hello">
-    <h1>{data.greeting}</h1>
-</SubLayout>
+<SubLayout title="Hello">{data.greeting}</SubLayout>

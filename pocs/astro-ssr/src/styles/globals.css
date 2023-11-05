@@ -24,6 +24,9 @@
     .custom-html ul {
         @apply list-disc;
     }
+    .custom-html ul ul {
+        @apply list-[circle];
+    }
     .custom-html ol {
         @apply list-decimal;
     }

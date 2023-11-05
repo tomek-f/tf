@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const prerender = true;
 
-const usernames = ['Sarah', 'Chris', 'Yan', 'Elian'];
+const usernames = ['Sarah', 'Chris', 'Yan', 'Elian', '2137'];
 
 export const GET: APIRoute = ({ params }) => {
     const id = Number(params.id);
@@ -23,5 +23,6 @@ export function getStaticPaths() {
         { params: { id: '1' } },
         { params: { id: '2' } },
         { params: { id: '3' } },
+        { params: { id: '4' } },
     ];
 }
