@@ -10,13 +10,14 @@
     "bin": {
         "ntl": "./out/index.js",
         "run-script": "./out/index.js",
-        "tfrs": "./out/index.js"
+        "tfrs": "./out/index.js",
+        "rrr": "./out/index.js"
     },
     "scripts": {
         "start": "node ./out/index.js",
-        "build": "tsc --declaration --sourceMap",
-        "test1": "test 1",
-        "test2": "test 2",
+        "build": "tsc --declaration --sourceMap --noEmit false",
+        "test1": "echo 'test 1'",
+        "test2": "echo 'test 2'",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "npm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"

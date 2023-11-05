@@ -10,7 +10,8 @@
         "outDir": "./out",
         "esModuleInterop": true,
         "noErrorTruncation": true,
-        "verbatimModuleSyntax": true
+        "verbatimModuleSyntax": true,
+        "noEmit": true
     },
     "include": ["./src"],
     "exclude": ["node_modules", "./out"]
