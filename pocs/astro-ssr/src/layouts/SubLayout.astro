@@ -3,9 +3,9 @@ import Block from '../components/Block.astro';
 import { linkCss } from '../styles/common';
 import CommonLayout from './CommonLayout.astro';
 
-type Props = {
+interface Props {
     title: string;
-};
+}
 ---
 
 <CommonLayout title={`${Astro.props.title} | Test`}>

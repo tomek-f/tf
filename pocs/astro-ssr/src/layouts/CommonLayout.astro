@@ -1,6 +1,10 @@
 ---
 import Header from '../components/Header.astro';
 import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+    title?: string;
+}
 ---
 
 <BaseLayout title={Astro.props.title}>

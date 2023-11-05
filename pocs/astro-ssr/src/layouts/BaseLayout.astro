@@ -7,16 +7,16 @@ import '../styles/globals.css';
 interface Props {
     class?: string;
     classHtml?: string;
-    title?: string;
+    title?: string | undefined; // exactOptionalPropertyTypes
 }
 
 const { class: className, classHtml, title } = Astro.props;
 
-const parsedTitle = [title, 'Astro + SolidJS'].filter(Boolean).join(' | ');
+const titleDefault = 'Astro SSR + SolidJS';
+
+const parsedTitle = [title, titleDefault].filter(Boolean).join(' | ');
 // useless description ;)
-const parsedDescription = ['Astro + SolidJS', title]
-    .filter(Boolean)
-    .join(' - ');
+const parsedDescription = [titleDefault, title].filter(Boolean).join(' - ');
 
 /*
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">

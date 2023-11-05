@@ -1,5 +1,7 @@
 ---
+import SubLayout from '../../layouts/SubLayout.astro';
+
 const time = new Date().toLocaleTimeString();
 ---
 
-<h1>{time}</h1>
+<SubLayout title="Time">{time}</SubLayout>
