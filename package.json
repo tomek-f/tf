@@ -16,7 +16,7 @@
         "turbo:build-pocs": "turbo build --force --filter='./pocs/*' --filter=!@tf/astro-ssr --filter=!@tf/t3-playground",
         "format-check": "prettier --check . **/*.astro",
         "format-write": "prettier --write . **/*.astro",
-        "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test --force",
+        "beforecommit": "NODE_ENV=production lint-staged && npm run turbo:astro-check && turbo check-types test --force",
         "vercel": "vercel",
         "turbo": "turbo"
     },
