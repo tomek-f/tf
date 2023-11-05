@@ -38,7 +38,7 @@ import CommonLayout from '../../layouts/CommonLayout.astro';
                 <ul>
                     <li>
                         <a href="/api/db">db</a>,
-                        <a href="/api/db">db pretty</a>
+                        <a href="/api/db?pretty=1">db pretty</a>
                     </li>
                     <li>
                         <a href="/api/search-params?hello=1">search-params</a>
@@ -65,9 +65,9 @@ import CommonLayout from '../../layouts/CommonLayout.astro';
                         <a href="/api/nanoid">nanoid</a>
                     </li>
                     <li>
-                        <a href="/api/redirect?a=1">redirect hello</a>,
-                        <a href="/api/redirect?a=2">redirect 404</a>,
-                        <a href="/api/redirect">redirect 307</a>
+                        <a href="/api/redirect-test?a=1">redirect hello</a>,
+                        <a href="/api/redirect-test?a=2">redirect 404</a>,
+                        <a href="/api/redirect-test">redirect 307</a>
                     </li>
                     <li>
                         <a href="/api/request-path.json">request-path.json</a>
