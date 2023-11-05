@@ -12,10 +12,11 @@
         "turbo:lint-js-fix": "turbo lint-js-fix --force",
         "turbo:lint-js-next": "turbo lint-js-next --force",
         "turbo:test": "turbo test --force",
+        "turbo:astro-check": "turbo astro-check --force --concurrency=1",
         "turbo:build-pocs": "turbo build --force --filter='./pocs/*' --filter=!@tf/astro-ssr --filter=!@tf/t3-playground",
         "format-check": "prettier --check . **/*.astro",
         "format-write": "prettier --write . **/*.astro",
-        "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test --force",
+        "beforecommit": "NODE_ENV=production lint-staged && npm run turbo:astro-check && turbo check-types test --force",
         "vercel": "vercel",
         "turbo": "turbo"
     },
