@@ -1,11 +1,12 @@
 {
     "$schema": "https://turbo.build/schema.json",
     "pipeline": {
+        "astro-check": { "cache": false },
         "build": { "cache": false },
+        "check-types": { "cache": false },
         "lint-js": { "cache": false },
         "lint-js-fix": { "cache": false },
         "lint-js-next": { "cache": false },
-        "check-types": { "cache": false },
         "test": { "cache": false }
     }
 }
