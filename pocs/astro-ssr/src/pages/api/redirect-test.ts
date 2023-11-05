@@ -10,6 +10,7 @@ export const GET: APIRoute = ({ url: { searchParams }, redirect }) => {
         });
     }
 
+    // TODO on vercel returns an unstyled 404, same thing in pages/api/user/[id].json.ts returns a proper styled pages/404.astro
     if (a === '2') {
         return new Response(null, {
             status: 404,
