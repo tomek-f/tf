@@ -13,7 +13,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['var(--font-sans)', ...fontFamily.sans],
+                'nunito-sans': ['var(--font-nunito-sans)', ...fontFamily.sans],
             },
             screens: {
                 '3xl': '1920px',
