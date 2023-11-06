@@ -1,26 +1,20 @@
 import '../styles/globals.css';
 
 import type { Metadata } from 'next';
-import { Nunito_Sans } from 'next/font/google';
 
 import Content from '../components/Content';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 import config from '../config';
-
-// .font-nunito-sans is a custom font in tailwind.config.ts
-const nunitoSans = Nunito_Sans({
-    display: 'swap',
-    subsets: ['latin'],
-    variable: '--font-nunito-sans',
-});
+import { nunitoSans } from './fonts';
 
 export const metadata: Metadata = {
     description: 'next-playground description',
     title: 'next-playground',
 };
 
+// .font-nunito-sans is a custom font in tailwind.config.ts
 export default async function RootLayout(props: { children: React.ReactNode }) {
     return (
         <html className="dark" lang={config.language.split('-')[0]}>
@@ -33,8 +27,6 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
             >
                 <Layout>
                     <Content>
-                        <strong>ółęążdźćśń</strong> <em>ółęążdźćśń</em>{' '}
-                        abcdefghijklmnopqrstuvwxyz
                         <Header />
                         <div className="max-w-full">{props?.children}</div>
                         <Footer />
