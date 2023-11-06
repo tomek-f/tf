@@ -13,6 +13,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
+                agbalumo: ['var(--font-agbalumo)', ...fontFamily.sans],
                 'nunito-sans': ['var(--font-nunito-sans)', ...fontFamily.sans],
             },
             screens: {
