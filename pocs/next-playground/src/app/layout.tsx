@@ -23,7 +23,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
                 rel="icon"
             />
             <body
-                className={`font-nunito-sans ${nunitoSans.variable} min-h-screen bg-emerald-200 p-8 text-base font-light text-black dark:bg-purple-950 dark:text-white`}
+                className={`font-nunito-sans ${nunitoSans.variable} min-h-screen bg-emerald-200 p-8 text-base font-light text-black dark:bg-pink-600 dark:text-white`}
             >
                 <Layout>
                     <Content>
