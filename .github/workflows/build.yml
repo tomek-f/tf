@@ -5,7 +5,7 @@ on:
     workflow_call:
 
 jobs:
-    build-pocs:
+    build-slash-run-pocs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -15,7 +15,7 @@ jobs:
                   check-latest: true
                   cache: 'npm'
             - run: npm ci
-            - run: npm run turbo:build-pocs
+            - run: npm run turbo:build-slash-run-pocs
     build-tomekf:
         runs-on: ubuntu-latest
         steps:

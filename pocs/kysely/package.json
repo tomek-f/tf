@@ -9,6 +9,7 @@
     "main": "./out/index.js",
     "scripts": {
         "start": "tsx ./src/index.ts",
+        "run": "tsx ./src/index.ts",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "npm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
