@@ -7,6 +7,7 @@
         "lint-js": { "cache": false },
         "lint-js-fix": { "cache": false },
         "lint-js-next": { "cache": false },
+        "run": { "cache": false },
         "test": { "cache": false }
     }
 }
