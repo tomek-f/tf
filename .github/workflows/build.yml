@@ -38,7 +38,7 @@ jobs:
                   cache: 'npm'
             - run: npm ci
             - run: npm --workspace=@tf/astro-ssr run build
-    build-t3-playground:
+    build-next-playground:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
@@ -48,7 +48,7 @@ jobs:
                   check-latest: true
                   cache: 'npm'
             - run: npm ci
-            - run: npm --workspace=@tf/t3-playground run build
+            - run: npm --workspace=@tf/next-playground run build
 
             # - name: build next-playground
             #   run: npm run build --workspace=@tf/next-playground
