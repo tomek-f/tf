@@ -18,6 +18,7 @@ const Menu = () => {
             <NavLink href="/zod-server">zod-server</NavLink>
             <NavLink href="/form">form</NavLink>
             <NavLink href="/form-2">form 2</NavLink>
+            <NavLink href="/turso">turso</NavLink>
         </div>
     );
 };

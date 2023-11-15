@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "@hookform/resolvers": "^3.3.2",
+        "@libsql/client": "^0.3.6",
         "@reduxjs/toolkit": "^1.9.7",
         "clsx": "^2.0.0",
         "lucide-react": "^0.292.0",
