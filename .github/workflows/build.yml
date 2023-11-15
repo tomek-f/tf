@@ -48,10 +48,8 @@ jobs:
                   check-latest: true
                   cache: 'npm'
             - run: npm ci
-            - run: npm --workspace=@tf/next-playground run build
-
-            # - name: build next-playground
-            #   run: npm run build --workspace=@tf/next-playground
-            #   env:
-            #       NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_URL }}
-            #       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.DEV_NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+            - name: build next-playground
+              run: npm --workspace=@tf/next-playground run build
+              env:
+                  TURSO_URL_1: ${{ secrets.TURSO_URL_1 }}
+                  TURSO_TOKEN_1: ${{ secrets.TURSO_TOKEN_1 }}
