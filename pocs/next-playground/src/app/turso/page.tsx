@@ -1,12 +1,8 @@
 import type { Metadata } from 'next';
-import { createClient } from '@libsql/client';
+
+import turso from '../turso';
 
 export const revalidate = 300; // 5 minutes
-
-const client = createClient({
-    authToken: process.env.TURSO_TOKEN_1,
-    url: process.env.TURSO_URL_1 as string,
-});
 
 interface Row {
     id: number;
@@ -22,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const Turso = async () => {
-    const response = await client.execute('SELECT * FROM frameworks');
+    const response = await turso.execute('SELECT * FROM frameworks');
 
     console.log(response.columns);
     console.log(response.columnTypes);
