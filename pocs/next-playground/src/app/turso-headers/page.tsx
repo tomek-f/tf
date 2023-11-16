@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 
 import turso from '../turso';
-
-export const revalidate = 300; // 5 minutes
 
 interface Row {
     id: number;
@@ -13,19 +12,20 @@ interface Row {
 }
 
 export const metadata: Metadata = {
-    description: 'turso description',
-    title: 'turso',
+    description: 'turso headers description',
+    title: 'turso headers',
 };
 
-const Turso = async () => {
+const TursoHeaders = async () => {
     const response = await turso.execute('SELECT * FROM frameworks');
 
     console.log(response.columns);
     console.log(response.columnTypes);
+    console.log(headers().get('user-agent'));
 
     return (
         <>
-            <p>turso</p>
+            <p>turso headers</p>
             {(response.rows as unknown as Row[]).map((row) => (
                 <div className="mt-4" key={row.id}>
                     <div>{row.name}</div>
@@ -38,4 +38,4 @@ const Turso = async () => {
     );
 };
 
-export default Turso;
+export default TursoHeaders;

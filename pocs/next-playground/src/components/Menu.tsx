@@ -19,6 +19,7 @@ const Menu = () => {
             <NavLink href="/form">form</NavLink>
             <NavLink href="/form-2">form 2</NavLink>
             <NavLink href="/turso">turso</NavLink>
+            <NavLink href="/turso-headers">turso headers</NavLink>
         </div>
     );
 };
