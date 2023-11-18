@@ -5,7 +5,7 @@ type Props = React.DetailedHTMLProps<
     HTMLButtonElement
 >;
 
-const Button = (props: Props) => {
+export const Button = (props: Props) => {
     return (
         <button
             className={clsx(
@@ -18,5 +18,3 @@ const Button = (props: Props) => {
         />
     );
 };
-
-export default Button;

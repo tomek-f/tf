@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 
-import RouterLink from './RouterLink';
+import { RouterLink } from './RouterLink';
 
 interface Props {
     children: React.ReactNode;
@@ -10,7 +10,7 @@ interface Props {
     href: string;
 }
 
-const NavLink = ({ children, className, href }: Props) => {
+export const NavLink = ({ children, className, href }: Props) => {
     const pathname = usePathname();
     const active = pathname === href || pathname?.startsWith(`${href}/`);
 
@@ -20,5 +20,3 @@ const NavLink = ({ children, className, href }: Props) => {
         </RouterLink>
     );
 };
-
-export default NavLink;

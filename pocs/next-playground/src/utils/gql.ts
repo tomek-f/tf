@@ -10,8 +10,6 @@
 // }
 
 // hacked version
-function gql(strings: TemplateStringsArray) {
+export function gql(strings: TemplateStringsArray) {
     return strings.join('');
 }
-
-export default gql;

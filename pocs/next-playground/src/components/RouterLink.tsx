@@ -9,7 +9,7 @@ interface Props extends LinkProps {
     className?: string;
 }
 
-const RouterLink = ({
+export const RouterLink = ({
     children,
     className,
     href,
@@ -30,5 +30,3 @@ const RouterLink = ({
         </Link>
     );
 };
-
-export default RouterLink;

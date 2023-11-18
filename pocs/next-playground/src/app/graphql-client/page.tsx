@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 
 import type { AllEpisodes } from '../../types/episodes';
 import type { Nullable } from '../../types/misc';
-import gql from '../../utils/gql';
-import gqlite from '../../utils/gqlite';
+import { gql } from '../../utils/gql';
+import { gqlite } from '../../utils/gqlite';
 
 const query = gql`
     query GetLearnWithJasonEpisodes($now: DateTime!) {

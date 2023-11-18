@@ -2,11 +2,11 @@ import '../styles/globals.css';
 
 import type { Metadata } from 'next';
 
-import Content from '../components/Content';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Layout from '../components/Layout';
-import config from '../config';
+import { Content } from '../components/Content';
+import { Footer } from '../components/Footer';
+import { Header } from '../components/Header';
+import { Layout } from '../components/Layout';
+import { config } from '../config';
 import { nunitoSans } from './fonts';
 
 export const metadata: Metadata = {

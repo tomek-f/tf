@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { fontAgbalumo } from 'src/app/fonts';
 
-import Menu from './Menu';
+import { Menu } from './Menu';
 
 // .font-agbalumo is a custom font in tailwind.config.ts
-const Header = () => {
+export const Header = () => {
     return (
         <div className="navbar bg-base-300 flex-col rounded-md md:flex-row">
             <div className="flex-1">
@@ -21,5 +21,3 @@ const Header = () => {
         </div>
     );
 };
-
-export default Header;
