@@ -53,3 +53,5 @@ jobs:
               env:
                   TURSO_URL_1: ${{ secrets.TURSO_URL_1 }}
                   TURSO_TOKEN_1: ${{ secrets.TURSO_TOKEN_1 }}
+                  TURSO_URL_2: ${{ secrets.TURSO_URL_2 }}
+                  TURSO_TOKEN_2: ${{ secrets.TURSO_TOKEN_2 }}
