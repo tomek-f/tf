@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePath } from 'next/cache';
 import type { SomeObject } from 'src/types/misc';
 
 import { turso2 } from '../../db/turso2';
@@ -19,6 +20,8 @@ export async function postBlog(previousState: SomeObject, formData: FormData) {
             sql: 'INSERT INTO blogs (title, body) VALUES ($title, $body)',
         });
     }
+
+    revalidatePath('/turso-blogs');
 
     const { rows: updatedRows } = await turso2.execute('SELECT * FROM blogs');
 
