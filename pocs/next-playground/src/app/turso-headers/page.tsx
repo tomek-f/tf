@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 
-import turso from '../turso';
+import { turso1 } from '../../db/turso1';
 
 interface Row {
     id: number;
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const TursoHeaders = async () => {
-    const response = await turso.execute('SELECT * FROM frameworks');
+    const response = await turso1.execute('SELECT * FROM frameworks');
 
     console.log(response.columns);
     console.log(response.columnTypes);

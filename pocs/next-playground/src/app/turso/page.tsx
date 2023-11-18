@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import turso from '../turso';
+import { turso1 } from '../../db/turso1';
 
 export const revalidate = 300; // 5 minutes
 
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const Turso = async () => {
-    const response = await turso.execute('SELECT * FROM frameworks');
+    const response = await turso1.execute('SELECT * FROM frameworks');
 
     console.log(response.columns);
     console.log(response.columnTypes);

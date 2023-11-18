@@ -6,7 +6,7 @@ import { linkClasses } from '../utils/link-classes';
 
 type Theme = 'dark' | 'light' | 'auto';
 
-const ThemeSwitcher = () => {
+export const ThemeSwitcher = () => {
     const [theme, setTheme] = useState<Theme>('auto');
 
     if (process.env.NODE_ENV === 'development') {
@@ -88,5 +88,3 @@ const ThemeSwitcher = () => {
         </div>
     );
 };
-
-export default ThemeSwitcher;

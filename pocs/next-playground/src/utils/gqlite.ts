@@ -93,7 +93,7 @@ class GQLiteError<K> extends Error {
     }
 }
 
-const gqlite = async <T, E extends Error = GQLiteSomeError>(
+export const gqlite = async <T, E extends Error = GQLiteSomeError>(
     input: RequestInfo | URL,
     {
         query,
@@ -216,5 +216,3 @@ const gqlite = async <T, E extends Error = GQLiteSomeError>(
         });
     }
 };
-
-export default gqlite;

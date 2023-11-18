@@ -10,7 +10,7 @@ interface Props
     active?: boolean;
 }
 
-const ButtonLink = ({
+export const ButtonLink = ({
     children,
     className,
     active = false,
@@ -26,5 +26,3 @@ const ButtonLink = ({
         </button>
     );
 };
-
-export default ButtonLink;

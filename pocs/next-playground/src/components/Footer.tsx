@@ -1,8 +1,8 @@
 import { BoxIcon } from 'lucide-react';
 
-import ThemeSwitcher from './ThemeSwitcher';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
-const Footer = () => {
+export const Footer = () => {
     return (
         <footer className="footer bg-base-300 text-base-content items-center rounded-md py-4">
             <div>footer.info</div>
@@ -15,5 +15,3 @@ const Footer = () => {
         </footer>
     );
 };
-
-export default Footer;

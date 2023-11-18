@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 
 import type { AllEpisodes } from '../../types/episodes';
 import type { Nullable, SomeError } from '../../types/misc';
-import gql from '../../utils/gql';
-import gqlite from '../../utils/gqlite';
+import { gql } from '../../utils/gql';
+import { gqlite } from '../../utils/gqlite';
 
 export const metadata: Metadata = {
     description: 'GraphQL server description',
