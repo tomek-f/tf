@@ -31,7 +31,7 @@
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
         "@total-typescript/ts-reset": "^0.5.1",
-        "@types/node": "^20.9.1",
+        "@types/node": "^20.9.2",
         "@typescript-eslint/eslint-plugin": "^6.11.0",
         "@typescript-eslint/parser": "^6.11.0",
         "eslint": "^8.54.0",
@@ -44,7 +44,7 @@
         "eslint-plugin-react-refresh": "^0.4.4",
         "eslint-plugin-typescript-sort-keys": "^3.1.0",
         "eslint-plugin-unicorn": "^49.0.0",
-        "eslint-plugin-workspaces": "^0.9.0",
+        "eslint-plugin-workspaces": "^0.10.0",
         "lint-staged": "^15.1.0",
         "pre-commit": "^1.2.2",
         "prettier": "^3.1.0",
