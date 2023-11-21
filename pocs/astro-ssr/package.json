@@ -6,7 +6,6 @@
     "engines": {
         "node": "^18 || ^20"
     },
-    "_": "1",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
