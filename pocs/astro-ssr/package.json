@@ -26,8 +26,8 @@
         "@types/uuid": "^9.0.7",
         "eslint": "^8.54.0",
         "tailwindcss": "^3.3.5",
-        "type-fest": "^4.8.1",
-        "typescript": "^5.2.2"
+        "type-fest": "^4.8.2",
+        "typescript": "^5.3.2"
     },
     "dependencies": {
         "@astrojs/check": "^0.3.1",
@@ -35,13 +35,13 @@
         "@astrojs/solid-js": "^3.0.2",
         "@astrojs/tailwind": "^5.0.2",
         "@astrojs/vercel": "^5.2.0",
-        "astro": "^3.5.5",
+        "astro": "^3.6.0",
         "better-sqlite3": "^9.1.1",
         "lucide-solid": "^0.292.0",
         "nanoid": "^5.0.3",
         "runes": "^0.4.3",
         "sharp": "^0.32.6",
-        "solid-js": "^1.8.5",
+        "solid-js": "^1.8.6",
         "tailwind-merge": "^2.0.0",
         "uuid": "^9.0.1"
     }
