@@ -37,7 +37,7 @@
         "@astrojs/vercel": "^5.2.0",
         "astro": "^3.6.0",
         "better-sqlite3": "^9.1.1",
-        "lucide-solid": "^0.292.0",
+        "lucide-solid": "^0.293.0",
         "nanoid": "^5.0.3",
         "runes": "^0.4.3",
         "sharp": "^0.32.6",
