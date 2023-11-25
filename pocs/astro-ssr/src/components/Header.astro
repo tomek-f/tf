@@ -64,21 +64,4 @@ const isTest = pathname.startsWith('/test');
     </nav>
 </header>
 
-<script>
-    (() => {
-        const button = document.getElementById('header-button');
-        const menu = document.getElementById('header-menu');
-        const icon1 = document.getElementById('header-icon-1');
-        const icon2 = document.getElementById('header-icon-2');
-
-        if (!button || !menu || !icon1 || !icon2) {
-            return;
-        }
-
-        button.addEventListener('click', () => {
-            const isHidden = menu.classList.toggle('hidden');
-            icon1.classList.toggle('hidden', !isHidden);
-            icon2.classList.toggle('hidden', isHidden);
-        });
-    })();
-</script>
+<script src="./header.ts"></script>
