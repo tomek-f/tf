@@ -2,18 +2,7 @@ import { $QS } from '../utils/dom';
 
 const calculateRatio = (a = 0, b = 0, c = 0): number => (b * c) / a;
 
-function addEvents(event: Event) {
-    const $ratio = $QS<HTMLInputElement>('#ratio');
-
-    // TODO after first run it runs on every page change
-    if (!$ratio) {
-        console.log('ratio elem', $ratio);
-
-        return;
-    }
-
-    console.log('ratio', event.type);
-
+function addEvents() {
     const $a = $QS<HTMLInputElement>('#a');
     const $b = $QS<HTMLInputElement>('#b');
     const $c = $QS<HTMLInputElement>('#c');
@@ -49,6 +38,31 @@ function addEvents(event: Event) {
     $c.addEventListener('input', onInput);
 }
 
-// window.document.addEventListener('astro:after-swap', addEvents);
 // window.addEventListener('DOMContentLoaded', addEvents);
-window.document.addEventListener('astro:page-load', addEvents);
+
+// TODO if it's start running it runs on every page swap
+window.document.addEventListener('astro:page-load', () => {
+    const $ratio = $QS<HTMLInputElement>('#ratio');
+
+    console.log('ratio', $ratio);
+
+    if ($ratio) {
+        addEvents();
+    }
+});
+
+// window.document.addEventListener('astro:before-preparation', (event: Event) => {
+//     console.log('ratio', event.type);
+// });
+// window.document.addEventListener('astro:after-preparation', (event: Event) => {
+//     console.log('ratio', event.type);
+// });
+// window.document.addEventListener('astro:before-swap', (event: Event) => {
+//     console.log('ratio', event.type);
+// });
+// window.document.addEventListener('astro:after-swap', (event: Event) => {
+//     console.log('ratio', event.type);
+// });
+// window.document.addEventListener('astro:page-load', (event: Event) => {
+//     console.log('ratio', event.type);
+// });
