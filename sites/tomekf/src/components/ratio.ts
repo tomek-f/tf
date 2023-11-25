@@ -1,39 +1,54 @@
+import { $QS } from '../utils/dom';
+
 const calculateRatio = (a = 0, b = 0, c = 0): number => (b * c) / a;
-// const $id = <T extends HTMLElement = HTMLElement>(id: string) =>
-//     document.getElementById(id) as T | null;
-const $ = <T extends HTMLElement = HTMLElement>(selector: string) =>
-    document.querySelector<T>(selector);
-// const $$ = <T extends HTMLElement = HTMLElement>(selector: string) =>
-//     document.querySelectorAll<T>(selector);
 
-const $a = $<HTMLInputElement>('#a');
-const $b = $<HTMLInputElement>('#b');
-const $c = $<HTMLInputElement>('#c');
-const $x = $<HTMLInputElement>('#x');
+function addEvents(event: Event) {
+    const $ratio = $QS<HTMLInputElement>('#ratio');
 
-if (!$a || !$b || !$c || !$x) {
-    throw new Error('Elements not found!');
-}
+    // TODO after first run it runs on every page change
+    if (!$ratio) {
+        console.log('ratio elem', $ratio);
 
-const state = {
-    a: Number($a.value),
-    b: Number($b.value),
-    c: Number($c.value),
-    x: Number($x.value),
-};
-
-type StateKeys = keyof typeof state;
-
-const onInput = (event: Event): void => {
-    if (!(event.target instanceof HTMLInputElement)) {
         return;
     }
 
-    state[event.target.name as StateKeys] = Number(event.target.value);
-    state.x = calculateRatio(state.a, state.b, state.c);
-    $x.value = state.x.toString();
-};
+    console.log('ratio', event.type);
 
-$a.addEventListener('input', onInput);
-$b.addEventListener('input', onInput);
-$c.addEventListener('input', onInput);
+    const $a = $QS<HTMLInputElement>('#a');
+    const $b = $QS<HTMLInputElement>('#b');
+    const $c = $QS<HTMLInputElement>('#c');
+    const $x = $QS<HTMLInputElement>('#x');
+
+    if (!$a || !$b || !$c || !$x) {
+        throw new Error('Elements not found!');
+    }
+
+    const state = {
+        a: Number($a.value),
+        b: Number($b.value),
+        c: Number($c.value),
+        x: Number($x.value),
+    };
+
+    type StateKeys = keyof typeof state;
+
+    const onInput = (eventInput: Event): void => {
+        if (!(eventInput.target instanceof HTMLInputElement)) {
+            return;
+        }
+
+        state[eventInput.target.name as StateKeys] = Number(
+            eventInput.target.value,
+        );
+        state.x = calculateRatio(state.a, state.b, state.c);
+        $x.value = state.x.toString();
+    };
+
+    $a.addEventListener('input', onInput);
+    $b.addEventListener('input', onInput);
+    $c.addEventListener('input', onInput);
+}
+
+// window.document.addEventListener('astro:after-swap', addEvents);
+// window.addEventListener('DOMContentLoaded', addEvents);
+window.document.addEventListener('astro:page-load', addEvents);
