@@ -1,8 +1,6 @@
 import { $QS } from '../utils/dom';
 
-function addEvents(event: Event) {
-    console.log('header', event.type);
-
+function addEvents() {
     const button = $QS('#header-button');
     const menu = $QS('#header-menu');
     const icon1 = $QS('#header-icon-1');
@@ -21,6 +19,5 @@ function addEvents(event: Event) {
     });
 }
 
-// window.document.addEventListener('astro:after-swap', addEvents);
-// window.addEventListener('DOMContentLoaded', addEvents);
+// if it's start running it runs on every page swap
 window.document.addEventListener('astro:page-load', addEvents);
