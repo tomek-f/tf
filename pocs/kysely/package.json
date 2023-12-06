@@ -15,7 +15,7 @@
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
     },
     "dependencies": {
-        "better-sqlite3": "^9.2.0",
+        "better-sqlite3": "^9.2.2",
         "kysely": "^0.26.3"
     },
     "devDependencies": {
