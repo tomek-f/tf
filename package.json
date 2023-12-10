@@ -47,7 +47,7 @@
         "eslint-plugin-workspaces": "^0.10.0",
         "lint-staged": "^15.2.0",
         "pre-commit": "^1.2.2",
-        "prettier": "^3.1.0",
+        "prettier": "^3.1.1",
         "prettier-plugin-astro": "^0.12.2",
         "prettier-plugin-tailwindcss": "^0.5.9",
         "turbo": "^1.11.1",
