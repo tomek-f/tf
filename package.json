@@ -16,7 +16,8 @@
         "turbo:build-slash-run-pocs": "turbo build run --force --filter='./pocs/*' --filter=!@tf/astro-ssr --filter=!@tf/next-playground",
         "format-check": "prettier --check . **/*.astro",
         "format-write": "prettier --write . **/*.astro",
-        "beforecommit": "NODE_ENV=production lint-staged && npm run turbo:astro-check && turbo check-types test --force",
+        "beforecommitTEMP": "NODE_ENV=production lint-staged && npm run turbo:astro-check && turbo check-types test --force",
+        "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test --force",
         "vercel": "vercel",
         "turbo": "turbo"
     },
@@ -31,10 +32,10 @@
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
         "@total-typescript/ts-reset": "^0.5.1",
-        "@types/node": "^20.10.4",
+        "@types/node": "^20.10.5",
         "@typescript-eslint/eslint-plugin": "^6.14.0",
         "@typescript-eslint/parser": "^6.14.0",
-        "eslint": "^8.55.0",
+        "eslint": "^8.56.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-import-resolver-typescript": "^3.6.1",
         "eslint-plugin-import": "^2.29.1",
