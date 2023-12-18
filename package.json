@@ -13,6 +13,7 @@
         "turbo:lint-js-next": "turbo lint-js-next --force",
         "turbo:test": "turbo test --force",
         "turbo:astro-check": "turbo astro-check --force --concurrency=1",
+        "turbo:astro-sync": "turbo astro-sync --force --concurrency=1",
         "turbo:build-slash-run-pocs": "turbo build run --force --filter='./pocs/*' --filter=!@tf/astro-ssr --filter=!@tf/next-playground",
         "format-check": "prettier --check . **/*.astro",
         "format-write": "prettier --write . **/*.astro",

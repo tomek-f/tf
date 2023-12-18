@@ -13,7 +13,7 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro-check": "astro check",
-        "sync": "astro sync",
+        "astro-sync": "astro sync",
         "astro": "astro",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "npm run lint-js --fix",

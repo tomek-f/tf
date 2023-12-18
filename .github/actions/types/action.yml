@@ -12,9 +12,10 @@ runs:
               cache: 'npm'
         - run: npm ci
           shell: bash
-        # TS type checking in astro require astro check to generate types if content used
-        # turbo:astro-check has --concurrency=1 to make it serial
+        # TS type checking in astro require astro sync to generate types if content used
+        # (Running astro dev, astro build or astro check will run the sync command as well.)
+        # turbo:astro-check and turbo:astro-check have --concurrency=1 to make it serial
         # it removes `WebSocket server error: Port is already in use` error
         # - run: npm run turbo:astro-check && npm run turbo:check-types
-        - run: npm run turbo:check-types
+        - run: npm run turbo:astro-sync && npm run turbo:check-types
           shell: bash
