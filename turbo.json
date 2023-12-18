@@ -2,6 +2,7 @@
     "$schema": "https://turbo.build/schema.json",
     "pipeline": {
         "astro-check": { "cache": false },
+        "astro-sync": { "cache": false },
         "build": { "cache": false },
         "check-types": { "cache": false },
         "lint-js": { "cache": false },
