@@ -18,7 +18,7 @@
         "format-check": "prettier --check . **/*.astro",
         "format-write": "prettier --write . **/*.astro",
         "beforecommitTEMP": "NODE_ENV=production lint-staged && npm run turbo:astro-check && turbo check-types test --force",
-        "beforecommit": "NODE_ENV=production lint-staged && turbo check-types test --force",
+        "beforecommit": "NODE_ENV=production lint-staged && npm run turbo:astro-sync && turbo check-types test --force",
         "vercel": "vercel",
         "turbo": "turbo"
     },
