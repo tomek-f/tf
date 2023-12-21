@@ -45,7 +45,7 @@
         "eslint-plugin-react-hooks": "5.0.0-canary-7118f5dd7-20230705",
         "eslint-plugin-react-refresh": "^0.4.5",
         "eslint-plugin-typescript-sort-keys": "^3.1.0",
-        "eslint-plugin-unicorn": "^49.0.0",
+        "eslint-plugin-unicorn": "^50.0.1",
         "eslint-plugin-workspaces": "^0.10.0",
         "lint-staged": "^15.2.0",
         "pre-commit": "^1.2.2",
