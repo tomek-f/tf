@@ -16,11 +16,11 @@
     },
     "dependencies": {
         "better-sqlite3": "^9.2.2",
-        "kysely": "^0.26.3"
+        "kysely": "^0.27.0"
     },
     "devDependencies": {
         "@types/better-sqlite3": "^7.6.8",
-        "@types/node": "^20.10.5",
+        "@types/node": "^20.10.6",
         "eslint": "^8.56.0",
         "tsx": "^4.7.0",
         "typescript": "^5.3.3"
