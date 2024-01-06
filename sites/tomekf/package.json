@@ -22,7 +22,7 @@
     "devDependencies": {
         "@types/runes": "^0.4.3",
         "eslint": "^8.56.0",
-        "tailwindcss": "^3.4.0",
+        "tailwindcss": "^3.4.1",
         "type-fest": "^4.9.0",
         "typescript": "^5.3.3"
     },
@@ -30,10 +30,10 @@
         "@astrojs/check": "^0.3.4",
         "@astrojs/mdx": "^2.0.3",
         "@astrojs/sitemap": "^3.0.4",
-        "@astrojs/solid-js": "^4.0.0",
+        "@astrojs/solid-js": "^4.0.1",
         "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.1.0",
-        "lucide-solid": "^0.304.0",
+        "astro": "^4.1.1",
+        "lucide-solid": "^0.306.0",
         "runes": "^0.4.3",
         "sharp": "^0.33.1",
         "solid-js": "^1.8.8",
