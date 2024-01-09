@@ -30,7 +30,7 @@
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "@astrojs/check": "^0.4.0",
+        "@astrojs/check": "^0.4.1",
         "@astrojs/node": "^7.0.4",
         "@astrojs/solid-js": "^4.0.1",
         "@astrojs/tailwind": "^5.1.0",
