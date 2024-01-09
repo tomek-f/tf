@@ -30,7 +30,7 @@
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "@astrojs/check": "^0.3.4",
+        "@astrojs/check": "^0.4.0",
         "@astrojs/node": "^7.0.4",
         "@astrojs/solid-js": "^4.0.1",
         "@astrojs/tailwind": "^5.1.0",
@@ -41,7 +41,7 @@
         "nanoid": "^5.0.4",
         "runes": "^0.4.3",
         "sharp": "^0.33.1",
-        "solid-js": "^1.8.8",
+        "solid-js": "^1.8.9",
         "tailwind-merge": "^2.2.0",
         "uuid": "^9.0.1"
     }
