@@ -27,16 +27,16 @@
         "typescript": "^5.3.3"
     },
     "dependencies": {
-        "@astrojs/check": "^0.4.0",
+        "@astrojs/check": "^0.4.1",
         "@astrojs/mdx": "^2.0.3",
         "@astrojs/sitemap": "^3.0.4",
         "@astrojs/solid-js": "^4.0.1",
         "@astrojs/tailwind": "^5.1.0",
         "astro": "^4.1.1",
-        "lucide-solid": "^0.307.0",
+        "lucide-solid": "^0.309.0",
         "runes": "^0.4.3",
         "sharp": "^0.33.1",
-        "solid-js": "^1.8.9",
+        "solid-js": "^1.8.10",
         "tailwind-merge": "^2.2.0"
     }
 }
