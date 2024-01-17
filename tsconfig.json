@@ -17,7 +17,7 @@
         "noFallthroughCasesInSwitch": true,
         "incremental": true,
         "noErrorTruncation": true,
-        "verbatimModuleSyntax": true
+        "verbatimModuleSyntax": true,
     },
     "exclude": [
         ".git",
@@ -26,6 +26,6 @@
         "**/node_modules/*",
         "tmp",
         "**/tmp/*",
-        ".vscode"
-    ]
+        ".vscode",
+    ],
 }
