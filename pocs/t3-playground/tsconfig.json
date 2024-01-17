@@ -6,7 +6,7 @@
         "plugins": [{ "name": "next" }],
         "strictNullChecks": true,
         "baseUrl": ".",
-        "paths": { "T3/*": ["./src/*"] }
+        "paths": { "T3/*": ["./src/*"] },
     },
     "include": [
         "../../@types",
@@ -16,7 +16,7 @@
         "**/*.tsx",
         "**/*.cjs",
         "**/*.mjs",
-        ".next/types/**/*.ts"
+        ".next/types/**/*.ts",
     ],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules"],
 }

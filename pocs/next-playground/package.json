@@ -24,7 +24,7 @@
         "@libsql/client": "^0.3.6",
         "@reduxjs/toolkit": "^2.0.1",
         "clsx": "^2.1.0",
-        "lucide-react": "^0.309.0",
+        "lucide-react": "^0.311.0",
         "next": "14.0.4",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -32,8 +32,8 @@
         "zod": "^3.22.4"
     },
     "devDependencies": {
-        "@types/node": "^20.11.1",
-        "@types/react": "^18.2.47",
+        "@types/node": "^20.11.5",
+        "@types/react": "^18.2.48",
         "@types/react-dom": "^18.2.18",
         "autoprefixer": "^10.4.16",
         "eslint": "^8.56.0",
