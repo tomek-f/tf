@@ -35,7 +35,7 @@
         "astro": "^4.2.1",
         "lucide-solid": "^0.312.0",
         "runes": "^0.4.3",
-        "sharp": "^0.33.2",
+        "sharp": "0.33.1",
         "solid-js": "^1.8.11",
         "tailwind-merge": "^2.2.0"
     }
