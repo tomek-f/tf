@@ -1,0 +1,18 @@
+---
+import SubLayout from '../../layouts/SubLayout.astro';
+---
+
+<SubLayout title="Hello">
+    <section>
+        <div id="parent-div">Target here</div>
+
+        <button
+            hx-post="/partials/clicked"
+            hx-trigger="click"
+            hx-target="#parent-div"
+            hx-swap="innerHTML"
+        >
+            Click Me!
+        </button>
+    </section>
+</SubLayout>
