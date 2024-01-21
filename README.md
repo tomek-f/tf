@@ -9,6 +9,11 @@
 
 -   `npm install -g npm-check-updates` && `ncu -u && ncu -u -ws` && `npm i`
 
+## corepack
+
+-   pnpm `corepack prepare pnpm@8.14.0 --activate`
+-   yarn `corepack prepare yarn@1.22.21 --activate`
+
 ## astro
 
 same result
