@@ -44,12 +44,12 @@ class Star {
     }
 }
 
-(() => {
-    console.log('Starfield');
-
+function init() {
     const canvasElement: Nullable<HTMLCanvasElement> =
         document.querySelector('#starfield-canvas');
     const container = document.querySelector('#starfield');
+
+    console.log('starfield.ts', { canvasElement, container });
 
     if (!canvasElement || !container) {
         return;
@@ -113,4 +113,7 @@ class Star {
         context.strokeStyle = 'white';
         rafId = requestAnimationFrame(frame);
     }
-})();
+}
+
+// TODO if it's start running it runs on every page swap
+window.document.addEventListener('astro:page-load', init);
