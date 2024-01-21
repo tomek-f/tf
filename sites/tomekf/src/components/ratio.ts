@@ -44,7 +44,7 @@ function addEvents() {
 window.document.addEventListener('astro:page-load', () => {
     const $ratio = $QS<HTMLInputElement>('#ratio');
 
-    console.log('ratio', $ratio);
+    console.log('ratio.ts', { $ratio });
 
     if ($ratio) {
         addEvents();
