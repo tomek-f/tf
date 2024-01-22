@@ -33,7 +33,7 @@
         "@astrojs/solid-js": "^4.0.1",
         "@astrojs/tailwind": "^5.1.0",
         "astro": "^4.2.1",
-        "lucide-solid": "^0.312.0",
+        "lucide-solid": "^0.314.0",
         "runes": "^0.4.3",
         "sharp": "^0.33.2",
         "solid-js": "^1.8.11",
