@@ -1,9 +1,0 @@
-{
-    "git": {
-        "deploymentEnabled": {
-            "feat/skipDeploy": false
-        }
-    },
-    "cleanUrls": true,
-    "trailingSlash": false
-}
