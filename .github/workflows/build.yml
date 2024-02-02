@@ -9,44 +9,100 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v2
+            - uses: actions/setup-node@v3
               with:
                   node-version: 20
                   check-latest: true
-                  cache: 'pnpm'
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: 8
+                  run_install: false
+            - name: Get pnpm store directory
+              shell: bash
+              run: |
+                  echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+            - name: Setup pnpm cache
+              uses: actions/cache@v3
+              with:
+                  path: ${{ env.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
             - run: pnpm i
             - run: pnpm run turbo:build-slash-run-pocs
     build-tomekf:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v2
+            - uses: actions/setup-node@v3
               with:
                   node-version: 20
                   check-latest: true
-                  cache: 'pnpm'
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: 8
+                  run_install: false
+            - name: Get pnpm store directory
+              shell: bash
+              run: |
+                  echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+            - name: Setup pnpm cache
+              uses: actions/cache@v3
+              with:
+                  path: ${{ env.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
             - run: pnpm i
             - run: pnpm --filter=@tf/tomekf run build # pnpm run build --workspace=@tf/tomekf
     build-astro-ssr:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v2
+            - uses: actions/setup-node@v3
               with:
                   node-version: 20
                   check-latest: true
-                  cache: 'pnpm'
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: 8
+                  run_install: false
+            - name: Get pnpm store directory
+              shell: bash
+              run: |
+                  echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+            - name: Setup pnpm cache
+              uses: actions/cache@v3
+              with:
+                  path: ${{ env.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
             - run: pnpm i
             - run: pnpm --filter=@tf/astro-ssr run build
     build-next-playground:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-            - uses: pnpm/action-setup@v2
+            - uses: actions/setup-node@v3
               with:
                   node-version: 20
                   check-latest: true
-                  cache: 'pnpm'
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: 8
+                  run_install: false
+            - name: Get pnpm store directory
+              shell: bash
+              run: |
+                  echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+            - name: Setup pnpm cache
+              uses: actions/cache@v3
+              with:
+                  path: ${{ env.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
             - run: pnpm i
             - name: build next-playground
               run: pnpm --filter=@tf/next-playground run build
