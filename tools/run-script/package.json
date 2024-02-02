@@ -16,6 +16,7 @@
     "scripts": {
         "start": "node ./out/index.js",
         "build": "tsc --declaration --sourceMap --noEmit false",
+        "postinstall": "npm run build",
         "test1": "echo 'test 1'",
         "test2": "echo 'test 2'",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
