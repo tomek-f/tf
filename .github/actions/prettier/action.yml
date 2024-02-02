@@ -12,5 +12,5 @@ runs:
               cache: 'npm'
         - run: npm ci
           shell: bash
-        - run: npm run format-check
+        - run: pnpm run format-check
           shell: bash

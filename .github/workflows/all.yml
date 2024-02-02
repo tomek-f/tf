@@ -39,7 +39,7 @@ jobs:
     #               check-latest: true
     #               cache: 'npm'
     #         - run: npm ci
-    #         - run: npm run xxx
+    #         - run: pnpm run xxx
 
     # # TESTING/PREVIEW >>>>>>>>>>
     # testing-vercel-deploy-tomekf:

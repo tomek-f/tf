@@ -12,5 +12,5 @@ runs:
               cache: 'npm'
         - run: npm ci
           shell: bash
-        - run: npm run turbo:test
+        - run: pnpm run turbo:test
           shell: bash

@@ -10,12 +10,12 @@
         "dev": "rimraf ./.next && next dev",
         "dev-turbo": "rimraf ./.next && next dev --turbo",
         "build": "rimraf ./.next && next build",
-        "build-and-preview": "npm run build && npm run preview",
+        "build-and-preview": "pnpm run build && pnpm run preview",
         "preview": "next start",
         "start": "next start",
         "lint-js-next": "next lint",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
-        "lint-js-fix": "npm run lint-js --fix",
+        "lint-js-fix": "pnpm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'",
         "next": "next"
     },
@@ -40,6 +40,7 @@
         "eslint": "^8.56.0",
         "eslint-config-next": "14.1.0",
         "postcss": "^8.4.33",
+        "rimraf": "^5.0.5",
         "tailwindcss": "^3.4.1",
         "typescript": "^5.3.3"
     },

@@ -16,6 +16,6 @@ runs:
         # (Running astro dev, astro build or astro check will run the sync command as well.)
         # turbo:astro-check and turbo:astro-check have --concurrency=1 to make it serial
         # it removes `WebSocket server error: Port is already in use` error
-        # - run: npm run turbo:astro-check && npm run turbo:check-types
-        - run: npm run turbo:astro-sync && npm run turbo:check-types
+        # - run: pnpm run turbo:astro-check && pnpm run turbo:check-types
+        - run: pnpm run turbo:astro-sync && pnpm run turbo:check-types
           shell: bash

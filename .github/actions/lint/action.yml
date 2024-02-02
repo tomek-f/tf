@@ -12,7 +12,7 @@ runs:
               cache: 'npm'
         - run: npm ci
           shell: bash
-        - run: npm run turbo:lint-js
+        - run: pnpm run turbo:lint-js
           shell: bash
-        - run: npm run turbo:lint-js-next
+        - run: pnpm run turbo:lint-js-next
           shell: bash

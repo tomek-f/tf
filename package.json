@@ -17,20 +17,12 @@
         "turbo:build-slash-run-pocs": "turbo build run --force --filter='./pocs/*' --filter=!@tf/astro-ssr --filter=!@tf/next-playground",
         "format-check": "prettier --check . **/*.astro",
         "format-write": "prettier --write . **/*.astro",
-        "beforecommitTEMP": "NODE_ENV=production lint-staged && npm run turbo:astro-check && turbo check-types test --force",
-        "beforecommit": "NODE_ENV=production lint-staged && npm run turbo:astro-sync && turbo check-types test --force",
+        "beforecommitTEMP": "NODE_ENV=production lint-staged && pnpm run turbo:astro-check && turbo check-types test --force",
+        "beforecommit": "NODE_ENV=production lint-staged && pnpm run turbo:astro-sync && turbo check-types test --force",
         "prettier-permission-fix": "chmod +x ./node_modules/.bin/prettier",
         "vercel": "vercel",
         "turbo": "turbo"
     },
-    "workspaces": [
-        "apps/*",
-        "components/*",
-        "libs/*",
-        "pocs/*",
-        "sites/*",
-        "tools/*"
-    ],
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
         "@total-typescript/ts-reset": "^0.5.1",
