@@ -12,32 +12,33 @@ jobs:
     vitest:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - uses: ./.github/actions/vitest
     lint:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - uses: ./.github/actions/lint
     prettier:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - uses: ./.github/actions/prettier
     types:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - uses: ./.github/actions/types
     # xxx:
     #     runs-on: ubuntu-latest
     #     steps:
-    #         - uses: actions/checkout@v3
-    #         - uses: pnpm/action-setup@v2
+    #         - uses: actions/checkout@v4
+    #         - run: corepack enable
+    #         - uses: actions/setup-node@v4
     #           with:
     #               node-version: 20
     #               check-latest: true
-    #               cache: 'npm'
+    #               cache: 'pnpm'
     #         - run: pnpm i
     #         - run: pnpm run xxx
 
@@ -48,12 +49,13 @@ jobs:
     #     environment: testing
     #     needs: [build, vitest, lint, prettier, types]
     #     steps:
-    #         - uses: actions/checkout@v3
-    #         - uses: pnpm/action-setup@v2
+    #         - uses: actions/checkout@v4
+    #         - run: corepack enable
+    #         - uses: actions/setup-node@v4
     #           with:
     #               node-version: 20
     #               check-latest: true
-    #               cache: 'npm'
+    #               cache: 'pnpm'
     #         # - run: pnpm i # vercel build handles this
     #         - run: npm install --global vercel@latest
     #         - name: clone repo with media
@@ -75,12 +77,13 @@ jobs:
     #     environment: testing
     #     needs: [build, vitest, lint, prettier, types]
     #     steps:
-    #         - uses: actions/checkout@v3
-    #         - uses: pnpm/action-setup@v2
+    #         - uses: actions/checkout@v4
+    #         - run: corepack enable
+    #         - uses: actions/setup-node@v4
     #           with:
     #               node-version: 20
     #               check-latest: true
-    #               cache: 'npm'
+    #               cache: 'pnpm'
     #         # - run: pnpm i # vercel build handles this
     #         - run: npm install --global vercel@latest
     #         - name: build & deploy
@@ -98,12 +101,13 @@ jobs:
     #     environment: production
     #     needs: [build, vitest, lint, prettier, types]
     #     steps:
-    #         - uses: actions/checkout@v3
-    #         - uses: pnpm/action-setup@v2
+    #         - uses: actions/checkout@v4
+    #         - run: corepack enable
+    #         - uses: actions/setup-node@v4
     #           with:
     #               node-version: 20
     #               check-latest: true
-    #               cache: 'npm'
+    #               cache: 'pnpm'
     #         # - run: pnpm i # vercel build handles this
     #         - run: npm install --global vercel@latest
     #         - name: clone repo with media
@@ -125,12 +129,13 @@ jobs:
     #     environment: production
     #     needs: [build, vitest, lint, prettier, types]
     #     steps:
-    #         - uses: actions/checkout@v3
-    #         - uses: pnpm/action-setup@v2
+    #         - uses: actions/checkout@v4
+    #         - run: corepack enable
+    #         - uses: actions/setup-node@v4
     #           with:
     #               node-version: 20
     #               check-latest: true
-    #               cache: 'npm'
+    #               cache: 'pnpm'
     #         # - run: pnpm i # vercel build handles this
     #         - run: npm install --global vercel@latest
     #         - name: build & deploy
