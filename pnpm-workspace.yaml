@@ -1,0 +1,7 @@
+packages:
+    - 'apps/*'
+    - 'components/*'
+    - 'libs/*'
+    - 'pocs/*'
+    - 'sites/*'
+    - 'tools/*'

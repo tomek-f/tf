@@ -133,7 +133,7 @@ jobs:
                 environment: [testing, production]
         steps:
             - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: uses: actions/setup-node@v3
             - run: npm install --global vercel@latest
             - name: deploy project 3 to Vercel
               run: |

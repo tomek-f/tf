@@ -8,48 +8,52 @@ jobs:
     build-slash-run-pocs:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v4
+            - run: corepack enable
+            - uses: actions/setup-node@v4
               with:
                   node-version: 20
                   check-latest: true
-                  cache: 'npm'
-            - run: npm ci
-            - run: npm run turbo:build-slash-run-pocs
+                  cache: 'pnpm'
+            - run: pnpm i
+            - run: pnpm run turbo:build-slash-run-pocs
     build-tomekf:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v4
+            - run: corepack enable
+            - uses: actions/setup-node@v4
               with:
                   node-version: 20
                   check-latest: true
-                  cache: 'npm'
-            - run: npm ci
-            - run: npm --workspace=@tf/tomekf run build # npm run build --workspace=@tf/tomekf
+                  cache: 'pnpm'
+            - run: pnpm i
+            - run: pnpm --filter=@tf/tomekf run build # pnpm run build --workspace=@tf/tomekf
     build-astro-ssr:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v4
+            - run: corepack enable
+            - uses: actions/setup-node@v4
               with:
                   node-version: 20
                   check-latest: true
-                  cache: 'npm'
-            - run: npm ci
-            - run: npm --workspace=@tf/astro-ssr run build
+                  cache: 'pnpm'
+            - run: pnpm i
+            - run: pnpm --filter=@tf/astro-ssr run build
     build-next-playground:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
+            - uses: actions/checkout@v4
+            - run: corepack enable
+            - uses: actions/setup-node@v4
               with:
                   node-version: 20
                   check-latest: true
-                  cache: 'npm'
-            - run: npm ci
+                  cache: 'pnpm'
+            - run: pnpm i
             - name: build next-playground
-              run: npm --workspace=@tf/next-playground run build
+              run: pnpm --filter=@tf/next-playground run build
               env:
                   TURSO_URL_1: ${{ secrets.TURSO_URL_1 }}
                   TURSO_TOKEN_1: ${{ secrets.TURSO_TOKEN_1 }}

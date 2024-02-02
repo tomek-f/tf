@@ -9,7 +9,7 @@
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
-        "DOES_NOT_WORK_ON_VERCEL_ADAPTER__build-and-preview": "npm run build && npm run preview",
+        "DOES_NOT_WORK_ON_VERCEL_ADAPTER__build-and-preview": "pnpm run build && pnpm run preview",
         "build": "astro build",
         "DOES_NOT_WORK_ON_VERCEL_ADAPTER__preview": "astro preview",
         "DOES_NOT_WORK_ON_VERCEL_ADAPTER__preview-node": "node ./dist/server/entry.mjs",
@@ -18,16 +18,8 @@
         "astro-sync": "astro sync",
         "astro": "astro",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
-        "lint-js-fix": "npm run lint-js --fix",
+        "lint-js-fix": "pnpm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
-    },
-    "devDependencies": {
-        "@types/runes": "^0.4.3",
-        "@types/uuid": "^9.0.8",
-        "eslint": "^8.56.0",
-        "tailwindcss": "^3.4.1",
-        "type-fest": "^4.10.2",
-        "typescript": "^5.3.3"
     },
     "dependencies": {
         "@astrojs/check": "^0.4.1",
@@ -44,5 +36,14 @@
         "solid-js": "^1.8.12",
         "tailwind-merge": "^2.2.1",
         "uuid": "^9.0.1"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.9",
+        "@types/runes": "^0.4.3",
+        "@types/uuid": "^9.0.8",
+        "eslint": "^8.56.0",
+        "tailwindcss": "^3.4.1",
+        "type-fest": "^4.10.2",
+        "typescript": "^5.3.3"
     }
 }
