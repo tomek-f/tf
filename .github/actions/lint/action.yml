@@ -10,7 +10,7 @@ runs:
               node-version: 20
               check-latest: true
               cache: 'pnpm'
-        - run: pnpm i
+        - run: corepack enable && pnpm i
           shell: bash
         - run: npm run turbo:lint-js
           shell: bash
