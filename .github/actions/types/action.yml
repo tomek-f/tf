@@ -9,8 +9,8 @@ runs:
           with:
               node-version: 20
               check-latest: true
-              cache: 'npm'
-        - run: npm ci
+              cache: 'pnpm'
+        - run: pnpm i
           shell: bash
         # TS type checking in astro require astro sync to generate types if content used
         # (Running astro dev, astro build or astro check will run the sync command as well.)

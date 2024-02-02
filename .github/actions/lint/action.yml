@@ -9,8 +9,8 @@ runs:
           with:
               node-version: 20
               check-latest: true
-              cache: 'npm'
-        - run: npm ci
+              cache: 'pnpm'
+        - run: pnpm i
           shell: bash
         - run: pnpm run turbo:lint-js
           shell: bash

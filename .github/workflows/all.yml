@@ -38,7 +38,7 @@ jobs:
     #               node-version: 20
     #               check-latest: true
     #               cache: 'npm'
-    #         - run: npm ci
+    #         - run: pnpm i
     #         - run: pnpm run xxx
 
     # # TESTING/PREVIEW >>>>>>>>>>
@@ -54,7 +54,7 @@ jobs:
     #               node-version: 20
     #               check-latest: true
     #               cache: 'npm'
-    #         # - run: npm ci # vercel build handles this
+    #         # - run: pnpm i # vercel build handles this
     #         - run: npm install --global vercel@latest
     #         - name: clone repo with media
     #           run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git __tf_data__
@@ -81,7 +81,7 @@ jobs:
     #               node-version: 20
     #               check-latest: true
     #               cache: 'npm'
-    #         # - run: npm ci # vercel build handles this
+    #         # - run: pnpm i # vercel build handles this
     #         - run: npm install --global vercel@latest
     #         - name: build & deploy
     #           run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build && vercel deploy --token ${VERCEL_TOKEN}
@@ -104,7 +104,7 @@ jobs:
     #               node-version: 20
     #               check-latest: true
     #               cache: 'npm'
-    #         # - run: npm ci # vercel build handles this
+    #         # - run: pnpm i # vercel build handles this
     #         - run: npm install --global vercel@latest
     #         - name: clone repo with media
     #           run: git clone https://.:${{ secrets.GH_TOKEN }}@github.com/tomek-f/tf-data.git __tf_data__
@@ -131,7 +131,7 @@ jobs:
     #               node-version: 20
     #               check-latest: true
     #               cache: 'npm'
-    #         # - run: npm ci # vercel build handles this
+    #         # - run: pnpm i # vercel build handles this
     #         - run: npm install --global vercel@latest
     #         - name: build & deploy
     #           run: vercel link --cwd ./pocs/next-playground --token ${VERCEL_TOKEN} --yes && vercel pull --token ${VERCEL_TOKEN} --yes && vercel build --prod && vercel deploy --prod --token ${VERCEL_TOKEN}
