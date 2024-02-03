@@ -65,6 +65,13 @@ async function main() {
 
     console.log(gradient('#bada55', 'hotpink')(`run script using ${pm}`));
 
+    process.stdin.on('keypress', (ch, key) => {
+        if (key && key.name === 'escape') {
+            // eslint-disable-next-line unicorn/no-process-exit
+            process.exit(0);
+        }
+    });
+
     const answers = await inquirer.prompt(questions);
 
     execSync(`${pm} run ${answers.script}`, {
