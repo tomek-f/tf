@@ -1,16 +1,39 @@
 import { execSync } from 'node:child_process';
-import { readFile } from 'node:fs/promises';
+import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import { detect } from 'detect-package-manager';
 import gradient from 'gradient-string';
 import inquirer from 'inquirer';
 import type { PackageJson } from 'type-fest';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const currentDirectory = process.cwd();
+const isDevelopment = process.env.NODE_ENV === 'development';
+const nodeModulesDirectory =
+    __dirname.split(isDevelopment ? '/out' : '/node_modules')[0] +
+    '/node_modules';
+const cacheDirectory = nodeModulesDirectory + '/.cache/@tf/run-script'; // TODO ? pass this
+const cacheFilePath = cacheDirectory + '/cache.json';
+
+const mainGradient = gradient('#bada55', 'hotpink');
 const redGradient = gradient('red', 'hotpink');
 
+// debug
+// console.log({
+//     __dirname,
+//     cwd: currentDirectory,
+//     isDevelopment,
+//     nodeModulesDirectory,
+// });
+
 async function main() {
+    // const t1 = Date.now();
     let packageJson: string;
     let packageJsonData: PackageJson;
+    let cache: Record<string, string> = {};
 
     try {
         packageJson = await readFile('./package.json', 'utf8');
@@ -52,9 +75,49 @@ async function main() {
         return;
     }
 
+    try {
+        await mkdir(cacheDirectory, { recursive: true });
+    } catch (error) {
+        console.log(redGradient('Error creating cache directory'));
+        console.error(error);
+        process.exitCode = 5;
+
+        return;
+    }
+
+    try {
+        await stat(cacheFilePath);
+    } catch {
+        try {
+            await writeFile(cacheFilePath, JSON.stringify({}));
+        } catch (error) {
+            console.log(redGradient('Error getting/creating cache directory'));
+            console.error(error);
+            process.exitCode = 6;
+
+            return;
+        }
+    }
+
+    try {
+        const cacheFileData = await readFile(cacheFilePath, 'utf8');
+
+        cache = JSON.parse(cacheFileData) as Record<string, string>;
+    } catch (error) {
+        console.log(redGradient('Error getting and parsing cache file'));
+        console.error(error);
+        process.exitCode = 7;
+
+        return;
+    }
+
+    // debug
+    // console.log({ cache });
+
     const questions = [
         {
             choices: keys,
+            default: cache[currentDirectory] || keys[0],
             message: 'Choose a script to run',
             name: 'script',
             type: 'list',
@@ -63,7 +126,7 @@ async function main() {
 
     const pm = await detect();
 
-    console.log(gradient('#bada55', 'hotpink')(`run script using ${pm}`));
+    console.log(mainGradient(`run script using ${pm}`));
 
     process.stdin.on('keypress', (ch, key) => {
         if (key && key.name === 'escape') {
@@ -72,7 +135,21 @@ async function main() {
         }
     });
 
-    const answers = await inquirer.prompt(questions);
+    // console.log(Date.now() - t1);
+
+    const answers = await inquirer.prompt(questions, {});
+
+    cache[currentDirectory] = answers.script;
+
+    try {
+        await writeFile(cacheFilePath, JSON.stringify(cache));
+    } catch (error) {
+        console.log(redGradient('Error writing to cache file'));
+        console.error(error);
+        process.exitCode = 8;
+
+        return;
+    }
 
     execSync(`${pm} run ${answers.script}`, {
         // cwd: process.cwd(),
