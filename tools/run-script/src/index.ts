@@ -1,37 +1,77 @@
 import { execSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
 
 import { detect } from 'detect-package-manager';
 import gradient from 'gradient-string';
 import inquirer from 'inquirer';
+import type { PackageJson } from 'type-fest';
 
-interface PackageJson {
-    scripts: Record<string, string>;
-    // eslint-disable-next-line typescript-sort-keys/interface
-    [x: string]: unknown;
+const redGradient = gradient('red', 'hotpink');
+
+async function main() {
+    let packageJson: string;
+    let packageJsonData: PackageJson;
+
+    try {
+        packageJson = await readFile('./package.json', 'utf8');
+    } catch (error) {
+        console.log(
+            redGradient('No package.json found in the current directory'),
+        );
+        console.error(error);
+        process.exitCode = 1;
+
+        return;
+    }
+
+    try {
+        packageJsonData = JSON.parse(packageJson);
+    } catch (error) {
+        console.log(redGradient('Error parsing package.json'));
+        console.error(error);
+        process.exitCode = 2;
+
+        return;
+    }
+
+    if (!packageJsonData.scripts) {
+        console.log(redGradient('No scripts field found in package.json'));
+
+        process.exitCode = 3;
+
+        return;
+    }
+
+    const keys = Object.keys(packageJsonData.scripts);
+
+    if (keys.length === 0) {
+        console.log(redGradient('Scripts field empty in package.json'));
+
+        process.exitCode = 4;
+
+        return;
+    }
+
+    const questions = [
+        {
+            choices: keys,
+            message: 'Choose a script to run',
+            name: 'script',
+            type: 'list',
+        },
+    ];
+
+    const pm = await detect();
+
+    console.log(gradient('#bada55', 'hotpink')(`run script using ${pm}`));
+
+    const answers = await inquirer.prompt(questions);
+
+    execSync(`${pm} run ${answers.script}`, {
+        // cwd: process.cwd(),
+        stdio: [process.stdin, process.stdout, process.stderr],
+    });
 }
 
-const packageJson = JSON.parse(
-    readFileSync('./package.json', 'utf8'),
-) as PackageJson;
-const scripts = packageJson.scripts;
-const keys = Object.keys(scripts);
-const questions = [
-    {
-        choices: keys,
-        message: 'Choose a script to run',
-        name: 'script',
-        type: 'list',
-    },
-];
-
-const pm = await detect();
-
-console.log(gradient('#bada55', 'hotpink')(`run script using ${pm}`));
-
-const answers = await inquirer.prompt(questions);
-
-execSync(`${pm} run ${answers.script}`, {
-    // cwd: process.cwd(),
-    stdio: [process.stdin, process.stdout, process.stderr],
-});
+// eslint-disable-next-line unicorn/prefer-top-level-await
+main();
