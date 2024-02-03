@@ -1,7 +1,7 @@
-#!/usr/bin/env node
 import { execSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 
+import { detect } from 'detect-package-manager';
 import gradient from 'gradient-string';
 import inquirer from 'inquirer';
 
@@ -25,14 +25,13 @@ const questions = [
     },
 ];
 
-console.log(gradient('#bada55', 'hotpink')('Hi, welcome to run-script!'));
+const pm = await detect();
 
-// TODO ? fix this
-// eslint-disable-next-line unicorn/prefer-top-level-await, @typescript-eslint/no-floating-promises
-inquirer.prompt(questions).then((answers) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    execSync(`npm run ${answers.script}`, {
-        // cwd: process.cwd(),
-        stdio: [process.stdin, process.stdout, process.stderr],
-    });
+console.log(gradient('#bada55', 'hotpink')(`run script using ${pm}`));
+
+const answers = await inquirer.prompt(questions);
+
+execSync(`${pm} run ${answers.script}`, {
+    // cwd: process.cwd(),
+    stdio: [process.stdin, process.stdout, process.stderr],
 });
