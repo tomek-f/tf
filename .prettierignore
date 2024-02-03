@@ -9,3 +9,5 @@ stats.html
 google*.html
 
 .astro
+
+pnpm-lock.yaml
