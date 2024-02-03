@@ -1,6 +1,6 @@
 {
     "name": "@tf/run-script",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "private": true,
     "type": "module",
     "engines": {
@@ -18,7 +18,7 @@
     ],
     "scripts": {
         "start": "node ./out/index.js",
-        "build": "tsc --declaration --sourceMap --noEmit false",
+        "build": "tsc --noEmit false &&  mv ./out/index.js ./out/index-temp.js && cat ./src/prepend.txt ./out/index-temp.js > out/index.js && rm ./out/index-temp.js",
         "test1": "echo 'test 1'",
         "test2": "echo 'test 2'",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
@@ -26,6 +26,7 @@
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
     },
     "dependencies": {
+        "detect-package-manager": "^3.0.1",
         "gradient-string": "^2.0.2",
         "inquirer": "^9.2.13"
     },
