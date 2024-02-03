@@ -44,7 +44,8 @@
         "plugin:@typescript-eslint/stylistic",
         "plugin:import/typescript",
         "plugin:unicorn/recommended",
-        "prettier"
+        "prettier",
+        "plugin:astro/recommended"
     ],
     "rules": {
         "no-console": "off",
