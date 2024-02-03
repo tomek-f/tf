@@ -25,16 +25,13 @@ const questions = [
     },
 ];
 
-// eslint-disable-next-line unicorn/prefer-top-level-await
-(async () => {
-    const pm = await detect();
+const pm = await detect();
 
-    console.log(gradient('#bada55', 'hotpink')(`run script using ${pm}`));
+console.log(gradient('#bada55', 'hotpink')(`run script using ${pm}`));
 
-    const answers = await inquirer.prompt(questions);
+const answers = await inquirer.prompt(questions);
 
-    execSync(`${pm} run ${answers.script}`, {
-        // cwd: process.cwd(),
-        stdio: [process.stdin, process.stdout, process.stderr],
-    });
-})();
+execSync(`${pm} run ${answers.script}`, {
+    // cwd: process.cwd(),
+    stdio: [process.stdin, process.stdout, process.stderr],
+});
