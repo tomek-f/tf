@@ -11,4 +11,4 @@ npm i -g tf-run-script…
 
 ## use
 
-Use `ntl`, `run-script`, `tfrs` or `rrr` commands
+Use `nrs`, `nnn`, or `rrr` commands
