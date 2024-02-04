@@ -118,7 +118,7 @@ async function main() {
         {
             choices: keys,
             default: cache[currentDirectory] || keys[0],
-            message: 'Choose a script to run',
+            message: 'Pick a script to run or press ESC to exit',
             name: 'script',
             type: 'list',
         },
@@ -126,7 +126,7 @@ async function main() {
 
     const pm = await detect();
 
-    console.log(mainGradient(`run script using ${pm}`));
+    console.log(mainGradient(`RUN-SCRIPT using ${pm}`));
 
     process.stdin.on('keypress', (ch, key) => {
         if (key && key.name === 'escape') {
@@ -151,11 +151,21 @@ async function main() {
         return;
     }
 
-    execSync(`${pm} run ${answers.script}`, {
-        // cwd: process.cwd(),
-        stdio: [process.stdin, process.stdout, process.stderr],
-    });
+    try {
+        execSync(`${pm} run ${answers.script}`, {
+            cwd: process.cwd(),
+            stdio: [process.stdin, process.stdout, process.stderr],
+        });
+    } catch (error) {
+        console.log(
+            'RUN-SCRIPT child process error ->',
+            (error as Error).message,
+        );
+    }
 }
 
-// eslint-disable-next-line unicorn/prefer-top-level-await
-main();
+try {
+    await main();
+} catch (error) {
+    console.log('RUN-SCRIPT global error ->', (error as Error).message); // TODO does it work?
+}

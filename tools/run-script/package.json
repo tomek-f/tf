@@ -1,6 +1,6 @@
 {
     "name": "@tf/run-script",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "private": true,
     "type": "module",
     "engines": {
@@ -8,9 +8,8 @@
     },
     "main": "./out/index.js",
     "bin": {
-        "ntl": "./out/index.js",
-        "run-script": "./out/index.js",
-        "tfrs": "./out/index.js",
+        "nrs": "./out/index.js",
+        "nnn": "./out/index.js",
         "rrr": "./out/index.js"
     },
     "files": [
@@ -20,9 +19,9 @@
         "__start": "node ./out/index.js",
         "__build": "tsc --noEmit false &&  mv ./out/index.js ./out/index-temp.js && cat ./src/prepend.txt ./out/index-temp.js > out/index.js && rm ./out/index-temp.js",
         "dev": "export NODE_ENV=development && npm run __build && npm run __start",
-        "build-and-pack-and-install": "export NODE_ENV=production && npm run __build && npm pack && npm install -g ./tf-run-script-0.6.0.tgz",
-        "test1": "echo 'test 1'",
-        "test2": "echo 'test 2'",
+        "build-and-pack-and-install": "export NODE_ENV=production && npm run __build && npm pack && npm install -g ./tf-run-script-0.7.0.tgz",
+        "test-echo": "echo 'test 1'",
+        "test-exit-1": "exit 1; echo 'test 3'",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "pnpm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
