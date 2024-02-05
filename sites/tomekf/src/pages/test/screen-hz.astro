@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+
+// https://cohost.org/lunasorcery/post/2465593-testing-your-animati
+// import wheelHz1 from '../../assets/wheel-hz/wheel-hz-1.png'; // Hz: 30, 48, 50, 60, 90, 120, 144
+import wheelHz2 from '../../assets/wheel-hz/wheel-hz-2.png'; // Hz: 30, 48, 50, 60, 75, 90, 120, 144
+import Box from '../../components/Box.astro';
+import TestLayout from '../../layouts/TestLayout.astro';
+---
+
+<TestLayout title="Screen Hz">
+    <!-- <Box>
+        <details>
+            <summary>Hz wheel</summary>
+            <p>Hz: 30, 48, 50, 60, 90, 120, 144</p>
+            <div class="overflow-hidden">
+            <Image
+                class="m-auto animate-[spin_0.5s_linear_infinite] overflow-hidden rounded-full"
+                src={wheelHz1}
+                width={800}
+                alt="Wheel Hz 1"
+                loading="eager"
+            />
+        </div>
+        </details>
+    </Box> -->
+    <Box>
+        <div class="overflow-hidden">
+            <Image
+                class="m-auto animate-spin rounded-full"
+                src={wheelHz2}
+                width={1600}
+                alt="Wheel Hz 2"
+                loading="eager"
+            />
+        </div>
+    </Box>
+</TestLayout>
