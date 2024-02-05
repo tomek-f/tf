@@ -8,6 +8,7 @@ export default {
             animation: {
                 float: 'float 1.5s linear infinite alternate',
                 'float-long': 'float-long 2s linear infinite alternate',
+                // 'spin-slow': 'spin 0.5s linear infinite', // one-off animation class animate-[spin_0.5s_linear_infinite]
             },
             keyframes: {
                 float: {

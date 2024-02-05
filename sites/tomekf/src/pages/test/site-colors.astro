@@ -1,10 +1,10 @@
 ---
 import Box from '../../components/Box.astro';
-import CommonLayout from '../../layouts/CommonLayout.astro';
+import TestLayout from '../../layouts/TestLayout.astro';
 import { primaryCss } from '../../styles/common';
 ---
 
-<CommonLayout>
+<TestLayout title="Site Colors">
     <Box class={`${primaryCss} text-2xl`}>primary color</Box>
     <Box>box</Box>
     <Box>box</Box>
@@ -52,4 +52,4 @@ import { primaryCss } from '../../styles/common';
             abc
         </div>
     </Box>
-</CommonLayout>
+</TestLayout>
