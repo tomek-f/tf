@@ -29,7 +29,7 @@
     "dependencies": {
         "detect-package-manager": "^3.0.1",
         "gradient-string": "^2.0.2",
-        "inquirer": "^9.2.13"
+        "inquirer": "^9.2.14"
     },
     "devDependencies": {
         "@types/gradient-string": "^1.1.5",
