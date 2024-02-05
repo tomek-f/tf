@@ -11,3 +11,5 @@ google*.html
 .astro
 
 pnpm-lock.yaml
+
+sites/tomekf/public/media
