@@ -33,7 +33,7 @@
         "nanoid": "^5.0.5",
         "runes": "^0.4.3",
         "sharp": "^0.33.2",
-        "solid-js": "^1.8.12",
+        "solid-js": "^1.8.14",
         "tailwind-merge": "^2.2.1",
         "uuid": "^9.0.1"
     },
