@@ -47,7 +47,7 @@
         "prettier": "^3.2.5",
         "prettier-plugin-astro": "^0.13.0",
         "prettier-plugin-tailwindcss": "^0.5.11",
-        "turbo": "^1.12.2",
+        "turbo": "^1.12.3",
         "typescript": "^5.3.3"
     },
     "pre-commit": "beforecommit"
