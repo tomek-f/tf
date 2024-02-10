@@ -1,6 +1,6 @@
 module blog
 
-go 1.21.7
+go 1.22.0
 
 require (
 	github.com/go-chi/chi/v5 v5.0.11
