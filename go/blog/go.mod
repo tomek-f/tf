@@ -1,8 +1,8 @@
 module blog
 
-go 1.21.3
+go 1.21.7
 
 require (
-	github.com/go-chi/chi/v5 v5.0.10
-	github.com/mattn/go-sqlite3 v1.14.17
+	github.com/go-chi/chi/v5 v5.0.11
+	github.com/mattn/go-sqlite3 v1.14.22
 )
