@@ -15,7 +15,7 @@ type Users struct {
 type User struct {
 	Name   string `json:"name"`
 	Type   string `json:"type"`
-	Age    int    `json:"Age"`
+	Age    int    `json:"age"`
 	Social Social `json:"social"`
 }
 
@@ -25,14 +25,14 @@ type Social struct {
 }
 
 func main() {
-	jsonFile, err := os.Open("users.json")
+	jsonFile, err := os.Open("./users.json")
 
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1) // or panic(err)
 	}
 
-	fmt.Println("Successfully Opened users.json")
+	fmt.Println("Successfully opened `users.json`")
 
 	// defer the closing of our jsonFile so that we can parse it later on
 	defer jsonFile.Close()
@@ -47,13 +47,19 @@ func main() {
 	// jsonFile's content into 'users' which we defined above
 	json.Unmarshal(byteValue, &users)
 
-	// we iterate through every user within our users array and
-	// print out the user Type, their name, and their facebook url
-	// as just an example
-	for i := 0; i < len(users.Users); i++ {
-		fmt.Println("User Type: " + users.Users[i].Type)
-		fmt.Println("User Age: " + strconv.Itoa(users.Users[i].Age))
-		fmt.Println("User Name: " + users.Users[i].Name)
-		fmt.Println("Facebook Url: " + users.Users[i].Social.Facebook)
+	// for i := 0; i < len(users.Users); i++ {
+	// 	fmt.Println("User type: " + users.Users[i].Type)
+	// 	fmt.Println("User age: " + strconv.Itoa(users.Users[i].Age))
+	// 	fmt.Println("User name: " + users.Users[i].Name)
+	// 	fmt.Println("Facebook url: " + users.Users[i].Social.Facebook)
+	// 	fmt.Println("Twitter url: " + users.Users[i].Social.Twitter)
+	// }
+
+	for _, user := range users.Users {
+		fmt.Println("User type: " + user.Type)
+		fmt.Println("User age: " + strconv.Itoa(user.Age))
+		fmt.Println("User name: " + user.Name)
+		fmt.Println("Facebook url: " + user.Social.Facebook)
+		fmt.Println("Twitter url: " + user.Social.Twitter)
 	}
 }
