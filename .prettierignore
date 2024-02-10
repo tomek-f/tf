@@ -13,3 +13,5 @@ google*.html
 pnpm-lock.yaml
 
 sites/tomekf/public/media
+
+go/**/templates/**/*.html
