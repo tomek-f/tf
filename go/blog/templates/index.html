@@ -1,13 +1,19 @@
-{{define "title"}}All articles{{end}} {{define "scripts"}}{{end}} {{define
-"body"}} {{if eq (len .) 6}}
-<p>Nothing to see here</p>
-{{end}} {{range .}}
-<div>
-    <a href="/articles/{{.ID}}">{{.Title}}</a>
-</div>
-{{end}}
+{{define "title"}}All articles{{end}}
 
-<p>
-    <a href="/articles">Create new article</a>
-</p>
+{{define "scripts"}}{{end}}
+
+{{define "body"}}
+    {{if eq (len .) 0}}
+        <p>Nothing to see here</p>
+    {{end}}
+
+    {{range .}}
+        <div>
+            <a href="/articles/{{.ID}}">{{.Title}}</a>
+        </div>
+    {{end}}
+
+    <p>
+        <a href="/articles">Create new article</a>
+    </p>
 {{end}}
