@@ -1,0 +1,12 @@
+go 1.22.0
+
+use ./go/cards
+use ./go/blog
+use ./go/hello-world
+use ./go/json-example
+use ./go/kitchensink
+use ./go/module-tutorial/hello
+use ./go/module-tutorial/greetings
+use ./go/template-example
+
+// replace example.com/bad/thing v1.4.5 => example.com/good/thing v1.4.5
