@@ -1,0 +1,23 @@
+{
+    "scripts": {
+        "start": "echo 'start'",
+        "dev": "echo 'dev'",
+        "build": "echo 'build'",
+        "test": "echo 'test'",
+        "lint": "echo 'lint'",
+        "precommit": "echo 'precommit'",
+        "prepush": "echo 'prepush'",
+        "prepare": "echo 'prepare'",
+        "version": "echo 'version'",
+        "postversion": "echo 'postversion'",
+        "deploy": "echo 'deploy'",
+        "postdeploy": "echo 'postdeploy'",
+        "clean": "echo 'clean'",
+        "postclean": "echo 'postclean'",
+        "preinstall": "echo 'preinstall'",
+        "install": "echo 'install'",
+        "postinstall": "echo 'postinstall'",
+        "preuninstall": "echo 'preuninstall'",
+        "uninstall": "echo 'uninstall'"
+    }
+}

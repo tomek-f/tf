@@ -56,6 +56,7 @@ func main() {
 	// }
 
 	for _, user := range users.Users {
+		fmt.Println("")
 		fmt.Println("User type: " + user.Type)
 		fmt.Println("User age: " + strconv.Itoa(user.Age))
 		fmt.Println("User name: " + user.Name)

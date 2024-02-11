@@ -7,6 +7,7 @@ use ./go/json-example
 use ./go/kitchensink
 use ./go/module-tutorial/hello
 use ./go/module-tutorial/greetings
+use ./go/nnn
 use ./go/template-example
 
 use ./pocs/next-playground/api
