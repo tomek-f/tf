@@ -4,39 +4,39 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"os"
-	"strconv"
+	"os/exec"
 
 	"github.com/manifoldco/promptui"
 )
 
-type Users struct {
-	Users []User `json:"users"`
+/*
+   * https://www.npmjs.com/package/detect-package-manager
+       packageManager field, scripts, files
+   * CursorPos
+*/
+
+type Scripts map[string]string
+
+type Package struct {
+	Scripts Scripts `json:"scripts"`
 }
 
-type User struct {
-	Name   string `json:"name"`
-	Type   string `json:"type"`
-	Age    int    `json:"age"`
-	Social Social `json:"social"`
+type Item struct {
+	Key   string
+	Value string
 }
 
-type Social struct {
-	Facebook string `json:"facebook"`
-	Twitter  string `json:"twitter"`
-}
+type Items []Item
 
 func main() {
 	var file string
 
 	if len(os.Args) < 2 {
-		file = "users.json"
+		file = "./package.json"
 	} else {
 		file = os.Args[1]
-	}
-
-	if file == "" {
-		file = "users.json"
 	}
 
 	jsonFile, err := os.Open(file)
@@ -54,68 +54,44 @@ func main() {
 	// read our opened JSON file as a byte array.
 	byteValue, _ := io.ReadAll(jsonFile)
 
-	// we initialize our Users array
-	var users Users
+	var scripts Package
 
-	// we unmarshal our byteArray which contains our
-	// jsonFile's content into 'users' which we defined above
-	json.Unmarshal(byteValue, &users)
+	json.Unmarshal([]byte(byteValue), &scripts)
 
-	// for i := 0; i < len(users.Users); i++ {
-	// 	fmt.Println("User type: " + users.Users[i].Type)
-	// 	fmt.Println("User age: " + strconv.Itoa(users.Users[i].Age))
-	// 	fmt.Println("User name: " + users.Users[i].Name)
-	// 	fmt.Println("Facebook url: " + users.Users[i].Social.Facebook)
-	// 	fmt.Println("Twitter url: " + users.Users[i].Social.Twitter)
-	// }
+	// fmt.Println(scripts.Scripts)
 
-	for _, user := range users.Users {
-		fmt.Println("")
-		fmt.Println("User type: " + user.Type)
-		fmt.Println("User age: " + strconv.Itoa(user.Age))
-		fmt.Println("User name: " + user.Name)
-		fmt.Println("Facebook url: " + user.Social.Facebook)
-		fmt.Println("Twitter url: " + user.Social.Twitter)
+	var items Items
+
+	for key, value := range scripts.Scripts {
+		items = append(items, Item{Key: key, Value: value})
 	}
 
-	type pepper struct {
-		Name     string
-		HeatUnit int
-		Peppers  int
-	}
-
-	peppers := []pepper{
-		{Name: "Bell Pepper", HeatUnit: 0, Peppers: 0},
-		{Name: "Banana Pepper", HeatUnit: 100, Peppers: 1},
-		{Name: "Poblano", HeatUnit: 1000, Peppers: 2},
-		{Name: "Jalapeño", HeatUnit: 3500, Peppers: 3},
-		{Name: "Aleppo", HeatUnit: 10000, Peppers: 4},
-		{Name: "Tabasco", HeatUnit: 30000, Peppers: 5},
-		{Name: "Malagueta", HeatUnit: 50000, Peppers: 6},
-		{Name: "Habanero", HeatUnit: 100000, Peppers: 7},
-		{Name: "Red Savina Habanero", HeatUnit: 350000, Peppers: 8},
-		{Name: "Dragon`s Breath", HeatUnit: 855000, Peppers: 9},
-	}
+	// fmt.Println(items[0].Key, items[0].Value)
 
 	templates := &promptui.SelectTemplates{
-		Label:    "{{ . }}?",
-		Active:   "🟢 {{ .Name | cyan }} ({{ .HeatUnit | red }})",
-		Inactive: "   {{ .Name | cyan }} ({{ .HeatUnit | red }})",
-		// Selected: "\U0001F336 {{ .Name | red | cyan }}",
-		Details: `
---------- Pepper ----------
-{{ "Name:" | faint }}	{{ .Name }}
-{{ "Heat Unit:" | faint }}	{{ .HeatUnit }}
-{{ "Peppers:" | faint }}	{{ .Peppers }}`,
+		Label: "{{ . }}",
+		// Active:   "💩 {{ .Key | cyan }} ({{ .Value | red }})",
+		Active: "💩 {{ .Key | cyan }}",
+		// Inactive: "   {{ .Key | cyan }} ({{ .Value | red }})",
+		Inactive: "   {{ .Key | cyan }}",
+		Selected: "✅ {{ .Key | green }}",
+		// 		Details: `
+		// --------- script ----------
+		// {{ "Key:" | faint }}	{{ .Key }}
+		// {{ "Value:" | faint }}	{{ .Value }}`,
+		Details: `Scrip value {{ .Value }}`,
+	}
+
+	size := len(items)
+	if size > 8 {
+		size = 8
 	}
 
 	prompt := promptui.Select{
-		Label:     "Spicy Level",
-		Size:      5,
-		Items:     peppers,
+		Label:     "Choose script",
+		Size:      size,
+		Items:     items,
 		Templates: templates,
-		// Items: []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
-		// 	"Saturday", "Sunday"},
 	}
 
 	// i, result, err := prompt.Run()
@@ -126,5 +102,17 @@ func main() {
 		return
 	}
 
-	fmt.Printf("You choose index %d: %s\n", i, peppers[i].Name)
+	// fmt.Printf("You choosed -> %s: %s\n", items[i].Key, items[i].Value)
+
+	cmd := exec.Command("npm", "run", items[i].Key)
+
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	// cmd.Stdin = os.Stdin
+	// log.SetPrefix("run: ")
+	log.SetFlags(3)
+
+	if err := cmd.Run(); err != nil {
+		log.Fatal(err)
+	}
 }
