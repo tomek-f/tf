@@ -9,4 +9,6 @@ use ./go/module-tutorial/hello
 use ./go/module-tutorial/greetings
 use ./go/template-example
 
+use ./pocs/next-playground/api
+
 // replace example.com/bad/thing v1.4.5 => example.com/good/thing v1.4.5
