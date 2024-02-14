@@ -7,22 +7,19 @@
     },
     "packageManager": "pnpm@8.15.2",
     "scripts": {
-        "turbo:build": "turbo build",
-        "turbo:check-types": "turbo check-types --force",
-        "turbo:lint-js": "turbo lint-js --force",
-        "turbo:lint-js-fix": "turbo lint-js-fix --force",
-        "turbo:lint-js-next": "turbo lint-js-next --force",
-        "turbo:test": "turbo test --force",
-        "turbo:astro-check": "turbo astro-check --force --concurrency=1",
-        "turbo:astro-sync": "turbo astro-sync --force --concurrency=1",
-        "turbo:build-slash-run-pocs": "turbo build run --force --filter='./pocs/*' --filter=!@tf/astro-ssr --filter=!@tf/next-playground",
+        "workspace:build": "pnpm run -r --parallel build",
+        "workspace:check-types": "pnpm run -r check-types",
+        "workspace:lint-js": "pnpm run -r lint-js",
+        "workspace:lint-js-fix": "pnpm run -r lint-js-fix",
+        "workspace:lint-js-next": "pnpm run -r lint-js-next",
+        "workspace:test": "pnpm run -r test",
+        "workspace:astro-check": "pnpm run -r astro-check",
+        "workspace:astro-sync": "pnpm run -r astro-sync",
         "format-check": "prettier --check . **/*.astro",
         "format-write": "prettier --write . **/*.astro",
-        "beforecommitTEMP": "NODE_ENV=production lint-staged && pnpm run turbo:astro-check && turbo check-types test --force",
-        "beforecommit": "NODE_ENV=production lint-staged && pnpm run turbo:astro-sync && turbo check-types test --force",
+        "beforecommit": "NODE_ENV=production lint-staged && pnpm run workspace:astro-sync && pnpm run workspace:astro-check && pnpm run workspace:check-types && pnpm run workspace:test",
         "prettier-permission-fix": "chmod +x ./node_modules/.bin/prettier",
-        "vercel": "vercel",
-        "turbo": "turbo"
+        "vercel": "vercel"
     },
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
@@ -47,7 +44,6 @@
         "prettier": "^3.2.5",
         "prettier-plugin-astro": "^0.13.0",
         "prettier-plugin-tailwindcss": "^0.5.11",
-        "turbo": "^1.12.4",
         "typescript": "^5.3.3"
     },
     "pre-commit": "beforecommit"

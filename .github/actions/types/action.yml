@@ -16,8 +16,7 @@ runs:
           shell: bash
         # TS type checking in astro require astro sync to generate types if content used
         # (Running astro dev, astro build or astro check will run the sync command as well.)
-        # turbo:astro-check and turbo:astro-check have --concurrency=1 to make it serial
-        # it removes `WebSocket server error: Port is already in use` error
-        # - run: pnpm run turbo:astro-check && pnpm run turbo:check-types
-        - run: pnpm run turbo:astro-sync && pnpm run turbo:check-types
+        # running in parallel will result in `WebSocket server error: Port is already in use` error
+        # - run: pnpm run workspace:astro-sync && pnpm run workspace:astro-check && pnpm run workspace:check-types
+        - run: pnpm run workspace:astro-check && pnpm run workspace:check-types
           shell: bash
