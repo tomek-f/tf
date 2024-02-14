@@ -15,7 +15,7 @@
         "DOES_NOT_WORK_ON_VERCEL_ADAPTER__preview-node": "node ./dist/server/entry.mjs",
         "DOES_NOT_WORK_ON_VERCEL_ADAPTER__preview-node-custom": "HOST=0.0.0.0 PORT=4321 node ./dist/server/entry.mjs",
         "astro-check": "astro check",
-        "astro-sync": "astro sync",
+        "astro-sync": "echo 'Running astro dev, astro build or astro check will run astro sync too.\n' && astro sync",
         "astro": "astro",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "pnpm run lint-js --fix",

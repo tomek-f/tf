@@ -13,11 +13,10 @@
         "workspace:lint-js-fix": "pnpm run -r lint-js-fix",
         "workspace:lint-js-next": "pnpm run -r lint-js-next",
         "workspace:test": "pnpm run -r test",
-        "workspace:astro-check": "pnpm run -r astro-check",
-        "workspace:astro-sync": "pnpm run -r astro-sync",
+        "workspace:astro-check": "pnpm --filter=@tf/tomekf run astro-check && pnpm --filter=@tf/astro-ssr run astro-check",
         "format-check": "prettier --check . **/*.astro",
         "format-write": "prettier --write . **/*.astro",
-        "beforecommit": "NODE_ENV=production lint-staged && pnpm run workspace:astro-sync && pnpm run workspace:astro-check && pnpm run workspace:check-types && pnpm run workspace:test",
+        "beforecommit": "NODE_ENV=production lint-staged && pnpm run workspace:astro-check && pnpm run workspace:check-types && pnpm run workspace:test",
         "prettier-permission-fix": "chmod +x ./node_modules/.bin/prettier",
         "vercel": "vercel"
     },
