@@ -14,5 +14,5 @@ runs:
               cache: 'pnpm'
         - run: pnpm i
           shell: bash
-        - run: pnpm run turbo:test
+        - run: pnpm run workspace:test
           shell: bash

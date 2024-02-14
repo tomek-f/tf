@@ -23,7 +23,6 @@ pnpm-debug.log*
 .eslintcache
 
 .vercel
-.turbo
 
 *.tsbuildinfo
 

@@ -8,7 +8,7 @@
     },
     "scripts": {
         "dev": "rimraf ./.next && next dev",
-        "dev-turbo": "rimraf ./.next && next dev --turbo",
+        "dev-turbopack": "rimraf ./.next && next dev --turbo",
         "build": "rimraf ./.next && next build",
         "build-and-preview": "pnpm run build && pnpm run preview",
         "preview": "next start",

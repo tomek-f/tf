@@ -14,7 +14,7 @@ runs:
               cache: 'pnpm'
         - run: pnpm i
           shell: bash
-        - run: npm run turbo:lint-js
+        - run: npm run workspace:lint-js
           shell: bash
-        - run: npm run turbo:lint-js-next
+        - run: npm run workspace:lint-js-next
           shell: bash

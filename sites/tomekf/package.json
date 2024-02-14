@@ -13,7 +13,7 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro-check": "astro check",
-        "astro-sync": "astro sync",
+        "astro-sync": "echo 'Running astro dev, astro build or astro check will run astro sync too.\n' && astro sync",
         "astro": "astro",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "pnpm run lint-js --fix",

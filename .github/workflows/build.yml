@@ -16,7 +16,8 @@ jobs:
                   check-latest: true
                   cache: 'pnpm'
             - run: pnpm i
-            - run: pnpm run turbo:build-slash-run-pocs
+            - run: pnpm --filter=@tf/react-playground run build
+            - run: pnpm --filter=@tf/kysely run github-action-start
     build-tomekf:
         runs-on: ubuntu-latest
         steps:

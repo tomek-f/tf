@@ -33,10 +33,6 @@ type Props2 = astroHTML.JSX.SVGAttributes;
 
 -   default https://github.com/colinhacks/zod/discussions/1953
 
-## turbo
-
--   https://turbo.build/repo/docs/handbook/sharing-code/internal-packages
-
 ## icons
 
 -   https://lucide.dev/
