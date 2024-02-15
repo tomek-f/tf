@@ -20,6 +20,7 @@ import (
 type Scripts map[string]string
 
 type Package struct {
+	Name    string  `json:"name"`
 	Scripts Scripts `json:"scripts"`
 }
 
@@ -103,6 +104,8 @@ func main() {
 	}
 
 	// fmt.Printf("You choosed -> %s: %s\n", items[i].Key, items[i].Value)
+
+	checkCache()
 
 	cmd := exec.Command("npm", "run", items[i].Key)
 
