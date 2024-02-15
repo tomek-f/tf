@@ -107,7 +107,17 @@ func main() {
 
 	checkCache()
 
-	cmd := exec.Command("npm", "run", items[i].Key)
+	script := items[i].Key
+
+	mydir, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+		// todo errors
+	}
+	fmt.Println(mydir)
+
+	// npm, yarn, pnpm, bun
+	cmd := exec.Command("npm", "run", script)
 
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
