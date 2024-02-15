@@ -1,4 +1,5 @@
 {
+    "name": "test",
     "scripts": {
         "start": "echo 'start'",
         "dev": "echo 'dev'",

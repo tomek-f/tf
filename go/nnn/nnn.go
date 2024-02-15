@@ -15,11 +15,15 @@ import (
    * https://www.npmjs.com/package/detect-package-manager
        packageManager field, scripts, files
    * CursorPos
+     * cache ✅
+     * global cache
+     * show last chosen option
 */
 
 type Scripts map[string]string
 
 type Package struct {
+	Name    string  `json:"name"`
 	Scripts Scripts `json:"scripts"`
 }
 
@@ -104,7 +108,21 @@ func main() {
 
 	// fmt.Printf("You choosed -> %s: %s\n", items[i].Key, items[i].Value)
 
-	cmd := exec.Command("npm", "run", items[i].Key)
+	checkCache()
+
+	script := items[i].Key
+
+	mydir, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+		// todo errors
+	}
+	fmt.Println(mydir)
+
+	saveData(mydir, script)
+
+	// npm, yarn, pnpm, bun
+	cmd := exec.Command("npm", "run", script)
 
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
