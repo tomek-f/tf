@@ -15,6 +15,9 @@ import (
    * https://www.npmjs.com/package/detect-package-manager
        packageManager field, scripts, files
    * CursorPos
+     * cache ✅
+     * global cache
+     * show last chosen option
 */
 
 type Scripts map[string]string

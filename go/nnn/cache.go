@@ -8,16 +8,9 @@ import (
 	"os"
 )
 
-// type Scripts map[string]string
-
-// type Package struct {
-// 	Name    string  `json:"name"`
-// 	Scripts Scripts `json:"scripts"`
-// }
-
 type Cache = map[string]string
 
-const cacheDir = ".cache"
+const cacheDir = ".cache" // todo /tmp or /usr or os.TempDir() or os.UserCacheDir()
 const cacheFile = cacheDir + "/file.json"
 
 func checkCache() {
