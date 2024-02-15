@@ -116,6 +116,8 @@ func main() {
 	}
 	fmt.Println(mydir)
 
+	saveData(mydir, script)
+
 	// npm, yarn, pnpm, bun
 	cmd := exec.Command("npm", "run", script)
 
