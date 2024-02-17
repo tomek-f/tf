@@ -70,8 +70,20 @@ func main() {
 		items = append(items, Item{Key: key, Value: value})
 	}
 
+	checkCache()
+
+	// read VALUE foem cache
+
+	mydir, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+		// todo errors
+	}
+	fmt.Println(mydir)
+
 	// fmt.Println(items[0].Key, items[0].Value)
 
+	// TODO pass VALUE to
 	templates := &promptui.SelectTemplates{
 		Label: "{{ . }}",
 		// Active:   "💩 {{ .Key | cyan }} ({{ .Value | red }})",
@@ -108,18 +120,10 @@ func main() {
 
 	// fmt.Printf("You choosed -> %s: %s\n", items[i].Key, items[i].Value)
 
-	checkCache()
-
 	script := items[i].Key
 
-	mydir, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
-		// todo errors
-	}
-	fmt.Println(mydir)
-
-	saveData(mydir, script)
+	// TODOsave VALUE only if not the same?
+	saveDataToCache(mydir, script)
 
 	// npm, yarn, pnpm, bun
 	cmd := exec.Command("npm", "run", script)

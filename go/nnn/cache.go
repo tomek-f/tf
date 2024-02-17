@@ -45,7 +45,7 @@ func checkCache() {
 	}
 }
 
-func saveData(key string, value string) {
+func saveDataToCache(key string, value string) {
 	file, err := os.ReadFile(cacheFile)
 	if err != nil {
 		log.Println(err)
