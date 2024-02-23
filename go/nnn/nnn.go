@@ -37,8 +37,15 @@ type Items []Item
 func main() {
 	var file string
 
+	mydir, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+		// todo errors
+	}
+	fmt.Println("Current dir:", mydir)
+
 	if len(os.Args) < 2 {
-		file = "./package.json"
+		file = mydir + "/package.json"
 	} else {
 		file = os.Args[1]
 	}
@@ -50,7 +57,7 @@ func main() {
 		os.Exit(1) // or panic(err) or return
 	}
 
-	fmt.Println("Successfully opened " + file)
+	fmt.Println("Successfully opened: " + file)
 
 	// defer the closing of our jsonFile so that we can parse it later on
 	defer jsonFile.Close()
@@ -73,13 +80,6 @@ func main() {
 	checkCache()
 
 	// read VALUE foem cache
-
-	mydir, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
-		// todo errors
-	}
-	fmt.Println(mydir)
 
 	// fmt.Println(items[0].Key, items[0].Value)
 
