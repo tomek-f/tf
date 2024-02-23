@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"strings"
 
 	"github.com/manifoldco/promptui"
 )
@@ -65,19 +66,108 @@ func main() {
 	// read our opened JSON file as a byte array.
 	byteValue, _ := io.ReadAll(jsonFile)
 
-	var scripts Package
+	// to keep order of scripts in package.json
+	dec := json.NewDecoder(strings.NewReader(string(byteValue)))
 
-	json.Unmarshal([]byte(byteValue), &scripts)
+	var packageName string
+	inScripts := false
+	var itemsTemp Items
+	index := 0
+	counter := 0
+	valueFromCache, err := getDataFromCache(mydir)
+
+	if err != nil {
+		// log.Println(err) // key not found
+		fmt.Println("no previous value in cache")
+		// todo errors
+	} else {
+		fmt.Println("valueFromCache:", valueFromCache)
+	}
+
+	for {
+		key, err := dec.Token()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+		// fmt.Printf("key: %v (%T)", key, key)
+
+		if _, ok := key.(json.Delim); !ok {
+			value, err := dec.Token()
+			if err == io.EOF {
+				break
+			}
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			if key == "name" && !inScripts {
+				packageName = value.(string)
+			}
+
+			if inScripts {
+				if _, ok := value.(json.Delim); !ok {
+					itemsTemp = append(itemsTemp, Item{Key: key.(string), Value: value.(string)})
+					if key == valueFromCache {
+						index = counter
+					}
+					counter++
+				}
+			}
+
+			if key == "scripts" {
+				if _, ok := value.(json.Delim); ok {
+					inScripts = true
+					// fmt.Printf(" (inScripts)")
+				}
+			}
+
+			// fmt.Printf(" value: %v (%T)", value, value)
+		} else {
+			if inScripts {
+				inScripts = false
+				// fmt.Printf(" (end inScripts)")
+			}
+		}
+	}
+
+	// fmt.Print(itemsTemp)
+
+	fmt.Println("packageName:", packageName)
+
+	// var scripts Package
+
+	// json.Unmarshal([]byte(byteValue), &scripts)
 
 	// fmt.Println(scripts.Scripts)
 
-	var items Items
-
-	for key, value := range scripts.Scripts {
-		items = append(items, Item{Key: key, Value: value})
-	}
-
 	checkCache()
+
+	// var items Items
+	// var index int = 0
+	// counter := 0
+	// valueFromCache, err := getDataFromCache(mydir)
+
+	// if err != nil {
+	// 	// log.Println(err) // key not found
+	// 	fmt.Println("no previous value in cache")
+	// 	// todo errors
+	// } else {
+	// 	fmt.Println("valueFromCache:", valueFromCache)
+	// }
+
+	// TODO better version, maybe normal for loop
+	// for key, value := range scripts.Scripts {
+	// 	items = append(items, Item{Key: key, Value: value})
+	// 	if key == valueFromCache {
+	// 		index = counter
+	// 	}
+	// 	counter++
+	// }
+
+	fmt.Println("index:", index)
 
 	// read VALUE foem cache
 
@@ -98,16 +188,19 @@ func main() {
 		Details: `Scrip value {{ .Value }}`,
 	}
 
-	size := len(items)
+	size := len(itemsTemp)
 	if size > 8 {
 		size = 8
 	}
 
+	// TODO if index is bigger than size, scroll items by changing slice
+
 	prompt := promptui.Select{
 		Label:     "Choose script",
 		Size:      size,
-		Items:     items,
+		Items:     itemsTemp,
 		Templates: templates,
+		CursorPos: index,
 	}
 
 	// i, result, err := prompt.Run()
@@ -120,7 +213,7 @@ func main() {
 
 	// fmt.Printf("You choosed -> %s: %s\n", items[i].Key, items[i].Value)
 
-	script := items[i].Key
+	script := itemsTemp[i].Key
 
 	// TODOsave VALUE only if not the same?
 	saveDataToCache(mydir, script)

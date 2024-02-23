@@ -63,7 +63,41 @@ func checkCache() {
 	}
 }
 
-func saveDataToCache(key string, value string) {
+func getDataFromCache(dir string) (string, error) {
+	_, cacheFile, err := getCachePaths()
+
+	if err != nil {
+		log.Println(err)
+		// todo errors
+	}
+
+	file, err := os.ReadFile(cacheFile)
+	if err != nil {
+		log.Println(err)
+		// todo errors
+	}
+
+	var data Cache
+	err = json.Unmarshal(file, &data)
+	if err != nil {
+		log.Println(err)
+		// todo errors
+
+		return "", err
+	}
+
+	value, ok := data[dir]
+
+	// fmt.Println(value, ok)
+
+	if !ok {
+		return "", errors.New("key not found")
+	}
+
+	return value, nil
+}
+
+func saveDataToCache(dir string, value string) {
 	_, cacheFile, err := getCachePaths()
 
 	if err != nil {
@@ -84,7 +118,7 @@ func saveDataToCache(key string, value string) {
 		// todo errors
 	}
 
-	data[key] = value
+	data[dir] = value
 
 	file, err = json.MarshalIndent(data, "", "  ")
 	if err != nil {

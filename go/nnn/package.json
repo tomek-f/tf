@@ -20,5 +20,6 @@
         "postinstall": "echo 'postinstall'",
         "preuninstall": "echo 'preuninstall'",
         "uninstall": "echo 'uninstall'"
-    }
+    },
+    "eee": "111"
 }
