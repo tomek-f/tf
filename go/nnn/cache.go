@@ -10,19 +10,37 @@ import (
 
 type Cache = map[string]string
 
-const cacheDir = ".cache" // todo /tmp or /usr or os.TempDir() or os.UserCacheDir()
-const cacheFile = cacheDir + "/file.json"
+func getCachePaths() (string, string, error) {
+	userCacheDir, err := os.UserCacheDir()
+
+	if err != nil {
+		log.Println(err)
+		// todo errors
+	}
+
+	cacheDir := userCacheDir + "/nnn"
+	cacheFile := cacheDir + "/file.json"
+
+	return cacheDir, cacheFile, err
+}
 
 func checkCache() {
+	cacheDir, cacheFile, err := getCachePaths()
+
+	if err != nil {
+		log.Println(err)
+		// todo errors
+	}
+
 	if _, err := os.Stat(cacheDir); errors.Is(err, os.ErrNotExist) {
 		err := os.Mkdir(cacheDir, os.ModePerm)
 		if err != nil {
 			log.Println(err)
 			// todo errors
 		}
-		fmt.Printf("Created %v dir\n", cacheDir)
+		fmt.Printf("Created %s dir\n", cacheDir)
 	} else {
-		fmt.Printf("%v dir already exists\n", cacheDir)
+		fmt.Printf("%s dir already exists\n", cacheDir)
 	}
 
 	if _, err := os.Stat(cacheFile); errors.Is(err, os.ErrNotExist) {
@@ -39,13 +57,54 @@ func checkCache() {
 			log.Println(err)
 			// todo errors
 		}
-		fmt.Printf("Created %v\n file", cacheFile)
+		fmt.Printf("Created %s\n file", cacheFile)
 	} else {
-		fmt.Printf("%v file already exists\n", cacheFile)
+		fmt.Printf("%s file already exists\n", cacheFile)
 	}
 }
 
-func saveDataToCache(key string, value string) {
+func getDataFromCache(dir string) (string, error) {
+	_, cacheFile, err := getCachePaths()
+
+	if err != nil {
+		log.Println(err)
+		// todo errors
+	}
+
+	file, err := os.ReadFile(cacheFile)
+	if err != nil {
+		log.Println(err)
+		// todo errors
+	}
+
+	var data Cache
+	err = json.Unmarshal(file, &data)
+	if err != nil {
+		log.Println(err)
+		// todo errors
+
+		return "", err
+	}
+
+	value, ok := data[dir]
+
+	// fmt.Println(value, ok)
+
+	if !ok {
+		return "", errors.New("key not found")
+	}
+
+	return value, nil
+}
+
+func saveDataToCache(dir string, value string) {
+	_, cacheFile, err := getCachePaths()
+
+	if err != nil {
+		log.Println(err)
+		// todo errors
+	}
+
 	file, err := os.ReadFile(cacheFile)
 	if err != nil {
 		log.Println(err)
@@ -59,7 +118,7 @@ func saveDataToCache(key string, value string) {
 		// todo errors
 	}
 
-	data[key] = value
+	data[dir] = value
 
 	file, err = json.MarshalIndent(data, "", "  ")
 	if err != nil {
