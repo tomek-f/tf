@@ -193,7 +193,7 @@ func main() {
 		size = 8
 	}
 
-	// TODO if index is bigger than size, scroll items by changing slice
+	// TODO if index is bigger than size, scroll items by changing order
 
 	prompt := promptui.Select{
 		Label:     "Choose script",
