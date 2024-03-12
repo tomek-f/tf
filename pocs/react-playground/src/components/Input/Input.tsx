@@ -13,6 +13,7 @@ const Input = ({
                 'appearance-none rounded border p-2 text-black shadow',
                 {
                     'bg-gray-400': readOnly,
+                    'bg-white': !readOnly,
                 },
             )}
             readOnly={readOnly}
