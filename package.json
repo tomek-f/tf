@@ -5,7 +5,7 @@
     "engines": {
         "node": "^18 || ^20"
     },
-    "packageManager": "pnpm@8.15.2",
+    "packageManager": "pnpm@8.15.4",
     "scripts": {
         "workspace:build": "pnpm run -r --parallel build",
         "workspace:check-types": "pnpm run -r check-types",
