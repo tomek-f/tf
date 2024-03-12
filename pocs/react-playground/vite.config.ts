@@ -1,5 +1,7 @@
 import { resolve } from 'node:path';
 
+// @ts-expect-error something is wrong with the types, external-modules.d.ts did not help
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react-swc';
 import { visualizer } from 'rollup-plugin-visualizer';
 
@@ -31,6 +33,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 // https://vitejs.dev/config/
 const config = (/* { mode }: UserConfig */) => ({
     plugins: [
+        tailwindcss(),
         react(),
         // htmlPlugin(loadEnv(mode as string, process.cwd(), 'VITE')),
         // stats.html file sizes are messed up
