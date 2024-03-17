@@ -21,7 +21,7 @@
         "vercel": "vercel"
     },
     "devDependencies": {
-        "@ianvs/prettier-plugin-sort-imports": "^4.2.0",
+        "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
         "@total-typescript/ts-reset": "^0.5.1",
         "@types/node": "^20.11.28",
         "@typescript-eslint/eslint-plugin": "^6.21.0",
