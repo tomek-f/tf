@@ -15,14 +15,14 @@
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
     },
     "dependencies": {
-        "better-sqlite3": "^9.4.3",
+        "better-sqlite3": "^9.4.5",
         "kysely": "^0.27.3"
     },
     "devDependencies": {
         "@types/better-sqlite3": "^7.6.9",
-        "@types/node": "^20.12.2",
+        "@types/node": "^20.12.4",
         "eslint": "^8.57.0",
-        "tsx": "^4.7.1",
+        "tsx": "^4.7.2",
         "typescript": "^5.4.3"
     }
 }

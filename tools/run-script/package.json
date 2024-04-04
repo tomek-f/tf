@@ -32,11 +32,11 @@
         "inquirer": "^9.2.17"
     },
     "devDependencies": {
-        "@types/gradient-string": "^1.1.5",
+        "@types/gradient-string": "^1.1.6",
         "@types/inquirer": "^9.0.7",
-        "@types/node": "^20.12.2",
+        "@types/node": "^20.12.4",
         "eslint": "^8.57.0",
-        "type-fest": "^4.14.0",
+        "type-fest": "^4.15.0",
         "typescript": "^5.4.3"
     }
 }
