@@ -2,6 +2,7 @@ import { resolve } from 'node:path';
 
 import react from '@vitejs/plugin-react-swc';
 import { visualizer } from 'rollup-plugin-visualizer';
+import { defineConfig } from 'vite';
 
 // import { loadEnv, type UserConfig } from 'vite';
 
@@ -29,7 +30,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 // loadEnv(mode as string, process.cwd(), 'VITE') === loadEnv(mode as string, '.', 'VITE')
 // https://vitejs.dev/config/
-const config = (/* { mode }: UserConfig */) => ({
+export default defineConfig({
     plugins: [
         react(),
         // htmlPlugin(loadEnv(mode as string, process.cwd(), 'VITE')),
@@ -50,5 +51,3 @@ const config = (/* { mode }: UserConfig */) => ({
         },
     },
 });
-
-export default config;

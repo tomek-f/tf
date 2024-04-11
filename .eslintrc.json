@@ -184,6 +184,7 @@
         "unicorn/template-indent": ["warn", { "indent": 4 }],
         "unicorn/no-null": "off",
         "unicorn/switch-case-braces": "off",
+        "unicorn/import-style": "off",
 
         "typescript-sort-keys/interface": "error",
         "typescript-sort-keys/string-enum": "error"
