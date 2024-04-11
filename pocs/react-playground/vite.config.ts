@@ -28,6 +28,8 @@ import { defineConfig } from 'vite';
 //     };
 // }
 
+// 1
+
 // loadEnv(mode as string, process.cwd(), 'VITE') === loadEnv(mode as string, '.', 'VITE')
 // https://vitejs.dev/config/
 export default defineConfig({
