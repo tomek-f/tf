@@ -27,7 +27,7 @@
         "@astrojs/solid-js": "^4.1.0",
         "@astrojs/tailwind": "^5.1.0",
         "@astrojs/vercel": "^7.5.3",
-        "astro": "^4.6.1",
+        "astro": "^4.6.2",
         "better-sqlite3": "^9.5.0",
         "lucide-solid": "^0.367.0",
         "nanoid": "^5.0.7",
