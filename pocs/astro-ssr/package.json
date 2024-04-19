@@ -27,14 +27,14 @@
         "@astrojs/solid-js": "^4.1.0",
         "@astrojs/tailwind": "^5.1.0",
         "@astrojs/vercel": "^7.5.3",
-        "astro": "^4.6.2",
+        "astro": "^4.6.3",
         "better-sqlite3": "^9.5.0",
         "lucide-solid": "^0.367.0",
         "nanoid": "^5.0.7",
         "runes": "^0.4.3",
         "sharp": "^0.33.3",
         "solid-js": "^1.8.16",
-        "tailwind-merge": "^2.2.2",
+        "tailwind-merge": "^2.3.0",
         "uuid": "^9.0.1"
     },
     "devDependencies": {
