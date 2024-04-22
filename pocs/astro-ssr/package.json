@@ -38,12 +38,12 @@
         "uuid": "^9.0.1"
     },
     "devDependencies": {
-        "@types/better-sqlite3": "^7.6.9",
+        "@types/better-sqlite3": "^7.6.10",
         "@types/runes": "^0.4.3",
         "@types/uuid": "^9.0.8",
         "eslint": "^8.57.0",
         "tailwindcss": "^3.4.3",
-        "type-fest": "^4.15.0",
+        "type-fest": "^4.16.0",
         "typescript": "^5.4.5"
     }
 }
