@@ -12,7 +12,6 @@
         "build-and-preview": "pnpm run build && pnpm run preview",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "_ntl_hack_preview": "vite preview",
         "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
         "lint-js-fix": "pnpm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'",
