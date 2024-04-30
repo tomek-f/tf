@@ -1,0 +1,24 @@
+{
+    "name": "@tf/fetch-enhanced",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": "^18 || ^20"
+    },
+    "scripts": {
+        "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
+        "lint-js-fix": "pnpm run lint-js --fix",
+        "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'",
+        "test:watch": "vitest --reporter=verbose",
+        "test:ui": "vitest --ui",
+        "test": "vitest --reporter=verbose run"
+    },
+    "devDependencies": {
+        "@vitest/ui": "^1.5.3",
+        "eslint": "^8.57.0",
+        "happy-dom": "^14.7.1",
+        "typescript": "^5.4.5",
+        "vitest": "^1.5.3"
+    }
+}

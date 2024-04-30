@@ -12,6 +12,8 @@
         "workspace:lint-js": "pnpm run -r lint-js",
         "workspace:lint-js-fix": "pnpm run -r lint-js-fix",
         "workspace:lint-js-next": "pnpm run -r lint-js-next",
+        "workspace:list": "pnpm list -r",
+        "workspace:list-shallow": "pnpm list -r --depth -1",
         "workspace:test": "pnpm run -r test",
         "workspace:astro-check": "pnpm --filter=@tf/tomekf run astro-check && pnpm --filter=@tf/astro-ssr run astro-check",
         "format-check": "prettier --check . **/*.astro",

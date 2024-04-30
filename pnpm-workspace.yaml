@@ -5,3 +5,4 @@ packages:
     - 'pocs/*'
     - 'sites/*'
     - 'tools/*'
+    - 'utils/*'
