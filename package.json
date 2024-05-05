@@ -16,13 +16,14 @@
         "workspace:list-shallow": "pnpm list -r --depth -1",
         "workspace:test": "pnpm run -r test",
         "workspace:astro-check": "pnpm --filter=@tf/tomekf run astro-check && pnpm --filter=@tf/astro-ssr run astro-check",
-        "format-check": "prettier --check . **/*.astro",
-        "format-write": "prettier --write . **/*.astro",
+        "format-check": "prettier --check **/*.css **/*.html **/*.astro && biome format ./",
+        "format-write": "prettier --write **/*.css **/*.html **/*.astro && biome format --write ./",
         "beforecommit": "NODE_ENV=production lint-staged && pnpm run workspace:astro-check && pnpm run workspace:check-types && pnpm run workspace:test",
         "prettier-permission-fix": "chmod +x ./node_modules/.bin/prettier",
         "vercel": "vercel"
     },
     "devDependencies": {
+        "@biomejs/biome": "1.7.2",
         "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
         "@total-typescript/ts-reset": "^0.5.1",
         "@types/node": "^20.12.8",
