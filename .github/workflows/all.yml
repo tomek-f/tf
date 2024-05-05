@@ -19,11 +19,11 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - uses: ./.github/actions/lint
-    prettier:
+    format:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - uses: ./.github/actions/prettier
+            - uses: ./.github/actions/format
     types:
         runs-on: ubuntu-latest
         steps:
