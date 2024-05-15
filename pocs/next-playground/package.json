@@ -20,7 +20,7 @@
         "next": "next"
     },
     "dependencies": {
-        "@hookform/resolvers": "^3.3.4",
+        "@hookform/resolvers": "^3.4.0",
         "@libsql/client": "^0.6.0",
         "@reduxjs/toolkit": "^2.2.4",
         "clsx": "^2.1.1",
