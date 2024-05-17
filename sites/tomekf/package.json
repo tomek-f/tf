@@ -32,10 +32,10 @@
         "@astrojs/sitemap": "^3.1.4",
         "@astrojs/solid-js": "^4.2.0",
         "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.8.3",
+        "astro": "^4.8.5",
         "lucide-solid": "^0.367.0",
         "runes": "^0.4.3",
-        "sharp": "^0.33.3",
+        "sharp": "^0.33.4",
         "solid-js": "^1.8.17",
         "tailwind-merge": "^2.3.0"
     }
