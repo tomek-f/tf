@@ -20,7 +20,7 @@
         "next": "next"
     },
     "dependencies": {
-        "@hookform/resolvers": "^3.4.0",
+        "@hookform/resolvers": "^3.4.2",
         "@libsql/client": "^0.6.0",
         "@reduxjs/toolkit": "^2.2.5",
         "clsx": "^2.1.1",
@@ -28,7 +28,7 @@
         "next": "14.1.4",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "react-hook-form": "^7.51.4",
+        "react-hook-form": "^7.51.5",
         "sharp": "^0.33.4",
         "zod": "^3.23.8"
     },
