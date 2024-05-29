@@ -5,14 +5,14 @@
 -   [ ] https://component-party.dev/
 -   [ ] https://auto-animate.formkit.com/
 
-## update all
+## update all (npm)
 
 -   `npm install -g npm-check-updates` && `ncu -u && ncu -u -ws` && `npm i`
 
 ## corepack
 
--   pnpm `corepack prepare pnpm@8.14.0 --activate`
--   yarn `corepack prepare yarn@1.22.21 --activate`
+-   pnpm `corepack prepare pnpm@9.1.3 --activate`
+-   yarn `corepack prepare yarn@1.22.22 --activate`
 
 ## astro
 
