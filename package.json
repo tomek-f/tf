@@ -5,7 +5,7 @@
     "engines": {
         "node": "^18 || ^20"
     },
-    "packageManager": "pnpm@9.1.3",
+    "packageManager": "pnpm@9.1.4",
     "scripts": {
         "workspace:build": "pnpm run -r --parallel build",
         "workspace:check-types": "pnpm run -r check-types",
@@ -25,7 +25,7 @@
     "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
         "@total-typescript/ts-reset": "^0.5.1",
-        "@types/node": "^20.12.12",
+        "@types/node": "^20.12.13",
         "@typescript-eslint/eslint-plugin": "^7.11.0",
         "@typescript-eslint/parser": "^7.11.0",
         "eslint": "^8.57.0",

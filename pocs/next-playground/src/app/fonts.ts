@@ -1,9 +1,9 @@
-import { Agbalumo, Nunito_Sans } from 'next/font/google';
+import { Nunito_Sans, Roboto_Mono } from 'next/font/google';
 
-export const fontAgbalumo = Agbalumo({
+export const robotoMono = Roboto_Mono({
     display: 'swap',
     subsets: ['latin'],
-    variable: '--font-agbalumo', // used in tailwind.config.ts
+    variable: '--font-roboto-mono', // used in tailwind.config.ts
     weight: ['400'],
 });
 
