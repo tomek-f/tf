@@ -11,7 +11,7 @@
 
 ## corepack
 
--   pnpm `corepack prepare pnpm@9.1.3 --activate`
+-   pnpm `corepack prepare pnpm@9.1.4 --activate`
 -   yarn `corepack prepare yarn@1.22.22 --activate`
 
 ## astro

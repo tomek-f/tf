@@ -176,8 +176,8 @@ importers:
         specifier: ^3.4.2
         version: 3.4.2(react-hook-form@7.51.5(react@18.3.1))
       '@libsql/client':
-        specifier: ^0.6.1
-        version: 0.6.1
+        specifier: 0.6.0
+        version: 0.6.0
       '@reduxjs/toolkit':
         specifier: ^2.2.5
         version: 2.2.5(react-redux@9.1.2(@types/react@18.3.3)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -1145,8 +1145,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@libsql/client@0.6.1':
-    resolution: {integrity: sha512-j32pZMzsuKJ8bWi0rtlszrexXV7mXSxoSA/2C6DfIL7kelI7SHsFgscrQD3wHBJVguitwMklWBe2EuMMRW0img==}
+  '@libsql/client@0.6.0':
+    resolution: {integrity: sha512-qhQzTG/y2IEVbL3+9PULDvlQFWJ/RnjFXECr/Nc3nRngGiiMysDaOV5VUzYk7DulUX98EA4wi+z3FspKrUplUA==}
 
   '@libsql/core@0.6.1':
     resolution: {integrity: sha512-xVV7w4iQcWgkhvmcJ6RZQdImlNvJGIW4Tlx1KJVWh6+l1sdAAz8hNXEXO04rYGAg6oeIXZF1j1E/AW1mwomO1g==}
@@ -6152,7 +6152,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@libsql/client@0.6.1':
+  '@libsql/client@0.6.0':
     dependencies:
       '@libsql/core': 0.6.1
       '@libsql/hrana-client': 0.6.0

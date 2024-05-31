@@ -13,8 +13,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                agbalumo: ['var(--font-agbalumo)', ...fontFamily.sans],
                 'nunito-sans': ['var(--font-nunito-sans)', ...fontFamily.sans],
+                'roboto-mono': ['var(--font-roboto-mono)', ...fontFamily.sans],
             },
             screens: {
                 '3xl': '1920px',
