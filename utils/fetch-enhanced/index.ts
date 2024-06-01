@@ -26,7 +26,9 @@ export const fetchEnhanced = async (
     try {
         if (init.method && !httpsMethods.includes(init.method.toUpperCase())) {
             throw new Error(
-                `Use one these methods (lowercase or uppercase): ${httpsMethods.join(', ')}`,
+                `Use one these methods (lowercase or uppercase): ${httpsMethods.join(
+                    ', ',
+                )}`,
             );
         }
 

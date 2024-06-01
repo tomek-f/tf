@@ -12,9 +12,7 @@
         "nnn": "./out/index.js",
         "rrr": "./out/index.js"
     },
-    "files": [
-        "out"
-    ],
+    "files": ["out"],
     "scripts": {
         "__start": "node ./out/index.js",
         "__build": "tsc --noEmit false &&  mv ./out/index.js ./out/index-temp.js && cat ./src/prepend.txt ./out/index-temp.js > out/index.js && rm ./out/index-temp.js",

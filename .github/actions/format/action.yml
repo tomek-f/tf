@@ -1,5 +1,5 @@
-name: 'Prettier action'
-description: 'Runs a composite Prettier action'
+name: 'Prettier/Biome action'
+description: 'Runs a composite Prettier/Biome action'
 
 runs:
     using: 'composite'
