@@ -21,11 +21,11 @@
     },
     "dependencies": {
         "@hookform/resolvers": "^3.4.2",
-        "@libsql/client": "0.6.0",
+        "@libsql/client": "^0.6.2",
         "@reduxjs/toolkit": "^2.2.5",
         "clsx": "^2.1.1",
         "lucide-react": "^0.367.0",
-        "next": "14.2.3",
+        "next": "^14.2.3",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-hook-form": "^7.51.5",
@@ -33,7 +33,7 @@
         "zod": "^3.23.8"
     },
     "devDependencies": {
-        "@types/node": "^20.12.13",
+        "@types/node": "^20.13.0",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
         "autoprefixer": "^10.4.19",
