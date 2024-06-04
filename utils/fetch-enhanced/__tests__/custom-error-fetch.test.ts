@@ -16,9 +16,7 @@ test('required data', () => {
 
     expect(errorWrapped instanceof CustomErrorFetch).toBe(true);
     expect(errorWrapped.message).toEqual(errorData.messageDefault);
-    expect(errorWrapped.request).toEqual(
-        JSON.parse(JSON.stringify(errorData.request)),
-    );
+    expect(errorWrapped.request).toEqual({ url: 'https://elo.yolo.com/111' });
     expect(errorWrapped.failedToFetch).toBe(false);
 });
 

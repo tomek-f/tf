@@ -25,7 +25,7 @@ export async function postBlog(previousState: SomeObject, formData: FormData) {
 
     const { rows: updatedRows } = await turso2.execute('SELECT * FROM blogs');
 
-    return JSON.parse(JSON.stringify(updatedRows)) as BlogItem[];
+    return structuredClone(updatedRows) as unknown as BlogItem[];
 }
 
 export type PostBlog = typeof postBlog;
