@@ -22,13 +22,13 @@
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
     },
     "dependencies": {
-        "@astrojs/check": "^0.5.10",
+        "@astrojs/check": "^0.7.0",
         "@astrojs/node": "^8.2.5",
         "@astrojs/solid-js": "^4.2.0",
         "@astrojs/tailwind": "^5.1.0",
         "astro": "^4.9.2",
-        "better-sqlite3": "^9.6.0",
-        "lucide-solid": "^0.367.0",
+        "better-sqlite3": "^11.0.0",
+        "lucide-solid": "^0.383.0",
         "nanoid": "^5.0.7",
         "runes": "^0.4.3",
         "sharp": "^0.33.4",
