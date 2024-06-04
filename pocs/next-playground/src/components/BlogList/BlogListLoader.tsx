@@ -17,7 +17,7 @@ export async function BlogListLoader() {
     return (
         <BlogList
             onSubmit={postBlog}
-            rows={JSON.parse(JSON.stringify(rows)) as BlogItem[]}
+            rows={structuredClone(rows) as unknown as BlogItem[]}
         />
     );
 }
