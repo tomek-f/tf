@@ -30,18 +30,18 @@ jobs:
                   cache: 'pnpm'
             - run: pnpm i
             - run: pnpm --filter=@tf/tomekf run build # pnpm run build --workspace=@tf/tomekf
-    build-astro-ssr:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-            - run: corepack enable
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  check-latest: true
-                  cache: 'pnpm'
-            - run: pnpm i
-            - run: pnpm --filter=@tf/astro-ssr run build
+    # build-astro-ssr:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - uses: actions/checkout@v4
+    #         - run: corepack enable
+    #         - uses: actions/setup-node@v4
+    #           with:
+    #               node-version: 20
+    #               check-latest: true
+    #               cache: 'pnpm'
+    #         - run: pnpm i
+    #         - run: pnpm --filter=@tf/astro-ssr run build
     build-next-playground:
         runs-on: ubuntu-latest
         steps:
