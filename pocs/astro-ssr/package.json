@@ -23,10 +23,10 @@
     },
     "dependencies": {
         "@astrojs/check": "^0.7.0",
-        "@astrojs/node": "^8.2.6",
+        "@astrojs/node": "^8.3.0",
         "@astrojs/solid-js": "^4.3.0",
         "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.10.1",
+        "astro": "^4.10.2",
         "better-sqlite3": "^11.0.0",
         "lucide-solid": "^0.383.0",
         "nanoid": "^5.0.7",
