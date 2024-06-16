@@ -43,7 +43,7 @@
         "eslint-plugin-react-hooks": "5.0.0-canary-7118f5dd7-20230705",
         "eslint-plugin-react-refresh": "^0.4.7",
         "eslint-plugin-typescript-sort-keys": "^3.2.0",
-        "eslint-plugin-unicorn": "^53.0.0",
+        "eslint-plugin-unicorn": "^54.0.0",
         "eslint-plugin-workspaces": "^0.10.1",
         "husky": "^9.0.11",
         "lint-staged": "^15.2.7",

@@ -54,8 +54,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       eslint-plugin-unicorn:
-        specifier: ^53.0.0
-        version: 53.0.0(eslint@8.57.0)
+        specifier: ^54.0.0
+        version: 54.0.0(eslint@8.57.0)
       eslint-plugin-workspaces:
         specifier: ^0.10.1
         version: 0.10.1
@@ -99,8 +99,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       lucide-solid:
-        specifier: ^0.383.0
-        version: 0.383.0(solid-js@1.8.17)
+        specifier: ^0.395.0
+        version: 0.395.0(solid-js@1.8.17)
       nanoid:
         specifier: ^5.0.7
         version: 5.0.7
@@ -117,8 +117,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
       uuid:
-        specifier: ^9.0.1
-        version: 9.0.1
+        specifier: ^10.0.0
+        version: 10.0.0
     devDependencies:
       '@types/better-sqlite3':
         specifier: ^7.6.10
@@ -182,8 +182,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       lucide-react:
-        specifier: ^0.383.0
-        version: 0.383.0(react@18.3.1)
+        specifier: ^0.395.0
+        version: 0.395.0(react@18.3.1)
       next:
         specifier: ^14.2.4
         version: 14.2.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -219,8 +219,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       eslint-config-next:
-        specifier: 14.2.3
-        version: 14.2.3(eslint@8.57.0)(typescript@5.4.5)
+        specifier: 14.2.4
+        version: 14.2.4(eslint@8.57.0)(typescript@5.4.5)
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
@@ -279,8 +279,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(react@18.3.1)(scheduler@0.23.2)
       use-immer:
-        specifier: ^0.9.0
-        version: 0.9.0(immer@10.1.1)(react@18.3.1)
+        specifier: ^0.10.0
+        version: 0.10.0(immer@10.1.1)(react@18.3.1)
       zustand:
         specifier: ^4.5.2
         version: 4.5.2(@types/react@18.3.3)(immer@10.1.1)(react@18.3.1)
@@ -346,8 +346,8 @@ importers:
         specifier: ^4.10.2
         version: 4.10.2(@types/node@20.14.2)(typescript@5.4.5)
       lucide-solid:
-        specifier: ^0.367.0
-        version: 0.367.0(solid-js@1.8.17)
+        specifier: ^0.395.0
+        version: 0.395.0(solid-js@1.8.17)
       runes:
         specifier: ^0.4.3
         version: 0.4.3
@@ -1068,8 +1068,8 @@ packages:
   '@next/env@14.2.4':
     resolution: {integrity: sha512-3EtkY5VDkuV2+lNmKlbkibIJxcO4oIHEhBWne6PaAp+76J9KoSsGvNikp6ivzAT8dhhBMYrm6op2pS1ApG0Hzg==}
 
-  '@next/eslint-plugin-next@14.2.3':
-    resolution: {integrity: sha512-L3oDricIIjgj1AVnRdRor21gI7mShlSwU/1ZGHmqM3LzHhXXhdkrfeNY5zif25Bi5Dd7fiJHsbhoZCHfXYvlAw==}
+  '@next/eslint-plugin-next@14.2.4':
+    resolution: {integrity: sha512-svSFxW9f3xDaZA3idQmlFw7SusOuWTpDTAeBlO3AEPDltrraV+lqs7mAc6A27YdnpQVVIA3sODqUAAHdWhVWsA==}
 
   '@next/swc-darwin-arm64@14.2.4':
     resolution: {integrity: sha512-AH3mO4JlFUqsYcwFUHb1wAKlebHU/Hv2u2kb1pAuRanDZ7pD/A/KPD98RHZmwsJpdHQwfEc/06mgpSzwrJYnNg==}
@@ -2279,8 +2279,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-config-next@14.2.3:
-    resolution: {integrity: sha512-ZkNztm3Q7hjqvB1rRlOX8P9E/cXRL9ajRcs8jufEtwMfTVYRqnmtnaSu57QqHyBlovMuiB8LEzfLBkh5RYV6Fg==}
+  eslint-config-next@14.2.4:
+    resolution: {integrity: sha512-Qr0wMgG9m6m4uYy2jrYJmyuNlYZzPRQq5Kvb9IDlYwn+7yq6W6sfMNFgb+9guM1KYwuIo6TIaiFhZJ6SnQ/Efw==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -2386,8 +2386,8 @@ packages:
       eslint: ^7 || ^8
       typescript: ^3 || ^4 || ^5
 
-  eslint-plugin-unicorn@53.0.0:
-    resolution: {integrity: sha512-kuTcNo9IwwUCfyHGwQFOK/HjJAYzbODHN3wP0PgqbW+jbXqpNWxNVpVhj2tO9SixBwuAdmal8rVcWKBxwFnGuw==}
+  eslint-plugin-unicorn@54.0.0:
+    resolution: {integrity: sha512-XxYLRiYtAWiAjPv6z4JREby1TAE2byBC7wlh0V4vWDCpccOSU1KovWV//jqPXF6bq3WKxqX9rdjoRQ1EhdmNdQ==}
     engines: {node: '>=18.18'}
     peerDependencies:
       eslint: '>=8.56.0'
@@ -3281,18 +3281,13 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.383.0:
-    resolution: {integrity: sha512-13xlG0CQCJtzjSQYwwJ3WRqMHtRj3EXmLlorrARt7y+IHnxUCp3XyFNL1DfaGySWxHObDvnu1u1dV+0VMKHUSg==}
+  lucide-react@0.395.0:
+    resolution: {integrity: sha512-6hzdNH5723A4FLaYZWpK50iyZH8iS2Jq5zuPRRotOFkhu6kxxJiebVdJ72tCR5XkiIeYFOU5NUawFZOac+VeYw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
 
-  lucide-solid@0.367.0:
-    resolution: {integrity: sha512-CDK58q2jmHcaV3UXJiOO3xCGyDwcXOeBQQ/ivIiyQn3BuAYHFpH77Ou5JYoMyHZuek7OA+FsV6nUmnnJv95mrQ==}
-    peerDependencies:
-      solid-js: ^1.4.7
-
-  lucide-solid@0.383.0:
-    resolution: {integrity: sha512-taIphchsZDyArTQkLyOhEQ3duIn0X/emfFhUySexrc1mg99EEFpCoKT/x+x4V39mWqlieKCaLKx+2goQWaE7Lg==}
+  lucide-solid@0.395.0:
+    resolution: {integrity: sha512-nLJfgLiAxzTaw1eZG+ayrFz4wqcqwpo1ZokYxigawj7uTWnraOCti8SOVDLE+JYmKObmvGOqTztVTV6LeGy8mw==}
     peerDependencies:
       solid-js: ^1.4.7
 
@@ -4803,10 +4798,10 @@ packages:
       react: '>=18.0.0'
       scheduler: '>=0.19.0'
 
-  use-immer@0.9.0:
-    resolution: {integrity: sha512-/L+enLi0nvuZ6j4WlyK0US9/ECUtV5v9RUbtxnn5+WbtaXYUaOBoKHDNL9I5AETdurQ4rIFIj/s+Z5X80ATyKw==}
+  use-immer@0.10.0:
+    resolution: {integrity: sha512-/eVwNR4TG9Tm/dd+aHYLLaI0FLfYKlkTqKMkn78Ah/EYVzWd/zJIgpkdoFEKbhQJOGo8XN7/mWrTx0exp1c+Ug==}
     peerDependencies:
-      immer: '>=2.0.0'
+      immer: '>=8.0.0'
       react: ^16.8.0 || ^17.0.1 || ^18.0.0
 
   use-sync-external-store@1.2.0:
@@ -4822,8 +4817,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@9.0.1:
-    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
     hasBin: true
 
   validate-html-nesting@1.2.2:
@@ -5876,7 +5871,7 @@ snapshots:
 
   '@next/env@14.2.4': {}
 
-  '@next/eslint-plugin-next@14.2.3':
+  '@next/eslint-plugin-next@14.2.4':
     dependencies:
       glob: 10.3.10
 
@@ -7258,9 +7253,9 @@ snapshots:
       eslint: 8.57.0
       semver: 7.6.2
 
-  eslint-config-next@14.2.3(eslint@8.57.0)(typescript@5.4.5):
+  eslint-config-next@14.2.4(eslint@8.57.0)(typescript@5.4.5):
     dependencies:
-      '@next/eslint-plugin-next': 14.2.3
+      '@next/eslint-plugin-next': 14.2.4
       '@rushstack/eslint-patch': 1.10.3
       '@typescript-eslint/parser': 7.2.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
@@ -7493,7 +7488,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-unicorn@53.0.0(eslint@8.57.0):
+  eslint-plugin-unicorn@54.0.0(eslint@8.57.0):
     dependencies:
       '@babel/helper-validator-identifier': 7.24.7
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
@@ -8517,15 +8512,11 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.383.0(react@18.3.1):
+  lucide-react@0.395.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
-  lucide-solid@0.367.0(solid-js@1.8.17):
-    dependencies:
-      solid-js: 1.8.17
-
-  lucide-solid@0.383.0(solid-js@1.8.17):
+  lucide-solid@0.395.0(solid-js@1.8.17):
     dependencies:
       solid-js: 1.8.17
 
@@ -10476,7 +10467,7 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  use-immer@0.9.0(immer@10.1.1)(react@18.3.1):
+  use-immer@0.10.0(immer@10.1.1)(react@18.3.1):
     dependencies:
       immer: 10.1.1
       react: 18.3.1
@@ -10491,7 +10482,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  uuid@9.0.1: {}
+  uuid@10.0.0: {}
 
   validate-html-nesting@1.2.2: {}
 

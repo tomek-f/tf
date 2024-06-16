@@ -28,13 +28,13 @@
         "@astrojs/tailwind": "^5.1.0",
         "astro": "^4.10.2",
         "better-sqlite3": "^11.0.0",
-        "lucide-solid": "^0.383.0",
+        "lucide-solid": "^0.395.0",
         "nanoid": "^5.0.7",
         "runes": "^0.4.3",
         "sharp": "^0.33.4",
         "solid-js": "^1.8.17",
         "tailwind-merge": "^2.3.0",
-        "uuid": "^9.0.1"
+        "uuid": "^10.0.0"
     },
     "devDependencies": {
         "@types/better-sqlite3": "^7.6.10",
