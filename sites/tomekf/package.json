@@ -36,7 +36,7 @@
         "lucide-solid": "^0.395.0",
         "runes": "^0.4.3",
         "sharp": "^0.33.4",
-        "solid-js": "^1.8.17",
+        "solid-js": "^1.8.18",
         "tailwind-merge": "^2.3.0"
     }
 }
