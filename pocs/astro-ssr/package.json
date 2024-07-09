@@ -33,7 +33,7 @@
         "runes": "^0.4.3",
         "sharp": "^0.33.4",
         "solid-js": "^1.8.18",
-        "tailwind-merge": "^2.3.0",
+        "tailwind-merge": "^2.4.0",
         "uuid": "^10.0.0"
     },
     "devDependencies": {
