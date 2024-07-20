@@ -29,14 +29,14 @@
     "dependencies": {
         "detect-package-manager": "^3.0.2",
         "gradient-string": "^2.0.2",
-        "inquirer": "^9.3.5"
+        "inquirer": "^9.3.6"
     },
     "devDependencies": {
         "@types/gradient-string": "^1.1.6",
         "@types/inquirer": "^9.0.7",
         "@types/node": "^20.14.11",
         "eslint": "^8.57.0",
-        "type-fest": "^4.22.0",
+        "type-fest": "^4.22.1",
         "typescript": "^5.5.3"
     }
 }
