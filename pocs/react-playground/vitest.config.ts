@@ -1,14 +1,10 @@
-import { resolve } from 'node:path';
-
+import { mergeConfig } from 'vite';
 import { defineConfig } from 'vitest/config';
 
-export default defineConfig({
-    resolve: {
-        alias: {
-            // TODO ? fix this
-            // eslint-disable-next-line unicorn/prefer-module
-            REACT_PG: resolve(__dirname, 'src'),
-        },
-    },
+import viteConfig from './vite.config';
+
+const vitestConfig = defineConfig({
     test: { environment: 'happy-dom' },
 });
+
+export default mergeConfig(viteConfig, vitestConfig);

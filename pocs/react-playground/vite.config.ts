@@ -1,8 +1,7 @@
-import { resolve } from 'node:path';
-
 import react from '@vitejs/plugin-react-swc';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // import { loadEnv, type UserConfig } from 'vite';
 
@@ -42,12 +41,6 @@ export default defineConfig({
             template: 'treemap',
             // open: true,
         }),
+        tsconfigPaths(),
     ],
-    resolve: {
-        alias: {
-            // TODO ? fix this
-            // eslint-disable-next-line unicorn/prefer-module
-            REACT_PG: resolve(__dirname, 'src'),
-        },
-    },
 });
