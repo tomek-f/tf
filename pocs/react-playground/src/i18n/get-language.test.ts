@@ -6,7 +6,7 @@ import {
     expect,
     test,
     vi,
-    type SpyInstance,
+    type MockInstance,
 } from 'vitest';
 
 import {
@@ -21,7 +21,7 @@ const getLanguageTestHelper = (value: string | null): void => {
     window.navigator.languages[0] = value;
 };
 
-let languageGetter: SpyInstance;
+let languageGetter: MockInstance<() => string | null>;
 
 const navigatorLanguage = navigator.language;
 const navigatorLanguages = [...navigator.languages];
