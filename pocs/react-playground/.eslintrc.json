@@ -1,6 +1,6 @@
 {
     "plugins": ["react", "react-hooks", "react-refresh"],
-    "extends": ["next/core-web-vitals", "plugin:react/recommended"],
+    "extends": ["plugin:react/recommended"],
     "rules": {
         "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
         "react/jsx-uses-react": "off",
@@ -17,8 +17,6 @@
         ],
 
         "react-refresh/only-export-components": "warn",
-
-        "@next/next/no-html-link-for-pages": "off",
 
         "@typescript-eslint/consistent-type-assertions": "off"
     }
