@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     title: 'next-playground',
 };
 
-// .font-nunito-sans is a custom font in tailwind.config.ts
 export default async function RootLayout(props: { children: React.ReactNode }) {
     return (
         <html
@@ -26,7 +25,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
                 rel="icon"
             />
             <body
-                className={`${nunitoSans.variable} font-nunito-sans bg-slate-900 text-base font-light text-gray-100 dark:bg-slate-900 dark:text-gray-100`}
+                className={`${nunitoSans.className} bg-slate-900 text-base font-light text-gray-100 dark:bg-slate-900 dark:text-gray-100`}
             >
                 <Layout>
                     <Content>

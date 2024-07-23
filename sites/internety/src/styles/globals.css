@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
+@layer components {
     .custom-html h1 {
         @apply my-8 text-2xl text-lime-200;
     }
@@ -39,4 +39,4 @@
     .custom-html a {
         @apply text-base text-sky-500 transition-colors duration-300 hover:text-sky-300 hover:underline;
     }
-} */
+}

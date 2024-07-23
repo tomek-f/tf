@@ -5,7 +5,10 @@
         "jsx": "preserve",
         "plugins": [{ "name": "next" }],
         "strictNullChecks": true,
-        "baseUrl": "."
+        "baseUrl": ".",
+        "paths": {
+            "INTERNETY/*": ["./src/*"]
+        }
     },
     "include": [
         "../../@types",

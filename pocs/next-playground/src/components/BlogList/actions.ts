@@ -1,7 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import type { SomeObject } from 'src/types/misc';
+import type { SomeObject } from 'NEXT_PG/types/misc';
 
 import { turso2 } from '../../db/turso2';
 import type { BlogItem } from './types';

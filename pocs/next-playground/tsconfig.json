@@ -5,7 +5,10 @@
         "jsx": "preserve",
         "plugins": [{ "name": "next" }],
         "strictNullChecks": true,
-        "baseUrl": "."
+        "baseUrl": ".",
+        "paths": {
+            "NEXT_PG/*": ["./src/*"]
+        }
     },
     "include": [
         "../../@types",

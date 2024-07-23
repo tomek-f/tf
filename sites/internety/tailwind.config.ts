@@ -1,4 +1,4 @@
-import { fontFamily } from 'tailwindcss/defaultTheme';
+// import { fontFamily } from 'tailwindcss/defaultTheme';
 
 import type { Config } from 'tailwindcss';
 
@@ -16,9 +16,6 @@ export default {
                 float: 'float 1.5s linear infinite alternate',
                 'float-long': 'float-long 2s linear infinite alternate',
                 // 'spin-slow': 'spin 0.5s linear infinite', // one-off animation class animate-[spin_0.5s_linear_infinite]
-            },
-            fontFamily: {
-                'nunito-sans': ['var(--font-nunito-sans)', ...fontFamily.sans],
             },
             keyframes: {
                 float: {

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { HomeIcon, MenuIcon, XIcon } from 'lucide-react';
+import { /* HomeIcon, */ MenuIcon, XIcon } from 'lucide-react';
 
 import { NavLink } from './NavLink';
 
@@ -48,10 +48,10 @@ export const Header = () => {
                     <div className="mt-5 flex flex-col gap-3 sm:mt-0 sm:flex-row sm:items-center sm:justify-end sm:pl-5">
                         <NavLink href="/info">info</NavLink>
                         <NavLink href="/contact">contact</NavLink>
-                        <NavLink href="/blog">blog</NavLink>
-                        <NavLink href="/test">test</NavLink>
 
-                        <div className="hidden">
+                        {/* <div className="hidden">
+                            <NavLink href="/blog">blog</NavLink>
+                            <NavLink href="/test">test</NavLink>
                             <NavLink href="/">
                                 <HomeIcon className="h-4 w-4" strokeWidth="1" />
                             </NavLink>
@@ -74,7 +74,7 @@ export const Header = () => {
                                 turso headers
                             </NavLink>
                             <NavLink href="/turso-blogs">turso blogs</NavLink>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </nav>

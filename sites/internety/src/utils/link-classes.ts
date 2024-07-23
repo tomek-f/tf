@@ -10,7 +10,7 @@ export function linkClasses({ className, active }: Props) {
         'transition-colors duration-300',
         active
             ? 'text-lime-500 dark:text-lime-500'
-            : 'text-sky-300 dark:text-sky-300 hover:underline',
+            : 'text-sky-500 dark:text-sky-500 hover:underline hover:text-sky-300 dark:hover:text-sky-300',
         className,
     );
 }
