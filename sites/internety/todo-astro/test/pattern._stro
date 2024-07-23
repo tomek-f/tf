@@ -1,0 +1,11 @@
+---
+import PatternComp from '../../components/Pattern.astro';
+import TestLayout from '../../layouts/TestLayout.astro';
+---
+
+<TestLayout title="Pattern">
+    <div class="flex flex-col gap-4">
+        <PatternComp />
+        <PatternComp class="h-96 w-96" />
+    </div>
+</TestLayout>

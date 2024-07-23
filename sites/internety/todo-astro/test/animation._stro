@@ -1,0 +1,13 @@
+---
+import Box from '../../components/Box.astro';
+import TestLayout from '../../layouts/TestLayout.astro';
+import { primaryCss } from '../../styles/common';
+---
+
+<TestLayout title="Animation">
+    <Box
+        class={`${primaryCss} animate-float md:animate-float-long motion-reduce:animate-none text-6xl`}
+    >
+        primary color
+    </Box>
+</TestLayout>
