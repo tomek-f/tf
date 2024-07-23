@@ -1,15 +1,1 @@
-coverage
-dist
-.next
-out
-
-stats.html
-# all html
-# *.html
-google*.html
-
 pnpm-lock.yaml
-
-sites/tomekf/public/media
-
-go/**/templates/**/*.html
