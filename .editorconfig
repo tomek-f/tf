@@ -12,8 +12,5 @@ trim_trailing_whitespace = true
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{go,sum,mod}]
-indent_style = tab
-
 # [*.{json,yml,js,cjs,mjs,ts,tsx,css,scss,graphql,gql,html,astro,svelte,md}]
 # indent_size = 2
