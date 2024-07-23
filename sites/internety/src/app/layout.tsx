@@ -20,8 +20,25 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
             className="dark min-h-screen min-w-[360px] p-6 md:p-8"
             lang={config.language.split('-')[0]}
         >
+            <meta content={`${process.env.NODE_ENV}`} name="debug_NODE_ENV" />
+            <meta
+                content={`${process.env.IS_NON_PRODUCTION === 'true'}`}
+                name="debug_IS_NON_PRODUCTION"
+            />
+            <meta
+                content={`${process.env.IS_PRODUCTION === 'true'}`}
+                name="debug_IS_PRODUCTION"
+            />
+            <meta
+                content={`${process.env.IS_PREVIEW === 'true'}`}
+                name="debug_IS_PREVIEW"
+            />
+            <meta
+                content={`${process.env.IS_DEVELOPMENT === 'true'}`}
+                name="debug_IS_DEVELOPMENT"
+            />
             <link
-                href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👷🏼</text></svg>"
+                href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
                 rel="icon"
             />
             <body
