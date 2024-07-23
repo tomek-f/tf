@@ -1,0 +1,21 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "skipLibCheck": true,
+        "jsx": "preserve",
+        "plugins": [{ "name": "next" }],
+        "strictNullChecks": true,
+        "baseUrl": ".",
+        "paths": {
+            "INTERNETY/*": ["./src/*"]
+        }
+    },
+    "include": [
+        "../../@types",
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        ".next/types/**/*.ts"
+    ],
+    "exclude": ["node_modules"]
+}

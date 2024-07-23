@@ -30,6 +30,24 @@ jobs:
                   cache: 'pnpm'
             - run: pnpm i
             - run: pnpm --filter=@tf/tomekf run build # pnpm run build --workspace=@tf/tomekf
+    build-intenety:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - run: corepack enable
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  check-latest: true
+                  cache: 'pnpm'
+            - run: pnpm i
+            - name: build intenety
+              run: pnpm --filter=@tf/intenety run build
+              env:
+                  TURSO_URL_1: ${{ secrets.TURSO_URL_1 }}
+                  TURSO_TOKEN_1: ${{ secrets.TURSO_TOKEN_1 }}
+                  TURSO_URL_2: ${{ secrets.TURSO_URL_2 }}
+                  TURSO_TOKEN_2: ${{ secrets.TURSO_TOKEN_2 }}
     build-next-playground:
         runs-on: ubuntu-latest
         steps:

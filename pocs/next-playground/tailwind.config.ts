@@ -1,5 +1,3 @@
-import { fontFamily } from 'tailwindcss/defaultTheme';
-
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -12,10 +10,6 @@ export default {
     plugins: [],
     theme: {
         extend: {
-            fontFamily: {
-                'nunito-sans': ['var(--font-nunito-sans)', ...fontFamily.sans],
-                'roboto-mono': ['var(--font-roboto-mono)', ...fontFamily.sans],
-            },
             screens: {
                 '3xl': '1920px',
             },

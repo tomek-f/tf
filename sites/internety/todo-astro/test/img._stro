@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets';
+
+import astronaut from '../../assets/astronaut-cut.png';
+import logo from '../../assets/logo.opti.svg';
+import TestLayout from '../../layouts/TestLayout.astro';
+---
+
+<TestLayout title="Img">
+    <Image src={astronaut} width={800} alt="descriptive text" loading="eager" />
+    <Image alt="logo" height={75} src={logo} width={220} loading="eager" />
+</TestLayout>

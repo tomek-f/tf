@@ -255,6 +255,7 @@ const config = [
         files: [
             'pocs/next-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}',
             'pocs/react-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}',
+            'sites/internety/**/*.{js,jsx,ts,tsx,cjs,mjs}',
         ],
         ...reactRecommended,
         plugins: {
@@ -289,16 +290,19 @@ const config = [
             'react-refresh/only-export-components': 'warn',
         },
     },
-    {
-        files: ['pocs/next-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}'],
-        // plugins: {
-        //     // '@next/next': next, // does it work?
-        // },
-        rules: {
-            // '@next/next/no-html-link-for-pages': 'error',
-            // '@next/next/no-head-element': 'error', // should return error
-        },
-    },
+    // {
+    //     files: [
+    //         'pocs/next-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}',
+    //         'sites/internety/**/*.{js,jsx,ts,tsx,cjs,mjs}',
+    //     ],
+    //     // plugins: {
+    //     //     // '@next/next': next, // does it work?
+    //     // },
+    //     rules: {
+    //         // '@next/next/no-html-link-for-pages': 'error',
+    //         // '@next/next/no-head-element': 'error', // should return error
+    //     },
+    // },
     // {
     //     files: [
     //         'pocs/**/*.{js,jsx,ts,tsx,cjs,mjs}',
@@ -327,6 +331,7 @@ const config = [
             '**/out/*',
             '**/.astro/types.d.ts',
             '**/*.astro', // TODO astro
+            '**/todo-astro/*', // TODO astro
         ],
     },
 ];

@@ -6,7 +6,7 @@
         "types": ["vite/client", "vitest", "node"],
         "skipLibCheck": true,
         "paths": {
-            "REACT_PG/*": ["src/*"]
+            "REACT_PG/*": ["./src/*"]
         }
     },
     "include": ["../../@types", "src"],
