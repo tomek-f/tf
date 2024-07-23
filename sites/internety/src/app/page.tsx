@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Box } from '../components/Box';
 
 export const metadata: Metadata = {
-    description: 'home description',
+    description: 'Internety Tomasz Fijoł',
     title: 'Internety Tomasz Fijoł',
 };
 

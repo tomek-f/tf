@@ -1,1 +1,1 @@
-export const CODENAME = 'next-playground';
+export const CODENAME = 'internety';

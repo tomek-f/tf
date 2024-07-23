@@ -5,7 +5,7 @@ on:
     workflow_call:
 
 jobs:
-    build-slash-run-pocs:
+    build-or-run-pocs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -16,7 +16,7 @@ jobs:
                   check-latest: true
                   cache: 'pnpm'
             - run: pnpm i
-            - run: pnpm --filter=@tf/react-playground run build
+            # - run: pnpm --filter=@tf/react-playground run build
             - run: pnpm --filter=@tf/kysely run github-action-start
     build-intenety:
         runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
             - run: corepack enable
             - uses: actions/setup-node@v4
               with:
-                  node-version: 20
+                  node-version: 18
                   check-latest: true
                   cache: 'pnpm'
             - run: pnpm i
@@ -36,7 +36,7 @@ jobs:
                   TURSO_TOKEN_1: ${{ secrets.TURSO_TOKEN_1 }}
                   TURSO_URL_2: ${{ secrets.TURSO_URL_2 }}
                   TURSO_TOKEN_2: ${{ secrets.TURSO_TOKEN_2 }}
-    build-next-playground:
+    build-react-playground:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -47,10 +47,5 @@ jobs:
                   check-latest: true
                   cache: 'pnpm'
             - run: pnpm i
-            - name: build next-playground
-              run: pnpm --filter=@tf/next-playground run build
-              env:
-                  TURSO_URL_1: ${{ secrets.TURSO_URL_1 }}
-                  TURSO_TOKEN_1: ${{ secrets.TURSO_TOKEN_1 }}
-                  TURSO_URL_2: ${{ secrets.TURSO_URL_2 }}
-                  TURSO_TOKEN_2: ${{ secrets.TURSO_TOKEN_2 }}
+            - name: build react-playground
+              run: pnpm --filter=@tf/react-playground run build
