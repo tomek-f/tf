@@ -18,18 +18,6 @@ jobs:
             - run: pnpm i
             - run: pnpm --filter=@tf/react-playground run build
             - run: pnpm --filter=@tf/kysely run github-action-start
-    build-tomekf:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v4
-            - run: corepack enable
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  check-latest: true
-                  cache: 'pnpm'
-            - run: pnpm i
-            - run: pnpm --filter=@tf/tomekf run build # pnpm run build --workspace=@tf/tomekf
     build-intenety:
         runs-on: ubuntu-latest
         steps:
