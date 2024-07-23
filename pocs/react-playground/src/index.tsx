@@ -16,7 +16,6 @@ import './themes-on-init';
 import './index.css';
 
 // TODO ? fix this
-// eslint-disable-next-line unicorn/prefer-top-level-await
 (async () => {
     const { language } = config;
     const { default: messages } = await import(
@@ -46,7 +45,7 @@ import './index.css';
                 <ProviderRedux store={store}>
                     <ProviderContextSelector>
                         {/* TODO ? fix this */}
-                        {/* eslint-disable-next-line unicorn/consistent-destructuring */}
+                        {}
                         <RawIntlProvider value={config.intl}>
                             <CustomRouter history={history}>
                                 <Root />

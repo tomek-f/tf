@@ -39,7 +39,7 @@ export const augmentedIntl = (
                         );
 
                         if (import.meta.env.DEV) {
-                            console.error(error); // eslint-disable-line no-console
+                            console.error(error);
                         }
                     }
 

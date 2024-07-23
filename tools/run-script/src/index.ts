@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 import { detect } from 'detect-package-manager';
 import gradient from 'gradient-string';
+// eslint-disable-next-line import/default, import/no-named-as-default-member
 import inquirer from 'inquirer';
 import type { PackageJson } from 'type-fest';
 
@@ -130,7 +131,6 @@ async function main() {
 
     process.stdin.on('keypress', (ch, key) => {
         if (key && key.name === 'escape') {
-            // eslint-disable-next-line unicorn/no-process-exit
             process.exit(0);
         }
     });

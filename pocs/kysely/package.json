@@ -10,7 +10,7 @@
     "scripts": {
         "start": "tsx ./src/index.ts",
         "github-action-start": "tsx ./src/index.ts",
-        "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
+        "lint-js": "NODE_ENV=production eslint",
         "lint-js-fix": "pnpm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
     },
@@ -21,7 +21,7 @@
     "devDependencies": {
         "@types/better-sqlite3": "^7.6.11",
         "@types/node": "^20.14.11",
-        "eslint": "^8.57.0",
+        "eslint": "^9.7.0",
         "tsx": "^4.16.2",
         "typescript": "^5.5.3"
     }

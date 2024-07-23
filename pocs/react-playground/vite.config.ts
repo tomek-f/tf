@@ -18,7 +18,6 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 //             order: 'pre',
 //             transform: (html: string) =>
 //                 // TODO ? fix this
-//                 // eslint-disable-next-line unicorn/prefer-string-replace-all
 //                 html.replace(
 //                     /%(.*?)%/g,
 //                     (match, p1: string) => environment[p1] ?? match,

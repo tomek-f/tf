@@ -9,11 +9,11 @@ class AccountingDepartment extends Department {
         console.log(
             'The Accounting Department meets each Monday at 10am.',
             this,
-        ); // eslint-disable-line no-console
+        );
     }
 
     generateReports(): void {
-        console.log('Generating accounting reports...', this); // eslint-disable-line no-console
+        console.log('Generating accounting reports...', this);
     }
 }
 
@@ -24,4 +24,4 @@ department.printName();
 department.printMeeting();
 department.generateReports();
 
-console.log('elo', AccountingDepartment.elo); // eslint-disable-line no-console
+console.log('elo', AccountingDepartment.elo);

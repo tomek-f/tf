@@ -20,8 +20,6 @@ const enum Direction3 {
     Right,
 }
 
-/* eslint-disable no-console */
 console.log(Direction);
 console.log(Direction2, Direction2.Left, Direction2[101]);
 console.log(Direction3.Left, Direction3['101']);
-/* eslint-enable no-console */

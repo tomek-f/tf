@@ -12,7 +12,7 @@ import CommonLayout from '../layouts/CommonLayout.astro';
 
 <script is:inline>
     (() => {
-        const pathname = document.getElementById('pathname-404');
+        const pathname = document.querySelector('#pathname-404');
 
         if (pathname) {
             pathname.textContent = window.location.pathname;

@@ -22,7 +22,7 @@
         "build-and-pack-and-install": "export NODE_ENV=production && npm run __build && npm pack && npm install -g ./tf-run-script-0.7.0.tgz",
         "test-echo": "echo 'test 1'",
         "test-exit-1": "exit 1; echo 'test 3'",
-        "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
+        "lint-js": "NODE_ENV=production eslint",
         "lint-js-fix": "pnpm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json"
     },
@@ -35,7 +35,7 @@
         "@types/gradient-string": "^1.1.6",
         "@types/inquirer": "^9.0.7",
         "@types/node": "^20.14.11",
-        "eslint": "^8.57.0",
+        "eslint": "^9.7.0",
         "type-fest": "^4.22.1",
         "typescript": "^5.5.3"
     }

@@ -46,7 +46,6 @@ const UserAddressSchema = z.object({
         .min(5, { message: 'Street must be 5 or more characters long' }),
     suite: z.string().trim().optional(),
     // TODO ? fix this
-    // eslint-disable-next-line unicorn/better-regex
     zipcode: z.string().regex(/^\d{5}(?:[-\s]\d{4})?$/, {
         message: 'Must be 5 digit zip. Optional 4 digit extension allowed.',
     }),

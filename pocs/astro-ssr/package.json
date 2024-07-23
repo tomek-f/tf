@@ -17,7 +17,7 @@
         "astro-check": "astro check",
         "astro-sync": "echo 'Running astro dev, astro build or astro check will run astro sync too.\n' && astro sync",
         "astro": "astro",
-        "lint-js": "NODE_ENV=production eslint --ext .js,.jsx,.cjs,.mjs,.ts,.tsx ./",
+        "lint-js": "NODE_ENV=production eslint",
         "lint-js-fix": "pnpm run lint-js --fix",
         "check-types": "tsc --skipLibCheck true -p ./tsconfig.json && echo 'no problems'"
     },
@@ -28,7 +28,7 @@
         "@astrojs/tailwind": "^5.1.0",
         "astro": "^4.12.2",
         "better-sqlite3": "^11.1.2",
-        "lucide-solid": "^0.412.0",
+        "lucide-solid": "^0.414.0",
         "nanoid": "^5.0.7",
         "runes": "^0.4.3",
         "sharp": "^0.33.4",
@@ -40,7 +40,7 @@
         "@types/better-sqlite3": "^7.6.11",
         "@types/runes": "^0.4.3",
         "@types/uuid": "^10.0.0",
-        "eslint": "^8.57.0",
+        "eslint": "^9.7.0",
         "tailwindcss": "^3.4.6",
         "type-fest": "^4.22.1",
         "typescript": "^5.5.3"

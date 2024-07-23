@@ -9,7 +9,6 @@ const createItem = async (formData: FormData) => {
 };
 
 export default function Page() {
-    // eslint-disable-next-line unicorn/consistent-function-scoping
     async function test(formData: FormData) {
         'use server';
 

@@ -5,7 +5,6 @@ import type { MouseEventHandler } from 'react';
 import { test4 } from './actions';
 
 export default function Page() {
-    // eslint-disable-next-line unicorn/consistent-function-scoping
     const test5: MouseEventHandler<HTMLButtonElement> = (event) => {
         event.preventDefault();
 
