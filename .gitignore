@@ -1,7 +1,11 @@
+# typical suspects
 **/node_modules/
 **/tmp/
 **/dist/
 **/build/
+**/out/
+**/.next/
+**/.vercel/
 .vscode
 
 # testing
@@ -9,8 +13,8 @@
 /test-results
 
 # misc
-# misc - macOS-specific files
 .DS_Store
+*.pem
 
 # logs
 npm-debug.log*
@@ -20,12 +24,6 @@ pnpm-debug.log*
 
 # tf
 .env*
-.eslintcache
-
 .vercel
-
 *.tsbuildinfo
-
 stats.html
-
-.parcel-cache
