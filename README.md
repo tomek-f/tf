@@ -1,33 +1,17 @@
 # tf
 
-## to check
-
--   [ ] https://component-party.dev/
--   [ ] https://auto-animate.formkit.com/
-
 ## update all (npm)
 
 -   `npm install -g npm-check-updates` && `ncu -u && ncu -u -ws` && `npm i`
 
 ## corepack
 
--   pnpm `corepack prepare pnpm@9.1.4 --activate`
+-   pnpm `corepack prepare pnpm@9.6.0 --activate`
 -   yarn `corepack prepare yarn@1.22.22 --activate`
-
-## astro
-
-same result
-
-```ts
-import type { HTMLAttributes } from 'astro/types';
-
-type Props1 = HTMLAttributes<'svg'>;
-type Props2 = astroHTML.JSX.SVGAttributes;
-```
 
 ## next
 
--   title and description ://github.com/vercel/next.js/discussions/50872
+-   title and description https://github.com/vercel/next.js/discussions/50872
 
 ## zod
 
