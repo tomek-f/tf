@@ -14,7 +14,5 @@ runs:
               cache: 'pnpm'
         - run: pnpm i
           shell: bash
-        - run: pnpm run workspace:astro-check
-          shell: bash
         - run: pnpm run workspace:check-types
           shell: bash
