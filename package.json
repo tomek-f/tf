@@ -15,8 +15,8 @@
         "workspace:list": "pnpm list -r",
         "workspace:list-shallow": "pnpm list -r --depth -1",
         "workspace:test": "pnpm run -r test",
-        "format-check": "prettier --check . **/*.astro",
-        "format-write": "prettier --write . **/*.astro",
+        "format-check": "prettier --check .",
+        "format-write": "prettier --write .",
         "lint-js-root": "NODE_ENV=production eslint ./eslint.config.js",
         "lint-js-root-fix": "NODE_ENV=production eslint ./eslint.config.js --fix",
         "lint-all": "NODE_ENV=production eslint",
@@ -42,7 +42,6 @@
         "eslint": "^9.7.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-import-resolver-typescript": "^3.6.1",
-        "eslint-plugin-astro": "^1.2.3",
         "eslint-plugin-import": "^2.29.1",
         "eslint-plugin-prettier": "^5.2.1",
         "eslint-plugin-react": "^7.35.0",
@@ -54,7 +53,6 @@
         "husky": "^9.1.1",
         "lint-staged": "^15.2.7",
         "prettier": "^3.3.3",
-        "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-tailwindcss": "^0.6.5",
         "typescript": "^5.5.3"
     }

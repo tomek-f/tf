@@ -5,7 +5,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-// import eslintPluginAstro from 'eslint-plugin-astro';
 import _import from 'eslint-plugin-import';
 // eslint-disable-next-line import/default, import/no-named-as-default-member
 import prettier from 'eslint-plugin-prettier';
@@ -28,7 +27,6 @@ const compat = new FlatCompat({
 
 const config = [
     js.configs.recommended,
-    // ...eslintPluginAstro.configs.recommended,
     ...fixupConfigRules(
         compat.extends(
             'eslint:recommended', // same as js.configs.recommended?
@@ -38,7 +36,6 @@ const config = [
             'plugin:@typescript-eslint/stylistic',
             'plugin:import/typescript',
             'prettier',
-            // 'plugin:astro/recommended',
         ),
     ),
     {
@@ -329,8 +326,6 @@ const config = [
             '**/tmp/*',
             '**/.next/*',
             '**/out/*',
-            '**/.astro/types.d.ts',
-            '**/*.astro', // TODO astro
             '**/todo-astro/*', // TODO astro
         ],
     },
