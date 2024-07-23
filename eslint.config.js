@@ -46,27 +46,15 @@ const config = [
             'typescript-sort-keys': typescriptSortKeys,
             prettier,
         },
-
         languageOptions: {
-            globals: {
-                ...globals.browser,
-                ...globals.node,
-            },
-
+            globals: { ...globals.browser, ...globals.node },
             parser: tsParser,
             ecmaVersion: 'latest',
             sourceType: 'module',
         },
-
         settings: {
-            react: {
-                version: 'detect',
-            },
-
-            'import/parsers': {
-                '@typescript-eslint/parser': ['.ts', '.tsx'],
-            },
-
+            react: { version: 'detect' },
+            'import/parsers': { '@typescript-eslint/parser': ['.ts', '.tsx'] },
             'import/resolver': {
                 typescript: {
                     project: [
@@ -81,7 +69,6 @@ const config = [
                 },
             },
         },
-
         rules: {
             'no-console': isProductionBuild ? 'off' : 'off',
             'no-debugger': isProductionBuild ? 'error' : 'warn',
@@ -106,33 +93,18 @@ const config = [
                     prev: ['const', 'let', 'var'],
                     next: ['const', 'let', 'var'],
                 },
-                {
-                    blankLine: 'always',
-                    prev: '*',
-                    next: 'return',
-                },
+                { blankLine: 'always', prev: '*', next: 'return' },
             ],
-
             'padded-blocks': 'off',
-
             'no-multiple-empty-lines': [
                 'error',
-                {
-                    max: 1,
-                    maxBOF: 0,
-                    maxEOF: 0,
-                },
+                { max: 1, maxBOF: 0, maxEOF: 0 },
             ],
-
             'object-shorthand': [
                 'error',
                 'always',
-                {
-                    ignoreConstructors: false,
-                    avoidQuotes: true,
-                },
+                { ignoreConstructors: false, avoidQuotes: true },
             ],
-
             'id-denylist': [
                 'error',
                 'e',
@@ -144,7 +116,6 @@ const config = [
                 '_____',
                 'cb',
             ],
-
             'no-restricted-imports': [
                 'error',
                 {
@@ -165,7 +136,6 @@ const config = [
                     ],
                 },
             ],
-
             'sort-keys': [
                 'error',
                 'asc',
@@ -176,22 +146,16 @@ const config = [
                     minKeys: 2,
                 },
             ],
-
             'prettier/prettier': 'error',
             'arrow-body-style': 'off',
             'prefer-arrow-callback': 'off',
-
             'import/no-useless-path-segments': [
                 'error',
-                {
-                    noUselessIndex: true,
-                },
+                { noUselessIndex: true },
             ],
-
             'import/prefer-default-export': 'off',
             'import/namespace': 'off',
             'import/no-named-as-default': 'off',
-
             'import/extensions': [
                 'error',
                 'ignorePackages',
@@ -204,14 +168,10 @@ const config = [
                     ts: 'never',
                 },
             ],
-
             'import/no-extraneous-dependencies': [
                 'error',
-                {
-                    devDependencies: true,
-                },
+                { devDependencies: true },
             ],
-
             'no-unused-expressions': 'off',
             '@typescript-eslint/no-unused-expressions': 'error',
             'no-use-before-define': 'off',
@@ -223,27 +183,18 @@ const config = [
             'workspaces/require-dependency': 'error',
             '@typescript-eslint/member-delimiter-style': 'error',
             '@typescript-eslint/no-var-requires': 'off',
-
             '@typescript-eslint/no-unused-vars': [
                 'error',
-                {
-                    ignoreRestSiblings: true,
-                    argsIgnorePattern: '^_',
-                },
+                { ignoreRestSiblings: true, argsIgnorePattern: '^_' },
             ],
-
             '@typescript-eslint/consistent-type-definitions': [
                 'error',
                 'interface',
             ],
-
             '@typescript-eslint/consistent-type-imports': [
                 'error',
-                {
-                    prefer: 'type-imports',
-                },
+                { prefer: 'type-imports' },
             ],
-
             'typescript-sort-keys/interface': 'error',
             'typescript-sort-keys/string-enum': 'error',
         },
@@ -255,10 +206,7 @@ const config = [
             'sites/internety/**/*.{js,jsx,ts,tsx,cjs,mjs}',
         ],
         ...reactRecommended,
-        plugins: {
-            react,
-            'react-hooks': fixupPluginRules(reactHooks),
-        },
+        plugins: { react, 'react-hooks': fixupPluginRules(reactHooks) },
         rules: {
             'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
             'react/jsx-uses-react': 'off',
@@ -280,54 +228,24 @@ const config = [
     {
         files: ['pocs/react-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}'],
         ...reactRecommended,
-        plugins: {
-            'react-refresh': reactRefresh,
-        },
-        rules: {
-            'react-refresh/only-export-components': 'warn',
-        },
+        plugins: { 'react-refresh': reactRefresh },
+        rules: { 'react-refresh/only-export-components': 'warn' },
     },
     // {
     //     files: [
     //         'pocs/next-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}',
     //         'sites/internety/**/*.{js,jsx,ts,tsx,cjs,mjs}',
     //     ],
-    //     // plugins: {
-    //     //     // '@next/next': next, // does it work?
-    //     // },
-    //     rules: {
-    //         // '@next/next/no-html-link-for-pages': 'error',
-    //         // '@next/next/no-head-element': 'error', // should return error
+    //     plugins: {
+    //         '@next/next': next, // does it work?
     //     },
-    // },
-    // {
-    //     files: [
-    //         'pocs/**/*.{js,jsx,ts,tsx,cjs,mjs}',
-    //         'apps/**/*.{js,jsx,ts,tsx,cjs,mjs}',
-    //     ],
     //     rules: {
-    //         'no-console': isProdBuild ? 'error' : 'warn',
-    //         'no-debugger': isProdBuild ? 'error' : 'warn',
-    //     },
-    // },
-    // {
-    //     files: [
-    //         'pocs/**/*.{js,jsx,ts,tsx,cjs,mjs}',
-    //         'apps/**/*.{js,jsx,ts,tsx,cjs,mjs}',
-    //     ],
-    //     rules: {
-    //         'no-console': isProdBuild ? 'error' : 'warn',
-    //         'no-debugger': isProdBuild ? 'error' : 'warn',
+    //         '@next/next/no-html-link-for-pages': 'error',
+    //         '@next/next/no-head-element': 'error', // should return error
     //     },
     // },
     {
-        ignores: [
-            '**/dist/*',
-            '**/tmp/*',
-            '**/.next/*',
-            '**/out/*',
-            '**/todo-astro/*', // TODO astro
-        ],
+        ignores: ['**/dist/*', '**/tmp/*', '**/.next/*', '**/out/*'],
     },
 ];
 
