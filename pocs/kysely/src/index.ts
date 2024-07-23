@@ -4,7 +4,6 @@ import { database } from './database';
 import { findPersonById } from './person-repository';
 
 // TODO ? fix this
-// eslint-disable-next-line unicorn/prefer-top-level-await
 (async () => {
     // create tables
     await database.schema

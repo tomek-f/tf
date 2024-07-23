@@ -6,7 +6,7 @@ export default abstract class Department {
     static elo = 'elo';
 
     printName(): void {
-        console.log(`Department name: ${this.name}`); // eslint-disable-line no-console
+        console.log(`Department name: ${this.name}`);
     }
 
     abstract printMeeting(): void; // must be implemented in derived classes

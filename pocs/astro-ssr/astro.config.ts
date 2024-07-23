@@ -1,4 +1,4 @@
-/* eslint-disable sort-keys */
+/* eslint-disable sort-keys, import/default, import/no-named-as-default-member */
 import nodejs from '@astrojs/node';
 import solidJs from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';

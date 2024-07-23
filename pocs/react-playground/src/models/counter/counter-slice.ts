@@ -14,7 +14,7 @@ export const counterSlice = createSlice({
     name: 'counter',
     // eslint-disable-next-line sort-keys
     initialState,
-    /* eslint-disable no-param-reassign */
+
     reducers: {
         decrement: (state) => {
             state.value -= 1;
@@ -26,7 +26,6 @@ export const counterSlice = createSlice({
             state.value += action.payload;
         },
     },
-    /* eslint-enable no-param-reassign */
 });
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;

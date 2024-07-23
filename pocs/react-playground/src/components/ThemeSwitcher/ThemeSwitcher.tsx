@@ -13,7 +13,7 @@ const ThemeSwitcher = () => {
 
     if (import.meta.env.DEV) {
         // double log from StrictMode
-        // eslint-disable-next-line no-console
+
         console.log('Root', theme);
     }
 
