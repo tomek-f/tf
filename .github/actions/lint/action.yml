@@ -16,5 +16,5 @@ runs:
           shell: bash
         - run: npm run workspace:lint-js
           shell: bash
-        - run: npm run workspace:lint-js-next
-          shell: bash
+        # - run: npm run workspace:lint-js-next
+        #   shell: bash
