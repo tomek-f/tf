@@ -10,8 +10,8 @@ import { config } from '../config';
 import { nunitoSans } from './fonts';
 
 export const metadata: Metadata = {
-    description: 'next-playground description',
-    title: 'next-playground',
+    description: 'Internety Tomasz Fijoł',
+    title: 'Internety Tomasz Fijoł',
 };
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

@@ -201,7 +201,6 @@ const config = [
     },
     {
         files: [
-            'pocs/next-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}',
             'pocs/react-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}',
             'sites/internety/**/*.{js,jsx,ts,tsx,cjs,mjs}',
         ],
@@ -232,10 +231,7 @@ const config = [
         rules: { 'react-refresh/only-export-components': 'warn' },
     },
     // {
-    //     files: [
-    //         'pocs/next-playground/**/*.{js,jsx,ts,tsx,cjs,mjs}',
-    //         'sites/internety/**/*.{js,jsx,ts,tsx,cjs,mjs}',
-    //     ],
+    //     files: ['sites/internety/**/*.{js,jsx,ts,tsx,cjs,mjs}'],
     //     plugins: {
     //         '@next/next': next, // does it work?
     //     },
