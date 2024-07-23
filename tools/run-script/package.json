@@ -17,9 +17,10 @@
     ],
     "scripts": {
         "__start": "node ./out/index.js",
-        "__build": "tsc --noEmit false &&  mv ./out/index.js ./out/index-temp.js && cat ./src/prepend.txt ./out/index-temp.js > out/index.js && rm ./out/index-temp.js",
+        "__prepend": "echo '#!/usr/bin/env node' | cat - ./out/index.js > temp && mv temp ./out/index.js",
+        "__build": "tsc --noEmit false",
         "dev": "export NODE_ENV=development && npm run __build && npm run __start",
-        "build-and-pack-and-install": "export NODE_ENV=production && npm run __build && npm pack && npm install -g ./tf-run-script-0.7.0.tgz",
+        "build-and-pack-and-install": "export NODE_ENV=production && npm run __build && npm run __prepend && npm pack && npm install -g ./tf-run-script-0.7.0.tgz",
         "test-echo": "echo 'test 1'",
         "test-exit-1": "exit 1; echo 'test 3'",
         "lint-js": "NODE_ENV=production eslint",
