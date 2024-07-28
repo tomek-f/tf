@@ -22,7 +22,7 @@
     "dependencies": {
         "@hookform/resolvers": "^3.9.0",
         "@libsql/client": "^0.7.0",
-        "@reduxjs/toolkit": "^2.2.6",
+        "@reduxjs/toolkit": "^2.2.7",
         "clsx": "^2.1.1",
         "lucide-react": "^0.414.0",
         "next": "^14.2.5",
@@ -33,15 +33,15 @@
         "zod": "^3.23.8"
     },
     "devDependencies": {
-        "@types/node": "^20.14.12",
+        "@types/node": "^20.14.13",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
         "autoprefixer": "^10.4.19",
-        "eslint": "^9.7.0",
+        "eslint": "^9.8.0",
         "eslint-config-next": "14.2.5",
         "postcss": "^8.4.40",
         "rimraf": "^6.0.1",
-        "tailwindcss": "^3.4.6",
+        "tailwindcss": "^3.4.7",
         "typescript": "^5.5.4"
     },
     "postcss": {
