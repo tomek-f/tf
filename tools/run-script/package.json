@@ -35,7 +35,7 @@
     "devDependencies": {
         "@types/gradient-string": "^1.1.6",
         "@types/inquirer": "^9.0.7",
-        "@types/node": "^20.14.13",
+        "@types/node": "^20.14.14",
         "eslint": "^9.8.0",
         "type-fest": "^4.23.0",
         "typescript": "^5.5.4"
